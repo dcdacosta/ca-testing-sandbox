@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="configuring-machine-deletion-remediation-operator">
+  <title>Configure the Machine Deletion Remediation Operator</title>
+  <shortdesc>You can use the Machine Deletion Remediation Operator, with the Node Health Check Operator, to create the <codeph>MachineDeletionRemediationTemplate</codeph> Custom Resource (CR). This CR defines the remediation strategy for the nodes.</shortdesc>
+  <conbody>
+    <p>The <codeph>MachineDeletionRemediationTemplate</codeph> CR resembles the following YAML file:</p>
+    <codeblock outputclass="language-yaml">apiVersion: machine-deletion-remediation.medik8s.io/v1alpha1
+kind: MachineDeletionRemediationTemplate
+metadata:
+  name: machinedeletionremediationtemplate-sample
+  namespace: openshift-workload-availability
+spec:
+  template:
+    spec: {}</codeblock>
+  </conbody>
+</concept>

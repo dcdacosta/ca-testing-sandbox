@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="example-metrics-from-workload-availability-operators">
+  <title>Example metrics for workload availability operators</title>
+  <shortdesc>The following are example metrics from the various workload availability operators.</shortdesc>
+  <refbody>
+    <section>
+      <p>The metrics include information on the following indicators:</p>
+      <ul>
+        <li>Operator availability: Showing if and when each Operator is up and running.</li>
+        <li>Node remediation count: Showing the number of remediations across the same node, and across all nodes.</li>
+        <li>Node remediation duration: Showing the remediation downtime or recovery time.</li>
+        <li>Node remediation gauge: Showing the number of ongoing remediations.</li>
+      </ul>
+    </section>
+  </refbody>
+</reference>

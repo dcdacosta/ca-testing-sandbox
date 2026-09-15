@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="about-remediation-fencing-maintenance-nmo">
+  <title>Node Maintenance Operator</title>
+  <shortdesc>Administrators face situations where they need to interrupt the cluster, for example, replace a drive, RAM, or a NIC.</shortdesc>
+  <conbody>
+    <p>Before this maintenance, affected nodes should be cordoned and drained. When a node is cordoned, new workloads cannot be scheduled on that node. When a node is drained, to avoid or minimize downtime, workloads on the affected node are transferred to other nodes.</p>
+    <p>While this maintenance can be achieved using command line tools, the Node Maintenance Operator offers a declarative approach to achieve this by using a custom resource. When such a resource exists for a node, the Operator cordons and drains the node until the resource is deleted.</p>
+  </conbody>
+</concept>

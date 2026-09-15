@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Workload Availability for Red Hat OpenShift</title>
+  <mapref format="ditamap" href="whats-new/rhwa-4-22-0-whats-new.ditamap" type="map">
+  </mapref>
+  <mapref format="ditamap" href="discover/rhwa-4-22-0-discover.ditamap" type="map">
+  </mapref>
+  <mapref format="ditamap" href="install/rhwa-4-22-0-install.ditamap" type="map">
+  </mapref>
+  <mapref format="ditamap" href="configure/rhwa-4-22-0-configure.ditamap" type="map">
+  </mapref>
+  <mapref format="ditamap" href="administer/rhwa-4-22-0-administer.ditamap" type="map">
+  </mapref>
+  <mapref format="ditamap" href="observe/rhwa-4-22-0-observe.ditamap" type="map">
+  </mapref>
+  <mapref format="ditamap" href="troubleshoot/rhwa-4-22-0-troubleshoot.ditamap" type="map">
+  </mapref>
+  <topichead navtitle="Download PDF">
+    <topicref format="dita" href="pdfs/rhwa-4-22-0-pdf-reference.dita">
+    </topicref>
+  </topichead>
+</map>

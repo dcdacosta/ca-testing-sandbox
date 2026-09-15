@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="GUID-2dd1193e-1c3f-4ff5-b404-9bcdab533d55">
+  <title>What's new in Lightwell Network</title>
+  <shortdesc>Stay up to date about new Lightwell Network features that you can use to keep your open source dependencies secure.</shortdesc>
+  <conbody>
+    <dl>
+      <dlentry>
+        <dt>Predisclosure repository added to Lightwell Network</dt>
+        <dd>
+          <p dir="ltr">The Predisclosure repository is now available in the <ph conref="../common-product/content-references-for-lightwell-network.dita#GUID-be6d0fc9-e264-42c1-a929-9aadc647de95/product-name"/>. This repository builds on the existing Remediated repository by delivering fixes for novel vulnerabilities before public disclosure.</p>
+          <p dir="ltr"><b>Key features and behaviors</b></p>
+          <ul id="ul_1">
+            <li>Packages in this repository are built on the latest remediated builds and are maintained with moderate and higher severity CVE fixes.</li>
+            <li>As vulnerabilities are publicly disclosed and addressed upstream, corresponding fixes are promoted from the Predisclosure repository into the Remediated repository.</li>
+          </ul>
+          <p dir="ltr"><b>Important operational considerations</b></p>
+          <ul id="ul_2">
+            <li><b>Repository migration:</b> Novel fixes are moved directly into the predisclosure repository. If you previously mirrored or pulled these specific artifacts into a local repository, such as JFrog Artifactory, they will no longer be available at their former Remediated path.</li>
+            <li><b>Existing novel builds:</b> Pre-existing novel fixes moved during this update do not retrospectively display the new <codeph>-nxxxx</codeph> suffix. Only newly created builds reflect the updated versioning format.</li>
+          </ul>
+        </dd>
+      </dlentry>
+    </dl>
+  </conbody>
+</concept>

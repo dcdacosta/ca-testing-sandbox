@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="red-hat-ligthwell-network">
+  <title>What is <ph conref="../common-product/content-references-for-lightwell-network.dita#GUID-be6d0fc9-e264-42c1-a929-9aadc647de95/product-name"/>?</title>
+  <shortdesc><ph conref="../common-product/content-references-for-lightwell-network.dita#GUID-be6d0fc9-e264-42c1-a929-9aadc647de95/product-name"/> is a membership-based service that secures your open source software supply chain across both active development and live production environments without disrupting your existing workflows.</shortdesc>
+  <conbody>
+    <p><ph conref="../common-product/content-references-for-lightwell-network.dita#GUID-be6d0fc9-e264-42c1-a929-9aadc647de95/product-name"/> provides verified, securely rebuilt versions of the latest open source libraries to support your active development pipelines. For your existing applications, it applies targeted security patches directly to the exact dependency versions you already run. As a result, you can eliminate vulnerabilities without executing risky system upgrades or altering your core application logic.</p>
+  </conbody>
+</concept>

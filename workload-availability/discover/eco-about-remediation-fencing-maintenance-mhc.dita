@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="about-remediation-fencing-maintenance-mhc">
+  <title>Machine health check</title>
+  <shortdesc>Machine health check uses a Red Hat OpenShift built-in failure detection, fencing and remediation system, which monitors the status of machines and the conditions of nodes. Machine Health Checks can be configured to trigger external fencing and remediation systems, like Self Node Remediation.</shortdesc>
+  <conbody/>
+</concept>

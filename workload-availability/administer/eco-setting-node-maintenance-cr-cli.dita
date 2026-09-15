@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="eco-setting-node-maintenance-cr-cli">
+  <title>Set a node to maintenance mode by using the CLI</title>
+  <shortdesc>You can put a node into maintenance mode with a <codeph>NodeMaintenance</codeph> custom resource (CR). When you apply a <codeph>NodeMaintenance</codeph> CR, all allowed pods are evicted and the node is rendered unschedulable. Evicted pods are queued to be moved to another node in the cluster.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Install the Red Hat OpenShift CLI <codeph>oc</codeph>.</li>
+        <li>Log in to the cluster as a user with <codeph>cluster-admin</codeph> privileges.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Create the following <codeph>NodeMaintenance</codeph> CR, and save the file as <codeph>nodemaintenance-cr.yaml</codeph>:
+</cmd>
+        <info>
+          <codeblock outputclass="language-yaml">apiVersion: nodemaintenance.medik8s.io/v1beta1
+kind: NodeMaintenance
+metadata:
+  name: nodemaintenance-cr
+spec:
+  nodeName: node-1.example.com
+  reason: "NIC replacement"</codeblock>
+          <ul>
+            <li><codeph>name</codeph>: The name of the node maintenance CR.</li>
+            <li><codeph>nodeName</codeph>: The name of the node to be put into maintenance mode.</li>
+            <li><codeph>reason</codeph>: A plain text description of the reason for maintenance.</li>
+          </ul>
+        </info>
+      </step>
+      <step>
+        <cmd>Apply the node maintenance CR by running the following command:
+</cmd>
+        <info>
+          <codeblock outputclass="language-terminal">$ oc apply -f nodemaintenance-cr.yaml</codeblock>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <ol>
+        <li>Check the progress of the maintenance task by running the following command:
+<codeblock outputclass="language-terminal">$ oc describe node &lt;node-name&gt;</codeblock><p>where <codeph>&lt;node-name&gt;</codeph> is the name of your node; for example, <codeph>node-1.example.com</codeph></p></li>
+        <li>Check the example output:
+<codeblock outputclass="language-terminal">Events:
+  Type     Reason                     Age                   From     Message
+  ----     ------                     ----                  ----     -------
+  Normal   NodeNotSchedulable         61m                   kubelet  Node node-1.example.com status is now: NodeNotSchedulable</codeblock></li>
+      </ol>
+    </result>
+  </taskbody>
+</task>

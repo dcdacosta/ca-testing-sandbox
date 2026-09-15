@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="flow-of-events-in-the-workload-availability-operators-phase4">
+  <title>Phase 4 - Workload starting</title>
+  <shortdesc>When MDR is used, the remediator deletes the resources. When FAR and SNR are used, varying remediation strategies are available for them to use. One strategy is <codeph>OutOfServiceTaint</codeph> which uses out-of-service taint to permit the deletion of resources in the cluster. In both cases, deleting the resources enables faster rescheduling of the affected workload. The workload is then rescheduled and restarted. When SBR is used, the  out-of-service taint strategy is also used.</shortdesc>
+  <refbody>
+    <section>
+      <p>This phase is initiated automatically by the remediators when fencing is complete. If fencing does not complete, and an escalation remediation is required, the user must configure the timeout in seconds for the entire remediation process. If the timeout passes, and the node is still unhealthy, NHC will try the next remediator in line to remediate the unhealthy node.</p>
+    </section>
+  </refbody>
+</reference>

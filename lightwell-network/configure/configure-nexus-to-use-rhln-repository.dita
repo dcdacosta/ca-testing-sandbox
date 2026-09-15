@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="GUID-cc67c046-ee0a-446f-883e-fc2e9c58fac0">
+  <title>Configure Nexus to use the Lightwell Network repository</title>
+  <shortdesc>Configure Sonatype Nexus Repository Manager to proxy the Lightwell Network repository so that your organization's build tools resolve dependencies through your centralized Nexus instance.</shortdesc>
+  <taskbody>
+    <prereq id="prereq_1">
+      <ul>
+        <li>You have administrator access to your Sonatype Nexus Repository Manager instance.</li>
+        <li>You have an active Lightwell Network membership.</li>
+        <li>You have created a Lightwell Network service account. For more information, see <xref format="dita" href="../get-started/create-a-red-hat-lightwell-network-service-account.dita" scope="local"/></li>
+        <li>You have chosen the repository tier that matches your environment. For more information, see <xref format="dita" href="../get-started/choose-the-right-repository.dita" scope="local">Choose the right repository for your environment</xref>.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Create a new <b>Maven2 (proxy)</b> repository. </cmd>
+      </step>
+      <step>
+        <cmd>Set the following values:</cmd>
+        <substeps id="substeps_2">
+          <substep>
+            <cmd>In the <b>Remote Storage</b> field, enter the URL for your chosen repository tier, for example, <codeph>https://packages.redhat.com/lightwell/java/remediated/</codeph>. </cmd>
+          </substep>
+          <substep>
+            <cmd>In the <b>Layout Policy</b> field, select <b>Strict</b> to ensure proper resolution of .rhlw suffixes. </cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>In the Authentication section, enter the following values:</cmd>
+        <substeps id="substeps_3">
+          <substep>
+            <cmd>In the <b>Username</b> field, enter your registry service account username in the format <codeph>XXXXXXX|service-account-name</codeph>.</cmd>
+          </substep>
+          <substep>
+            <cmd>In the <b>Password</b> field, enter your registry service account token.</cmd>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+    <postreq id="postreq_1">
+      <ul id="ul_1">
+        <li>Navigate to the proxy repository in your Nexus instance and verify that artifacts are being fetched from the Lightwell Network repository.</li>
+      </ul>
+    </postreq>
+  </taskbody>
+</task>

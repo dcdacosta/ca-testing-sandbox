@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="about-storage-based-remediation-operator">
+  <title>Use cases for the Storage-Based Remediation Operator</title>
+  <shortdesc>The Storage-Based Remediation Operator is a "Rolling Stream" Operator, meaning updates are available asynchronously of OpenShift Container Platform releases.</shortdesc>
+  <conbody>
+    <p>The Storage-Based Remediation (SBR) operator installs and configures cluster-wide settings <codeph>StorageBasedRemediationConfig</codeph>, validates <codeph>ReadWriteMany</codeph> shared storage, provisions the shared volume, and runs an SBR agent DaemonSet on nodes. Each agent keeps the kernel watchdog fed when healthy, writes periodic heartbeats into its own slot on the shared device, and reads peers' slots to detect failures.</p>
+    <p>When a peer looks unhealthy, the agent publishes a <codeph>SBRStorageUnhealthy</codeph> node condition. A separate workflow, using the Node Health Check (NHC) Operator, then creates a <codeph>StorageBasedRemediation</codeph> object named after the target node. NHC can use SBR’s storage-based health detection - <codeph>detectOnlyMode</codeph>, while preserving the modularity to use any remediator, (for example, Fence Agents Remediation (FAR) Operator or Machine Deletion Remediation (MDR) Operator) for the actual remediation action.</p>
+    <p>Fencing then takes one of two paths, depending on whether the target node can still reach shared storage:</p>
+    <ul>
+      <li>Storage is reachable: A healthy peer agent writes a fence message to the target’s slot on the fence device. The target’s own agent reads it and immediately self-fences (reboot/panic).</li>
+      <li>Storage is not reachable: The target cannot read any fence message, but for the same reason it also can not write its own heartbeats. After enough consecutive write failures, the agent checks whether a <codeph>StorageBasedRemediation</codeph> CR exists for itself. If the CR exists, or if the API server is also unreachable (fail-safe), it stops petting its local watchdog. The watchdog timer then expires and the operating system reboots the node independently of shared storage. The only case where the node does not self-fence is a confirmed negative, that is, API returns that no CR exists, in which case the node keeps petting and waits for the NHC Operator to decide.</li>
+    </ul>
+    <p>After fencing, the remediation controller applies the <codeph>node.kubernetes.io/out-of-service</codeph> taint so Kubernetes evicts workloads from the fenced node cleanly.</p>
+  </conbody>
+  <related-links id="additional-resources-fence-agents-remediation-operator-about-sbr">
+    <link format="html" href="https://access.redhat.com/support/policy/updates/openshift_operators#rolling-stream" scope="external">
+      <linktext>OpenShift Operator Life Cycles</linktext>
+    </link>
+    <link format="html" href="https://docs.openshift.com/container-platform/4.21/operators/admin/olm-restricted-networks.html#olm-restricted-networks" scope="external">
+      <linktext>Using Operator Lifecycle Manager on restricted networks</linktext>
+    </link>
+    <link format="html" href="https://docs.openshift.com/container-platform/4.21/operators/admin/olm-deleting-operators-from-cluster.html#olm-deleting-operators-from-a-cluster" scope="external">
+      <linktext>Deleting Operators from a cluster</linktext>
+    </link>
+  </related-links>
+</concept>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="eco-working-with-bare-metal-nodes">
+  <title>Work with bare-metal nodes</title>
+  <shortdesc>For clusters with bare-metal nodes, you can place a node into maintenance mode, and resume a node from maintenance mode, by using the web console <b>Actions</b> control.</shortdesc>
+  <conbody>
+    <note type="note">
+      <p>Clusters with bare-metal nodes can also place a node into maintenance mode, and resume a node from maintenance mode, by using the web console and CLI, as outlined. These methods, by using the web console <b>Actions</b> control, are applicable to bare-metal clusters only.</p>
+    </note>
+  </conbody>
+</concept>

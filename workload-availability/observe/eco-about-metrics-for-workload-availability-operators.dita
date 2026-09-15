@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="about-metrics-for-workload-availability-operators">
+  <title>Check workload availability operator health metrics</title>
+  <shortdesc>The addition of data analysis enhances observability for the workload availability operators. The data provides metrics about the activity of the operators, and the effect on the cluster. These metrics improve decision-making capabilities, enable data-driven optimization, and enhance overall system performance.</shortdesc>
+  <conbody>
+    <p>You can use metrics to do these tasks:</p>
+    <ul>
+      <li>Access comprehensive tracking data for operators, to monitor overall system efficiency.</li>
+      <li>Access actionable insights derived from tracking data, such as identifying frequently failing nodes, or downtime due to operator’s remediations.</li>
+      <li>Visualize how the operator’s remediations are actually enhancing the system efficiency.</li>
+    </ul>
+  </conbody>
+</concept>

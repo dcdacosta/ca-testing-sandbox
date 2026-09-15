@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="about-remediation-fencing-maintenance-far">
+  <title>Fence Agents Remediation Operator</title>
+  <shortdesc>The Fence Agents Remediation (FAR) Operator is a Red Hat OpenShift add-on Operator. The Operator automatically remediates unhealthy nodes, similar to the Self Node Remediation Operator. You can use well-known agents to fence and remediate unhealthy nodes.</shortdesc>
+  <conbody>
+    <p>FAR supports two fencing actions 1) the <codeph>reboot</codeph> action - used with any agent or 2) the <codeph>off</codeph> action - only used with cloud-based agents. The remediation includes rebooting the unhealthy node using a fence agent, and then evicting workloads from the unhealthy node, depending on the remediation strategy.</p>
+  </conbody>
+  <related-links id="additional-resources-about-remediation-fencing-maintenance-far">
+    <link format="html" href="https://access.redhat.com/documentation/en-us/workload_availability_for_red_hat_openshift/4.21-0/html/remediation_fencing_and_maintenance/fence-agents-remediation-operator-remediate-nodes#supported-agents-fence-agents-remediation-operator_fence-agents-remediation-operator-remediate-nodes" scope="external">
+      <linktext>Fence agents</linktext>
+    </link>
+    <link format="html" href="https://access.redhat.com/documentation/en-us/workload_availability_for_red_hat_openshift/4.21-0/html/remediation_fencing_and_maintenance/fence-agents-remediation-operator-remediate-nodes#about-fence-agents-remediation-operator_fence-agents-remediation-operator-remediate-nodes" scope="external">
+      <linktext>Fencing actions</linktext>
+    </link>
+    <link format="html" href="https://access.redhat.com/documentation/en-us/workload_availability_for_red_hat_openshift/4.21-0/html/remediation_fencing_and_maintenance/fence-agents-remediation-operator-remediate-nodes#understanding-fence-agents-remediation-template-config_fence-agents-remediation-operator-remediate-nodes" scope="external">
+      <linktext>Remediation strategy</linktext>
+    </link>
+  </related-links>
+</concept>

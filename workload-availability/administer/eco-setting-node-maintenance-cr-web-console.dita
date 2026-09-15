@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="eco-setting-node-maintenance-web-console">
+  <title>Set a node to maintenance mode by using the web console</title>
+  <shortdesc>To set a node to maintenance mode, you can create a <codeph>NodeMaintenance</codeph> custom resource (CR) by using the web console.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Log in as a user with <codeph>cluster-admin</codeph> privileges.</li>
+        <li>Install the Node Maintenance Operator from the <b>Software Catalog</b>.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>From the <b>Administrator</b> perspective in the web console, navigate to <b>Operators</b> → <b>Installed Operators</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the Node Maintenance Operator from the list of Operators.</cmd>
+      </step>
+      <step>
+        <cmd>In the <b>Node Maintenance</b> tab, click <b>Create NodeMaintenance</b>.</cmd>
+      </step>
+      <step>
+        <cmd>In the <b>Create NodeMaintenance</b> page, select the <b>Form view</b> or the <b>YAML view</b> to configure the <codeph>NodeMaintenance</codeph> CR.</cmd>
+      </step>
+      <step>
+        <cmd>To apply the <codeph>NodeMaintenance</codeph> CR that you have configured, click <b>Create</b>.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>In the <b>Node Maintenance</b> tab, inspect the <codeph>Status</codeph> column and verify that its status is <codeph>Succeeded</codeph>.</p>
+    </result>
+  </taskbody>
+</task>

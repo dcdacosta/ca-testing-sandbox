@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="installing-fence-agents-remediation-operator-using-cli">
+  <title>Install the Fence Agents Remediation Operator by using the CLI</title>
+  <shortdesc>You can use the OpenShift CLI (<codeph>oc</codeph>) to install the Fence Agents Remediation Operator.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Install the OpenShift CLI (<codeph>oc</codeph>).</li>
+        <li>Log in as a user with <codeph>cluster-admin</codeph> privileges.</li>
+      </ul>
+    </prereq>
+    <context>
+      <p>You can install the Fence Agents Remediation Operator in your own namespace or in the <codeph>openshift-workload-availability</codeph> namespace.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Create a <codeph>Namespace</codeph> custom resource (CR) for the Fence Agents Remediation Operator:
+</cmd>
+        <substeps>
+          <substep>
+            <cmd>Define the <codeph>Namespace</codeph> CR and save the YAML file, for example, <codeph>workload-availability-namespace.yaml</codeph>:
+</cmd>
+            <info>
+              <codeblock outputclass="language-yaml">apiVersion: v1
+kind: Namespace
+metadata:
+  name: openshift-workload-availability</codeblock>
+            </info>
+          </substep>
+          <substep>
+            <cmd>To create the <codeph>Namespace</codeph> CR, run the following command:
+</cmd>
+            <info>
+              <codeblock outputclass="language-terminal">$ oc create -f workload-availability-namespace.yaml</codeblock>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Create an <codeph>OperatorGroup</codeph> CR:
+</cmd>
+        <substeps>
+          <substep>
+            <cmd>Define the <codeph>OperatorGroup</codeph> CR and save the YAML file, for example, <codeph>workload-availability-operator-group.yaml</codeph>:
+</cmd>
+            <info>
+              <codeblock outputclass="language-yaml">apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: workload-availability-operator-group
+  namespace: openshift-workload-availability</codeblock>
+            </info>
+          </substep>
+          <substep>
+            <cmd>To create the <codeph>OperatorGroup</codeph> CR, run the following command:
+</cmd>
+            <info>
+              <codeblock outputclass="language-terminal">$ oc create -f workload-availability-operator-group.yaml</codeblock>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Create a <codeph>Subscription</codeph> CR:
+</cmd>
+        <substeps>
+          <substep>
+            <cmd>Define the <codeph>Subscription</codeph> CR and save the YAML file, for example, <codeph>fence-agents-remediation-subscription.yaml</codeph>:
+</cmd>
+            <info>
+              <codeblock outputclass="language-yaml">apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+    name: fence-agents-remediation-subscription
+    namespace: openshift-workload-availability
+spec:
+    channel: stable
+    name: fence-agents-remediation
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace</codeblock>
+              <ul>
+                <li><codeph>namespace</codeph>: Specify the <codeph>Namespace</codeph> where you want to install the Fence Agents Remediation Operator, for example, the <codeph>openshift-workload-availability</codeph> outlined earlier in this procedure. You can install the <codeph>Subscription</codeph> CR for the Fence Agents Remediation Operator in the <codeph>openshift-workload-availability</codeph> namespace where there is already a matching <codeph>OperatorGroup</codeph> CR.</li>
+              </ul>
+            </info>
+          </substep>
+          <substep>
+            <cmd>To create the <codeph>Subscription</codeph> CR, run the following command:
+</cmd>
+            <info>
+              <codeblock outputclass="language-terminal">$ oc create -f fence-agents-remediation-subscription.yaml</codeblock>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+    <result>
+      <ol>
+        <li>Verify that the installation succeeded by inspecting the CSV resource:
+<codeblock outputclass="language-terminal">$ oc get csv -n openshift-workload-availability</codeblock><codeblock outputclass="language-terminal">NAME                               DISPLAY                          VERSION   REPLACES   PHASE
+fence-agents-remediation.v0.3.0      Fence Agents Remediation Operator   0.3.0   fence-agents-remediation.v0.2.1           Succeeded</codeblock></li>
+        <li>Verify that the Fence Agents Remediation Operator is up and running:
+<codeblock outputclass="language-terminal">$ oc get deployment -n openshift-workload-availability</codeblock><codeblock outputclass="language-terminal">NAME                                        READY   UP-TO-DATE   AVAILABLE   AGE
+fence-agents-remediation-controller-manager    2/2     2            2           110m</codeblock></li>
+      </ol>
+    </result>
+  </taskbody>
+</task>

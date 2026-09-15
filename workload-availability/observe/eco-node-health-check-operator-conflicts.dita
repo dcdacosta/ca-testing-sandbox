@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="how-nhc-prevent-conflict-with-mhc">
+  <title>Manage conflicts between node and machine health checks</title>
+  <shortdesc>When both, node health checks and machine health checks are deployed, the node health check avoids conflict with the machine health check.</shortdesc>
+  <conbody>
+    <note type="note">
+      <p>Red Hat OpenShift deploys <codeph>machine-api-termination-handler</codeph> as the default <codeph>MachineHealthCheck</codeph> resource.</p>
+    </note>
+    <p>The following list summarizes the system behavior when node health checks and machine health checks are deployed:</p>
+    <ul>
+      <li>If only the default machine health check exists, the node health check continues to identify unhealthy nodes. However, the node health check ignores unhealthy nodes in a Terminating state. The default machine health check handles the unhealthy nodes with a Terminating state.</li>
+    </ul>
+    <codeblock>INFO MHCChecker	ignoring unhealthy Node, it is terminating and will be handled by MHC	{"NodeName": "node-1.example.com"}</codeblock>
+    <ul>
+      <li>If the default machine health check is modified (for example, the <codeph>unhealthyConditions</codeph> is  <codeph>Ready</codeph>), or if additional machine health checks are created, the node health check is disabled.</li>
+    </ul>
+    <codeblock>INFO controllers.NodeHealthCheck disabling NHC in order to avoid conflict with custom MHCs configured in the cluster {"NodeHealthCheck": "/nhc-worker-default"}</codeblock>
+    <ul>
+      <li>When, again, only the default machine health check exists, the node health check is re-enabled.</li>
+    </ul>
+    <codeblock>INFO controllers.NodeHealthCheck re-enabling NHC, no conflicting MHC configured in the cluster {"NodeHealthCheck": "/nhc-worker-default"}</codeblock>
+  </conbody>
+</concept>

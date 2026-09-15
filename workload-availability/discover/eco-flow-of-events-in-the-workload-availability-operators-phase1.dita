@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="flow-of-events-in-the-workload-availability-operators-phase1">
+  <title>Phase 1 - Kubernetes Health Check (Core OpenShift)</title>
+  <shortdesc>The unhealthy node stops communicating with the API server. After approximately 50 seconds the API server sets the "Ready" condition of the node to "Unknown", that is, <codeph>Ready=Unknown</codeph>.</shortdesc>
+  <refbody/>
+</reference>

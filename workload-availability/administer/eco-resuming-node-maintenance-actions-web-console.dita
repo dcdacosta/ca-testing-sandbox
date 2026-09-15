@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="eco-resuming-node-maintenance-actions-web-console">
+  <title>Resume a bare-metal node from maintenance mode</title>
+  <shortdesc>Resume a bare-metal node from maintenance mode using the Options menu <image href="../images/kebab.png" id="image_1">
+      <alt>kebab icon</alt></image> found on each node in the <b>Compute</b> → <b>Nodes</b> list, or using the <b>Actions</b> control of the <b>Node Details</b> screen.</shortdesc>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>From the <b>Administrator</b> perspective of the web console, click <b>Compute</b> → <b>Nodes</b>.</cmd>
+      </step>
+      <step>
+        <cmd>You can resume the node from this screen, which makes it easier to perform actions on multiple nodes, or from the <b>Node Details</b> screen, where you can view comprehensive details of the selected node: </cmd>
+        <info>
+          <ul>
+            <li>Click the Options menu <image href="../images/kebab.png">
+                <alt>kebab icon</alt></image> at the end of the node and select <b>Stop Maintenance</b>.</li>
+            <li>Click the node name to open the <b>Node Details</b> screen and click <b>Actions</b> → <b>Stop Maintenance</b>.</li>
+          </ul>
+        </info>
+      </step>
+      <step>
+        <cmd>Click <b>Stop Maintenance</b> in the confirmation window. </cmd>
+        <info>
+          <p>The node becomes schedulable. If it had virtual machine instances that were running on the node prior to maintenance, then they will not automatically migrate back to this node.</p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <ul>
+        <li>Navigate to the <b>Compute</b> → <b>Nodes</b> page and verify that the corresponding node has a status of <codeph>Ready</codeph>.</li>
+      </ul>
+    </result>
+  </taskbody>
+</task>

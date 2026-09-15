@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="GUID-c5ad3945-8cea-4f6f-ae64-f9aa981fbc3e">
+  <title>Support policy</title>
+  <shortdesc>Review the official support policy, service level agreements, and lifecycle information for <ph conref="../common-product/content-references-for-lightwell-network.dita#GUID-be6d0fc9-e264-42c1-a929-9aadc647de95/product-name"/>.</shortdesc>
+  <refbody>
+    <section id="section_1">
+      <p><xref format="html" href="https://access.redhat.com/support/policy/updates/lightwell" scope="external">Lightwell Support Policy</xref></p>
+    </section>
+  </refbody>
+</reference>

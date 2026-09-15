@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="get-started-with-lightwell-network">
+  <title>Get started with Lightwell Network</title>
+  <shortdesc>Get started with Lightwell Network by learning how patched artifacts are versioned, choosing the right repository for your environment, and configuring your artifact repository manager or build tool to consume secure dependencies from Red Hat.</shortdesc>
+  <conbody>
+  </conbody>
+</concept>

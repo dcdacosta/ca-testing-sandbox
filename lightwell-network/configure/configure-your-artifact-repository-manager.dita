@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="GUID-b9f21897-474c-49d2-b311-5ce2e6535523">
+  <title>Configure your artifact repository manager</title>
+  <shortdesc>If you utilize a centralized manager for artifact repositories, set it up to proxy the Lightwell Network. Follow the specific instructions for your chosen repository manager. </shortdesc>
+  <conbody>
+  </conbody>
+</concept>

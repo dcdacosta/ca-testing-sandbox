@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="GUID-aad7d19b-43ae-4a4b-894f-ed6d38fc4d84">
+  <title>Get help with the Lightwell Network</title>
+  <shortdesc>Access support options and essential resources for the Lightwell Network, including support policies.</shortdesc>
+  <refbody>
+    <section id="section_1">
+      <title>Support</title>
+      <ul id="ul_1">
+        <li>To report a problem or request assistance, open a support case through the <xref format="html" href="https://access.redhat.com/support" scope="external">Red Hat customer support</xref>.</li>
+        <li>For the Lightwell Network support policy, see <xref format="html" href="https://access.redhat.com/support/policy/updates/lightwell" scope="external">Red Hat Lightwell Support Policy</xref>.</li>
+      </ul>
+    </section>
+    <section id="section_2">
+      <title>Software bills of materials </title>
+      <ul id="ul_2">
+        <li>To view a Python SBOM, extract the wheel file and navigate to <codeph>&lt;package&gt;-X.Y.Z.dist-info/sboms/redhat.spdx.json</codeph>.</li>
+        <li>To view the Java SBOM, navigate to the directory containing the <filepath>.jar</filepath> file and open the <codeph>cyclonedx.json</codeph> file.</li>
+      </ul>
+    </section>
+    <section id="section_5">
+      <title>Provenance attestations </title>
+      <ul id="ul_4">
+        <li>To view a Python provenance attestation, see<codeph>packages.redhat.com/api/pypi/lightwell/&lt;tier&gt;/integrity/&lt;package&gt;/&lt;version&gt;/&lt;wheel_filename&gt;/provenance/</codeph>.</li>
+        <li>To view a Java provenance attestation, navigate to the directory with the <filepath>.jar</filepath> file and open the <filepath>.provenance.sigstore.json</filepath> file.</li>
+      </ul>
+    </section>
+    <section id="section_4">
+      <title>Vulnerability data</title>
+      <p>To download OSV data for Java artifacts, see the following depending on your repository:</p>
+      <ul id="ul_5">
+        <li><xref format="html" href="https://packages.redhat.com/lightwell/osv/java/remediated/" scope="external">Remediated repository</xref> </li>
+        <li><xref format="html" href="https://packages.redhat.com/lightwell/osv/java/predisclosure/" scope="external">Predisclosure repository </xref></li>
+      </ul>
+    </section>
+  </refbody>
+</reference>

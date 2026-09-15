@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Release notes</title>
+  <topicref href="eco-rn-rhwa-4-21-0.dita" locktitle="yes" navtitle="Release notes" type="concept">
+    <topicref href="eco-rhwa-rel-notes-new-features.dita" locktitle="yes" navtitle="New features and enhancements" type="concept">
+    </topicref>
+    <topicref href="eco-rhwa-rel-notes-removed-features.dita" locktitle="yes" navtitle="Deprecated and removed features" type="concept">
+    </topicref>
+    <topicref href="eco-rhwa-rel-notes-bug-fixes.dita" locktitle="yes" navtitle="Bug fixes" type="concept">
+    </topicref>
+    <topicref href="eco-rhwa-rel-notes-tech-preview.dita" locktitle="yes" navtitle="Technology Preview features" type="concept">
+    </topicref>
+    <topicref href="eco-rhwa-rel-notes-known-issues.dita" locktitle="yes" navtitle="Known issues" type="concept">
+    </topicref>
+    <topicref href="eco-rhwa-rel-notes-mapping-table.dita" locktitle="yes" navtitle="Mapping the Workload Availability for Red Hat OpenShift release to the Operator releases." type="concept">
+    </topicref>
+  </topicref>
+</map>

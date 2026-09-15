@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="GUID-9ab88fbf-83b2-48c5-9a18-f75bef668b49">
+  <title>Configure Artifactory to use the Lightwell Network Python repository</title>
+  <shortdesc>Configure JFrog Artifactory to proxy the Lightwell Network Python repository so that your organization's build tools resolve dependencies through your centralized Artifactory instance.</shortdesc>
+  <taskbody>
+    <prereq id="prereq_1">
+      <ul id="ul_1">
+        <li>You have administrator access to your JFrog Artifactory instance.</li>
+        <li> You have an active Lightwell Network membership.</li>
+        <li> You have created a Lightwell Network service account. For more information, see <xref format="dita" href="../get-started/create-a-red-hat-lightwell-network-service-account.dita" scope="local"/></li>
+        <li>You have chosen the repository tier that matches your environment. For more information, see <xref format="dita" href="../get-started/choose-the-right-repository.dita" scope="local"/></li>
+        <li>Your Artifactory naming policy allows the <codeph>.rhlw-0000X</codeph> version suffix, for example, <codeph>5.3.17.rhlw-00001</codeph> or <codeph>5.3.17.rhlw-00001-n0001</codeph> depending on your repository. These suffixes are the standard identifiers for Lightwell-patched libraries.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the JFrog Platform console, navigate to <menucascade>
+            <uicontrol>Administration</uicontrol>
+            <uicontrol>Repositories</uicontrol></menucascade>.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Create a Repository</b> and select <b>Remote</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select <b>PyPI</b> as the package type. </cmd>
+      </step>
+      <step>
+        <cmd>On the <b>Basic</b> tab, set the following values:</cmd>
+        <substeps id="substeps_2">
+          <substep>
+            <cmd>In the <b>Repository Key</b> field, enter <codeph>lightwell-python-validated</codeph>. </cmd>
+          </substep>
+          <substep>
+            <cmd>In the <b>URL</b> field, enter the following URL:<codeph>https://packages.redhat.com/api/pulp-content/lightwell/python/validated/</codeph></cmd>
+          </substep>
+          <substep>
+            <cmd>In the <b>Registry URL</b> field, enter the following URL:<codeph>https://packages.redhat.com/lightwell/python/validated/</codeph></cmd>
+          </substep>
+          <substep>
+            <cmd>Leave the <b>Registry Index Location URL Suffix</b> at the default value of <codeph>simple</codeph></cmd>
+          </substep>
+          <substep>
+            <cmd>In the <b>User Name</b> field, enter your registry service account username in the format <codeph>XXXXXXX|service-account-name</codeph>. </cmd>
+          </substep>
+          <substep>
+            <cmd>In the <b>Password / Access Token</b> field, enter your registry service account token. </cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Leave the remaining fields at their default values.</cmd>
+      </step>
+    </steps>
+    <postreq id="postreq_1">
+      <ul id="ul_2">
+        <li>Navigate to the lightwell-remote repository in your Artifactory instance and verify that artifacts are being cached from the Lightwell Network repository.</li>
+        <li>Configure your Python build tool to resolve packages through your Artifactory instance. For instructions on connecting your PyPI client to Artifactory, see <xref format="html" href="https://docs.jfrog.com/artifactory/docs/pypi-repositories#connect-your-pypi-client-to-artifactory" scope="external"> Connect Your PyPI Client to Artifactory</xref></li>
+      </ul>
+    </postreq>
+  </taskbody>
+</task>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="about-remediation-fencing-maintenance-nhc">
+  <title>Node Health Check Operator</title>
+  <shortdesc>The Node Health Check (NHC) Operator is a Red Hat OpenShift add-on Operator. The Operator implements a failure detection system that monitors node conditions. It does not have a built-in fencing or remediation system and so must be configured with an external system that provides these features. By default, it is configured to use the Self Node Remediation system.</shortdesc>
+  <conbody/>
+</concept>

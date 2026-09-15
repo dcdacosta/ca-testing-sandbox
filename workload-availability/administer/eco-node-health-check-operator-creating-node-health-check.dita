@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="eco-node-health-check-operator-creating-node-health-check">
+  <title>Create a node health check</title>
+  <shortdesc>Using the web console, you can create a node health check to identify unhealthy nodes and specify the remediation type and strategy to fix them.</shortdesc>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>From the <b>Administrator</b> perspective of the Red Hat OpenShift web console, click <b>Compute</b> → <b>NodeHealthChecks</b> → <b>CreateNodeHealthCheck</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Specify whether to configure the node health check using the <b>Form view</b>  or the <b>YAML view</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Enter a <b>Name</b> for the node health check. The name must consist of lower case, alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character.</cmd>
+      </step>
+      <step>
+        <cmd>Specify the <b>Remediator template</b> or <b>Kind</b>. You can select from the supported remediation templates, or you can <b>Use custom kind</b>. The default supported remediation template is <codeph>SelfNodeRemediationTemplate</codeph>. Selecting <b>Use custom kind</b> requires you to select from a Custom Resource Definition (CRD) that has the <codeph>spec.template.spec</codeph> field structure. After you select the <b>Kind</b>, select a supported <b>Instance</b> of that template, or select <b>Create new instance</b>. If the CRD for the selected supported remediation template is not available, you must install the corresponding Operator, using the UI link provided, to create that CRD.</cmd>
+      </step>
+      <step>
+        <cmd>Make a <b>Nodes</b> selection by specifying the labels of the nodes you want to remediate. The selection matches labels that you want to check. If more than one label is specified, the nodes must contain each label. The default value is empty, which selects both worker and control-plane nodes.
+</cmd>
+        <info>
+          <note type="note">
+            <p>When creating a node health check with the Self Node Remediation Operator, you must select either <codeph>node-role.kubernetes.io/worker</codeph> or <codeph>node-role.kubernetes.io/control-plane</codeph> as the value.</p>
+          </note>
+        </info>
+      </step>
+      <step>
+        <cmd>Specify the Health <b>Threshold Mode</b> for remediation to occur. You can choose <b>Min healthy</b> or <b>Max unhealthy</b>. You must then specify the <b>Threshold value</b>, using either a percentage or a number, for the selected mode. The value specifies the minimum number of healthy nodes, or the maximum number of unhealthy nodes, required for a <b>NodeHealthCheck</b> to remediate nodes in the targeted pool. If the number of healthy nodes equals to or exceeds the limit set by <b>Min healthy</b>, remediation occurs. The default <b>Threshold value</b> is 51%.</cmd>
+      </step>
+      <step>
+        <cmd>Specify a list of <b>Unhealthy conditions</b> that if a node meets determines whether the node is considered unhealthy, and requires remediation. You can specify the <b>Type</b>, <b>Status</b> and <b>Duration</b>. You can also create your own custom type.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Create</b> to create the node health check.</cmd>
+      </step>
+    </steps>
+    <result>
+      <ul>
+        <li>Navigate to the <b>Compute</b> → <b>NodeHealthCheck</b> page and verify that the corresponding node health check is listed, and their status displayed. Once created, node health checks can be paused, modified, and deleted.</li>
+      </ul>
+    </result>
+  </taskbody>
+</task>

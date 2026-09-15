@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="eco-self-node-remediation-operator-install">
+  <title>Install the Self Node Remediation Operator</title>
+  <shortdesc>You can use the Red Hat OpenShift web console or the OpenShift CLI (<codeph>oc</codeph>) to install the Self Node Remediation Operator.</shortdesc>
+  <conbody/>
+</concept>

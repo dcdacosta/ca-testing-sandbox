@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="workflow-node-health-check-operator">
+  <title>Node Health Check Operator workflow</title>
+  <shortdesc>When a node is identified as unhealthy, the Node Health Check Operator checks how many other nodes are unhealthy. If the number of healthy nodes exceeds the amount that is specified in the <codeph>minHealthy</codeph> field of the <codeph>NodeHealthCheck</codeph> CR, the controller creates a remediation CR from the details that are provided in the external remediation template by the remediation provider. After remediation, the kubelet updates the node’s health status.</shortdesc>
+  <conbody>
+    <p>When the node turns healthy, the controller deletes the external remediation template.</p>
+  </conbody>
+</concept>

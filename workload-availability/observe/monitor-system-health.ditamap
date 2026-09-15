@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Monitor system health</title>
+  <topicref href="eco-observe-system.dita" locktitle="yes" navtitle="Monitor system health" type="concept">
+    <topicref href="eco-about-metrics-for-workload-availability-operators.dita" locktitle="yes" navtitle="Check workload availability operator health metrics" type="concept">
+      <topicref href="eco-example-metrics-from-workload-availability-operators.dita" locktitle="yes" navtitle="Example metrics for workload availability operators" type="reference"/>
+    </topicref>
+    <topicref href="eco-fence-agents-remediation-operator-supported-agents.dita" locktitle="yes" navtitle="Verify supported fence agents" type="reference"/>
+    <topicref href="../discover/eco-node-health-check-operator-workflow.dita" locktitle="yes" navtitle="Node Health Check Operator workflow" type="concept"/>
+    <topicref href="eco-node-health-check-operator-conflicts.dita" locktitle="yes" navtitle="Manage conflicts between node and machine health checks" type="concept"/>
+    <topicref href="eco-checking-status-of-node-maintenance-cr-tasks.dita" locktitle="yes" navtitle="Check status of current NodeMaintenance CR tasks" type="task"/>
+  </topicref>
+</map>

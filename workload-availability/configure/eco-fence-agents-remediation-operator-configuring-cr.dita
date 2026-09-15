@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="configuring-fence-agents-remediation-operator-cr">
+  <title>Configure the Fence Agents Remediation Operator custom resource</title>
+  <shortdesc>You can use the Fence Agents Remediation Operator to create the <codeph>FenceAgentsRemediationTemplate</codeph> Custom Resource (CR), which is used by the Node Health Check Operator (NHC). This CR defines the fence agent to be used in the cluster with all the required parameters for remediating the nodes. There may be many <codeph>FenceAgentsRemediationTemplate</codeph> CRs, at most one for each fence agent, and when NHC is being used it can choose the <codeph>FenceAgentsRemediationTemplate</codeph> as the remediationTemplate to be used for power-cycling the node.</shortdesc>
+  <conbody>
+    <p>The <codeph>FenceAgentsRemediationTemplate</codeph> CR resembles the following YAML file:</p>
+    <codeblock outputclass="language-yaml">apiVersion: fence-agents-remediation.medik8s.io/v1alpha1
+kind: FenceAgentsRemediationTemplate
+metadata:
+  name: fence-agents-remediation-template-fence-ipmilan
+  namespace: openshift-workload-availability
+spec:
+  template:
+    spec:
+      agent: fence_ipmilan
+      nodeparameters:
+	  nodeSecretNames:
+        --ipport:
+          master-0-0: '6230'
+          master-0-1: '6231'
+          master-0-2: '6232'
+          worker-0-0: '6233'
+          worker-0-1: '6234'
+          worker-0-2: '6235'
+      nodeSecretNames:
+        master-0-0: fence-agents-credentials-master-0-0
+        worker-0-0: fence-agents-credentials-worker-0-0
+        worker-0-1: fence-agents-credentials-worker-0-1
+      sharedparameters:
+        '--action': reboot
+        '--ip': 192.168.123.1
+        '--lanplus': ''
+        '--password': password
+        '--username': admin
+      retrycount: '5'
+      retryinterval: '5s'
+      sharedSecretName: 'fence-agents-credentials-shared'
+      timeout: '60s'</codeblock>
+    <ul>
+      <li><codeph>agent</codeph>: Displays the name of the fence agent to be executed, for example, <codeph>fence_ipmilan</codeph>.</li>
+      <li><codeph>nodeparameters</codeph>: Displays the node-specific parameters for executing the fence agent, for example, <codeph>ipport</codeph>.</li>
+      <li><codeph>nodeSecretNames</codeph>: Displays the mapping of the node name to the Secret name. It contains parameters that are relevant for the node.</li>
+      <li><codeph>sharedparameters</codeph>: Displays the cluster-wide parameters for executing the fence agent, for example, <codeph>username</codeph>.</li>
+      <li><codeph>action</codeph>: Displays the action parameters, <codeph>reboot</codeph> or <codeph>off</codeph>, which should be used for fencing the unhealthy node. The <codeph>reboot</codeph> action reboots the specific node, so it rejoins the cluster when fencing is complete. The <codeph>off</codeph> action stops the node by shutting it down, and ensures fencing without recovering the node. When using the <codeph>off</codeph> action, the administrator needs to manually turn on the node to rejoin the cluster.
+<note type="note"><p>Currently, the <codeph>off</codeph> action is only supported on cloud-based environments.</p></note></li>
+      <li><codeph>retrycount</codeph>: Displays the number of times to retry the fence agent command in case of failure. The default number of attempts is 5.</li>
+      <li><codeph>retryinterval</codeph>: Displays the interval between retries in seconds. The default is 5 seconds.</li>
+      <li><codeph>sharedSecretName</codeph>: Displays the name of the Secret containing cluster-wide parameters. The default name is <codeph>fence-agents-credentials-shared</codeph>.</li>
+      <li><codeph>timeout</codeph>: Displays the timeout for the fence agent command. The default is 60 seconds. For values of 60 seconds or greater, the timeout value is expressed in both minutes and seconds in the YAML file.</li>
+    </ul>
+  </conbody>
+  <related-links id="additional-resources-fence-agents-remediation-operator-agents-far">
+    <link format="html" href="https://access.redhat.com/documentation/en-us/workload_availability_for_red_hat_openshift/4.21-0/html/remediation_fencing_and_maintenance/fence-agents-remediation-operator-remediate-nodes#supported-agents-fence-agents-remediation-operator_fence-agents-remediation-operator-remediate-nodes" scope="external">
+      <linktext>Fence agents</linktext>
+    </link>
+  </related-links>
+</concept>

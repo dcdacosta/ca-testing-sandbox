@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Administer</title>
+  <topichead navtitle="Administer">
+    <mapref format="ditamap" href="perform-planned-node-maintenance.ditamap" type="map">
+    </mapref>
+  </topichead>
+</map>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="eco-node-maintenance-operator-install">
+  <title>Install the Node Maintenance Operator</title>
+  <shortdesc>You can use the Red Hat OpenShift web console or the OpenShift CLI (<codeph>oc</codeph>) to install the Node Maintenance Operator.</shortdesc>
+  <conbody>
+    <note type="note">
+      <p>If OpenShift Virtualization version 4.10 or less is installed in your cluster, it includes an outdated version of the Node Maintenance Operator.</p>
+    </note>
+  </conbody>
+</concept>

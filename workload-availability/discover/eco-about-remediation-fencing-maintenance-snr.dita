@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="about-remediation-fencing-maintenance-snr">
+  <title>Self Node Remediation Operator</title>
+  <shortdesc>The Self Node Remediation (SNR) Operator is a Red Hat OpenShift add-on Operator. The Operator implements an external system of fencing and remediation that reboots unhealthy nodes and deletes resources, such as Pods and VolumeAttachments. The reboot ensures that the workloads are fenced, and the resource deletion accelerates the rescheduling of affected workloads. Unlike other external systems, SNR does not require any management interface, like, for example, Intelligent Platform Management Interface (IPMI) or an API for node provisioning.</shortdesc>
+  <conbody>
+    <p>Self Node Remediation can be used by failure detection systems, like Machine Health Check or Node Health Check.</p>
+  </conbody>
+</concept>

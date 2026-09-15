@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="about-remediation-fencing-maintenance-mdr">
+  <title>Machine Deletion Remediation Operator</title>
+  <shortdesc>The Machine Deletion Remediation (MDR) Operator is a Red Hat OpenShift add-on Operator. The Operator uses the Machine API to reprovision unhealthy nodes. MDR works with NodeHealthCheck (NHC) to create a Custom Resource (CR) for MDR with information about the unhealthy node.</shortdesc>
+  <conbody>
+    <p>MDR follows the annotation on the node to the associated machine object and confirms that it has an owning controller. Next, MDR deletes the machine, and then the owning controller recreates a replacement machine.</p>
+  </conbody>
+</concept>

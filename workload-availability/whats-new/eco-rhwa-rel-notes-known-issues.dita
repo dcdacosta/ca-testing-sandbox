@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="eco-rhwa-rel-notes-known-issues">
+  <title>Known issues</title>
+  <conbody>
+    <ul>
+      <li>When installing the Storage-based Remediation (SBR) Operator using the Operator Hub, permissions are missing to create the <codeph>SecurityContextConstraints</codeph>.
+<ul><li><b>Cause</b>: Attempting to install the SBR Operator using the Operator Lifecycle Manager (OLM), and applying a default SBDConfig, results in a broken state where the agent pods cannot start.</li><li><b>Consequence</b>: The operator controller logs repeated errors stating it cannot find the required <codeph>SecurityContextConstraints</codeph>.</li><li><b>Fix</b>: Manually create the <codeph>SecurityContextConstraints</codeph> before creating your first <codeph>SBDConfig</codeph>.</li><li><b>Result:</b> The permissions are present to create the <codeph>SecurityContextConstraints</codeph> where the agent pods can start.</li></ul></li>
+      <li>When creating an <codeph>SBDConfig</codeph> without specifying an image, the Operator injects an invalid default image path from its environment variables.
+<ul><li><b>Cause</b>: Attempting to inject an invalid default image path from its environment variables, causes the agent pods to fail permanently with <codeph>ImagePullBackOff</codeph> and <codeph>ErrImagePull</codeph>.</li><li><b>Consequence</b>: The installation does not work out of the box.</li><li><b>Fix</b>: Specify <codeph>spec.image</codeph> explicitly in the <codeph>SBDConfig</codeph> and use a valid image, such as, <codeph>registry.redhat.io/workload-availability/storage-based-remediation-agent-rhel9:v0.2.0</codeph>.</li><li><b>Result:</b> The default image path is correct and the installation works out of the box.</li></ul></li>
+      <li>When deleting an <codeph>SBDConfig</codeph>, or modifying the <codeph>SBDConfig CR</codeph>, all nodes panic.
+<ul><li><b>Cause</b>: The watchdog receives no communication and the agents cease operation.</li><li><b>Consequence</b>: Deleting the <codeph>SBDConfig</codeph> or updating the Operator, can lead to an unexpected, simultaneous reboot of all worker nodes.</li><li><b>Fix</b>: Before deleting the <codeph>SBDConfig</codeph>, run the command <codeph>echo -n "V" &gt; /dev/watchdog0</codeph> to manually disarm the watchdog in each running agent.</li><li><b>Result:</b> The <codeph>SBDConfig</codeph> is deleted, or the <codeph>SBDConfig CR</codeph> is modified, with no issues.</li></ul></li>
+    </ul>
+  </conbody>
+</concept>

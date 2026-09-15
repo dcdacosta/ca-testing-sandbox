@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="authenticate-to-lightwell-network">
+  <title>Lightwell Network repository access</title>
+  <shortdesc>Access to the Lightwell Network is controlled through Red Hat entitlement certificates. Each certificate is linked to your organization ID, ensuring that your build tool can only resolve artifacts from repositories you are authorized to access.</shortdesc>
+  <conbody>
+    <p>Every Lightwell Network membership includes an entitlement certificate that you configure in your build tool. This certificate serves two purposes:</p>
+    <ul>
+      <li><b>Authentication:</b> Confirms your identity as a Lightwell Network member.</li>
+      <li><b>Authorization:</b> Scopes your access to repositories based on your organization ID.</li>
+    </ul>
+    <p>Your entitlement certificate scopes access to the repositories included in your membership. Attempts to access repositories not included in your membership are denied with a <codeph>403 Forbidden</codeph> error.</p>
+  </conbody>
+</concept>

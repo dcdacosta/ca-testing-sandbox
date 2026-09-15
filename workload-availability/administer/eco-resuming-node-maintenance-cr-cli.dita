@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="eco-resuming-node-from-maintenance-mode-with-cr">
+  <title>Resume a node from maintenance mode by using the CLI</title>
+  <shortdesc>You can resume a node from maintenance mode that was initiated with a <codeph>NodeMaintenance</codeph> CR by deleting the <codeph>NodeMaintenance</codeph> CR.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Install the Red Hat OpenShift CLI <codeph>oc</codeph>.</li>
+        <li>Log in to the cluster as a user with <codeph>cluster-admin</codeph> privileges.</li>
+      </ul>
+    </prereq>
+    <steps-unordered>
+      <step>
+        <cmd>When your node maintenance task is complete, delete the active <codeph>NodeMaintenance</codeph> CR:
+</cmd>
+        <info>
+          <codeblock outputclass="language-terminal">$ oc delete -f nodemaintenance-cr.yaml</codeblock>
+          <codeblock outputclass="language-terminal">nodemaintenance.nodemaintenance.medik8s.io "maintenance-example" deleted</codeblock>
+        </info>
+      </step>
+    </steps-unordered>
+    <result>
+      <ol>
+        <li>Check the progress of the maintenance task by running the following command:
+<codeblock outputclass="language-terminal">$ oc describe node &lt;node-name&gt;</codeblock><p>where <codeph>&lt;node-name&gt;</codeph> is the name of your node; for example, <codeph>node-1.example.com</codeph></p></li>
+        <li>Check the example output:
+<codeblock outputclass="language-terminal">Events:
+  Type     Reason                  Age                   From     Message
+  ----     ------                  ----                  ----     -------
+  Normal   NodeSchedulable         2m                    kubelet  Node node-1.example.com status is now: NodeSchedulable</codeblock></li>
+      </ol>
+    </result>
+  </taskbody>
+</task>

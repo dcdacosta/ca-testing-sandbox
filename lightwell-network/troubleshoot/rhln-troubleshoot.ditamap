@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="GUID-3ea9e045-bfb4-49d1-b20d-c8771ac2e9b3">
+  <!-- Use a map to build the structure of your HTML output. -->
+  <title>Lightwell Network Troubleshoot</title>
+  <topichead navtitle="Troubleshoot">
+    <topicref format="dita" href="get-help-with-rhln.dita">
+    </topicref>
+  </topichead>
+</map>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="GUID-0a57fae3-fd0c-465c-ab26-2caf32318e24">
+  <!-- Use a map to build the structure of your HTML output. -->
+  <title>Lightwell Network Configure</title>
+  <topichead navtitle="Configure">
+    <topicref format="dita" href="configure-your-artifact-repository-manager.dita">
+      <topicref format="dita" href="configure-artifactory-to-use-rhln-repository.dita">
+      </topicref>
+      <topicref href="configure-artifactory-to-use-rhln-repository_python.dita" type="task">
+      </topicref>
+      <topicref href="configure-nexus-to-use-rhln-repository.dita" type="task">
+      </topicref>
+    </topicref>
+    <topicref href="configure-your-build-tool.dita" locktitle="yes" navtitle="Configure your build tool" type="concept">
+      <topicref href="configure-java-build-tool.dita" locktitle="yes" navtitle="Configure your Java build tool to use the Red Hat Lightwell Network repository" type="task">
+      </topicref>
+      <topicref href="configure-python-build-tool.dita" locktitle="yes" navtitle="Configure your Python build tool to use the Red Hat Lightwell Network repository" type="task">
+      </topicref>
+    </topicref>
+  </topichead>
+</map>

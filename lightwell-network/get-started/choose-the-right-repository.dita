@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="choose-the-right-repository">
+  <title>Choose the right repository for your environment</title>
+  <shortdesc>The Lightwell Network provides three repository tiers for each language ecosystem: Validated, Remediated, and Predisclosure. All of these tiers deliver artifacts in the native format for your ecosystem.</shortdesc>
+  <conbody>
+    <p>Most environments layer multiple tiers in a repository manager such as Artifactory or Nexus, with a virtual or group repository, ordered by precedence: typically, Predisclosure first, then Remediated, then Validated. This ensures that you always resolve the most current, most patched artifact. Lightwell provides the source tiers, and you build and control the combined view.</p>
+    <p>Choose the repository that matches your needs, and use the corresponding URL when configuring your build tool. </p>
+    <table>
+      <tgroup cols="4">
+        <colspec colname="col_1" colwidth="16.6666*"/>
+        <colspec colname="col_2" colwidth="33.3333*"/>
+        <colspec colname="col_3" colwidth="50.0001*"/>
+        <colspec colname="col3" colwidth="50.0001*"/>
+        <thead>
+          <row>
+            <entry>Repository</entry>
+            <entry>Validated</entry>
+            <entry>Remediated</entry>
+            <entry>Predisclosure</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <p>Purpose</p>
+            </entry>
+            <entry>
+              <p>Trust and verification of upstream code</p>
+            </entry>
+            <entry>
+              <p>Delivery of backported security fixes</p>
+            </entry>
+            <entry>
+              <p dir="ltr">Security fixes for novel vulnerabilities before public disclosure</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Contents</p>
+            </entry>
+            <entry>
+              <p>Upstream-parity artifacts, signed provenance record, and software bill of materials (SBOM)</p>
+            </entry>
+            <entry>
+              <p>Lightwell-patched libraries with <codeph>.rhlw-0000X</codeph> suffix</p>
+            </entry>
+            <entry>
+              <p dir="ltr">Content is rebuilt on top of the latest Remediated builds, and extends the versioning with an additional <codeph>-nxxxx</codeph> suffix</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Build standard</p>
+            </entry>
+            <entry>
+              <p>SLSA Level 3</p>
+            </entry>
+            <entry>
+              <p>SLSA Level 3</p>
+            </entry>
+            <entry>
+              <p>SLSA Level 3</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>When to use</p>
+            </entry>
+            <entry>
+              <p>Dependencies that require verified, reproducible builds but do not yet need security patches</p>
+            </entry>
+            <entry>
+              <p>Dependencies that need active CVE remediation without version upgrades</p>
+            </entry>
+            <entry>
+              <p>Critical software dependencies where security is paramount and a proper testing pipeline validates application behavior</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Java URL</p>
+            </entry>
+            <entry>
+              <p>packages.redhat.com/lightwell/java/validated/</p>
+            </entry>
+            <entry>
+              <p>packages.redhat.com/lightwell/java/remediated/</p>
+            </entry>
+            <entry>
+              <p>packages.redhat.com/lightwell/java/predisclosure/</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Python URL</p>
+            </entry>
+            <entry>
+              <p>packages.redhat.com/lightwell/python/validated/</p>
+            </entry>
+            <entry>
+              <p>packages.redhat.com/lightwell/python/remediated/</p>
+            </entry>
+            <entry>
+              <p>packages.redhat.com/lightwell/python/predisclosure/</p>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </conbody>
+  <related-links>
+    <link format="dita" href="../discover/lightwell-network-repositories.dita" scope="local">
+      <linktext>Lightwell Network repositories</linktext>
+    </link>
+  </related-links>
+</concept>

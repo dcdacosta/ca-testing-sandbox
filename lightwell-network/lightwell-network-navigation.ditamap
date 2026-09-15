@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="GUID-681dcdb1-95be-4e24-974d-9193c565ef5b">
+  <!-- Use a map to build the structure of your HTML output. -->
+  <title>Lightwell Network Primary Navigation Map</title>
+  <topicref format="dita" href="common-product/content-references-for-lightwell-network.dita" processing-role="resource-only">
+  </topicref>
+  <mapref format="ditamap" href="whats-new/what-s-new-in-the-lightwell-network.ditamap">
+  </mapref>
+  <mapref format="ditamap" href="discover/rhln-discover.ditamap">
+  </mapref>
+  <mapref format="ditamap" href="get-started/get-started.ditamap">
+  </mapref>
+  <mapref format="ditamap" href="configure/rhln-configure.ditamap">
+  </mapref>
+  <mapref format="ditamap" href="troubleshoot/rhln-troubleshoot.ditamap">
+  </mapref>
+  <topichead navtitle="Download PDF">
+    <topicref format="dita" href="pdfs/red-hat-lightwell-network-pdf-reference.dita">
+    </topicref>
+  </topichead>
+</map>

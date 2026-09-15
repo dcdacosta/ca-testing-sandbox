@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="troubleshooting-storage-based-remediation-operator">
+  <title>Troubleshoot the Storage-Based Remediation Operator</title>
+  <shortdesc>Review these solutions for common issues that you might get when using the Storage-Based Remediation (SBR) Operator.</shortdesc>
+  <refbody>
+    <section id="general-troubleshooting-storage-based-remediation-operator">
+      <title>General troubleshooting</title>
+      <dl>
+        <dlentry>
+          <dt>Issue</dt>
+          <dd>You want to troubleshoot issues with the SBR Operator.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Resolution</dt>
+          <dd>
+            <p>Check the Operator logs.</p>
+            <codeblock outputclass="language-terminal">$ oc logs &lt;storage-based-remediation-controller-manager-name&gt; -c manager -n &lt;namespace-name&gt;</codeblock>
+          </dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section id="unsuccessful_remediation">
+      <title>Unsuccessful remediation</title>
+      <dl>
+        <dlentry>
+          <dt>Issue</dt>
+          <dd>An unhealthy node was not remediated.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Resolution</dt>
+          <dd>
+            <p>Verify that the <codeph>StorageBasedRemediationConfig</codeph> CR was created by running the following command:</p>
+            <codeblock outputclass="language-terminal">$ oc get sbr -A</codeblock>
+            <p>If the <codeph>NodeHealthCheck</codeph> controller did not create the <codeph>StorageBasedRemediationConfig</codeph> CR when the node turned unhealthy, check the logs of the <codeph>NodeHealthCheck</codeph> controller. Additionally, ensure that the <codeph>NodeHealthCheck</codeph> CR includes the required specification to use the remediation template.</p>
+            <p>If the <codeph>StorageBasedRemediationConfig</codeph> CR was created, ensure that its name matches the unhealthy node object.</p>
+          </dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section id="daemon-set-exists">
+      <title>Resources remain after uninstalling the Operator</title>
+      <dl>
+        <dlentry>
+          <dt>Issue</dt>
+          <dd>The SBR Operator resources, such as the remediation CR and the remediation template CR, exist even after uninstalling the Operator.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Resolution</dt>
+          <dd>
+            <p>To remove the SBR Operator resources, you can delete the resources by selecting the <b>Delete all operand instances for this operator</b> checkbox before uninstalling. This checkbox feature is only available in Red Hat OpenShift since version 4.13. For all versions of Red Hat OpenShift, you can delete the resources by running the following relevant command for each resource type:</p>
+            <codeblock outputclass="language-terminal">$ oc delete sbr &lt;storage-based-remediation&gt; -n &lt;namespace&gt;</codeblock>
+            <codeblock outputclass="language-terminal">$ oc delete sbrt &lt;storage-based-remediation-template&gt; -n &lt;namespace&gt;</codeblock>
+            <p>The remediation CR <codeph>sbr</codeph> must be created and deleted by the same entity, for example, NHC. If the remediation CR <codeph>sbr</codeph> is still present, it is deleted, together with the SBR Operator.</p>
+            <p>The remediation template CR <codeph>sbrt</codeph> only exists if you use SBR with NHC. When the SBR Operator is deleted using the web console, the remediation template CR <codeph>sbrt</codeph> is also deleted.</p>
+          </dd>
+        </dlentry>
+      </dl>
+    </section>
+  </refbody>
+</reference>

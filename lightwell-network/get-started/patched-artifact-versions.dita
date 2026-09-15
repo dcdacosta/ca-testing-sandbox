@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="lightwell-patched-artifact-versions">
+  <title>Repository version suffixes</title>
+  <shortdesc>If you are using the remediated repository or predisclosure repository, your artifacts include backported security fixes identified by a version suffix. </shortdesc>
+  <conbody>
+    <dl>
+      <dlentry>
+        <dt>Remediated repository</dt>
+        <dd>
+          <p>Red Hat backports fixes to existing upstream versions. You choose the specific version you want to update, and the scope of each security patch is limited to the fix itself. </p>
+          <p>Patched artifacts are identified by a version suffix appended to the original upstream version:</p>
+          <ul id="ul_1">
+            <li><codeph>.rhlw-0000X</codeph> — A sequential counter tracking cumulative security patches applied to that version.</li>
+          </ul>
+          <p>For example, <codeph>5.3.17.rhlw-00001</codeph> means:</p>
+          <ul id="ul_2">
+            <li>The base upstream version is 5.3.17.</li>
+            <li>This is the first Lightwell build that contains security patches applied to this version.</li>
+          </ul>
+          <p>A subsequent fix to the same version would produce <codeph>5.3.17.rhlw-00002</codeph>. These suffixed versions are available to resolve when your build tool is configured to use the remediated repository.</p>
+        </dd>
+      </dlentry>
+      <dlentry>
+        <dt>Predisclosure repository</dt>
+        <dd>
+          <p dir="ltr">Red Hat includes fixes for novel vulnerabilities before public disclosure. Each package in this repository extends the versioning from the remediated repository with an additional <codeph>-nXXXX</codeph> suffix.</p>
+          <p dir="ltr">For example, if the Remediated version upon which this repository is built is <codeph>5.3.17.rhlw-00001</codeph> then the predisclosure version looks like <codeph>5.3.17.rhlw-00001-n0001</codeph></p>
+          <p dir="ltr">New builds increment the suffix and contain the cumulative set of patches.</p>
+        </dd>
+      </dlentry>
+    </dl>
+  </conbody>
+</concept>

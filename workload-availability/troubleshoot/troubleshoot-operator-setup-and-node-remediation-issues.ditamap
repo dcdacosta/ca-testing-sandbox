@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Troubleshoot operator setup and node remediation issues</title>
+  <topicref href="eco-troubleshoot-issues.dita" locktitle="yes" navtitle="Troubleshoot operator setup and node remediation issues" type="concept">
+    <topicref href="eco-gathering-data-about-the-workload-availability-operators.dita" locktitle="yes" navtitle="Gather data about the workload availability operators" type="concept"/>
+    <topicref href="eco-self-node-remediation-operator-troubleshooting.dita" locktitle="yes" navtitle="Troubleshoot the Self Node Remediation Operator" type="reference"/>
+    <topicref href="eco-fence-agents-remediation-operator-troubleshooting.dita" locktitle="yes" navtitle="Troubleshoot the Fence Agents Remediation Operator" type="reference"/>
+    <topicref href="eco-machine-deletion-remediation-operator-troubleshooting.dita" locktitle="yes" navtitle="Troubleshoot the Machine Deletion Remediation Operator" type="reference"/>
+    <topicref href="eco-storage-based-remediation-operator-troubleshooting.dita" locktitle="yes" navtitle="Troubleshoot the Storage-Based Remediation Operator" type="reference"/>
+  </topicref>
+</map>

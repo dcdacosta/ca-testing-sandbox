@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="eco-rhwa-rel-notes-new-features">
+  <title>New features and enhancements</title>
+  <conbody>
+    <p>This release adds improvements related to the following components and concepts.</p>
+    <ul>
+      <li>The Workload Availability for Red Hat OpenShift Operators had inconsistent deployment configurations with regards to replicas, node affinity, and the update strategy. In cases where the Operator pod was running on an unhealthy node, this had the potential for remediation to be slower. With this release, first use two replicas for Node Health Check (NHC), Fence Agents Remedation (FAR) and Self Node Remedation (SNR). Also use the parameter  'topologySpreadConstraints' for preventing running on the same node. And finally, use the parameter 'updateStrategy' for avoiding potential update locks in some edge cases. This results in a reduced chance of slower remediation.</li>
+      <li>The Node Health Check (NHC) Operator now includes:
+<ul><li>A new configurable <codeph>StormCooldownDuration</codeph> parameter to specify the duration of an optional cooldown phase after a "storm". A "storm" happens when the number of (un)healthy nodes exceeds the threshold defined by minHealthy or maxUnhealthy.</li><li>Updates to creating a node health check using the web console,
+<ul><li>You can now select from the supported <codeph>Remediator templates</codeph>, or you can <codeph>Use custom kind</codeph>. Previously, only a predefined instance of the Self Node Remediation (SNR) template was available. Now, <codeph>Remediator templates</codeph> are supported for SNR, Machine Deletion Remediation (MDR) and Fence Agents Remediation (FAR). In addition, several instance of the selected template are available from an auto populated list.
+Selecting <codeph>Use custom kind</codeph> requires you to select from a Custom Resource Definition (CRD) that has the <codeph>spec.template.spec</codeph> field structure.</li><li>You can now also specify the <codeph>Health Threshold Mode</codeph> for remediation to occur. You can choose from the modes <codeph>Min healthy</codeph> or <codeph>Max unhealthy</codeph>. You must then specify the <codeph>Threshold value</codeph>, using either a percentage or a number, for the selected mode. Previously, it was not possible to configure <codeph>Max unhealthy</codeph> using the user interface.</li></ul></li></ul></li>
+      <li>The Fence Agents Remediation (FAR) Operator now includes:
+<ul><li>A validating admission webhook to ensure the correctness of fence agent parameters, before fencing takes place. Fence agent status validation occurs in the background when the FAR template is created, and verifies that fence agents are configured properly by running a status check. Validation is configured by the optional <codeph>FenceAgentsRemediationTemplate.Spec.StatusValidationSample</codeph> and the validation results are captured in FAR Template Status.</li><li>An update to it’s remediation strategy. When FAR has a <codeph>remediationStrategy</codeph> of <codeph>OutOfServiceTaint</codeph>, it populates the <codeph>TimeAdded</codeph> field with the time of emitting the out-of-service taint.</li><li>An update to the taint effect and key. The FAR remediation taint had been changed by effect and key. The effect has changed from <codeph>NoExecute</codeph> to <codeph>NoSchedule</codeph> to only prevent new workloads, without evicting any workloads, prior to running the fence agent.</li></ul></li>
+      <li>The Self Node Remediation (SNR) Operator now includes:
+<ul><li>An update to the taint effect. The SNR remediation taint effect has changed from <codeph>NoExecute</codeph> to <codeph>NoSchedule</codeph> to only prevent new workloads, without evicting any workloads, prior to rebooting the node.</li></ul></li>
+      <li>The Storage-based Remediation (SBR) Operator now includes:
+<ul><li>The addition of a <codeph>StorageBasedRemediationTemplate</codeph> which enables the SBR Operator to work with the Node Health Check (NHC) Operator.</li><li>An update to the API naming conventions.</li></ul></li>
+    </ul>
+  </conbody>
+</concept>

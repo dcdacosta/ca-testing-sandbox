@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="configuring-self-node-remediation-operator">
+  <title>Configure the Self Node Remediation Operator</title>
+  <shortdesc>The Self Node Remediation Operator creates the <codeph>SelfNodeRemediationConfig</codeph> CR and the <codeph>SelfNodeRemediationTemplate</codeph> Custom Resource Definition (CRD).</shortdesc>
+  <conbody>
+    <note type="note">
+      <p>To avoid unexpected reboots of a specific node, the Node Maintenance Operator places the node in maintenance mode and automatically adds a node selector that prevents the SNR daemonset from running on the specific node.</p>
+    </note>
+  </conbody>
+</concept>

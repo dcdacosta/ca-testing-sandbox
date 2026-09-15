@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="eco-checking-status-of-node-maintenance-cr-tasks">
+  <title>Check status of current NodeMaintenance CR tasks</title>
+  <shortdesc>You can check the status of current <codeph>NodeMaintenance</codeph> CR tasks.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Install the Red Hat OpenShift CLI <codeph>oc</codeph>.</li>
+        <li>Log in as a user with <codeph>cluster-admin</codeph> privileges.</li>
+      </ul>
+    </prereq>
+    <steps-unordered>
+      <step>
+        <cmd>Check the status of current node maintenance tasks, for example the <codeph>NodeMaintenance</codeph> CR or <codeph>nm</codeph> object, by running the following command:
+</cmd>
+        <info>
+          <codeblock outputclass="language-terminal">$ oc get nm -o yaml</codeblock>
+          <codeblock outputclass="language-yaml">apiVersion: v1
+items:
+- apiVersion: nodemaintenance.medik8s.io/v1beta1
+  kind: NodeMaintenance
+  metadata:
+...
+  spec:
+    nodeName: node-1.example.com
+    reason: Node maintenance
+  status:
+    drainProgress: 100
+    evictionPods: 3
+    lastError: "Last failure message"
+    lastUpdate: "2022-06-23T11:43:18Z"
+    phase: Succeeded
+    totalpods: 5
+...</codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd><codeph>drainProgress</codeph>: The percentage completion of draining the node.</cmd>
+      </step>
+      <step>
+        <cmd><codeph>evictionPods</codeph>: The number of pods scheduled for eviction.</cmd>
+      </step>
+      <step>
+        <cmd><codeph>lastError</codeph>: The latest eviction error, if any.</cmd>
+      </step>
+      <step>
+        <cmd><codeph>lastUpdate</codeph>: The last time the status was updated.</cmd>
+      </step>
+      <step>
+        <cmd><codeph>totalpods</codeph>: The total number of pods before the node entered maintenance mode.</cmd>
+      </step>
+    </steps-unordered>
+  </taskbody>
+</task>

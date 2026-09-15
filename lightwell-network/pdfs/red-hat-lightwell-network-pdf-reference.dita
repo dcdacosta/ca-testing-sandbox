@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="GUID-a8942bfb-8f03-486d-9df7-d57b06b2bccd">
+  <title>Lightwell Network PDF Reference</title>
+  <shortdesc>A listing of all available PDF documentation for Red Hat Lightwell Network. </shortdesc>
+  <refbody>
+    <table colsep="1" frame="all" id="table_rhln_pdfs" pgwide="1" rowsep="1">
+      <tgroup cols="2">
+        <colspec colname="c1" colnum="1" colwidth="1*"/>
+        <colspec colname="c2" colnum="2" colwidth="3*"/>
+        <thead>
+          <row>
+            <entry>Guide</entry>
+            <entry>PDF Link</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>What's new</entry>
+            <entry><xref format="html" href="https://your-s3-bucket-link/rhln-whats-new-pdf.pdf" scope="external">Lightwell Network What's new</xref></entry>
+          </row>
+          <row>
+            <entry>Discover</entry>
+            <entry><xref format="html" href="https://your-s3-bucket-link/rhln-discover-pdf.pdf" scope="external">Lightwell Network Discover</xref></entry>
+          </row>
+          <row>
+            <entry>Get started</entry>
+            <entry><xref format="html" href="https://your-s3-bucket-link/rhln-get-started-pdf.pdf" scope="external">Lightwell Network Get started</xref></entry>
+          </row>
+          <row>
+            <entry>Configure</entry>
+            <entry><xref format="html" href="https://your-s3-bucket-link/rhln-configure-pdf.pdf" scope="external">Lightwell Network Configure</xref></entry>
+          </row>
+          <row>
+            <entry>Troubleshoot</entry>
+            <entry><xref format="html" href="https://your-s3-bucket-link/rhln-troubleshoot-pdf.pdf" scope="external">Lightwell Network Troubleshoot</xref></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refbody>
+</reference>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="about-remediation-fencing-maintenance-sbr">
+  <title>Storage-Based Remediation Operator</title>
+  <shortdesc>The Storage-Based Remediation (SBR) Operator is a Red Hat OpenShift add-on Operator that uses shared storage and a STONITH-style channel to reprovision unhealthy nodes. SBR works with NodeHealthCheck (NHC) to create a Custom Resource (CR) for SBR with information about the unhealthy node.</shortdesc>
+  <conbody>
+    <p>SBR supports the following two storage actions:</p>
+    <ul>
+      <li>Storage is reachable - the target can self-fence.</li>
+      <li>Storage is not reachable - the target cannot self-fence.</li>
+    </ul>
+    <p>Remediation uses a <codeph>StorageBasedRemediation</codeph> object to reboot the unhealthy node and then evict its workloads.</p>
+  </conbody>
+</concept>

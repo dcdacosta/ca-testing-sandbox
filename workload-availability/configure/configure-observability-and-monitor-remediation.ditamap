@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Configure observability and monitor remediation</title>
+  <topicref href="eco-configure-observability.dita" locktitle="yes" navtitle="Configure observability and monitor remediation" type="concept">
+    <topicref href="eco-configuring-metrics-for-workload-availability-operators.dita" locktitle="yes" navtitle="Configure metrics for workload availability operators" type="task"/>
+    <topicref href="eco-self-node-remediation-operator-configuring.dita" locktitle="yes" navtitle="Configure the Self Node Remediation Operator" type="concept">
+      <topicref href="eco-self-node-remediation-operator-configuring-cr.dita" locktitle="yes" navtitle="Configure the Self Node Remediation Operator custom resource" type="concept"/>
+      <topicref href="eco-self-node-remediation-operator-configuring-crd.dita" locktitle="yes" navtitle="Configure the Self Node Remediation Operator custom resource definition" type="concept"/>
+    </topicref>
+    <topicref href="eco-fence-agents-remediation-operator-configuring.dita" locktitle="yes" navtitle="Configure the Fence Agents Remediation Operator" type="concept">
+      <topicref href="eco-fence-agents-remediation-operator-configuring-cr.dita" locktitle="yes" navtitle="Configure the Fence Agents Remediation Operator custom resource" type="concept"/>
+      <topicref href="eco-fence-agents-remediation-operator-configuring-crd.dita" locktitle="yes" navtitle="Configure the Fence Agents Remediation Operator custom resource definition" type="concept"/>
+    </topicref>
+    <topicref href="eco-machine-deletion-remediation-operator-configuring.dita" locktitle="yes" navtitle="Configure the Machine Deletion Remediation Operator" type="concept"/>
+    <topicref href="eco-storage-based-remediation-operator-configuring.dita" locktitle="yes" navtitle="Configure the Storage-Based Deletion Remediation Operator" type="concept"/>
+    <topicref href="eco-configuring-machine-health-check-with-self-node-remediation.dita" locktitle="yes" navtitle="Configure machine health checks to use the Self Node Remediation Operator" type="task"/>
+  </topicref>
+</map>

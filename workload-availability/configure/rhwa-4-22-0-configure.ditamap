@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Configure</title>
+  <topichead navtitle="Configure">
+    <mapref format="ditamap" href="configure-observability-and-monitor-remediation.ditamap" type="map">
+    </mapref>
+  </topichead>
+</map>

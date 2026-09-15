@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="configure-your-python-build-tool">
+  <title>Configure your Python build tool to use the Lightwell Network repository</title>
+  <shortdesc>Configure your Python build tool to resolve dependencies through the Lightwell Network repository by adding the repository to your existing configuration.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You have an active Lightwell Network membership.</li>
+        <li>You have created a Lightwell Network service account. For more information, see <xref format="dita" href="../get-started/create-a-red-hat-lightwell-network-service-account.dita" scope="local"/></li>
+        <li>You have chosen the repository tier that matches your environment. For more information, see <xref format="dita" href="../get-started/choose-the-right-repository.dita" scope="local"/>.</li>
+        <li>You have Python 3.12 installed.</li>
+        <li>You have one of the following Python build tools configured:
+          <ul>
+            <li>pip</li>
+            <li>Pipenv</li>
+            <li>Poetry</li>
+          </ul>
+        </li>
+      </ul>
+    </prereq>
+    <context>
+      <p>Select the configuration method that matches your build tool. Run the command that corresponds to your chosen repository tier. </p>
+    </context>
+    <steps-unordered>
+      <step>
+        <cmd> <b>If you are using pip:</b> </cmd>
+        <substeps>
+          <substep>
+            <cmd>Configure authentication by adding your service account credentials to your <codeph>~/.netrc</codeph> file. Create the file if it does not exist:</cmd>
+            <info>
+              <codeblock>machine packages.redhat.com login &lt;service_account_username&gt; password &lt;service_account_token&gt;</codeblock>
+              <p>where:</p>
+              <p><codeph>&lt;service_account_username&gt;</codeph>: Specifies your registry service account username in the format <codeph>XXXXXXX|service-account-name</codeph></p>
+              <p><codeph>&lt;service_account_token&gt;</codeph>: Specifies your registry service account token</p>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Run one of the following commands to set the Lightwell Network repository as your default index:</cmd>
+            <info>
+              <p>To set the Validated repository as your default index:</p>
+              <codeblock>$ pip config set global.index-url https://packages.redhat.com/lightwell/python/validated/simple</codeblock>
+              <p>To set the Remediated repository as your default index:</p>
+              <codeblock>$ pip config set global.index-url https://packages.redhat.com/lightwell/python/remediated/simple</codeblock>
+              <p>To set the Predisclosure repository as your default index:</p>
+              <codeblock>$ pip config set global.index-url https://packages.redhat.com/lightwell/python/predisclosure/simple </codeblock>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd> <b>If you are using Pipenv:</b> </cmd>
+        <substeps>
+          <substep>
+            <cmd>Configure authentication by adding your service account credentials to your <codeph>~/.netrc</codeph> file. Create the file if it does not exist:</cmd>
+            <info>
+              <codeblock>machine packages.redhat.com login &lt;service_account_username&gt; password &lt;service_account_token&gt;</codeblock>
+              <p>where:</p>
+              <p><codeph>&lt;service_account_username&gt;</codeph>: Specifies your registry service account username in the format <codeph>XXXXXXX|service-account-name</codeph></p>
+              <p><codeph>&lt;service_account_token&gt;</codeph>: Specifies your registry service account token</p>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Run one of the following commands to install from the Lightwell Network repository:</cmd>
+            <info>
+              <p>To install from the Validated repository:</p>
+              <codeblock>$ pipenv install --index https://packages.redhat.com/lightwell/python/validated/simple</codeblock>
+              <p>To install from the Remediated repository:</p>
+              <codeblock>$ pipenv install --index https://packages.redhat.com/lightwell/python/remediated/simple</codeblock>
+              <p>To install from the Predisclosure repository:</p>
+              <codeblock>$ pipenv install --index https://packages.redhat.com/lightwell/python/predisclosure/simple</codeblock>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd> <b>If you are using Poetry:</b> </cmd>
+        <substeps>
+          <substep>
+            <cmd>Configure authentication for the Lightwell repository by running the following command:</cmd>
+            <info>
+              <codeblock>$ poetry config http-basic.lightwell "&lt;service_account_username&gt;" "&lt;service_account_token&gt;"</codeblock>
+              <p>where:</p>
+              <p><codeph>&lt;service_account_username&gt;</codeph>: Specifies your registry service account username in the format <codeph>XXXXXXX|service-account-name</codeph></p>
+              <p><codeph>&lt;service_account_token&gt;</codeph>: Specifies your registry service account token</p>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Run one of the following commands to add the Lightwell Network repository as the default source:</cmd>
+            <info>
+              <p>To add the Validated repository:</p>
+              <codeblock>$ poetry source add --priority=default lightwell https://packages.redhat.com/lightwell/python/validated</codeblock>
+              <p>To add the Remediated repository:</p>
+              <codeblock>$ poetry source add --priority=default lightwell https://packages.redhat.com/lightwell/python/remediated</codeblock>
+              <p>To add the Predisclosure repository:</p>
+              <codeblock>$ poetry source add --priority=default lightwell https://packages.redhat.com/lightwell/python/disclosure</codeblock>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+    </steps-unordered>
+    <postreq>
+      <ol>
+        <li>Create and activate a virtual environment:
+          <codeblock>$ python3.12 -m venv venv
+$ source venv/bin/activate</codeblock>
+        </li>
+        <li>Install a package and confirm that it resolves through the Lightwell Network repository:
+          <codeblock>$ pip install numpy</codeblock>
+        </li>
+        <li>To install a specific version, specify the version number in the install command:
+          <codeblock>$ pip install numpy==2.3.5</codeblock>
+        </li>
+        <li>If you are using the Remediated repository, add a remediated dependency and verify that the resolved package version includes the <codeph>.rhlw-0000X</codeph> version suffix. If you are using the Predisclosure repository, add a remediated dependency and verify that the resolved package version includes the <codeph>.rhlw-0000X-nXXXX</codeph> version suffix.
+          <codeblock>$ pip show numpy | grep Version</codeblock>
+          <p>The output should show a version with the <codeph>.rhlw-0000X</codeph> or <codeph>.rhlw-0000X-nXXXX</codeph> suffix, for example, <codeph>Version: 2.3.5.rhlw-00001</codeph>.</p>
+        </li>
+      </ol>
+    </postreq>
+  </taskbody>
+</task>

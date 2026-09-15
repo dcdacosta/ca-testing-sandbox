@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="eco-about-node-maintenance-operator">
+  <title>Use cases for the Node Maintenance Operator</title>
+  <shortdesc>The Node Maintenance Operator is a "Rolling Stream" Operator, meaning updates are available asynchronously of OpenShift Container Platform releases.</shortdesc>
+  <conbody>
+    <p>The Node Maintenance Operator watches for new or deleted <codeph>NodeMaintenance</codeph> CRs. When a new <codeph>NodeMaintenance</codeph> CR is detected, no new workloads are scheduled and the node is cordoned off from the rest of the cluster. All pods that can be evicted are removed from the node. When a <codeph>NodeMaintenance</codeph> CR is deleted, the node that is referenced in the CR is made available for new workloads.</p>
+    <note type="note">
+      <p>Using a <codeph>NodeMaintenance</codeph> CR for node maintenance tasks achieves the same results as the <codeph>oc adm cordon</codeph> and <codeph>oc adm drain</codeph> commands using standard Red Hat OpenShift CR processing.</p>
+    </note>
+  </conbody>
+  <related-links id="additional-resources-node-maintenance-operator-about-nmo">
+    <link format="html" href="https://access.redhat.com/support/policy/updates/openshift_operators#rolling-stream" scope="external">
+      <linktext>OpenShift Operator Life Cycles</linktext>
+    </link>
+    <link format="html" href="https://docs.openshift.com/container-platform/4.21/nodes/nodes/nodes-nodes-working.html#nodes-nodes-working-evacuating_nodes-nodes-working" scope="external">
+      <linktext>Understanding how to evacuate pods on nodes</linktext>
+    </link>
+    <link format="html" href="https://docs.openshift.com/container-platform/4.21/nodes/nodes/nodes-nodes-working.html#nodes-nodes-working-marking_nodes-nodes-working" scope="external">
+      <linktext>Understanding how to mark nodes as unschedulable or schedulable</linktext>
+    </link>
+  </related-links>
+</concept>

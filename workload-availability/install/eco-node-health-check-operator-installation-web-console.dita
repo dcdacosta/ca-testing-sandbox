@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="installing-node-health-check-operator-using-web-console">
+  <title>Install the Node Health Check Operator by using the web console</title>
+  <shortdesc>You can use the Red Hat OpenShift web console to install the Node Health Check Operator.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Log in as a user with <codeph>cluster-admin</codeph> privileges.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the Red Hat OpenShift web console, navigate to <b>Ecosystem</b> → <b>Software Catalog</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the Node Health Check Operator, then click <b>Install</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Keep the default selection of <b>Installation mode</b> and <b>namespace</b> to ensure that the Operator will be installed to the <codeph>openshift-workload-availability</codeph> namespace.</cmd>
+      </step>
+      <step>
+        <cmd>Ensure that the <b>Console plug-in</b> is set to <codeph>Enable</codeph>.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Install</b>.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>To confirm that the installation is successful:</p>
+      <ol>
+        <li>Navigate to the <b>Operators</b> → <b>Installed Operators</b> page.</li>
+        <li>Check that the Operator is installed in the <codeph>openshift-workload-availability</codeph> namespace and that its status is <codeph>Succeeded</codeph>.</li>
+      </ol>
+      <p>If the Operator is not installed successfully:</p>
+      <ol>
+        <li>Navigate to the <b>Operators</b> → <b>Installed Operators</b> page and inspect the <b>Status</b> column for any errors or failures.</li>
+        <li>Navigate to the <b>Workloads</b> → <b>Pods</b> page and check the logs in any pods in the <codeph>openshift-workload-availability</codeph> project that are reporting issues.</li>
+      </ol>
+    </result>
+  </taskbody>
+</task>

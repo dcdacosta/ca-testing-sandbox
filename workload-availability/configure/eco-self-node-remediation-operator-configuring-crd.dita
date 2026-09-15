@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="configuring-self-node-remediation-operator-crd">
+  <title>Configure the Self Node Remediation Operator custom resource definition</title>
+  <shortdesc>The Self Node Remediation Operator also creates the <codeph>SelfNodeRemediationTemplate</codeph> Custom Resource Definition (CRD). This CRD defines the remediation strategy for the nodes that is aimed to recover workloads faster. The following remediation strategies are available:</shortdesc>
+  <conbody>
+    <dl>
+      <dlentry>
+        <dt>
+          <codeph>Automatic</codeph>
+        </dt>
+        <dd>This remediation strategy simplifies the remediation process by letting the Self Node Remediation Operator decide on the most suitable remediation strategy for the cluster. This strategy checks if the <codeph>OutOfServiceTaint</codeph> strategy is available on the cluster. If the <codeph>OutOfServiceTaint</codeph> strategy is available, the Operator selects the <codeph>OutOfServiceTaint</codeph> strategy. If the <codeph>OutOfServiceTaint</codeph> strategy is not available, the Operator selects the <codeph>ResourceDeletion</codeph> strategy. <codeph>Automatic</codeph> is the default remediation strategy.</dd>
+      </dlentry>
+      <dlentry>
+        <dt>
+          <codeph>ResourceDeletion</codeph>
+        </dt>
+        <dd>This remediation strategy removes the pods on the node, rather than the removal of the node object.</dd>
+      </dlentry>
+      <dlentry>
+        <dt>
+          <codeph>OutOfServiceTaint</codeph>
+        </dt>
+        <dd>This remediation strategy implicitly causes the removal of the pods and associated volume attachments on the node, rather than the removal of the node object. It achieves this by placing the <codeph>OutOfServiceTaint</codeph> strategy on the node. This strategy has been supported on technology preview since OpenShift Container Platform version 4.13, and on general availability since OpenShift Container Platform version 4.15.</dd>
+      </dlentry>
+    </dl>
+    <p>The Self Node Remediation Operator creates the <codeph>SelfNodeRemediationTemplate</codeph> CR for the strategy <codeph>self-node-remediation-automatic-strategy-template</codeph>, which the <codeph>Automatic</codeph> remediation strategy uses.</p>
+    <p>The <codeph>SelfNodeRemediationTemplate</codeph> CR resembles the following YAML file:</p>
+    <codeblock outputclass="language-yaml">apiVersion: self-node-remediation.medik8s.io/v1alpha1
+kind: SelfNodeRemediationTemplate
+metadata:
+  creationTimestamp: "2022-03-02T08:02:40Z"
+  name: self-node-remediation-&lt;remediation_object&gt;-deletion-template
+  namespace: openshift-workload-availability
+spec:
+  template:
+    spec:
+      remediationStrategy: &lt;remediation_strategy&gt;</codeblock>
+    <ul>
+      <li><codeph>name</codeph>: Specifies the type of remediation template based on the remediation strategy. Replace <codeph>&lt;remediation_object&gt;</codeph> with either <codeph>resource</codeph> or <codeph>node</codeph>; for example, <codeph>self-node-remediation-resource-deletion-template</codeph>.</li>
+      <li><codeph>remediationStrategy</codeph>: Specifies the remediation strategy. The default remediation strategy is <codeph>Automatic</codeph>.</li>
+    </ul>
+  </conbody>
+</concept>

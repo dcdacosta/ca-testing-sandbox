@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <!-- Use a map to build the structure of your HTML output. -->
+  <title>Lightwell Network Get started</title>
+  <topichead navtitle="Get started">
+    <topicref href="get-started.dita" locktitle="yes" navtitle="Get started with the Red Hat Lightwell Network" type="concept">
+      <topicref href="choose-the-right-repository.dita" locktitle="yes" navtitle="Choose the right repository for your environment" type="concept">
+      </topicref>
+      <topicref href="patched-artifact-versions.dita" type="concept">
+      </topicref>
+      <topicref href="authenticate-to-lightwell-network.dita" type="concept">
+      </topicref>
+      <topicref href="create-a-red-hat-lightwell-network-service-account.dita" type="task">
+      </topicref>
+    </topicref>
+  </topichead>
+</map>

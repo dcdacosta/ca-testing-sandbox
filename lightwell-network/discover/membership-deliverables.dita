@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="membership-deliverables">
+  <title>Membership benefits</title>
+  <shortdesc>As a <ph conref="../common-product/content-references-for-lightwell-network.dita#GUID-be6d0fc9-e264-42c1-a929-9aadc647de95/product-name"/> member, you get access to a verified catalog of secure, patched open source artifacts through the Red Hat Lightwell Network.</shortdesc>
+  <conbody>
+    <p>The membership includes the following supply chain deliverables:</p>
+    <ul>
+      <li>Patched and signed artifacts</li>
+      <li>Software Bill of Materials (SBOM) documentation, such as CycloneDX</li>
+      <li>SLSA L3 build provenance that is built by using a secure supply chain and signed with Sigstore or cosign</li>
+    </ul>
+  </conbody>
+</concept>

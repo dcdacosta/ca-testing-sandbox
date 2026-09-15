@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="about-remediation-fencing-maintenance-overview">
+  <title>Remediation, fencing and maintenance</title>
+  <shortdesc>Hardware is imperfect and software contains bugs. When node-level failures, such as the kernel hangs or network interface controllers (NICs) fail, the work required from the cluster does not decrease. In addition, the workloads from these affected nodes need to be restarted somewhere. However, some workloads, such as ReadWriteOnce (RWO) volumes and StatefulSets, might require at-most-one semantics.</shortdesc>
+  <conbody>
+    <p>Failures affecting these workloads risk data loss, corruption, or both. It is important to ensure that the node reaches a safe state before initiating recovery of the workload, and ideally, recovery of the node also. The safe state, is known as <codeph>fencing</codeph> and the recovery of the workload, is known as <codeph>remediation</codeph>.</p>
+    <p>It is not always practical to depend on administrator intervention to confirm the true status of the nodes and workloads. To facilitate such intervention, Red Hat OpenShift provides multiple components for the automation of failure detection, fencing and remediation.</p>
+  </conbody>
+</concept>

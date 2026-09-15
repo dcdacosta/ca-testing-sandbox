@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Set up automated detection and node recovery</title>
+  <topicref href="eco-install-setup.dita" locktitle="yes" navtitle="Set up automated detection and node recovery" type="concept">
+    <topicref href="eco-self-node-remediation-operator-install.dita" locktitle="yes" navtitle="Install the Self Node Remediation Operator" type="concept">
+      <topicref href="eco-self-node-remediation-operator-installation-web-console.dita" locktitle="yes" navtitle="Install the Self Node Remediation Operator by using the web console" type="task"/>
+      <topicref href="eco-self-node-remediation-operator-installation-cli.dita" locktitle="yes" navtitle="Install the Self Node Remediation Operator by using the CLI" type="task"/>
+    </topicref>
+    <topicref href="eco-fence-agents-remediation-operator-install.dita" locktitle="yes" navtitle="Install the Fence Agents Remediation Operator" type="concept">
+      <topicref href="eco-fence-agents-remediation-operator-installation-web-console.dita" locktitle="yes" navtitle="Install the Fence Agents Remediation Operator by using the web console" type="task"/>
+      <topicref href="eco-fence-agents-remediation-operator-installation-cli.dita" locktitle="yes" navtitle="Install the Fence Agents Remediation Operator by using the CLI" type="task"/>
+    </topicref>
+    <topicref href="eco-machine-deletion-remediation-operator-install.dita" locktitle="yes" navtitle="Install the Machine Deletion Remediation Operator" type="concept">
+      <topicref href="eco-machine-deletion-remediation-operator-installation-web-console.dita" locktitle="yes" navtitle="Install the Machine Deletion Remediation Operator by using the web console" type="task"/>
+      <topicref href="eco-machine-deletion-remediation-operator-installation-cli.dita" locktitle="yes" navtitle="Install the Machine Deletion Remediation Operator by using the CLI" type="task"/>
+    </topicref>
+    <topicref href="eco-storage-based-remediation-operator-install.dita" locktitle="yes" navtitle="Install the Storage-Based Remediation Operator" type="concept">
+      <topicref href="eco-storage-based-remediation-operator-installation-web-console.dita" locktitle="yes" navtitle="Install the Storage-Based Remediation Operator by using the web console" type="task"/>
+      <topicref href="eco-storage-based-remediation-operator-installation-cli.dita" locktitle="yes" navtitle="Install the Storage-Based Remediation Operator by using the CLI" type="task"/>
+    </topicref>
+    <topicref href="eco-node-health-check-operator-install.dita" locktitle="yes" navtitle="Install the Node Health Check Operator" type="concept">
+      <topicref href="eco-node-health-check-operator-installation-web-console.dita" locktitle="yes" navtitle="Install the Node Health Check Operator by using the web console" type="task"/>
+      <topicref href="eco-node-health-check-operator-installation-cli.dita" locktitle="yes" navtitle="Install the Node Maintenance Operator" type="task"/>
+    </topicref>
+    <topicref href="eco-node-maintenance-operator-install.dita" locktitle="yes" navtitle="Install the Node Health Check Operator" type="concept">
+      <topicref href="eco-node-maintenance-operator-installation-web-console.dita" locktitle="yes" navtitle="Install the Node Maintenance Operator by using the web console" type="task"/>
+      <topicref href="eco-node-maintenance-operator-installation-cli.dita" locktitle="yes" navtitle="Install the Node Maintenance Operator by using the CLI" type="task"/>
+    </topicref>
+  </topicref>
+</map>

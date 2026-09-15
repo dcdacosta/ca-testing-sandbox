@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="lightwell-network-repositories">
+  <title><ph conref="../common-product/content-references-for-lightwell-network.dita#GUID-be6d0fc9-e264-42c1-a929-9aadc647de95/product-name"/> repositories</title>
+  <shortdesc><ph conref="../common-product/content-references-for-lightwell-network.dita#GUID-be6d0fc9-e264-42c1-a929-9aadc647de95/product-name"/> provides signed, Supply Chain Levels for Software Artifacts (SLSA) Level 3-compliant repositories with verified build provenance. These repositories secure your open source dependencies using native formats for the ecosystem.</shortdesc>
+  <conbody>
+    <p>With a <ph conref="../common-product/content-references-for-lightwell-network.dita#GUID-be6d0fc9-e264-42c1-a929-9aadc647de95/product-name"/> membership, you gain access to three repositories of signed artifacts per ecosystem: Validated repository, Remediated repository, and Predisclosure repository.</p>
+    <dl>
+      <dlentry>
+        <dt>Validated repository</dt>
+        <dd>
+          <p>The Validated repository provides securely rebuilt versions of the latest open source libraries to protect your software supply chain. Red Hat rebuilds these packages by using Red Hat Secure Software Pipelines.</p>
+          <ul>
+            <li><b>Integration requirements:</b> Functions exactly like standard community libraries. You need to make only a one-time change to your repository URL, with no application code modifications required.</li>
+            <li><b>When to use:</b> Dependencies that require verified, reproducible builds but do not yet need security patches.</li>
+            <li><b>Use cases:</b>
+              <ul id="ul_2">
+                <li>Developing new features.</li>
+                <li>Adding new open source packages to your project.</li>
+                <li>Upgrading to the latest community versions.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+      </dlentry>
+      <dlentry>
+        <dt>Remediated repository</dt>
+        <dd>
+          <p>The Remediated repository provides community-approved security fixes for the exact library versions you already use in production. This resolves critical vulnerabilities without the risk of a full system upgrade.</p>
+          <ul>
+            <li><b>Integration requirements:</b>Update your dependency configuration to point to the package version featuring the Lightwell Network suffix.</li>
+            <li><b>When to use:</b> Dependencies that need active CVE remediation without version upgrades.</li>
+            <li><b>Use cases:</b>
+              <ul id="ul_3">
+                <li>Maintaining live production applications.</li>
+                <li>Securing pinned dependencies without risking breaking updates.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+      </dlentry>
+    </dl>
+    <dl>
+      <dlentry>
+        <dt>Predisclosure repository</dt>
+        <dd>
+          <p>The Predisclosure repository houses libraries that contain security fixes for novel vulnerabilities that are not publicly disclosed or have not been accepted by the upstream communities. As Red Hat discloses and addresses vulnerabilities upstream, the fixes are promoted from the Predisclosure repository to the Remediated repository. This provides you with the flexibility to choose between a proactive fix by using the Predisclosure repository, or an upstream vetted fix by using the Remediated repository.</p>
+          <p>
+            <note>The Predisclosure repository is not available as part of the <ph conref="../common-product/content-references-for-lightwell-network.dita#GUID-be6d0fc9-e264-42c1-a929-9aadc647de95/product-name"/> membership for R1 Institutions.</note>
+          </p>
+          <ul id="ul_4">
+            <li><b>Integration requirements:</b> Update your dependency configuration to point to the package version featuring the Lightwell Network suffix.</li>
+            <li><b>When to use:</b> When you need the most recent security fixes, and are not concerned about acceptance by the upstream community.</li>
+            <li><b>Use cases:</b>
+              <ul id="ul_5">
+                <li>Maintaining live production applications with robust CI/CD support.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+      </dlentry>
+    </dl>
+  </conbody>
+</concept>

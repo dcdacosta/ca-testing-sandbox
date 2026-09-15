@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Troubleshoot</title>
+  <topichead navtitle="Troubleshoot">
+    <mapref format="ditamap" href="troubleshoot-operator-setup-and-node-remediation-issues.ditamap" type="map">
+    </mapref>
+  </topichead>
+</map>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="patch-delivery-lifecycle">
+  <title>Patch delivery lifecycle</title>
+  <shortdesc><ph conref="../common-product/content-references-for-lightwell-network.dita#GUID-be6d0fc9-e264-42c1-a929-9aadc647de95/product-name"/> fully automates the open source patch delivery lifecycle. It routes, validates, and deploys patched artifacts directly through your existing build tools.</shortdesc>
+  <conbody>
+    <note>To accelerate vulnerability remediation, <ph conref="../common-product/content-references-for-lightwell-network.dita#GUID-be6d0fc9-e264-42c1-a929-9aadc647de95/product-name"/> uses automated AI-assistance for patch generation. All AI-generated patches undergo strict automated testing and human validation before distribution.</note>
+    <ol>
+      <li><b>Onboarding:</b> You configure your existing build tools, such as Maven, Nexus, or Artifactory, to mirror the secure Red Hat repository.</li>
+      <li><b>Distribution:</b> Red Hat publishes newly signed artifacts to the secure repository so that you automatically receive them during your next dependency resolution.</li>
+      <li><b>Validation:</b> Red Hat tests the patched artifacts for upstream regression and compatibility to ensure that their original behavior is preserved.</li>
+      <li><b>Deployment:</b> Your build pipelines transparently pull the patched artifacts, requiring minimal to no modifications to your application code.</li>
+      <li><b>Upstream contribution:</b> Red Hat submits the backported patch to the originating open source project and works with the upstream community to merge it.</li>
+      <li><b>Disclosure:</b> Red Hat publicly discloses the vulnerability and its corresponding patch, and releases Vulnerability Exploitability eXchange (VEX) and Open Source Vulnerabilities (OSV) data to the broader ecosystem as appropriate.</li>
+    </ol>
+  </conbody>
+</concept>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="eco-rhwa-rel-notes-mapping-table">
+  <title>Mapping the Workload Availability for Red Hat OpenShift release to the Operator releases</title>
+  <conbody>
+    <p>With some RHWA releases, the version numbers are based on the year and the iteration in that year. For example, 26.1 is the first release in 2026.</p>
+    <p>However, some RHWA releases now also align with the latest release of Red Hat OpenShift.</p>
+    <p>To distinguish between the Red Hat OpenShift release and the RHWA release, a <b>-Iteration</b>, is appended at the end of the RHWA release number.</p>
+    <p>The latest release of Red Hat OpenShift is 4.21. Accordingly, the first, and latest release of Workload Availability for Red Hat OpenShift is 4.21-0.</p>
+    <p>The Operator version numbers follow semantic versioning.</p>
+    <table>
+      <title>Release Mapping</title>
+      <tgroup cols="2">
+        <colspec colname="col_1" colwidth="25*"/>
+        <colspec colname="col_2" colwidth="75*"/>
+        <thead>
+          <row>
+            <entry>Workload Availability Version</entry>
+            <entry>Operator Version</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <p>
+                <codeph>4.21-0</codeph>
+              </p>
+            </entry>
+            <entry>
+              <p>Node Health Check (NHC) Operator 0.11.0</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>
+                <codeph>4.21-0</codeph>
+              </p>
+            </entry>
+            <entry>
+              <p>Self Node Remediation (SNR) Operator 0.12.0</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>
+                <codeph>4.21-0</codeph>
+              </p>
+            </entry>
+            <entry>
+              <p>Fence Agents Remediation (FAR) Operator 0.7.0</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>
+                <codeph>4.21-0</codeph>
+              </p>
+            </entry>
+            <entry>
+              <p>Machine Deletion Remediation (MDR) Operator 0.6.0</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>
+                <codeph>4.21-0</codeph>
+              </p>
+            </entry>
+            <entry>
+              <p>Node Maintenance Operator (NMO) 5.6.0</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>
+                <codeph>4.21-0</codeph>
+              </p>
+            </entry>
+            <entry>
+              <p>Storage-based Remediation (SBR) Operator 0.2.0</p>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </conbody>
+  <related-links id="additional-resources-rhwa-release-notes">
+    <link format="html" href="https://docs.redhat.com/en/documentation/workload_availability_for_red_hat_openshift/4.21-0/html/remediation_fencing_and_maintenance/node-health-check-operator#about-node-health-check-operator_node-health-check-operator" scope="external">
+      <linktext>About the Node Health Check Operator</linktext>
+    </link>
+    <link format="html" href="https://docs.redhat.com/en/documentation/workload_availability_for_red_hat_openshift/4.21-0/html/remediation_fencing_and_maintenance/node-health-check-operator#eco-node-health-check-operator-creating-node-health-check_node-health-check-operator" scope="external">
+      <linktext>Creating a node health check</linktext>
+    </link>
+    <link format="html" href="https://docs.redhat.com/en/documentation/workload_availability_for_red_hat_openshift/4.21-0/html/remediation_fencing_and_maintenance/fence-agents-remediation-operator-remediate-nodes#configuring-fence-agents-remediation-operator_fence-agents-remediation-operator-remediate-nodes" scope="external">
+      <linktext>Configuring the Fence Agents Remediation Operator</linktext>
+    </link>
+    <link format="html" href="https://docs.redhat.com/en/documentation/workload_availability_for_red_hat_openshift/4.21-0/html/remediation_fencing_and_maintenance/fence-agents-remediation-operator-remediate-nodes#understanding-fence-agents-remediation-template-config_fence-agents-remediation-operator-remediate-nodes" scope="external">
+      <linktext>Understanding the Fence Agents Remediation Template configuration</linktext>
+    </link>
+  </related-links>
+</concept>

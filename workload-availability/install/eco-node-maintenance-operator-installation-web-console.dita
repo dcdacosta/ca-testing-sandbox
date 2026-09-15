@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="installing-node-maintenance-operator-using-web-console">
+  <title>Install the Node Maintenance Operator by using the web console</title>
+  <shortdesc>You can use the Red Hat OpenShift web console to install the Node Maintenance Operator.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Log in as a user with <codeph>cluster-admin</codeph> privileges.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the Red Hat OpenShift web console, navigate to <b>Ecosystem</b> → <b>Software Catalog</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the Node Maintenance Operator, then click <b>Install</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Keep the default selection of <b>Installation mode</b> and <b>namespace</b> to ensure that the Operator will be installed to the <codeph>openshift-workload-availability</codeph> namespace.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Install</b>.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>To confirm that the installation is successful:</p>
+      <ol>
+        <li>Navigate to the <b>Operators</b> → <b>Installed Operators</b> page.</li>
+        <li>Check that the Operator is installed in the <codeph>openshift-workload-availability</codeph> namespace and that its status is <codeph>Succeeded</codeph>.</li>
+      </ol>
+      <p>If the Operator is not installed successfully:</p>
+      <ol>
+        <li>Navigate to the <b>Operators</b> → <b>Installed Operators</b> page and inspect the <b>Status</b> column for any errors or failures.</li>
+        <li>Navigate to the <b>Operators</b> → <b>Installed Operators</b> → <b>Node Maintenance Operator</b> → <b>Details</b> page, and inspect the <codeph>Conditions</codeph> section for errors before pod creation.</li>
+        <li>Navigate to the <b>Workloads</b> → <b>Pods</b> page, search for the <codeph>Node Maintenance Operator</codeph> pod in the installed namespace, and check the logs in the <codeph>Logs</codeph> tab.</li>
+      </ol>
+    </result>
+  </taskbody>
+</task>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="flow-of-events-in-the-workload-availability-operators-phase2">
+  <title>Phase 2 - Node Health Check (NHC)</title>
+  <shortdesc>If the <codeph>Ready=Unknown</codeph> condition is present longer than the configured duration, it starts a remediation.</shortdesc>
+  <refbody>
+    <section>
+      <p>The user-configured duration in this phase represents the tolerance that the Operator has towards the duration of the unhealthy condition. It takes into account that while the workload is restarting as requested, the resource is expected to be "Unready".</p>
+      <p>For example:</p>
+      <ul>
+        <li>If you have a workload that takes a long time to restart, then you need to have a longer timeout.</li>
+        <li>Likewise, when the workload restart is short, then the timeout needed is also short.</li>
+      </ul>
+    </section>
+  </refbody>
+</reference>

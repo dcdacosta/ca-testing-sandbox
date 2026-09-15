@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="eco-resuming-node-from-maintenance-mode">
+  <title>Resume a node from maintenance mode</title>
+  <shortdesc>You can resume a node from maintenance mode from the web console or from the CLI by using a <codeph>NodeMaintenance</codeph> CR. Resuming a node brings it out of maintenance mode and makes it schedulable again.</shortdesc>
+  <conbody/>
+</concept>

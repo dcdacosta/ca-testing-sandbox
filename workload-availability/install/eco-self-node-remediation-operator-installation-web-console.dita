@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="installing-self-node-remediation-operator-using-web-console">
+  <title>Install the Self Node Remediation Operator by using the web console</title>
+  <shortdesc>You can use the Red Hat OpenShift web console to install the Self Node Remediation Operator.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Log in as a user with <codeph>cluster-admin</codeph> privileges.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the Red Hat OpenShift web console, navigate to <b>Ecosystem</b> → <b>Software Catalog</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the Self Node Remediation Operator from the list of available Operators, and then click <b>Install</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Keep the default selection of <b>Installation mode</b> and <b>namespace</b> to ensure that the Operator is installed to the <codeph>openshift-workload-availability</codeph> namespace.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Install</b>.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>To confirm that the installation is successful:</p>
+      <ol>
+        <li>Navigate to the <b>Operators</b> → <b>Installed Operators</b> page.</li>
+        <li>Check that the Operator is installed in the <codeph>openshift-workload-availability</codeph> namespace and its status is <codeph>Succeeded</codeph>.</li>
+      </ol>
+      <p>If the Operator is not installed successfully:</p>
+      <ol>
+        <li>Navigate to the <b>Operators</b> → <b>Installed Operators</b> page and inspect the <codeph>Status</codeph> column for any errors or failures.</li>
+        <li>Navigate to the <b>Workloads</b> → <b>Pods</b> page and check the logs of the <codeph>self-node-remediation-controller-manager</codeph> pod and <codeph>self-node-remediation-ds</codeph> pods in the <codeph>openshift-workload-availability</codeph> project for any reported issues.</li>
+      </ol>
+    </result>
+  </taskbody>
+</task>

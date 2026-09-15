@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Ensure workload continuity during node failures with RHWA</title>
+  <topicref href="eco-discover-rhwa.dita" locktitle="yes" navtitle="Ensure workload continuity during node failures with RHWA" type="concept">
+    <topicref href="eco-about-remediation-fencing-maintenance-overview.dita" locktitle="yes" navtitle="Remediation, fencing, and maintenance" type="concept">
+      <topicref href="eco-about-remediation-fencing-maintenance-snr.dita" locktitle="yes" navtitle="Self Node Remediation Operator" type="concept"/>
+      <topicref href="eco-about-remediation-fencing-maintenance-far.dita" locktitle="yes" navtitle="Fence Agents Remediation Operator" type="concept"/>
+      <topicref href="eco-about-remediation-fencing-maintenance-mdr.dita" locktitle="yes" navtitle="Machine Deletion Remediation Operator" type="concept"/>
+      <topicref href="eco-about-remediation-fencing-maintenance-sbr.dita" locktitle="yes" navtitle="Storage-Based Remediation Operator" type="concept"/>
+      <topicref href="eco-about-remediation-fencing-maintenance-mhc.dita" locktitle="yes" navtitle="Machine health check" type="concept"/>
+      <topicref href="eco-about-remediation-fencing-maintenance-nhc.dita" locktitle="yes" navtitle="Node Health Check Operator" type="concept"/>
+      <topicref href="eco-about-remediation-fencing-maintenance-nmo.dita" locktitle="yes" navtitle="Node Maintenance Operator" type="concept"/>
+      <topicref chunk="to-content" href="eco-flow-of-events-in-the-workload-availability-operators.dita" locktitle="yes" navtitle="Flow of events during fencing and remediation" type="reference">
+        <topicref href="eco-flow-of-events-in-the-workload-availability-operators-phase1.dita" locktitle="yes" navtitle="Phase 1 - Kubernetes Health Check (Core OpenShift)" toc="no" type="reference"/>
+        <topicref href="eco-flow-of-events-in-the-workload-availability-operators-phase2.dita" locktitle="yes" navtitle="Phase 2 - Node Health Check (NHC)" toc="no" type="reference"/>
+        <topicref href="eco-flow-of-events-in-the-workload-availability-operators-phase3.dita" locktitle="yes" navtitle="Phase 3 - Host or API remediation" toc="no" type="reference"/>
+        <topicref href="eco-flow-of-events-in-the-workload-availability-operators-phase4.dita" locktitle="yes" navtitle="Phase 4 - Workload starting" toc="no" type="reference"/>
+      </topicref>
+    </topicref>
+    <topicref href="eco-use-case-rhwa-operators.dita" locktitle="yes" navtitle="File is created as a placeholder but the content needs to be added. POG 18/08/26" type="concept">
+      <topicref chunk="to-content" href="eco-self-node-remediation-operator-about.dita" locktitle="yes" navtitle="Use cases for the Self Node Remediation Operator" type="concept">
+        <topicref href="eco-self-node-remediation-about-watchdog.dita" locktitle="yes" navtitle="Watchdog devices" toc="no" type="concept"/>
+        <topicref href="eco-self-node-remediation-leverage-watchdog.dita" locktitle="yes" navtitle="Leverage watchdog devices for Self Node Remediation" toc="no" type="concept"/>
+        <topicref href="eco-self-node-remediation-operator-control-plane-fencing.dita" locktitle="yes" navtitle="Control plane fencing" toc="no" type="concept"/>
+      </topicref>
+      <topicref href="eco-fence-agents-remediation-operator-about.dita" locktitle="yes" navtitle="Use cases for the Fence Agents Remediation Operator" type="concept"/>
+      <topicref href="eco-machine-deletion-remediation-operator-about.dita" locktitle="yes" navtitle="Use cases for the Machine Deletion Remediation Operator" type="concept"/>
+      <topicref href="eco-storage-based-remediation-operator-about.dita" locktitle="yes" navtitle="Use cases for the Storage-Based Remediation Operator" type="concept"/>
+      <topicref chunk="to-content" href="machine-health-checks-about.dita" locktitle="yes" navtitle="Use cases for machine health checks" type="concept"/>
+      <topicref chunk="to-content" href="eco-node-health-check-operator-about.dita" locktitle="yes" navtitle="Use cases for the Node Health Check Operator" type="concept">
+        <topicref href="eco-node-health-check-operator-workflow.dita" locktitle="yes" navtitle="Node Health Check Operator workflow" toc="no" type="concept"/>
+        <topicref href="eco-node-health-check-operator-control-plane-fencing.dita" locktitle="yes" navtitle="Control plane fencing" toc="no" type="concept"/>
+      </topicref>
+      <topicref href="eco-about-node-maintenance-standalone.dita" locktitle="yes" navtitle="Use cases for the Node Maintenance Operator" type="concept"/>
+    </topicref>
+  </topicref>
+</map>

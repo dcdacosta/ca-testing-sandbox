@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="eco-resuming-node-maintenance-web-console">
+  <title>Resume a node from maintenance mode by using the web console</title>
+  <shortdesc>To resume a node from maintenance mode, you can delete a <codeph>NodeMaintenance</codeph> custom resource (CR) by using the web console.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Log in as a user with <codeph>cluster-admin</codeph> privileges.</li>
+        <li>Install the Node Maintenance Operator from the <b>Software Catalog</b>.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>From the <b>Administrator</b> perspective in the web console, navigate to <b>Operators</b> → <b>Installed Operators</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the Node Maintenance Operator from the list of Operators.</cmd>
+      </step>
+      <step>
+        <cmd>In the <b>Node Maintenance</b> tab, select the <codeph>NodeMaintenance</codeph> CR that you want to delete.</cmd>
+      </step>
+      <step>
+        <cmd>Click the Options menu <image href="../images/kebab.png" id="image_1">
+      <alt>kebab icon</alt></image> at the end of the node and select <b>Delete NodeMaintenance</b>.</cmd>
+      </step>
+    </steps>
+    <result>
+      <ol>
+        <li>In the Red Hat OpenShift console, click <b>Compute → Nodes</b>.</li>
+        <li>Inspect the <codeph>Status</codeph> column of the node for which you deleted the <codeph>NodeMaintenance</codeph> CR and verify that its status is <codeph>Ready</codeph>.</li>
+      </ol>
+    </result>
+  </taskbody>
+</task>

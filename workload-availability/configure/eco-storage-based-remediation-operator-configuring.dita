@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="configuring-storage-based-remediation-operator">
+  <title>Configure the Storage-Based Remediation Operator</title>
+  <shortdesc>You can use the Storage-Based Remediation (SBR) Operator, with the Node Health Check Operator, to create the <codeph>StorageBasedRemediationConfig</codeph> Custom Resource (CR). This CR defines the remediation strategy for the nodes.</shortdesc>
+  <conbody>
+    <p>The <codeph>StorageBasedRemediationConfig</codeph> CR resembles the following YAML file:</p>
+    <codeblock outputclass="language-yaml">apiVersion: storage-based-remediation.medik8s.io/v1alpha1
+kind: StorageBasedRemediationConfig
+metadata:
+  name: storagebasedremediationconfig-test
+  namespace: openshift-workload-availability
+spec:
+  sharedStorageClass: ocs-storagecluster-cephfs
+  watchdogPath: /dev/watchdog
+  nodeSelector:
+    node-role.kubernetes.io/worker: ""
+  sbrTimeoutSeconds: 30
+  maxConsecutiveFailures: 7
+  detectOnlyMode: Enabled</codeblock>
+    <ul>
+      <li><codeph>sharedStorageClass</codeph>: Displays the name of a StorageClass to use for creating shared storage. When specified, the controller will create a PVC using this StorageClass and mount it in the agent DaemonSet for cross-node coordination, slot assignment, and shared configuration data. The StorageClass must support ReadWriteMany (RWX) access mode. The <codeph>sharedStorageClass</codeph> must be specified for the SBR Operator to function.</li>
+      <li><codeph>watchdogPath</codeph>: Displays the path to the watchdog device on the host. The default path is <codeph>/dev/watchdog</codeph>.</li>
+      <li><codeph>nodeSelector</codeph>: Allows users to control which nodes the SBR agent runs on by specifying node labels. If not specified, the default is for worker nodes only <codeph>node-role.kubernetes.io/worker: ""</codeph>.</li>
+      <li><codeph>sbrTimeoutSeconds</codeph>: Displays the base timing for failure detection in seconds. The heartbeat is sent every (sbrTimeoutSeconds/2) seconds. A node is considered unhealthy after <codeph>maxConsecutiveFailures</codeph> missed heartbeats. The default is 30 seconds and the permitted range is 10-300 seconds.</li>
+      <li><codeph>maxConsecutiveFailures</codeph>: Displays the maximum number of consecutive failures (SBR device, watchdog, or local heartbeat writes) before the agent treats the node as failed, and performs self-fencing (when not in detect-only or otherwise disarmed). If not specified, <codeph>DefaultMaxConsecutiveFailures</codeph> is used at runtime with a default of 7 failures.</li>
+      <li><codeph>detectOnlyMode</codeph>: Displays the detection mode. When set to <codeph>Enabled</codeph> all remediation is disabled, that is, the agent disarms the watchdog and there is no reboot and the controller does not write fence messages.</li>
+    </ul>
+  </conbody>
+</concept>

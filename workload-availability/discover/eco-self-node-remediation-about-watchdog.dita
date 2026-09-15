@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="about-watchdog-devices">
+  <title>Watchdog devices</title>
+  <shortdesc>Watchdog devices can be any of the following:</shortdesc>
+  <conbody>
+    <ul>
+      <li>Independently powered hardware devices</li>
+      <li>Hardware devices that share power with the hosts they control</li>
+      <li>Virtual devices implemented in software, or <codeph>softdog</codeph></li>
+    </ul>
+    <p>Hardware watchdog and <codeph>softdog</codeph> devices have electronic or software timers, respectively. These watchdog devices are used to ensure that the machine enters a safe state when an error condition is detected. The cluster is required to repeatedly reset the watchdog timer to prove that it is in a healthy state. This timer might elapse due to fault conditions, such as deadlocks, CPU starvation, and loss of network or disk access. If the timer expires, the watchdog device assumes that a fault has occurred and the device triggers a forced reset of the node.</p>
+    <p>Hardware watchdog devices are more reliable than <codeph>softdog</codeph> devices.</p>
+  </conbody>
+</concept>

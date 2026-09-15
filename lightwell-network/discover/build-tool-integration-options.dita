@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="build-tool-integration">
+  <title>Build tool integration benefits</title>
+  <shortdesc><ph conref="../common-product/content-references-for-lightwell-network.dita#GUID-be6d0fc9-e264-42c1-a929-9aadc647de95/product-name"/> connects seamlessly with your existing development pipelines so that you never have to modify your application code.</shortdesc>
+  <conbody>
+    <p>By making a single configuration change to your enterprise build tools, such as Artifactory, Nexus, or Maven, you immediately connect to the secure Red Hat repository.</p>
+    <p>Integrating with your build tools provides the following key benefits:</p>
+    <ul>
+      <li>Routes all the dependency resolutions directly through the secure repository.</li>
+      <li>Automatically pulls patched artifacts during your next dependency resolution.</li>
+      <li>Enhances your existing repositories with a secure, verified set of packages.</li>
+    </ul>
+  </conbody>
+</concept>

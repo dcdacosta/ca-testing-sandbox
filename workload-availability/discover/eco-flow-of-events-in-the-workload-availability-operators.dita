@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="flow-of-events-in-the-workload-availability-operators">
+  <title>Flow of events during fencing and remediation</title>
+  <shortdesc>When a node becomes unhealthy multiple events occur to detect, fence, and remediate the node, in order to restore workloads, and ideally the node, to health. Some events are triggered by the OpenShift cluster, and some events are reactions by the Workload Availability operators. Understanding this flow of events, and the duration between these events, is important to make informed decisions. Decisions including, which remediation provider to use, and how to configure Node Health Check Operator and the chosen remediaton provider.</shortdesc>
+  <refbody>
+    <section>
+      <note type="note">
+        <p>The example outlined next is a common use case that outlines the phased flow of events. Only when the Node Health Check Operator has the <codeph>Ready=Unknown</codeph> unhealthy conditions do the phases act as follows.</p>
+      </note>
+    </section>
+  </refbody>
+</reference>

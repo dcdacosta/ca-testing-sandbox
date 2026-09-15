@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="installing-node-health-check-operator-using-cli">
+  <title>Install the Node Health Check Operator by using the CLI</title>
+  <shortdesc>You can use the OpenShift CLI (<codeph>oc</codeph>) to install the Node Health Check Operator.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Install the OpenShift CLI (<codeph>oc</codeph>).</li>
+        <li>Log in as a user with <codeph>cluster-admin</codeph> privileges.</li>
+      </ul>
+    </prereq>
+    <context>
+      <p>You can install the Node Health Check Operator in your own namespace or in the <codeph>openshift-workload-availability</codeph> namespace.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Create a <codeph>Namespace</codeph> custom resource (CR) for the Node Health Check Operator:
+</cmd>
+        <substeps>
+          <substep>
+            <cmd>Define the <codeph>Namespace</codeph> CR and save the YAML file, for example, <codeph>node-health-check-namespace.yaml</codeph>:
+</cmd>
+            <info>
+              <codeblock outputclass="language-yaml">apiVersion: v1
+kind: Namespace
+metadata:
+  name: openshift-workload-availability</codeblock>
+            </info>
+          </substep>
+          <substep>
+            <cmd>To create the <codeph>Namespace</codeph> CR, run the following command:
+</cmd>
+            <info>
+              <codeblock outputclass="language-terminal">$ oc create -f node-health-check-namespace.yaml</codeblock>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Create an <codeph>OperatorGroup</codeph> CR:
+</cmd>
+        <substeps>
+          <substep>
+            <cmd>Define the <codeph>OperatorGroup</codeph> CR and save the YAML file, for example, <codeph>workload-availability-operator-group.yaml</codeph>:
+</cmd>
+            <info>
+              <codeblock outputclass="language-yaml">apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: workload-availability-operator-group
+  namespace: openshift-workload-availability</codeblock>
+            </info>
+          </substep>
+          <substep>
+            <cmd>To create the <codeph>OperatorGroup</codeph> CR, run the following command:
+</cmd>
+            <info>
+              <codeblock outputclass="language-terminal">$ oc create -f workload-availability-operator-group.yaml</codeblock>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Create a <codeph>Subscription</codeph> CR:
+</cmd>
+        <substeps>
+          <substep>
+            <cmd>Define the <codeph>Subscription</codeph> CR and save the YAML file, for example, <codeph>node-health-check-subscription.yaml</codeph>:
+</cmd>
+            <info>
+              <codeblock outputclass="language-yaml">apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+    name: node-health-check-operator
+    namespace: openshift-workload-availability
+spec:
+    channel: stable
+    installPlanApproval: Manual
+    name: node-healthcheck-operator
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace</codeblock>
+              <ul>
+                <li><codeph>namespace</codeph>: Specify the <codeph>Namespace</codeph> where you want to install the Node Health Check Operator. To install the Node Health Check Operator in the <codeph>openshift-workload-availability</codeph> namespace, specify <codeph>openshift-workload-availability</codeph> in the <codeph>Subscription</codeph> CR.</li>
+                <li><codeph>channel</codeph>: Specify the channel name for your subscription. To upgrade to the latest version of the Node Health Check Operator, you must manually change the channel name for your subscription from <codeph>candidate</codeph> to <codeph>stable</codeph>.</li>
+                <li><codeph>installPlanApproval</codeph>: Set the approval strategy to Manual in case your specified version is superseded by a later version in the catalog. This plan prevents an automatic upgrade to a later version and requires manual approval before the starting CSV can complete the installation.</li>
+              </ul>
+            </info>
+          </substep>
+          <substep>
+            <cmd>To create the <codeph>Subscription</codeph> CR, run the following command:
+</cmd>
+            <info>
+              <codeblock outputclass="language-terminal">$ oc create -f node-health-check-subscription.yaml</codeblock>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+    <result>
+      <ol>
+        <li>Verify that the installation succeeded by inspecting the CSV resource:
+<codeblock outputclass="language-terminal">$ oc get csv -n openshift-workload-availability</codeblock><codeblock outputclass="language-terminal">NAME                              DISPLAY                     VERSION  REPLACES PHASE
+node-healthcheck-operator.v0.7.0  Node Health Check Operator  0.7.0   node-healthcheck-operator.v0.6.1           Succeeded</codeblock></li>
+        <li>Verify that the Node Health Check Operator is up and running:
+<codeblock outputclass="language-terminal">$ oc get deployment -n openshift-workload-availability</codeblock><codeblock outputclass="language-terminal">NAME                                           READY   UP-TO-DATE   AVAILABLE   AGE
+node-healthcheck-controller-manager            2/2     2            2           10d</codeblock></li>
+      </ol>
+    </result>
+  </taskbody>
+</task>

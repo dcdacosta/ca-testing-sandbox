@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="configure-your-java-build-tool">
+  <title>Configure your Java build tool to use the Lightwell Network repository</title>
+  <shortdesc>Configure your Java build tool to resolve dependencies through the Lightwell Network repository by adding the repository to your existing build configuration.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You have an active Lightwell Network membership.</li>
+        <li>You have created a Lightwell Network service account. For more information, see <xref format="dita" href="../get-started/create-a-red-hat-lightwell-network-service-account.dita" scope="local"/></li>
+        <li>You have chosen the repository tier that matches your environment. For more information, see <xref format="dita" href="../get-started/choose-the-right-repository.dita" scope="local"/>.</li>
+        <li>You have one of the following Java build tools configured:
+          <ul>
+            <li>Apache Maven</li>
+            <li>Gradle</li>
+          </ul>
+        </li>
+      </ul>
+    </prereq>
+    <context>
+      <p>Select the configuration method that matches your build tool.</p>
+    </context>
+    <steps-unordered>
+      <step>
+        <cmd> <b>If you are using Apache Maven:</b> </cmd>
+        <info/>
+        <substeps>
+          <substep>
+            <cmd>Open your Maven <filepath>settings.xml</filepath> file.</cmd>
+          </substep>
+          <substep>
+            <cmd>Add one of the following blocks inside your existing <codeph>&lt;profiles&gt; </codeph>section, and add the corresponding <codeph>&lt;activeProfile&gt;</codeph> entry inside your existing <codeph>&lt;activeProfiles&gt;</codeph> section. If your <filepath>settings.xml </filepath>file does not have these sections, add the entire block: </cmd>
+            <info>
+              <p><b>Validated repository:</b>
+                <codeblock outputclass="language-xml"> &lt;settings&gt;
+    &lt;profiles&gt;
+      &lt;profile&gt;
+        &lt;id&gt;lightwell-validated&lt;/id&gt;
+        &lt;repositories&gt;
+          &lt;repository&gt;
+            &lt;id&gt;lightwell-validated&lt;/id&gt;
+            &lt;name&gt;Lightwell Network - Validated&lt;/name&gt;
+            &lt;url&gt;https://packages.redhat.com/lightwell/java/validated/&lt;/url&gt;
+            &lt;releases&gt;
+              &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;/releases&gt;
+            &lt;snapshots&gt;
+              &lt;enabled&gt;false&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+          &lt;/repository&gt;
+        &lt;/repositories&gt;
+      &lt;/profile&gt;
+    &lt;/profiles&gt;
+    &lt;activeProfiles&gt;
+      &lt;activeProfile&gt;lightwell-validated&lt;/activeProfile&gt;
+    &lt;/activeProfiles&gt;
+  &lt;/settings&gt;</codeblock>
+              </p>
+              <p><b>Remediated repository:</b>
+                <codeblock> &lt;settings&gt;
+    &lt;profiles&gt;
+      &lt;profile&gt;
+        &lt;id&gt;lightwell-remediated&lt;/id&gt;
+        &lt;repositories&gt;
+          &lt;repository&gt;
+            &lt;id&gt;lightwell-remediated&lt;/id&gt;
+            &lt;name&gt;Lightwell Network - Remediated&lt;/name&gt;
+            &lt;url&gt;https://packages.redhat.com/lightwell/java/remediated/&lt;/url&gt;
+            &lt;releases&gt;
+              &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;/releases&gt;
+            &lt;snapshots&gt;
+              &lt;enabled&gt;false&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+          &lt;/repository&gt;
+        &lt;/repositories&gt;
+      &lt;/profile&gt;
+    &lt;/profiles&gt;
+    &lt;activeProfiles&gt;
+      &lt;activeProfile&gt;lightwell-remediated&lt;/activeProfile&gt;
+    &lt;/activeProfiles&gt;
+  &lt;/settings&gt;
+</codeblock>
+              </p>
+              <p><b>Predisclosure repository:</b>
+                <codeblock>&lt;settings&gt;
+    &lt;profiles&gt;
+      &lt;profile&gt;
+        &lt;id&gt;lightwell-predisclosure&lt;/id&gt;
+        &lt;repositories&gt;
+          &lt;repository&gt;
+            &lt;id&gt;lightwell-remediated&lt;/id&gt;
+            &lt;name&gt;Lightwell Network - Predisclosure&lt;/name&gt;                     &lt;url&gt;https://packages.redhat.com/lightwell/java/predisclosure/&lt;/url&gt;
+            &lt;releases&gt;
+              &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;/releases&gt;
+            &lt;snapshots&gt;
+              &lt;enabled&gt;false&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+          &lt;/repository&gt;
+        &lt;/repositories&gt;
+      &lt;/profile&gt;
+    &lt;/profiles&gt;
+    &lt;activeProfiles&gt;
+      &lt;activeProfile&gt;lightwell-predisclosure&lt;/activeProfile&gt;
+    &lt;/activeProfiles&gt;
+  &lt;/settings&gt;</codeblock>
+              </p>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Add a <codeph>&lt;server&gt;</codeph>block inside the <codeph>&lt;servers&gt;</codeph> section of your <filepath>settings.xml</filepath> file to configure authentication. The <codeph>&lt;id&gt;</codeph> must match the repository <codeph>&lt;id&gt;</codeph> in your profile. If your <filepath>settings.xml</filepath> file does not have a <codeph>&lt;servers&gt;</codeph> section, add one.</cmd>
+            <info>
+              <p><b>Validated repository:</b>
+                <codeblock>&lt;servers&gt; 
+    &lt;server&gt; 
+        &lt;id&gt;lightwell-validated&lt;/id&gt; 
+        &lt;username&gt;&lt;service_account_username&gt;&lt;/username&gt; 
+        &lt;password&gt;&lt;service_account_token&gt;&lt;/password&gt;
+    &lt;/server&gt;
+&lt;/servers&gt;</codeblock>
+              </p>
+              <p><b>Remediated repository</b>
+                <codeblock>&lt;servers&gt; 
+    &lt;server&gt; 
+        &lt;id&gt;lightwell-remediated&lt;/id&gt; 
+        &lt;username&gt;&lt;service_account_username&gt;&lt;/username&gt; 
+        &lt;password&gt;&lt;service_account_token&gt;&lt;/password&gt;
+    &lt;/server&gt; 
+&lt;/servers&gt;</codeblock>
+              </p>
+              <p><b>Predisclosure repository</b>
+                <codeblock>&lt;servers&gt; 
+    &lt;server&gt; 
+        &lt;id&gt;lightwell-remediated&lt;/id&gt; 
+        &lt;username&gt;&lt;service_account_username&gt;&lt;/username&gt; 
+        &lt;password&gt;&lt;service_account_token&gt;&lt;/password&gt;
+    &lt;/server&gt; 
+&lt;/servers&gt;</codeblock>
+              </p>
+              <p>where:</p>
+              <p><codeph>&lt;service_account_username&gt;</codeph>:  Specifies your registry service account username in the format <codeph>XXXXXXX|service-account-name</codeph></p>
+              <p><codeph>&lt;service_account_token&gt;</codeph>:  Specifies your registry service account token.</p>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Save the file.</cmd>
+          </substep>
+        </substeps>
+        <info>
+          <note>To switch to the other repository tier, replace the block with the one for the other tier.</note>
+        </info>
+      </step>
+      <step>
+        <cmd> <b>If you are using Gradle:</b> </cmd>
+        <substeps>
+          <substep>
+            <cmd>Open your <filepath>build.gradle</filepath> file.</cmd>
+          </substep>
+          <substep>
+            <cmd>Add the following repositories block. Ensure the Lightwell Network repository is placed above <codeph>mavenCentral()</codeph> to prioritize patched versions: </cmd>
+            <info>
+              <p><b>Validated repository:</b>
+                <codeblock outputclass="language-json"> repositories {
+      maven {
+          name = "lightwell-validated"
+          url "https://packages.redhat.com/lightwell/java/validated/"
+          credentials { 
+               username = "&lt;service_account_username&gt;"
+               password = "&lt;service_account_token&gt;"
+            }
+      mavenCentral()
+  }
+</codeblock>
+              </p>
+              <p><b>Remediated repository</b>
+                <codeblock>repositories {
+      maven {
+          name = "lightwell-remediated"
+          url "https://packages.redhat.com/lightwell/java/remediated/"
+          credentials { 
+               username = "&lt;service_account_username&gt;"
+               password = "&lt;service_account_token&gt;"
+            }
+      }
+      mavenCentral()
+  }</codeblock>
+              </p>
+              <p><b>Predisclosure repository</b>
+                <codeblock>repositories {
+      maven {
+          name = "lightwell-predisclosure"
+          url "https://packages.redhat.com/lightwell/java/predisclosure/"
+          credentials { 
+               username = "&lt;service_account_username&gt;"
+               password = "&lt;service_account_token&gt;"
+            }
+      }
+      mavenCentral()
+  }</codeblock>
+              </p>
+              <p>where:</p>
+              <p><codeph>&lt;service_account_username&gt;</codeph>: Specifies your registry service account username in the format <codeph>XXXXXXX|service-account-name</codeph>.</p>
+              <p><codeph>&lt;service_account_token&gt;</codeph>: Specifies your registry service account token</p>
+              <p>To use the validated repository instead, replace remediated with validated in the URL.</p>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Add your service account credentials to your <codeph>~/.gradle/gradle.properties</codeph> file.</cmd>
+            <info>
+              <note>
+                <p> Do not store credentials directly in your <codeph>build.gradle</codeph> file. Do not commit credentials to version control. Store them securely, for example, in your <codeph>~/.gradle/gradle.properties</codeph> file.</p>
+              </note>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Save the file.</cmd>
+          </substep>
+        </substeps>
+      </step>
+    </steps-unordered>
+    <postreq>
+      <ol>
+        <li>Run a build to confirm that dependencies resolve through the Lightwell Network repository:
+          <p>For maven, run the following command:</p>
+          <codeblock>$ mvn dependency:resolve</codeblock>
+          <p>For Gradle, run the following command:</p>
+          <codeblock>$ gradle dependencies</codeblock>
+        </li>
+        <li>Verify that the build output shows artifacts resolving from the Lightwell Network repository URL.</li>
+        <li>If you are using the Remediated or Predisclosure repository, add a remediated dependency to your project and verify that the resolved artifact includes the <codeph>.rhlw-0000X </codeph>or <codeph>.rhlw-0000X-nXXXX</codeph> version suffix, for example, <codeph>5.3.17.rhlw-00001</codeph> or <codeph>5.3.17.rhlw-00001-n0001</codeph>.</li>
+      </ol>
+    </postreq>
+  </taskbody>
+</task>

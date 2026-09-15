@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="GUID-be6d0fc9-e264-42c1-a929-9aadc647de95">
+  <title>Content references for Lightwell Network</title>
+  <shortdesc>This is a list of commonly used product names and terms for content reuse using conref elements.</shortdesc>
+  <conbody>
+    <p><ph id="product-name">Lightwell Network</ph></p>
+  </conbody>
+</concept>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="eco-setting-node-maintenance-actions-web-console">
+  <title>Set a bare-metal node to maintenance mode</title>
+  <shortdesc>Set a bare-metal node to maintenance mode using the Options menu <image href="../images/kebab.png" id="image_1">
+      <alt>kebab icon</alt></image> found on each node in the <b>Compute</b> → <b>Nodes</b> list, or using the <b>Actions</b> control of the <b>Node Details</b> screen.</shortdesc>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>From the <b>Administrator</b> perspective of the web console, click <b>Compute</b> → <b>Nodes</b>.</cmd>
+      </step>
+      <step>
+        <cmd>You can set the node to maintenance from this screen, which makes it easier to perform actions on multiple nodes, or from the <b>Node Details</b> screen, where you can view comprehensive details of the selected node: </cmd>
+        <info>
+          <ul>
+            <li>Click the Options menu <image href="../images/kebab.png">
+                <alt>kebab icon</alt></image> at the end of the node and select <b>Start Maintenance</b>.</li>
+            <li>Click the node name to open the <b>Node Details</b> screen and click <b>Actions</b> → <b>Start Maintenance</b>.</li>
+          </ul>
+        </info>
+      </step>
+      <step>
+        <cmd>Click <b>Start Maintenance</b> in the confirmation window. </cmd>
+        <info>
+          <p>The node is no longer schedulable. If it had virtual machines with the <codeph>LiveMigration</codeph> eviction strategy, then it will live migrate them. All other pods and virtual machines on the node are deleted and recreated on another node.</p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <ul>
+        <li>Navigate to the <b>Compute</b> → <b>Nodes</b> page and verify that the corresponding node has a status of <codeph>Under maintenance</codeph>.</li>
+      </ul>
+    </result>
+  </taskbody>
+</task>

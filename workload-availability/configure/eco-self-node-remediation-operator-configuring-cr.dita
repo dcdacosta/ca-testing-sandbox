@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="configuring-self-node-remediation-operator-cr">
+  <title>Configure the Self Node Remediation Operator custom resource</title>
+  <shortdesc>The Self Node Remediation Operator creates the <codeph>SelfNodeRemediationConfig</codeph> CR with the name <codeph>self-node-remediation-config</codeph>. The CR is created in the namespace of the Self Node Remediation Operator.</shortdesc>
+  <conbody>
+    <p>A change in the <codeph>SelfNodeRemediationConfig</codeph> CR re-creates the Self Node Remediation daemon set.</p>
+    <p>The <codeph>SelfNodeRemediationConfig</codeph> CR resembles the following YAML file:</p>
+    <codeblock outputclass="language-yaml">apiVersion: self-node-remediation.medik8s.io/v1alpha1
+kind: SelfNodeRemediationConfig
+metadata:
+  name: self-node-remediation-config
+  namespace: openshift-workload-availability
+spec:
+  safeTimeToAssumeNodeRebootedSeconds: 180
+  watchdogFilePath: /dev/watchdog
+  isSoftwareRebootEnabled: true
+  apiServerTimeout: 15s
+  apiCheckInterval: 5s
+  maxApiErrorThreshold: 3
+  peerApiServerTimeout: 5s
+  peerDialTimeout: 5s
+  peerRequestTimeout: 5s
+  peerUpdateInterval: 15m
+  hostPort: 30001
+  customDsTolerations:
+      - effect: NoSchedule
+        key: node-role.kubernetes.io.infra
+        operator: Equal
+        value: "value1"
+        tolerationSeconds: 3600</codeblock>
+    <ul>
+      <li><codeph>safeTimeToAssumeNodeRebootedSeconds</codeph>: Specify an optional time duration that the Operator waits before recovering affected workloads running on an unhealthy node. Starting replacement pods while they are still running on the failed node can lead to data corruption and a violation of run-once semantics. The Operator calculates a minimum duration using the values in the <codeph>ApiServerTimeout</codeph>, <codeph>ApiCheckInterval</codeph>, <codeph>MaxApiErrorThreshold</codeph>, <codeph>PeerDialTimeout</codeph>, and <codeph>PeerRequestTimeout</codeph> fields, as well as the watchdog timeout and the cluster size at the time of remediation. To check the minimum duration calculation, view the manager pod logs and find references to the <codeph>calculated minimum time in seconds</codeph>.
+<p>If you specify a value that is lower than the minimum duration, the Operator uses the minimum duration. However, if you want to increase the duration to a value higher than this minimum value, you can set <codeph>safeTimeToAssumeNodeRebootedSeconds</codeph> to a value higher than the minimum duration.</p><p>If you increase the watchdog timeout duration, for example, to give time to <codeph>kdump</codeph> to capture a complete <codeph>vm-core</codeph>, then you must also increase the <codeph>safeTimeToAssumeNodeRebootedSeconds</codeph> duration. This increase ensures that the value meets or exceeds the watchdog timeout duration, plus a safety margin. This prevents the cluster from recovering workloads before the reboot is complete.</p></li>
+      <li><codeph>watchdogFilePath</codeph>: Specify the file path of the watchdog device in the nodes. If you enter an incorrect path to the watchdog device, the Self Node Remediation Operator automatically detects the softdog device path.
+<p>If a watchdog device is unavailable, the <codeph>SelfNodeRemediationConfig</codeph> CR uses a software reboot.</p></li>
+      <li><codeph>isSoftwareRebootEnabled</codeph>: Specify if you want to enable software reboot of the unhealthy nodes. By default, the value of <codeph>isSoftwareRebootEnabled</codeph> is set to <codeph>true</codeph>. To disable the software reboot, set the parameter value to <codeph>false</codeph>.</li>
+      <li><codeph>apiServerTimeout</codeph>: Specify the timeout duration to check connectivity with each API server. When this duration elapses, the Operator starts remediation. The timeout duration must be greater than or equal to 10 milliseconds.</li>
+      <li><codeph>apiCheckInterval</codeph>: Specify the frequency to check connectivity with each API server. The timeout duration must be greater than or equal to 1 second.</li>
+      <li><codeph>maxApiErrorThreshold</codeph>: Specify a threshold value. After reaching this threshold, the node starts contacting its peers. The threshold value must be greater than or equal to 1 second.</li>
+      <li><codeph>peerApiServerTimeout</codeph>: Specify the duration of the timeout for the peer to connect the API server. The timeout duration must be greater than or equal to 10 milliseconds.</li>
+      <li><codeph>peerDialTimeout</codeph>: Specify the duration of the timeout for establishing connection with the peer. The timeout duration must be greater than or equal to 10 milliseconds.</li>
+      <li><codeph>peerRequestTimeout</codeph>: Specify the duration of the timeout to get a response from the peer. The timeout duration must be greater than or equal to 10 milliseconds.</li>
+      <li><codeph>peerUpdateInterval</codeph>: Specify the frequency to update peer information such as IP address. The timeout duration must be greater than or equal to 10 seconds.</li>
+      <li><codeph>hostPort</codeph>: Specify an optional value to change the port that Self Node Remediation agents use for internal communication. The value must be greater than 0. The default value is port 30001.</li>
+      <li><codeph>customDsTolerations</codeph>: Specify custom toleration Self Node Remediation agents that are running on the DaemonSets to support remediation for different types of nodes. You can configure the following fields:
+<ul><li><codeph>effect</codeph>: The effect indicates the taint effect to match. If this field is empty, all taint effects are matched. When specified, allowed values are <codeph>NoSchedule</codeph>, <codeph>PreferNoSchedule</codeph> and <codeph>NoExecute</codeph>.</li><li><codeph>key</codeph>: The key is the taint key that the toleration applies to. If this field is empty, all taint keys are matched. If the key is empty, the <codeph>operator</codeph> field must be <codeph>Exists</codeph>. This combination means to match all values and all keys.</li><li><codeph>operator</codeph>: The operator represents a key’s relationship to the value. Valid operators are <codeph>Exists</codeph> and <codeph>Equal</codeph>. The default is <codeph>Equal</codeph>. <codeph>Exists</codeph> is equivalent to a wildcard for a value, so that a pod can tolerate all taints of a particular category.</li><li><codeph>value</codeph>: The taint value the toleration matches to. If the operator is <codeph>Exists</codeph>, the value should be empty, otherwise it is just a regular string.</li><li><codeph>tolerationSeconds</codeph>: The period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (that is, do not evict). Zero and negative values will be treated as 0 (that is evict immediately) by the system.</li><li>Custom toleration allows you to add a toleration to the Self Node Remediation agent pod.</li></ul></li>
+    </ul>
+    <note type="note">
+      <ul>
+        <li>The Self Node Remediation Operator creates the CR by default in the deployment namespace.</li>
+        <li>The name for the CR must be <codeph>self-node-remediation-config</codeph>.</li>
+        <li>You can only have one <codeph>SelfNodeRemediationConfig</codeph> CR.</li>
+        <li>Deleting the <codeph>SelfNodeRemediationConfig</codeph> CR disables Self Node Remediation.</li>
+        <li>You can edit the <codeph>self-node-remediation-config</codeph> CR that is created by the Self Node Remediation Operator. However, when you try to create a new CR for the Self Node Remediation Operator, the following message is displayed in the logs:</li>
+      </ul>
+      <codeblock outputclass="language-text">controllers.SelfNodeRemediationConfig
+ignoring selfnoderemediationconfig CRs that are not named 'self-node-remediation-config'
+or not in the namespace of the operator:
+'openshift-workload-availability' {"selfnoderemediationconfig":
+"openshift-workload-availability/selfnoderemediationconfig-copy"}</codeblock>
+    </note>
+  </conbody>
+  <related-links id="additional-resources-self-node-remediation-operator-tolerations-snr">
+    <link format="html" href="https://docs.openshift.com/container-platform/4.21/logging/config/cluster-logging-tolerations.html" scope="external">
+      <linktext>Using tolerations to control OpenShift Logging pod placement</linktext>
+    </link>
+  </related-links>
+</concept>

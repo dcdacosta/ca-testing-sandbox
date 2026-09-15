@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="machine-health-checks-about">
+  <title>Use cases for machine health checks</title>
+  <conbody>
+    <note type="note">
+      <p>You can only apply a machine health check to control plane machines on clusters that use control plane machine sets.</p>
+    </note>
+    <p>To monitor machine health, create a resource to define the configuration for a controller. Set a condition, such as staying in the <codeph>NotReady</codeph> status for five minutes or displaying a permanent condition in the node-problem-detector. You must also set a label for the set of machines to monitor.</p>
+    <p>The controller that observes a <codeph>MachineHealthCheck</codeph> resource checks for the defined condition. If a machine fails the health check, the machine is automatically deleted and one is created to take its place. When a machine is deleted, you see a <codeph>machine deleted</codeph> event.</p>
+    <p>To limit disruptive impact of the machine deletion, the controller drains and deletes only one node at a time. If there are more unhealthy machines than the <codeph>maxUnhealthy</codeph> threshold allows for in the targeted pool of machines, remediation stops. Stopping remediation enables manual intervention.</p>
+    <note type="note">
+      <p>Consider the timeouts carefully, accounting for workloads and requirements.</p>
+      <ul>
+        <li>Long timeouts can result in long periods of downtime for the workload on the unhealthy machine.</li>
+        <li>Too short timeouts can result in a remediation loop. For example, the timeout for checking the <codeph>NotReady</codeph> status must be long enough to allow the machine to complete the startup process.</li>
+      </ul>
+    </note>
+    <p>To stop the check, remove the resource.</p>
+  </conbody>
+</concept>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="eco-use-cases-rhwa-operators">
+  <title>Use cases for workload availability operators</title>
+  <shortdesc>Use cases for RHWA operators - placeholder for concept topic content.</shortdesc>
+  <conbody>
+    <p>In turn, include Overview information from each Operator assembly into the use case topic of each Operator.</p>
+  </conbody>
+</concept>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Perform planned node maintenance</title>
+  <topicref href="eco-administer-maintenance.dita" locktitle="yes" navtitle="Perform planned node maintenance" type="concept">
+    <topicref href="eco-node-health-check-operator-creating-node-health-check.dita" locktitle="yes" navtitle="Create a node health check" type="task"/>
+    <topicref href="eco-setting-node-to-maintenance-mode.dita" locktitle="yes" navtitle="Set a node to mainitenance mode" type="concept">
+      <topicref href="eco-setting-node-maintenance-cr-web-console.dita" locktitle="yes" navtitle="Set a node to maintenance node by using the web console" type="task"/>
+      <topicref href="eco-setting-node-maintenance-cr-cli.dita" locktitle="yes" navtitle="Set a node to maintenance node by using the CLI" type="task"/>
+    </topicref>
+    <topicref href="eco-resuming-node-from-maintenance-mode.dita" locktitle="yes" navtitle="Resume a node from mainitenance mode" type="concept">
+      <topicref href="eco-resuming-node-maintenance-cr-web-console.dita" locktitle="yes" navtitle="Resume a node from maintenance node by using the web console" type="task"/>
+      <topicref href="eco-resuming-node-maintenance-cr-cli.dita" locktitle="yes" navtitle="Resume a node from maintenance node by using the CLI" type="task"/>
+    </topicref>
+    <topicref href="eco-working-with-bare-metal-nodes.dita" locktitle="yes" navtitle="Work with bare-metal nodes" type="concept">
+      <topicref href="eco-maintaining-bare-metal-nodes.dita" locktitle="yes" navtitle="Maintain bare-metal nodes" type="concept"/>
+      <topicref href="eco-setting-node-maintenance-actions-web-console.dita" locktitle="yes" navtitle="Set a bare-metal node to maintenance node" type="task"/>
+      <topicref href="eco-resuming-node-maintenance-actions-web-console.dita" locktitle="yes" navtitle="Resume a bare-metal node from maintenance node" type="task"/>
+    </topicref>
+  </topicref>
+</map>

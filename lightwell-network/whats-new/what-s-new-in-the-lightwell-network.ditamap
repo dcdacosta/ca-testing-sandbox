@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="GUID-0b19f6de-220a-405c-84cb-6458c5b9b1e3">
+  <!-- Use a map to build the structure of your HTML output. -->
+  <title>What's new in the Lightwell Network</title>
+  <topichead navtitle="What's new">
+    <topicref href="what-s-new-in-lightwell-network.dita" type="concept">
+    </topicref>
+  </topichead>
+</map>

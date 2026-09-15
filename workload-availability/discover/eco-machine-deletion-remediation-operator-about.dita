@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="about-machine-deletion-remediation-operator">
+  <title>Use cases for the Machine Deletion Remediation Operator</title>
+  <shortdesc>The Machine Deletion Remediation Operator is a "Rolling Stream" Operator, meaning updates are available asynchronously of OpenShift Container Platform releases.</shortdesc>
+  <conbody>
+    <p>The Machine Deletion Remediation (MDR) operator works with the <codeph>NodeHealthCheck</codeph> controller, to reprovision unhealthy nodes using the Machine API. MDR follows the annotation on the node to the associated machine object, confirms that it has an owning controller (for example, <codeph>MachineSetController</codeph>), and deletes it. Once the machine Custom Resource (CR) is deleted, the owning controller creates a replacement.</p>
+    <p>The prerequisites for MDR include:</p>
+    <ul>
+      <li>a Machine API-based cluster that is able to programmatically destroy and create cluster nodes,</li>
+      <li>nodes that are associated with machines, and</li>
+      <li>declaratively managed machines.</li>
+    </ul>
+    <p>You can then modify the <codeph>NodeHealthCheck</codeph> CR to use MDR as its remediator. An example MDR template object and <codeph>NodeHealthCheck</codeph> configuration are provided in the documentation.</p>
+    <p>The MDR process works as follows:</p>
+    <ul>
+      <li>the Node Health Check (NHC) Operator detects an unhealthy node and creates a MDR CR.</li>
+      <li>the MDR Operator watches for the MDR CR associated with the unhealthy node and deletes it, if the machine has an owning controller.</li>
+      <li>when the node is healthy again, the MDR CR is deleted by the <codeph>NodeHealthCheck</codeph> controller.</li>
+    </ul>
+  </conbody>
+  <related-links id="additional-resources-machine-deletion-remediation-operator-about-mdr">
+    <link format="html" href="https://access.redhat.com/support/policy/updates/openshift_operators#rolling-stream" scope="external">
+      <linktext>OpenShift Operator Life Cycles</linktext>
+    </link>
+    <link format="html" href="https://docs.openshift.com/container-platform/4.21/operators/admin/olm-restricted-networks.html#olm-restricted-networks" scope="external">
+      <linktext>Using Operator Lifecycle Manager on restricted networks</linktext>
+    </link>
+    <link format="html" href="https://docs.openshift.com/container-platform/4.21/operators/admin/olm-deleting-operators-from-cluster.html#olm-deleting-operators-from-a-cluster" scope="external">
+      <linktext>Deleting Operators from a cluster</linktext>
+    </link>
+  </related-links>
+</concept>

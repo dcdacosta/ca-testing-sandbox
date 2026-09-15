@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="supported-agents-fence-agents-remediation-operator">
+  <title>Verify supported fence agents</title>
+  <shortdesc>This section describes the agents currently supported by the Fence Agents Remediation Operator.</shortdesc>
+  <refbody>
+    <section>
+      <p>Most of the supported agents can be grouped by the node’s hardware proprietary and usage, as follows:</p>
+      <ol>
+        <li>BareMetal</li>
+        <li>Virtualization</li>
+        <li>Intel</li>
+        <li>HP</li>
+        <li>IBM</li>
+        <li>VMware</li>
+        <li>Cloud</li>
+        <li>Cisco</li>
+        <li>APC</li>
+        <li>Other</li>
+      </ol>
+      <table>
+        <title>BareMetal - Using the Redfish management interface is recommended, unless it is not supported.</title>
+        <tgroup cols="2">
+          <colspec colname="col_1" colwidth="25*"/>
+          <colspec colname="col_2" colwidth="75*"/>
+          <thead>
+            <row>
+              <entry>Agent</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_redfish</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with Out-of-Band controllers that support <b>Redfish</b> APIs.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_ipmilan</codeph>
+                  <fn>This description also applies for the agents <codeph>fence_ilo3</codeph>, <codeph>fence_ilo4</codeph>, <codeph>fence_ilo5</codeph>, <codeph>fence_imm</codeph>, <codeph>fence_idrac</codeph>, and <codeph>fence_ipmilanplus</codeph>.</fn>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with machines controlled by <b>IPMI</b>.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <table>
+        <title>Virtualization</title>
+        <tgroup cols="2">
+          <colspec colname="col_1" colwidth="25*"/>
+          <colspec colname="col_2" colwidth="75*"/>
+          <thead>
+            <row>
+              <entry>Agent</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_kubevirt</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with <b>KubeVirt</b>.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_rhevm</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with RHEV-M REST API to fence virtual machines.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <table>
+        <title>Intel</title>
+        <tgroup cols="2">
+          <colspec colname="col_1" colwidth="25*"/>
+          <colspec colname="col_2" colwidth="75*"/>
+          <thead>
+            <row>
+              <entry>Agent</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_amt_ws</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with <b>Intel</b> AMT (WS).</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_intelmodular</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with <b>Intel</b> Modular device (tested on Intel MFSYS25, should also work with MFSYS35).</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <table>
+        <title>HP - agents for the iLO management interface or BladeSystem.</title>
+        <tgroup cols="2">
+          <colspec colname="col_1" colwidth="25*"/>
+          <colspec colname="col_2" colwidth="75*"/>
+          <thead>
+            <row>
+              <entry>Agent</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_ilo</codeph>
+                  <fn>This description also applies for the agent <codeph>fence_ilo2</codeph>.</fn>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used for HP servers with the Integrated Light Out (<b>iLO</b>) PCI card.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <table>
+        <title>IBM</title>
+        <tgroup cols="2">
+          <colspec colname="col_1" colwidth="25*"/>
+          <colspec colname="col_2" colwidth="75*"/>
+          <thead>
+            <row>
+              <entry>Agent</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_ibmblade</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with <b>IBM</b> BladeCenter chassis.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_ibm_powervs</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with <b>IBM</b> Power Virtual Server (IBM PowerVS) to fence virtual server instances.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_ibm_vpc</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with <b>IBM</b> Cloud VPC to fence virtual machines.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_ipdu</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with the <b>IBM</b> iPDU network power switch.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <table>
+        <title>VMware</title>
+        <tgroup cols="2">
+          <colspec colname="col_1" colwidth="25*"/>
+          <colspec colname="col_2" colwidth="75*"/>
+          <thead>
+            <row>
+              <entry>Agent</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_vmware_rest</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with <b>VMware</b> API to fence virtual machines.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_vmware_soap</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with the virtual machines managed by <b>VMWare</b> products that have SOAP API v4.1+.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <table>
+        <title>Cloud</title>
+        <tgroup cols="2">
+          <colspec colname="col_1" colwidth="25*"/>
+          <colspec colname="col_2" colwidth="75*"/>
+          <thead>
+            <row>
+              <entry>Agent</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_aws</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with AWS (<b>Amazon</b> Web Services) to fence machines.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_gce</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with GCE (<b>Google</b> Cloud Engine) to fence machines.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_azure_arm</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with <b>Azure</b> Resource Manager to fence machines.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <table>
+        <title>Cisco</title>
+        <tgroup cols="2">
+          <colspec colname="col_1" colwidth="25*"/>
+          <colspec colname="col_2" colwidth="75*"/>
+          <thead>
+            <row>
+              <entry>Agent</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_cisco_ucs</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with <b>Cisco</b> UCS to fence machines.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <table>
+        <title>APC</title>
+        <tgroup cols="2">
+          <colspec colname="col_1" colwidth="25*"/>
+          <colspec colname="col_2" colwidth="75*"/>
+          <thead>
+            <row>
+              <entry>Agent</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_apc_snmp</codeph>
+                  <fn>This description also applies for the <codeph>fence_tripplite_snmp</codeph> agent.</fn>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with the <b>APC</b> network power switch or Tripplite PDU devices.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <table>
+        <title>Other - agents for usage not listed in the previous tables.</title>
+        <tgroup cols="2">
+          <colspec colname="col_1" colwidth="25*"/>
+          <colspec colname="col_2" colwidth="75*"/>
+          <thead>
+            <row>
+              <entry>Agent</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_eaton_snmp</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with the Eaton network power switch.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_emerson</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with MPX and MPH2 managed rack PDU.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_epsr2</codeph>
+                  <fn>This description also applies for the <codeph>fence_eps</codeph> agent.</fn>
+                </p>
+              </entry>
+              <entry>
+                <p>A power fencing agent that can be used with the ePowerSwitch 8M+ power switch to fence connected machines.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_evacuate</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>A resource that can be used to reschedule flagged instances.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>
+                  <codeph>fence_ifmib</codeph>
+                </p>
+              </entry>
+              <entry>
+                <p>An I/O fencing agent that can be used with any SNMP IF-MIB capable device.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </refbody>
+</reference>

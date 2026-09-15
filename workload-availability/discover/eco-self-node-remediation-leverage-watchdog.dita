@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="leverage-watchdog-devices">
+  <title>Leverage watchdog devices for Self Node Remediation</title>
+  <shortdesc>The Self Node Remediation Operator determines the remediation strategy based on the watchdog devices that are present.</shortdesc>
+  <conbody>
+    <p>If a hardware watchdog device is configured and available, the Operator uses it for remediation. If a hardware watchdog device is not configured, the Operator enables and uses a <codeph>softdog</codeph> device for remediation.</p>
+    <p>If neither watchdog devices are supported, either by the system or by the configuration, the Operator remediates nodes by using software reboot.</p>
+  </conbody>
+  <related-links id="additional-resources-self-node-remediation-operator-watchdog-snr">
+    <link format="html" href="https://docs.openshift.com/container-platform/4.21/virt/monitoring/virt-monitoring-vm-health.html#virt-defining-watchdog-device-vm" scope="external">
+      <linktext>Configuring a watchdog device for the virtual machine</linktext>
+    </link>
+  </related-links>
+</concept>

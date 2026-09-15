@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="flow-of-events-in-the-workload-availability-operators-phase3">
+  <title>Phase 3 - Host or API remediation</title>
+  <shortdesc>Using Machine Deletion Remediation (MDR), Self Node Remediation (SNR), Fence Agents Remediation (FAR), or Storage-Based Remediation (SBR), the remediator fences and isolates the node by rebooting it in order to reach a safe state.</shortdesc>
+  <refbody>
+    <section>
+      <p>The details of this phase are configured by the user and depends on their workload requirements.</p>
+      <p>For example:</p>
+      <ul>
+        <li>Machine Deletion Remediation - The choice of platform influences the time it takes to reprovision the machine, and then the duration of the remediation. MDR is only applicable to clusters that use Machine API.</li>
+        <li>Self Node Remediation - The remediation time depends on many parameters, including the safe time is takes to automatically reboot unhealthy nodes, and the watchdog devices used to ensure that the machine enters a safe state when an error condition is detected.</li>
+        <li>Fence Agents Remediation - The fencing agent time depends on many parameters including, the cluster nodes, the management interface, and the agent parameters.</li>
+        <li>Storage-Based Remediation - The Operator uses shared block storage to detect unresponsive nodes, and the watchdog to reboot these nodes and restore them to functionality.</li>
+      </ul>
+    </section>
+  </refbody>
+</reference>

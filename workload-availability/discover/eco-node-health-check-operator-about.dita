@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="about-node-health-check-operator">
+  <title>Use cases for the Node Health Check Operator</title>
+  <shortdesc>The Node Health Check Operator is a "Rolling Stream" Operator, meaning updates are available asynchronously of OpenShift Container Platform releases.</shortdesc>
+  <conbody>
+    <p>When unhealthy nodes are identified, the Node Health Check (NHC) Operator can be used with the other remediation providers, including:</p>
+    <ul>
+      <li>The Self Node Remediation Operator.</li>
+      <li>The Fence Agents Remediation Operator.</li>
+      <li>The Machine Deletion Remediation Operator.</li>
+    </ul>
+    <note type="note">
+      <p>Due to the existence of preinstalled machine health checks on Red Hat OpenShift Service on AWS (ROSA) clusters, the Node Health Check Operator is unable to function in such an environment.</p>
+    </note>
+    <p>The Node Health Check Operator detects the health of the nodes in a cluster. The <codeph>NodeHealthCheck</codeph> controller creates the <codeph>NodeHealthCheck</codeph> custom resource (CR), which defines a set of criteria and thresholds to determine the health of a node.</p>
+    <p>When the Node Health Check Operator detects an unhealthy node, it creates a remediation CR that triggers the remediation provider. For example, the controller creates the <codeph>SelfNodeRemediation</codeph> CR, which triggers the Self Node Remediation Operator to remediate the unhealthy node.</p>
+    <p>The <codeph>NodeHealthCheck</codeph> CR resembles the following YAML file, with self-node-remediation as the remediation provider:</p>
+    <codeblock outputclass="language-yaml">apiVersion: remediation.medik8s.io/v1alpha1
+kind: NodeHealthCheck
+metadata:
+  name: nodehealthcheck-sample
+spec:
+  minHealthy: 51%
+  maxUnhealthy: 29%
+  pauseRequests:
+    - &lt;pause-test-cluster&gt;
+  stormCooldownDuration: 60s
+  remediationTemplate:
+    apiVersion: self-node-remediation.medik8s.io/v1alpha1
+    name: self-node-remediation-resource-deletion-template
+    namespace: openshift-workload-availability
+    kind: SelfNodeRemediationTemplate
+  escalatingRemediations:
+    - remediationTemplate:
+        apiVersion: self-node-remediation.medik8s.io/v1alpha1
+        name: self-node-remediation-resource-deletion-template
+        namespace: openshift-workload-availability
+        kind: SelfNodeRemediationTemplate
+    order: 1
+    timeout: 300s
+  selector:
+    matchExpressions:
+      - key: node-role.kubernetes.io/worker
+        operator: Exists
+  unhealthyConditions:
+    - type: Ready
+      status: "False"
+      duration: 300s
+    - type: Ready
+      status: Unknown
+      duration: 300s</codeblock>
+    <ul>
+      <li><codeph>minHealthy</codeph>: Specifies the amount of healthy nodes (in percentage or number) required for a remediation provider to concurrently remediate nodes in the targeted pool. If the number of healthy nodes equals to or exceeds the limit set by <codeph>minHealthy</codeph>, remediation occurs. The default value is 51%.</li>
+      <li><codeph>maxUnhealthy</codeph>: Specifies the amount of unhealthy nodes (in percentage or number) permitted for a remediation provider to concurrently remediate nodes in the targeted pool. If the number of unhealthy nodes exceeds the limit set by <codeph>maxUnhealthy</codeph>, no further remediation occurs. There is no default value. The usage of <codeph>maxUnhealthy</codeph> is mutually exclusive to the usage of <codeph>minHealthy</codeph>.</li>
+      <li><codeph>pauseRequests</codeph>: Prevents any new remediation from starting, while allowing any ongoing remediations to persist. The default value is empty. However, you can enter an array of strings that identify the cause of pausing the remediation. For example, <codeph>pause-test-cluster</codeph>.
+<note type="note"><p>During the upgrade process, nodes in the cluster might become temporarily unavailable and get identified as unhealthy. In the case of worker nodes, when the Operator detects that the cluster is upgrading, it stops remediating new unhealthy nodes to prevent such nodes from rebooting.</p></note></li>
+      <li><codeph>stormCooldownDuration</codeph>: Specifies the timeout duration of the stabilization phase that occurs immediately after a "storm". A storm happens when the number of healthy or unhealthy nodes exceeds the threshold values defined by <codeph>minHealthy</codeph> or <codeph>maxUnhealthy</codeph>. Remediation creation is blocked during the active storm, remains blocked for this additional cooldown duration, and until the threshold values are satisfied again. This cooldown duration ensures that nodes recovering from a mass failure have sufficient time to report their status before normal remediation logic resumes.</li>
+      <li><codeph>remediationTemplate</codeph>: Specifies a remediation template from the remediation provider. For example, from the Self Node Remediation Operator. <codeph>remediationTemplate</codeph> is mutually exclusive with  <codeph>escalatingRemediations</codeph>.</li>
+      <li><codeph>escalatingRemediations</codeph>: Specifies a list of <codeph>RemediationTemplates</codeph> with order and timeout fields. To obtain a healthy node, use this field to sequence and configure multiple remediations. This strategy increases the likelihood of obtaining a healthy node, instead of depending on a single remediation that might not be successful. The <codeph>order</codeph> field determines the order in which the remediations are invoked (lower order = earlier invocation). The <codeph>timeout</codeph> field determines when the next remediation is invoked. <codeph>escalatingRemediations</codeph> is mutually exclusive with <codeph>remediationTemplate</codeph>.
+<note type="note"><p>When <codeph>escalatingRemediations</codeph> is used the remediation providers, Self Node Remediation Operator and Fence Agents Remediation Operator, can be used multiple times with different <codeph>remediationTemplate</codeph> configurations. However, you can not use the same Machine Deletion Remediation configuration with different <codeph>remediationTemplate</codeph> configurations.</p></note></li>
+      <li><codeph>selector</codeph>: Specifies a selector that matches labels or expressions that you want to check. Avoid selecting both control-plane and worker nodes in one CR.</li>
+      <li><codeph>unhealthyConditions</codeph>: Specifies a list of the conditions that determine whether a node is considered unhealthy.</li>
+      <li><codeph>duration</codeph>: Specifies the timeout duration for a node condition. If a condition is met for the duration of the timeout, the node will be remediated. Long timeouts can result in long periods of downtime for a workload on an unhealthy node.</li>
+    </ul>
+    <p>The <codeph>NodeHealthCheck</codeph> CR resembles the following YAML file, with metal3 as the remediation provider:</p>
+    <codeblock outputclass="language-yaml">apiVersion: remediation.medik8s.io/v1alpha1
+kind: NodeHealthCheck
+metadata:
+  name: nhc-worker-metal3
+spec:
+  minHealthy: 30%
+  remediationTemplate:
+    apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+    kind: Metal3RemediationTemplate
+    name: metal3-remediation
+    namespace: openshift-machine-api
+  selector:
+    matchExpressions:
+    - key: node-role.kubernetes.io/worker
+      operator: Exists
+  unhealthyConditions:
+  - duration: 300s
+    status: 'False'
+    type: Ready
+  - duration: 300s
+    status: 'Unknown'
+    type: Ready</codeblock>
+    <note type="note">
+      <p>The <codeph>matchExpressions</codeph> are examples only; you must map your machine groups based on your specific needs.</p>
+    </note>
+    <p>The <codeph>Metal3RemediationTemplate</codeph> resembles the following YAML file, with metal3 as the remediation provider:</p>
+    <codeblock outputclass="language-yaml">apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+kind: Metal3RemediationTemplate
+metadata:
+  name: metal3-remediation
+  namespace: openshift-machine-api
+spec:
+  template:
+    spec:
+      strategy:
+        retryLimit: 1
+        timeout: 5m0s
+        type: Reboot</codeblock>
+    <note type="note">
+      <p>In addition to creating a <codeph>NodeHealthCheck</codeph> CR, you must also create the <codeph>Metal3RemediationTemplate</codeph>.</p>
+    </note>
+  </conbody>
+  <related-links id="additional-resources-node-health-check-operator-about-nhc">
+    <link format="html" href="https://access.redhat.com/support/policy/updates/openshift_operators#rolling-stream" scope="external">
+      <linktext>OpenShift Operator Life Cycles</linktext>
+    </link>
+    <link format="html" href="https://docs.openshift.com/container-platform/4.21/operators/admin/olm-upgrading-operators.html#olm-changing-update-channel_olm-upgrading-operators" scope="external">
+      <linktext>Changing the update channel for an Operator</linktext>
+    </link>
+    <link format="html" href="https://docs.openshift.com/container-platform/4.21/operators/admin/olm-restricted-networks.html#olm-restricted-networks" scope="external">
+      <linktext>Using Operator Lifecycle Manager on restricted networks</linktext>
+    </link>
+  </related-links>
+</concept>

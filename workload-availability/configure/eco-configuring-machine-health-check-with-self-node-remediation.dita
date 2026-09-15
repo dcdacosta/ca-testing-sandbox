@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="configuring-machine-health-check-with-self-node-remediation-operator">
+  <title>Configure machine health checks to use the Self Node Remediation Operator</title>
+  <shortdesc>Use the following procedure to configure the worker or control-plane machine health checks to use the Self Node Remediation Operator as a remediation provider.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Install the OpenShift CLI (<codeph>oc</codeph>).</li>
+        <li>Log in as a user with <codeph>cluster-admin</codeph> privileges.</li>
+      </ul>
+    </prereq>
+    <context>
+      <note type="note">
+        <p>To use the Self Node Remediation Operator as a remediation provider for machine health checks, a machine must have an associated node in the cluster.</p>
+      </note>
+    </context>
+    <steps>
+      <step>
+        <cmd>Create a <codeph>SelfNodeRemediationTemplate</codeph> CR:
+</cmd>
+        <substeps>
+          <substep>
+            <cmd>Define the <codeph>SelfNodeRemediationTemplate</codeph> CR:
+</cmd>
+            <info>
+              <codeblock outputclass="language-yaml">apiVersion: self-node-remediation.medik8s.io/v1alpha1
+kind: SelfNodeRemediationTemplate
+metadata:
+  namespace: openshift-machine-api
+  name: selfnoderemediationtemplate-sample
+spec:
+  template:
+    spec:
+      remediationStrategy: Automatic</codeblock>
+              <ul>
+                <li><codeph>remediationStrategy</codeph>: Specifies the remediation strategy. The default remediation strategy is <codeph>Automatic</codeph>.</li>
+              </ul>
+            </info>
+          </substep>
+          <substep>
+            <cmd>To create the <codeph>SelfNodeRemediationTemplate</codeph> CR, run the following command:
+</cmd>
+            <info>
+              <codeblock outputclass="language-terminal">$ oc create -f &lt;snrt-name&gt;.yaml</codeblock>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Create or update the <codeph>MachineHealthCheck</codeph> CR to point to the <codeph>SelfNodeRemediationTemplate</codeph> CR:
+</cmd>
+        <substeps>
+          <substep>
+            <cmd>Define or update the <codeph>MachineHealthCheck</codeph> CR:
+</cmd>
+            <info>
+              <codeblock outputclass="language-yaml">apiVersion: machine.openshift.io/v1beta1
+kind: MachineHealthCheck
+metadata:
+  name: machine-health-check
+  namespace: openshift-machine-api
+spec:
+  selector:
+    matchLabels:
+      machine.openshift.io/cluster-api-machine-role: "worker"
+      machine.openshift.io/cluster-api-machine-type: "worker"
+  unhealthyConditions:
+  - type:    "Ready"
+    timeout: "300s"
+    status: "False"
+  - type:    "Ready"
+    timeout: "300s"
+    status: "Unknown"
+  maxUnhealthy: "40%"
+  nodeStartupTimeout: "10m"
+  remediationTemplate:
+    kind: SelfNodeRemediationTemplate
+    apiVersion: self-node-remediation.medik8s.io/v1alpha1
+    name: selfnoderemediationtemplate-sample</codeblock>
+              <ul>
+                <li><codeph>matchLabels</codeph>: Selects whether the machine health check is for <codeph>worker</codeph> or <codeph>control-plane</codeph> nodes. The label can also be user-defined.</li>
+                <li><codeph>remediationTemplate</codeph>: Specifies the details for the remediation template.</li>
+              </ul>
+            </info>
+          </substep>
+          <substep>
+            <cmd>To create a <codeph>MachineHealthCheck</codeph> CR, run the following command:
+</cmd>
+            <info>
+              <codeblock outputclass="language-terminal">$ oc create -f &lt;mhc-name&gt;.yaml</codeblock>
+            </info>
+          </substep>
+          <substep>
+            <cmd>To update a <codeph>MachineHealthCheck</codeph> CR, run the following command:
+</cmd>
+            <info>
+              <codeblock outputclass="language-terminal">$ oc apply -f &lt;mhc-name&gt;.yaml</codeblock>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+    <result>
+      <ol>
+        <li>To verify the successful creation of the <codeph>MachineHealthCheck</codeph> CR, run the following command:
+<codeblock outputclass="language-terminal">$ oc -n openshift-machine-api get machinehealthchecks &lt;mhc-name&gt; -o yaml</codeblock><codeblock outputclass="language-yaml">status:
+  conditions:
+  - lastTransitionTime: "2026-01-28T13:51:12Z"
+    status: "True"
+    type: RemediationAllowed
+  currentHealthy: 3
+  expectedMachines: 3
+  remediationsAllowed: 1</codeblock></li>
+      </ol>
+    </result>
+  </taskbody>
+</task>

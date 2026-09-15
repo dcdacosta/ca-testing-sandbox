@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="about-self-node-remediation-operator">
+  <title>Use cases for the Self Node Remediation Operator</title>
+  <shortdesc>The Self Node Remediation Operator is a "Rolling-Stream" Operator, meaning updates are available asynchronously of OpenShift Container Platform releases.</shortdesc>
+  <conbody>
+    <p>The Self Node Remediation (SNR) Operator runs on the cluster nodes and reboots nodes that are identified as unhealthy. The Operator uses the <codeph>MachineHealthCheck</codeph> or <codeph>NodeHealthCheck</codeph> controller to detect the health of a node in the cluster.</p>
+    <p>When a node is identified as unhealthy, the <codeph>MachineHealthCheck</codeph> or the <codeph>NodeHealthCheck</codeph> resource creates the <codeph>SelfNodeRemediation</codeph> custom resource (CR), which triggers the Self Node Remediation Operator.</p>
+    <p>The <codeph>SelfNodeRemediation</codeph> CR resembles the following YAML file:</p>
+    <codeblock outputclass="language-yaml">apiVersion: self-node-remediation.medik8s.io/v1alpha1
+kind: SelfNodeRemediation
+metadata:
+  name: selfnoderemediation-sample
+  namespace: openshift-workload-availability
+spec:
+  remediationStrategy: &lt;remediation_strategy&gt;
+status:
+  lastError: &lt;last_error_message&gt;</codeblock>
+    <ul>
+      <li><codeph>remediationStrategy</codeph>: Specifies the remediation strategy for the nodes.</li>
+      <li><codeph>lastError</codeph>: Displays the last error that occurred during remediation. When remediation succeeds or if no errors occur, the field is left empty.</li>
+    </ul>
+    <p>The Self Node Remediation Operator minimizes downtime for stateful applications and restores compute capacity if transient failures occur. You can use this Operator regardless of the management interface, such as IPMI or an API to provision a node, and regardless of the cluster installation type, such as installer-provisioned infrastructure or user-provisioned infrastructure.</p>
+  </conbody>
+  <related-links id="additional-resources-self-node-remediation-operator-about-snr">
+    <link format="html" href="https://access.redhat.com/support/policy/updates/openshift_operators#rolling-stream" scope="external">
+      <linktext>OpenShift Operator Life Cycles</linktext>
+    </link>
+    <link format="html" href="https://docs.openshift.com/container-platform/4.21/operators/admin/olm-restricted-networks.html#olm-restricted-networks" scope="external">
+      <linktext>Using Operator Lifecycle Manager on restricted networks</linktext>
+    </link>
+    <link format="html" href="https://docs.openshift.com/container-platform/4.21/operators/admin/olm-deleting-operators-from-cluster.html#olm-deleting-operators-from-a-cluster" scope="external">
+      <linktext>Deleting Operators from a cluster</linktext>
+    </link>
+  </related-links>
+</concept>

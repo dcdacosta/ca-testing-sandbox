@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="troubleshooting-self-node-remediation-operator">
+  <title>Troubleshoot the Self Node Remediation Operator</title>
+  <shortdesc>Review these solutions for common issues that you might encounter when using the Self Node Remediation Operator.</shortdesc>
+  <refbody>
+    <section id="general-troubleshooting-self-node-remediation-operator">
+      <title>General troubleshooting</title>
+      <dl>
+        <dlentry>
+          <dt>Issue</dt>
+          <dd>You want to troubleshoot issues with the Self Node Remediation Operator.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Resolution</dt>
+          <dd>Check the Operator logs.</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section id="checking-daemon-set">
+      <title>Check the daemon set</title>
+      <dl>
+        <dlentry>
+          <dt>Issue</dt>
+          <dd>The Self Node Remediation Operator is installed but the daemon set is not available.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Resolution</dt>
+          <dd>Check the Operator logs for errors or warnings.</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section id="unsuccessful_remediation">
+      <title>Unsuccessful remediation</title>
+      <dl>
+        <dlentry>
+          <dt>Issue</dt>
+          <dd>An unhealthy node was not remediated.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Resolution</dt>
+          <dd>
+            <p>Verify that the <codeph>SelfNodeRemediation</codeph> CR was created by running the following command:</p>
+            <codeblock outputclass="language-terminal">$ oc get snr -A</codeblock>
+            <p>If the <codeph>MachineHealthCheck</codeph> controller did not create the <codeph>SelfNodeRemediation</codeph> CR when the node turned unhealthy, check the logs of the <codeph>MachineHealthCheck</codeph> controller. Additionally, ensure that the <codeph>MachineHealthCheck</codeph> CR includes the required specification to use the remediation template.</p>
+            <p>If the <codeph>SelfNodeRemediation</codeph> CR was created, ensure that its name matches the unhealthy node or the machine object.</p>
+          </dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section id="daemon-set-exists">
+      <title>Resources remain after uninstalling the Operator</title>
+      <dl>
+        <dlentry>
+          <dt>Issue</dt>
+          <dd>The Self Node Remediation Operator resources, such as the daemon set, configuration CR, and the remediation template CR, exist even after after uninstalling the Operator.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Resolution</dt>
+          <dd>
+            <p>To remove the Self Node Remediation Operator resources, delete the resources by running the following commands for each resource type:</p>
+            <codeblock outputclass="language-terminal">$ oc delete ds &lt;self-node-remediation-ds&gt; -n &lt;namespace&gt;</codeblock>
+            <codeblock outputclass="language-terminal">$ oc delete snrc &lt;self-node-remediation-config&gt; -n &lt;namespace&gt;</codeblock>
+            <codeblock outputclass="language-terminal">$ oc delete snrt &lt;self-node-remediation-template&gt; -n &lt;namespace&gt;</codeblock>
+          </dd>
+        </dlentry>
+      </dl>
+    </section>
+  </refbody>
+</reference>

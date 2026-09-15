@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="configuring-metrics-for-workload-availability-operators">
+  <title>Configure metrics for workload availability operators</title>
+  <shortdesc>You can use the Red Hat OpenShift web console to install the Node Health Check (NHC) Operator.</shortdesc>
+  <taskbody>
+    <context>
+      <p>After installing the NHC Operator, Platform Prometheus metrics are automatically configured and ready to use.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>The NHC Operator’s namespace is labeled with <codeph>openshift.io/cluster-monitoring: "true"</codeph> for Platform Prometheus discovery, and</cmd>
+      </step>
+      <step>
+        <cmd>A <codeph>ServiceMonitor</codeph> is deployed to enable TLS client certificate authentication <codeph>scrapeClass: tls-client-certificate-auth</codeph>.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>To verify that the setup is complete, check the Prometheus targets by using the <b>Observe</b> &gt; <b>Targets</b> tab in the OCP Web UI.</p>
+      <p>The NHC target shows <codeph>UP</codeph> (in green) within a few minutes of installation. Metric queries are now available for use.</p>
+    </result>
+  </taskbody>
+</task>

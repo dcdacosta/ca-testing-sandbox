@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="gathering-data-about-the-workload-availability-operators">
+  <title>Gather data about the workload availability operators</title>
+  <shortdesc>You can gather debugging information about specific features by using the <codeph>oc adm must-gather</codeph> CLI command. The <codeph>must-gather</codeph> tool supports multiple images, so you can gather data about more than one feature by running a single command.</shortdesc>
+  <conbody/>
+  <related-links id="additional-resources-workload-availability-operators-gather-data">
+    <link format="html" href="https://docs.openshift.com/container-platform/4.21/support/gathering-cluster-data.html#gathering-data-specific-features_gathering-cluster-data" scope="external">
+      <linktext>Gathering data about specific features</linktext>
+    </link>
+  </related-links>
+</concept>

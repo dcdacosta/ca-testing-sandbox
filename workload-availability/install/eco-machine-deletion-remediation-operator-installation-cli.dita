@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="installing-machine-deletion-remediation-operator-using-cli">
+  <title>Install the Machine Deletion Remediation Operator by using the CLI</title>
+  <shortdesc>You can use the OpenShift CLI (<codeph>oc</codeph>) to install the Machine Deletion Remediation Operator.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Install the OpenShift CLI (<codeph>oc</codeph>).</li>
+        <li>Log in as a user with <codeph>cluster-admin</codeph> privileges.</li>
+      </ul>
+    </prereq>
+    <context>
+      <p>You can install the Machine Deletion Remediation Operator in your own namespace or in the <codeph>openshift-workload-availability</codeph> namespace.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Create a <codeph>Namespace</codeph> custom resource (CR) for the Machine Deletion Remediation Operator:
+</cmd>
+        <substeps>
+          <substep>
+            <cmd>Define the <codeph>Namespace</codeph> CR and save the YAML file, for example, <codeph>workload-availability-namespace.yaml</codeph>:
+</cmd>
+            <info>
+              <codeblock outputclass="language-yaml">apiVersion: v1
+kind: Namespace
+metadata:
+  name: openshift-workload-availability</codeblock>
+            </info>
+          </substep>
+          <substep>
+            <cmd>To create the <codeph>Namespace</codeph> CR, run the following command:
+</cmd>
+            <info>
+              <codeblock outputclass="language-terminal">$ oc create -f workload-availability-namespace.yaml</codeblock>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Create an <codeph>OperatorGroup</codeph> CR:
+</cmd>
+        <substeps>
+          <substep>
+            <cmd>Define the <codeph>OperatorGroup</codeph> CR and save the YAML file, for example, <codeph>workload-availability-operator-group.yaml</codeph>:
+</cmd>
+            <info>
+              <codeblock outputclass="language-yaml">apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: workload-availability-operator-group
+  namespace: openshift-workload-availability</codeblock>
+            </info>
+          </substep>
+          <substep>
+            <cmd>To create the <codeph>OperatorGroup</codeph> CR, run the following command:
+</cmd>
+            <info>
+              <codeblock outputclass="language-terminal">$ oc create -f workload-availability-operator-group.yaml</codeblock>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Create a <codeph>Subscription</codeph> CR:
+</cmd>
+        <substeps>
+          <substep>
+            <cmd>Define the <codeph>Subscription</codeph> CR and save the YAML file, for example, <codeph>machine-deletion-remediation-subscription.yaml</codeph>:
+</cmd>
+            <info>
+              <codeblock outputclass="language-yaml">apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+    name: machine-deletion-remediation
+    namespace: openshift-workload-availability
+spec:
+    channel: stable
+    name: machine-deletion-remediation
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace</codeblock>
+              <ul>
+                <li><codeph>namespace</codeph>: Specify the <codeph>Namespace</codeph> where you want to install the Machine Deletion Remediation Operator. When installing the Machine Deletion Remediation Operator in the <codeph>openshift-workload-availability</codeph><codeph>Subscription</codeph> CR, the <codeph>Namespace</codeph> and <codeph>OperatorGroup</codeph> CRs will already exist.</li>
+              </ul>
+            </info>
+          </substep>
+          <substep>
+            <cmd>To create the <codeph>Subscription</codeph> CR, run the following command:
+</cmd>
+            <info>
+              <codeblock outputclass="language-terminal">$ oc create -f machine-deletion-remediation-subscription.yaml</codeblock>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+    <result>
+      <ol>
+        <li>Verify that the installation succeeded by inspecting the CSV resource:
+<codeblock outputclass="language-terminal">$ oc get csv -n openshift-workload-availability</codeblock><codeblock outputclass="language-terminal">NAME                               DISPLAY                          VERSION   REPLACES   PHASE
+machine-deletion-remediation.v0.3.0      Machine Deletion Remediation Operator   0.3.0   machine-deletion-remediation.v0.2.1           Succeeded</codeblock></li>
+      </ol>
+    </result>
+  </taskbody>
+</task>

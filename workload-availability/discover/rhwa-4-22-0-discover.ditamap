@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Discover</title>
+  <topichead navtitle="Discover">
+    <mapref format="ditamap" href="ensure-workload-continuity-during-node-failures-with-rhwa.ditamap" type="map">
+    </mapref>
+  </topichead>
+</map>

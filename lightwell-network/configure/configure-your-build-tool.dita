@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="configure-your-build-tool">
+  <title>Configure your build tool</title>
+  <shortdesc>Add a Lightwell Network repository to your existing build configuration so that your dependencies resolve through the Lightwell Network. Select the procedure that matches your language ecosystem.</shortdesc>
+  <conbody>
+  </conbody>
+</concept>
