@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="assembly-adding-cloud-integrations">
+  <title>Integrate external infrastructure to share data with Red Hat services</title>
+  <shortdesc>You can connect Amazon Web Services (AWS), Google Cloud, or Microsoft Azure accounts as cloud integrations in the Red Hat Hybrid Cloud Console so that services hosted on the Hybrid Cloud Console can use data from public cloud providers.</shortdesc>
+  <conbody>
+    <p>You can also connect your Red Hat OpenShift Container Platform environment to the Hybrid Cloud Console as a cloud integration to use with the cost management service on the console.</p>
+  </conbody>
+</concept>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-notif-config-integrations">
+  <title>Create and configure integrations</title>
+  <shortdesc>The Notifications administrator creates and configures integrations for the organization so third-party applications can send event notifications to users.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged into the Red Hat Hybrid Cloud Console as an Organization Administrator or as a user with Notifications administrator permissions.</li>
+        <li>Your endpoint must be protected by a non-self-signed and globally trusted certificate.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the Hybrid Cloud Console, navigate to <xref format="html" href="https://console.openshiftusgov.com/settings/integrations" otherprops="FEDRAMP" scope="external">Settings &gt; Integrations</xref><xref format="html" href="https://console.redhat.com/settings/integrations" otherprops="PUBLIC" scope="external">Settings &gt; Integrations</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Click the <b>Integrations</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Select the tab for the type of integration you want to create. For example, to create a Slack integration, select the <b>Communications</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Add integration</b> and select the third-party tool to integrate with the Hybrid Cloud Console: </cmd>
+        <substeps>
+          <substep>
+            <cmd>Select an integration type.</cmd>
+          </substep>
+          <substep>
+            <cmd>Enter an integration name.</cmd>
+          </substep>
+          <substep>
+            <cmd>Provide the endpoint URL. </cmd>
+            <info>
+              <note otherprops="PUBLIC" type="important">SSL is essential for protecting the data sent to the integration endpoint. SSL must always be used when integrating the Red Hat Hybrid Cloud Console with third-party applications.</note>
+              <note otherprops="FEDRAMP" type="important">SSL is essential for protecting the data sent to the integration endpoint.</note>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Optional: Provide a secret token, if required. If defined, the secret token is used as an <codeph>X-Insight-Token</codeph> header on the POST HTTP request. </cmd>
+            <info>
+              <note type="note">A secret token is essential for protecting the data sent to the integration endpoint and should always be used when integrating the Hybrid Cloud Console with third-party applications.</note>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Click <b>Save</b>.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>To verify that the new integration is listed on the <b>Integrations</b> page, enter the integration name in <b>Filter by Name</b> box. </cmd>
+        <info>
+          <note type="note">The new integration is enabled by default and available as an integration option when a Notifications administrator configures behavior groups in the notifications service. To disable the integration, toggle the switch in the <b>Enabled</b> column. To configure a behavior group, see <xref format="html" href="create-behavior-group.dita#proc-notif-creating-behavior-group" scope="external"/>.</note>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+  <related-links>
+    <link format="html" href="../extend/integrate-communication-apps.dita" scope="external">
+      <linktext>Integrate communication applications</linktext>
+    </link>
+  </related-links>
+</task>

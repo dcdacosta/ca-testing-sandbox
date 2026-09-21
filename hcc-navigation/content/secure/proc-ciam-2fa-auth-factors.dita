@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-ciam-iam-auth-factors">
+  <title>Require two-factor authentication (2FA) for all users in your organization</title>
+  <shortdesc>To promote the security of Red Hat user accounts associated with your organization, the Organization Administrator can enable a two-factor authentication requirement for all users in the organization. </shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Ensure you are using a registered Red Hat account with Organization Administrator permissions.</li>
+      </ul>
+      <note type="note">Google Authenticator and FreeOTP Authenticator are the only supported token generators for providing two-factor authentication one-time codes. Hardware tokens, SMS (text-message) tokens, and other apps are not supported. You can install these apps on your smartphone or other compatible Android or iOS device.</note>
+      <note type="note">When a user enables individual opt-in two-factor authentication for their user account through their <b>Signing in</b> settings, two-factor authentication remains enabled for their account regardless of organization-level requirements.</note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Log in to Red Hat Hybrid Cloud Console as a user who has Organization Administrator permission.</cmd>
+      </step>
+      <step>
+        <cmd>From the home page after you log in, click ⚙ (<b>Settings</b>).</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Authentication Policy</b>.</cmd>
+      </step>
+      <step>
+        <cmd>When the <b>Authentication Policy</b> window appears, click <b>Authentication Factors</b>.</cmd>
+      </step>
+      <step>
+        <cmd>On the <b>Authentication factors</b> page, check <b>Enable two-factor authentication for your organization</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Save</b>.</cmd>
+      </step>
+    </steps>
+    <result id="result_1">Once organization-wide two-factor authentication is enabled, all users will be prompted to set up an authenticator app upon their next login. After this initial configuration, a one-time code from the app will be required for every subsequent login. </result>
+  </taskbody>
+</task>

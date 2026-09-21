@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-notif-console-config-behavior-group-eda">
+  <title>Create the behavior group for the Event-Driven Ansible integration</title>
+  <shortdesc>A behavior group defines which notifications will be sent to external services such as Event-Driven Ansible when a specific event is received by the notifications service. You can link events from any Red Hat Hybrid Cloud Console service to your behavior group.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Hybrid Cloud Console as an Organization Administrator or as a user with Notifications administrator permissions.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>The Event-Driven Ansible integration with the Hybrid Cloud Console is configured as described in <xref href="configure-eda-25-for-integration.dita#proc-notif-eda-25-config"/>.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the Hybrid Cloud Console, navigate to <xref format="html" href="https://console.openshiftusgov.com/settings/notifications" otherprops="FEDRAMP" scope="external">Settings &gt; Notifications</xref><xref format="html" href="https://console.redhat.com/settings/notifications" otherprops="PUBLIC" scope="external">Settings &gt; Notifications</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Under <b>Notifications</b>, select <b>Configure Events</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the application bundle tab you want to configure event notification behavior for: <b>Red Hat Enterprise Linux</b>, <b>Console</b>, or <b>OpenShift</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Click the <b>Behavior Groups</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Create new group</b> to open the <b>Create behavior group</b> wizard.</cmd>
+      </step>
+      <step>
+        <cmd>Type a name for the behavior group and click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>In the <b>Actions and Recipients</b> step, select <b>Integration: Event-Driven Ansible</b> from the <b>Actions</b> drop-down list.</cmd>
+      </step>
+      <step>
+        <cmd>From the <b>Recipient</b> drop-down list, select the name of the integration you created (for example, <i>My EDA Listener</i>) and click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>In the <b>Associate event types</b> step, select one or more events for which you want to send notifications (for example, <b>Advisor: New recommendation</b>) and click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Review your behavior group settings and click <b>Finish</b>. The new behavior group appears on the <b>Notifications</b> page.</cmd>
+      </step>
+    </steps>
+    <postreq id="postreq_1">
+      <p><b>Verify your integration:</b></p>
+      <ol id="ol_1">
+        <li>Create an event that will trigger a Hybrid Cloud Console notification. For example, you can run the <codeph>insights client</codeph> command on a registered system to trigger a new recommendation event from Advisor.</li>
+        <li>To validate that the Hybrid Cloud Console integration was successful, in the Hybrid Cloud Console, go to <b>Settings</b> &gt; <b>Notifications</b> &gt; <b>Event Log</b> and check that the last event that you triggered shows the label <b>Integrations: Event-Driven Ansible</b>.
+          <p><image href="../images/img-integ-eda.event.png" id="image_1" placement="inline">
+              <alt>img integ eda.event</alt></image></p>
+          <ul id="ul_1">
+            <li>If the label is green, the notification succeeded.</li>
+            <li>If the label is red, verify that the stream has been properly created and exposed in Event-Driven Ansible, and that the correct stream URL is configured in the Hybrid Cloud Console integration configuration.</li>
+          </ul>
+        </li>
+      </ol>
+      <note type="note">See <xref format="html" href="../troubleshoot/troubleshoot-notif-failures.dita#proc-troubleshoot" scope="external"/> in the notifications documentation for more details.</note>
+    </postreq>
+  </taskbody>
+</task>

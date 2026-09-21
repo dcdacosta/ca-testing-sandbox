@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="con-rbac-who-can-use">
+  <title>Who can manage User Access</title>
+  <shortdesc>To initially view and manage User Access on the Red Hat Hybrid Cloud Console, you must be an Organization Administrator. User Access requires user management capabilities that are designated from the Red Hat Customer Portal. Those capabilities belong solely to the Organization Administrator.</shortdesc>
+  <conbody>
+    <p>The <b>User Access administrator</b> role is a special role that the Organization Administrator can assign. This role allows users who are not Organization Administrator users to manage User Access on the Red Hat Hybrid Cloud Console.</p>
+    <p>The <b>User Access administrator</b> role is delegated by the Organization Administrator and used for user and group management tasks that apply to managing human users and service accounts. This role is not allowed to do the following:</p>
+    <ul>
+      <li>Assign the Organization Administrator role.</li>
+      <li>Add members, either users or service accounts, to any group assigned the <b>User Access administrator</b> role.</li>
+      <li>Create new groups and assign the <b>User Access administrator</b> role to the group.</li>
+    </ul>
+    <p>These restrictions are intentionally enforced to uphold the core cybersecurity Principle of Least Privilege and secure the administrative tier from allowing a higher level of permissions than are needed to perform the <b>User Access administrator</b> tasks.</p>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://console.redhat.com/" scope="external">
+      <linktext>Red Hat Hybrid Cloud Console</linktext>
+    </link>
+    <link format="html" href="https://access.redhat.com" scope="external">
+      <linktext>Red Hat Customer Portal</linktext>
+    </link>
+  </related-links>
+</concept>

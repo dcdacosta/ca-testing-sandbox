@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="adding-gcp-integration">
+  <title>Create a Google Cloud integration</title>
+  <shortdesc>You can connect your Google Cloud account to the Red Hat Hybrid Cloud Console as a cloud integration so that you can use your Google Cloud data with Hybrid Cloud Console services.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Red Hat Hybrid Cloud Console as an Organization Administrator or as a user with Cloud Administrator permissions.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>You have access to a Google Cloud account that you want to use with the Hybrid Cloud Console.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Go to <b>Settings</b> &gt; <b>Integrations</b> and select the <b>Cloud</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Add integration</b> to open the <b>Add a cloud integration</b> wizard. If this is the first integration you are adding, skip this step.</cmd>
+      </step>
+      <step>
+        <cmd>Select <b>Google Cloud</b>, and then click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Enter a descriptive name for the integration, for example, <i>my_gcp_integration</i>, and then click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Optional: Select a service to connect with Google Cloud. You can choose to create the integration without selecting a service. You can connect Hybrid Cloud Console services after you create the Google Cloud integration.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Follow the instructions in the integration wizard. </cmd>
+        <info>
+          <note type="note">If you selected <b>Cost Management</b>, see <xref format="html" href="../../cost-management/integrate/integrate-google-cloud-data-with-cost-management.ditamap#integrate-google-cloud-data-with-cost-management" scope="external"/> for detailed instructions.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>On the <b>Review details</b> page, review the details of the integration and then click <b>Add</b>. Your Google Cloud integration is added to the Hybrid Cloud Console.</cmd>
+      </step>
+    </steps>
+    <result>
+      <ol>
+        <li>Go to the <b>Integrations</b> page, and select the <b>Cloud</b> tab.</li>
+        <li>Confirm that your Google Cloud integration is listed and the status is <b>Ready</b>.</li>
+      </ol>
+    </result>
+  </taskbody>
+</task>

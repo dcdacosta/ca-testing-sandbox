@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="con-ciam-svc-acct-intro">
+  <title>Authenticate applications and services by setting up service accounts</title>
+  <shortdesc>Accounts are classified as either user accounts or service accounts. A user account authenticates human users in your organization. A service account authenticates applications or services without human intervention.</shortdesc>
+  <conbody>
+    <p>The practical difference between a user account and a service account is significant for automation. A user account can become inaccessible when an employee leaves your organization. A service account belongs to the workload, not the person, so organizational changes do not affect the account.</p>
+    <p>You must use service accounts to connect to cloud service APIs on Red Hat Hybrid Cloud Console. Service accounts support token-based authentication. Permissions on the token are determined by the User Access groups the service account belongs to. Without group membership, the account can authenticate but has no privileges on any Red Hat application or service.</p>
+    <p>
+      <note type="note">APIs require an access token from Red Hat Single Sign-On. The token expires after 15 minutes (900 seconds). Repeat the process of obtaining an access token every 10 minutes (600 seconds) so that the token is rotated prior to expiration.</note>
+    </p>
+    <p><b>Create service accounts on Red Hat Hybrid Cloud Console for the following reasons:</b></p>
+    <ul id="ul_5">
+      <li>A workload must call Hybrid Cloud Console APIs without human intervention.</li>
+      <li>An application or service requires access to specific resources.</li>
+      <li>An application or service must access resources from multiple locations.</li>
+    </ul>
+    <p><b>Example use cases for service accounts:</b></p>
+    <ul id="ul_6">
+      <li>Automation and CI/CD pipelines: provision clusters, sync inventory, pull compliance reports, or push configuration.</li>
+      <li>Platform integrations: run Ansible playbooks, GitOps controllers, or cluster API providers that act on behalf of your organization against Red Hat APIs.</li>
+      <li>In-cluster operators: run operators such as the Cost Management Metrics Operator, which reads <codeph>client_id</codeph> and <codeph>client_secret</codeph> from a Kubernetes secret to send usage data back to console.redhat.com.</li>
+      <li>Scheduled data pulls: pull data and report against Insights (Red Hat Lightspeed), Inventory, Subscription Watch, Notifications, RBAC, and other console APIs.</li>
+      <li>Service-to-service authentication: authenticate against console-hosted APIs that accept OIDC bearer tokens.</li>
+    </ul>
+    <p><b>Do not use service accounts in these situations:</b></p>
+    <ul id="ul_7">
+      <li>For an individual's day-to-day console access.</li>
+      <li>As a shared "team" login.</li>
+      <li>For actions that require Organization Administrator privileges that your RBAC model does not allow to be delegated.</li>
+    </ul>
+    <p><b>Red Hat tools that work with service accounts:</b></p>
+    <p>Once you've created a service account and added it to the correct User Access group, you can use it to authenticate to Red Hat tools and integrations, such as:</p>
+    <ul id="ul_3">
+      <li>ROSA CLI</li>
+      <li>Cluster API Provider AWS (CAPA) for ROSA with hosted control planes HCP </li>
+      <li>Cost Management Metrics Operator </li>
+      <li>Kessel APIs (Inventory API and Relations API) </li>
+      <li>Ansible Automation Platform on Hybrid Cloud Console </li>
+      <li>Any Hybrid Cloud Console REST API </li>
+    </ul>
+  </conbody>
+</concept>

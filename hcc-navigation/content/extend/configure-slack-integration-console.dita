@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-notif-console-config-for-slack">
+  <title>Configure the Slack integration</title>
+  <shortdesc>After you have configured an incoming webhook in Slack, you can configure the Hybrid Cloud Console to send event notifications to the Slack channel or user you configured.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Hybrid Cloud Console as an Organization Administrator or as a user with Notifications administrator permissions. For more information about setting up Notifications administrator permissions, see <xref format="dita" href="../observe/control-team-access-notif-settings.dita#assembly-config-user-access" scope="local"/> in the notifications documentation.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>If necessary, go to the <xref format="html" href="https://api.slack.com/messaging/webhooks" scope="external">Slack API</xref> web page and copy the webhook URL that you configured. </cmd>
+        <info>
+          <note type="note">See <xref href="configure-incoming-webhooks-slack.dita#proc-notif-slack-config"/> for the steps to create a Slack webhook URL.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>In the Hybrid Cloud Console, navigate to <xref format="html" href="https://console.openshiftusgov.com/settings/integrations" otherprops="FEDRAMP" scope="external">Settings &gt; Integrations</xref><xref format="html" href="https://console.redhat.com/settings/integrations" otherprops="PUBLIC" scope="external">Settings &gt; Integrations</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the <b>Communications</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Add integration</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select <b>Slack</b> as the integration type and click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Enter a name for the integration (for example, <i>My Slack notifications</i>).</cmd>
+      </step>
+      <step>
+        <cmd>Paste the Slack webhook URL that you copied from Slack into the <b>Workspace URL</b> field and click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Optional: Associate events with the integration. Doing this automatically creates a behavior group. </cmd>
+        <info>
+          <note type="note">You can skip this step and associate the event types later.</note>
+        </info>
+        <substeps>
+          <substep>
+            <cmd>Select a product family, for example <b>OpenShift</b>, <b>Red Hat Enterprise Linux</b>, or <b>Console</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Select the event types you want your integration to react to and click <b>Next</b>.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>To enable the integration, review the integration details and click <b>Submit</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Refresh the <b>Integrations</b> page to show the Slack integration in the <b>Integrations</b> &gt; <b>Communications</b> list. Under <b>Last connection attempt</b>, the status is <b>Ready</b> to show the connection can accept notifications from the Hybrid Cloud Console.</cmd>
+      </step>
+    </steps>
+    <postreq id="postreq_1">
+      <p><b>Verify your configuration:</b></p>
+      <p>Create a test notification to confirm you have successfully connected Slack to the Hybrid Cloud Console:</p>
+      <ol id="ol_1">
+        <li>Next to your Slack integration on the <b>Integrations</b> &gt; <b>Communications</b> page, click the options icon (⋮) and click <b>Test</b>.</li>
+        <li>In the <b>Integration Test</b> screen, enter a message and click <b>Send</b>. If you leave the field empty, the Hybrid Cloud Console sends a default message.</li>
+        <li>Open the Slack channel you configured and check for the message sent from the Hybrid Cloud Console.</li>
+        <li>In the Hybrid Cloud Console, go to <b>Notifications</b> &gt; <b>Event Log</b> and check that the <b>Integration: Slack</b> event is listed with a green label.</li>
+      </ol>
+    </postreq>
+  </taskbody>
+</task>

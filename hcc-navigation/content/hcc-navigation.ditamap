@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/map.dtd">
+<map>
+  <title>Hybrid Cloud Console (HCC) navigation </title>
+  <mapref format="ditamap" href="discover/hcc-discover.ditamap" type="map">
+  </mapref>
+  <mapref format="ditamap" href="get-started/hcc-get-started.ditamap" type="map">
+  </mapref>
+  <mapref format="ditamap" href="administer/hcc-administer.ditamap" type="map">
+  </mapref>
+  <mapref format="ditamap" href="observe/hcc-observe.ditamap" type="map">
+  </mapref>
+  <mapref format="ditamap" href="extend/hcc-extend.ditamap" type="map">
+  </mapref>
+  <mapref format="ditamap" href="secure/hcc-secure.ditamap" type="map">
+  </mapref>
+  <mapref format="ditamap" href="integrate/hcc-integrate.ditamap" type="map">
+  </mapref>
+  <mapref format="ditamap" href="troubleshoot/hcc-troubleshoot.ditamap" type="map">
+  </mapref>
+  <mapref format="ditamap" href="reference/hcc-reference.ditamap" type="map">
+  </mapref>
+  <topichead navtitle="Download PDF">
+    <topicref format="dita" href="pdfs/hybrid-cloud-console-pdf-reference.dita">
+    </topicref>
+  </topichead>
+  <!-- ddacosta - I'm not sure this legal notice is necessary but leaving the reference just in case it needs to be included. Once confirmed, it can easily be deleted or added back. <topichead navtitle="Legal Notice">     <topicref href="GUID-b20af6d5-48bd-4964-a978-aa515587f972.dita" type="reference">     </topicref>   </topichead> -->
+</map>

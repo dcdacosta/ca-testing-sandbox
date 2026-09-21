@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="proc-ciam-2fa-revoke-regain">
+  <title>Recover account access</title>
+  <shortdesc>You can revoke the two-factor authentication requirement on your Red Hat account if both your authenticator application and recovery codes are unavailable and you have no other way to log in to your account.</shortdesc>
+  <conbody>
+    <p>Red Hat Customer Service can quickly revoke two-factor authentication with a phone call or seven-day email response after you create a support ticket.</p>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://www.redhat.com/en/contact/customer-service" scope="external">
+      <linktext>Red Hat Customer Service</linktext>
+    </link>
+  </related-links>
+</concept>

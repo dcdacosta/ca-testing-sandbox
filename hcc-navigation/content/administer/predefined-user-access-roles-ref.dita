@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="assembly-insights-rbac-reference">
+  <title>Predefined User Access roles</title>
+  <shortdesc>The following table lists the predefined roles provided with User Access. Some of the predefined roles are included in the <b>Default access</b> group, which includes all authenticated users in your organization.</shortdesc>
+  <conbody>
+    <p>Only the Organization Administrator users in your organization inherit the roles in the <b>Default admin access</b> group. Because this group is provided by Red Hat, it is updated automatically when Red Hat assigns roles to the <b>Default admin access</b> group.</p>
+    <note>Predefined roles are updated and modified by Red Hat and cannot be modified. The table might not contain all currently available predefined roles.</note>
+    <table>
+      <title>Predefined roles provided with User Access</title>
+      <tgroup cols="4">
+        <colspec colname="col_1" colwidth="25*"/>
+        <colspec colname="col_2" colwidth="25*"/>
+        <colspec colname="col_3" colwidth="25*"/>
+        <colspec colname="col_4" colwidth="25*"/>
+        <thead>
+          <row>
+            <entry>Role name</entry>
+            <entry>Description</entry>
+            <entry>Default access group</entry>
+            <entry>Default admin access group</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <p>Ansible Lightspeed administrator</p>
+            </entry>
+            <entry>
+              <p>Perform read operations for Organization Administrators on all Lightspeed charts.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Automation Analytics administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on Automation Analytics resources.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Automation Analytics editor</p>
+            </entry>
+            <entry>
+              <p>Perform read and update operations on Automation Analytics resources.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Automation Analytics viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on Automation Analytics resources.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Cloud administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on any source.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Compliance administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on Compliance resources.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Compliance viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on Compliance resources.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Content Template administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on any Content Template resource.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Content Template viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read-only operations on Content Template resources.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Cost OpenShift viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on cost reports related to OpenShift sources.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Cost Price List administrator</p>
+            </entry>
+            <entry>
+              <p>Perform read and write operations on cost models.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Cost Price List viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on cost models.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Cost administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on cost management resources.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Cost cloud viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on cost reports related to cloud sources.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Directory and Domain Services administrator</p>
+            </entry>
+            <entry>
+              <p>Create, read, update and delete Directory and Domains Services registrations.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Directory and Domain Services viewer</p>
+            </entry>
+            <entry>
+              <p>Read Directory and Domains Services registrations.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Hybrid Committed Spend viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on any Hybrid Committed Spend report.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Inventory Hosts administrator</p>
+            </entry>
+            <entry>
+              <p>Perform read and update operations on Inventory Hosts data.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Inventory Hosts viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on Inventory Hosts data.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Inventory administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on any Inventory resource.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Malware detection administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on any malware-detection resource.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Malware detection editor</p>
+            </entry>
+            <entry>
+              <p>Read any malware-detection resource as well as set malware acknowledgements.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Malware detection viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on any malware-detection resource.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Notifications administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on notifications and integrations resources.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Notifications viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on notifications and integrations resources.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>OCM IdP editor</p>
+            </entry>
+            <entry>
+              <p>Perform update operations on IdPs.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>OCM Organization Administrator</p>
+            </entry>
+            <entry>
+              <p>Perform all available operations on the associated organization’s clusters.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>OCM cluster autoscaler editor</p>
+            </entry>
+            <entry>
+              <p>Perform update operations on the cluster autoscaler.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>OCM cluster editor</p>
+            </entry>
+            <entry>
+              <p>Perform update operations on clusters.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>OCM cluster provisioner</p>
+            </entry>
+            <entry>
+              <p>Perform provision operations on clusters.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>OCM cluster viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on clusters.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>OCM machine pool editor</p>
+            </entry>
+            <entry>
+              <p>Perform update operations on machine pools.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>OCP Advisor administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on any OCP Advisor resource.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Organization staleness and deletion administrator</p>
+            </entry>
+            <entry>
+              <p>Perform read and update operations on organization staleness and deletion data.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Organization staleness and deletion viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on organization staleness and deletion data.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Patch administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on any Patch resource.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Patch viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on any Patch resource.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Policies administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on any Policies resource.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Policies viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operation on any Policies resource.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>RHC administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on RHC manager resources.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>RHC user</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on the current configurations on RHC manager and update actions to the activation keys.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>RHEL Advisor administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on any RHEL advisor resource.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>RHEL Advisor viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on RHEL advisor data.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row otherprops="PUBLIC">
+            <entry>
+              <p>RHEL administrator</p>
+            </entry>
+            <entry>
+              <p>Grants full access to RHEL system configs, inventory, compliance, notifications, patch management, remediations, malware detection, and advisor. View/modify vulnerability settings.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row otherprops="PUBLIC">
+            <entry>
+              <p>RHEL operator</p>
+            </entry>
+            <entry>
+              <p>Grants edit access to system configs, inventory, policies, and notifications/integrations. View compliance reports, patch info, malware detections, and recommendations. Initiate remediations, manage staleness data and modify vulnerability settings.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row otherprops="PUBLIC">
+            <entry>
+              <p>RHEL viewer</p>
+            </entry>
+            <entry>
+              <p>Grants read-only access to Red Hat Lightspeed for RHEL. Users can view system configs, compliance reports, inventory data, patch info, vulnerabilities and more to observe the state of resources/activities, but can’t perform actions other than generating activation keys.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Remediations administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on any Remediations resource.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Remediations user</p>
+            </entry>
+            <entry>
+              <p>Perform create, read, update, delete operations on any Remediations resource.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Repositories administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on any repositories resource.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Repositories uploader</p>
+            </entry>
+            <entry>
+              <p>Perform content upload to repositories.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Repositories viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on repositories resources.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Resource Optimization administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on any Resource Optimization resource.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Resource Optimization user</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on any Resource Optimization resource.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Subscriptions administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on any Subscriptions resource.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Subscriptions viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on any Subscriptions resource.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Tasks administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on any Tasks resource.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>User Access administrator</p>
+            </entry>
+            <entry>
+              <p>Perform most delegated access operations for users and service accounts. This includes managing standard groups and assigning/revoking non-admin roles. Cannot invite new users, assign the Org Admin role or manage any group that contains the User Access Administrator role (to prevent privilege escalation).</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>User Access principal viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations as a non-Organization Administrator on principals within user access.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Vulnerability administrator</p>
+            </entry>
+            <entry>
+              <p>Perform any available operation on any Vulnerability resource.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Vulnerability viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on any Vulnerability resource.</p>
+            </entry>
+            <entry>
+              <p>X</p>
+            </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>Workspace administrator</p>
+            </entry>
+            <entry>
+              <p>Perform read and update operations on Workspace data.</p>
+            </entry>
+            <entry/>
+            <entry>
+              <p>X</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Workspace viewer</p>
+            </entry>
+            <entry>
+              <p>Perform read operations on Workspace data.</p>
+            </entry>
+            <entry/>
+            <entry/>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </conbody>
+</concept>

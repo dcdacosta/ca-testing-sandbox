@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="GUID-024297c6-ab2d-41de-a9c1-39a78c5cf3de">
+  <title>About webhook integrations</title>
+  <shortdesc>Third-party applications can be configured to allow inbound data requests by exposing webhooks and using them to listen for incoming events. The Hybrid Cloud Console integrations service uses this functionality to send events and associated data from each service.</shortdesc>
+  <conbody>
+    <note>Webhook integrations support events from all Hybrid Cloud Console services.</note>
+    <p>You can configure the Hybrid Cloud Console notifications service to send POST messages to those third-party application webhook endpoints. For example, you can configure the Hybrid Cloud Console to automatically forward events triggered when a new Advisor recommendation is found. The event and its data are sent as an HTTP POST message to the third-party application on its incoming webhook endpoint.</p>
+    <p>After you configure the endpoints in the notifications service, you can subscribe to a stream of Hybrid Cloud Console events and automatically forward that stream to the webhooks of your choice. Each event contains additional metadata, which you can use to process the event, for example, to perform specific actions or trigger responses, as part of your operational workflow. You configure the implementation and data handling within your application.</p>
+    <p>If you have any issues with integrating the Hybrid Cloud Console with webhooks, contact Red Hat for support. To open a Red Hat support case directly from the Hybrid Cloud Console:</p>
+    <ol id="ol_1">
+      <li>Click <b>Help</b> (the <b>?</b> icon) to open the help panel.</li>
+      <li>Select the <b>My support cases</b> tab.</li>
+      <li>Click <b>Open a support case</b> and add information about the issue.</li>
+    </ol>
+  </conbody>
+  <related-links>
+    <link format="html" href="../observe/configure-notifications-hcc-services.dita" scope="external">
+      <linktext>Configure notifications for Hybrid Cloud Console services</linktext>
+    </link>
+    <link format="html" href="../troubleshoot/troubleshoot-third-party-integrations.dita" scope="external">
+      <linktext>Troubleshoot Hybrid Cloud Console integrations</linktext>
+    </link>
+  </related-links>
+</concept>

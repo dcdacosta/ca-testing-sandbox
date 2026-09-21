@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/map.dtd">
+<map>
+  <title>Observe</title>
+  <topichead navtitle="Observe">
+    <topicref href="configure-notifications-hcc-services.dita" locktitle="yes" navtitle="Configure notifications for Hybrid Cloud Console services" type="concept">
+      <topicref href="../get-started/configure-notification-prefs.dita" locktitle="yes" navtitle="Enable your preferred notifications" type="task">
+      </topicref>
+      <topicref chunk="to-content" href="understand-notification-types-sources-triggers.dita" locktitle="yes" navtitle="Understand notification types, sources, and triggers" type="concept">
+        <topicref href="notification-service-concepts.dita" locktitle="yes" navtitle="Notification service concepts" toc="no" type="reference">
+        </topicref>
+        <topicref href="notification-severity.dita" locktitle="yes" navtitle="Notification severity" toc="no" type="concept">
+        </topicref>
+        <topicref href="manage-notifications-with-external-tools.dita" locktitle="yes" navtitle="Manage notifications with external tools" toc="no" type="concept">
+          <topicref href="create-configure-integrations.dita" locktitle="yes" navtitle="Create and configure integrations" type="task">
+          </topicref>
+        </topicref>
+      </topicref>
+      <topicref href="control-team-access-notif-settings.dita" locktitle="yes" navtitle="Control team access to notification settings" type="concept">
+      </topicref>
+      <topicref href="manage-how-organization-receives-notifs.dita" locktitle="yes" navtitle="Manage how your organization receives notifications" type="reference">
+      </topicref>
+      <topicref chunk="to-content" href="manage-notification-rules-delivery-for-teams.dita" locktitle="yes" navtitle="Configure notification rules and delivery for my teams" type="concept">
+        <topicref href="create-configure-notif-group.dita" locktitle="yes" navtitle="Create and configure a notifications group" toc="no" type="task">
+        </topicref>
+        <topicref href="create-behavior-group.dita" locktitle="yes" navtitle="Create a behavior group" toc="no" type="task">
+        </topicref>
+        <topicref href="associate-behavior-group-with-events.dita" locktitle="yes" navtitle="Associate a behavior group with events" toc="no" type="task">
+        </topicref>
+        <topicref href="modify-behavior-group.dita" locktitle="yes" navtitle="Modify a behavior group" toc="no" type="task">
+        </topicref>
+      </topicref>
+      <topicref href="view-notification-event-types.dita" locktitle="yes" type="task">
+      </topicref>
+      <topicref chunk="to-content" href="con-configure-preferences-for-email-notifications.dita" type="concept">
+        <topicref href="configure-email-preferences-for-notifications.dita" locktitle="yes" navtitle="Select email notification type and frequency" toc="no" type="task">
+        </topicref>
+        <topicref href="update-email-address-for-notifications.dita" locktitle="yes" navtitle="Update your email address for notifications" toc="no" type="task">
+        </topicref>
+        <topicref href="customize-daily-digest-email-time.dita" locktitle="yes" navtitle="Customize the daily digest email notification time" toc="no" type="task">
+        </topicref>
+        <topicref href="select-services-receive-notifications.dita" locktitle="yes" navtitle="Example: How to select the services from which you want to receive notifications" toc="no" type="concept">
+          <topicref href="opt-into-content-notifications.dita" locktitle="yes" type="task">
+          </topicref>
+          <topicref href="create-behavior-group-content-notications.dita" locktitle="yes" type="task">
+          </topicref>
+        </topicref>
+      </topicref>
+    </topicref>
+  </topichead>
+</map>

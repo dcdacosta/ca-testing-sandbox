@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="adding-aws-integration">
+  <title>Create an Amazon Web Services (AWS) integration</title>
+  <shortdesc>You can connect your AWS account to the Red Hat Hybrid Cloud Console as a cloud integration so that you can use your AWS data with Hybrid Cloud Console services.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Red Hat Hybrid Cloud Console as an Organization Administrator or as a user with Cloud Administrator permissions.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>You have access to an AWS account that you want to use with the Hybrid Cloud Console that has the following Identity and Access Management (IAM) roles:
+          <ul>
+            <li><codeph>CreatePolicy</codeph></li>
+            <li><codeph>CreateRole</codeph></li>
+            <li><codeph>AttachRolePolicy</codeph></li>
+            <li><codeph>GetPolicy</codeph></li>
+            <li><codeph>GetRole</codeph></li>
+          </ul>
+        </li>
+        <li>To create your AWS integration using the account authorization configuration method (recommended), you have the access key ID and the secret access key for your AWS account.</li>
+      </ul>
+      <p>You can create your integration using the account authorization method and let Red Hat configure and manage your integration for you. If you choose this method, you must provide the access key ID and the secret access key for your AWS account. This is the recommended method. However, if you do not want to provide your AWS account credentials to Red Hat, you can configure your integration manually. After adding your AWS integration, you can view and manage your AWS and other integrations from the <b>Integrations</b> page in the Hybrid Cloud Console.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Go to <b>Settings</b> &gt; <b>Integrations</b> and select the <b>Cloud</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Add integration</b> to open the <b>Add a cloud integration</b> wizard. If this is the first integration you are adding, skip this step.</cmd>
+      </step>
+      <step>
+        <cmd>Select <b>Amazon Web Services</b>, and then click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Enter a descriptive name for the integration, for example, <i>my_aws_integration</i>, and then click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select a configuration mode: </cmd>
+        <info>
+          <ul>
+            <li>Select <b>Account authorization</b> to allow Red Hat to configure and manage the integration for you after you provide your AWS credentials. This is the recommended configuration mode.
+              <ol>
+                <li>Enter your AWS access key ID and secret access key and click <b>Next</b>. The <b>Select applications</b> page appears with <b>Cost Management</b> and <b>RHEL management services</b> selected.</li>
+                <li>Deselect any services that you do not want your integration to connect to, and then click <b>Next</b>.
+                  <note type="note">You can choose to deselect all services in this step. You can connect additional Hybrid Cloud Console services after you finish creating the AWS integration.</note>
+                </li>
+              </ol>
+            </li>
+            <li>Select <b>Manual configuration</b> and click <b>Next</b> to configure your integration manually if you do not want to enter your AWS account authorization credentials.
+              <ol>
+                <li>Optional: Select a service to connect to your integration.</li>
+                <li>Click <b>Next</b>.</li>
+                <li>Follow the instructions in the integration wizard.
+                  <note type="note">If you selected <b>Cost Management</b>, see <xref format="html" href="../../cost-management/integrate/integrate-aws-with-cost-management.ditamap#integrate-aws-with-cost-management" scope="external"/> for detailed instructions.</note>
+                </li>
+              </ol>
+            </li>
+          </ul>
+        </info>
+      </step>
+      <step>
+        <cmd>On the <b>Review details</b> page, review the details of the integration and then click <b>Add</b>. Your AWS integration is added to the Hybrid Cloud Console.</cmd>
+      </step>
+    </steps>
+    <result>
+      <ol>
+        <li>Go to the <b>Integrations</b> page and select the <b>Cloud</b> tab.</li>
+        <li>Confirm that your AWS integration is listed and the status is <b>Ready</b>.</li>
+      </ol>
+    </result>
+  </taskbody>
+</task>

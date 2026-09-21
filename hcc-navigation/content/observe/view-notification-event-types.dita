@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="viewing-notifications-event-types">
+  <title>View notification event types</title>
+  <shortdesc>You can receive notifications for Hybrid Cloud Console events that your Organization Administrator or Notifications administrator configures. You can view the configured events but, unless you are an Organization Administrator or Notifications administrator, you cannot make any changes.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Hybrid Cloud Console.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>A Notifications administrator or Organization Administrator has configured behavior groups to receive event notifications.</li>
+      </ul>
+      <note type="note">If you are an Organization Administrator or Notifications administrator, you configure notifications for users in your organization from <b>Settings</b> &gt; <b>Notifications</b>. For detailed information, see <xref format="html" href="configure-notifications-hcc-services.dita#assembly-intro" otherprops="PUBLIC" scope="external"/>.</note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the Hybrid Cloud Console, select <xref format="html" href="https://console.openshiftusgov.com/settings/notifications/configure-events" otherprops="FEDRAMP" scope="external">Settings &gt; Notifications &gt; Configure Events</xref><xref format="html" href="https://console.redhat.com/settings/notifications/configure-events" otherprops="PUBLIC" scope="external">Settings &gt; Notifications &gt; Configure Events</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the <b>OpenShift</b>, <b>Red Hat Enterprise Linux</b>, or <b>Console</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>To view a list of event types that your Organization Administrator has configured for notifications, select the <b>Configuration</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>To opt in to notifications for these events, go to <xref format="html" href="https://console.redhat.com/settings/notifications/user-preferences" scope="external">Settings &gt; Notifications &gt; Notifications Preferences</xref>.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

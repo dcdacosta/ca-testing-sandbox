@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="assembly-installing-configuring-insights-for-splunk">
+  <title>Configure a Splunk integration</title>
+  <shortdesc>The Red Hat Insights (Red Hat Lightspeed) application for Splunk forwards selected Hybrid Cloud Console events to Splunk.</shortdesc>
+  <conbody>
+    <p>The application seamlessly integrates with the Hybrid Cloud Console, so that you can focus on handling the data on the Splunk application side in the same way that you manage other sources of data. After the integration has been configured, you can view and manage Hybrid Cloud Console notifications from the Splunk dashboard without having to open the Red Hat Hybrid Cloud Console. </p>
+    <p>If you have any issues with the Red Hat Insights application for Splunk, contact Red Hat for support. To open a Red Hat support case directly from the Hybrid Cloud Console:</p>
+    <ol>
+      <li>Click <b>Help</b> (the <b>?</b> icon) to open the help panel.</li>
+      <li>Select the <b>My support cases</b> tab.</li>
+      <li>Click <b>Open a support case</b> and add information about the issue.</li>
+    </ol>
+    <p>Splunk will not provide troubleshooting. The Red Hat Insights application for Splunk is fully supported by Red Hat.</p>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/UsetheHTTPEventCollector#More_information_on_HEC" scope="external">
+      <linktext>Configure HTTP Event Collector on Splunk Cloud Platform</linktext>
+    </link>
+    <link format="html" href="https://docs.splunk.com/Documentation/SplunkCloud/latest/Data/UsetheHTTPEventCollector#Send_data_to_HTTP_Event_Collector" scope="external">
+      <linktext>Send data to HTTP Event Collector</linktext>
+    </link>
+    <link format="html" href="https://docs.splunk.com/Documentation/Splunk/8.2.6/Data/UsetheHTTPEventCollector#Configure_HTTP_Event_Collector_on_Splunk_Enterprise" scope="external">
+      <linktext>Set up and use HTTP Event Collector on Splunk Enterprise</linktext>
+    </link>
+    <link format="html" href="https://splunk.com" scope="external">
+      <linktext>Splunk</linktext>
+    </link>
+    <link format="html" href="https://splunkbase.splunk.com" scope="external">
+      <linktext>Splunkbase</linktext>
+    </link>
+    <link format="html" href="../troubleshoot/troubleshoot-third-party-integrations.dita" scope="external">
+      <linktext>Troubleshoot Hybrid Cloud Console integrations</linktext>
+    </link>
+  </related-links>
+</concept>

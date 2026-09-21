@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-rbac-creating-cost-mgmt-app-roles">
+  <title>Create cost management service roles</title>
+  <shortdesc>You can create a role that is specific to the cost management service. When you create a cost management role, you define cost management resource definitions for that role. Other service roles do not provide that choice.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Cost management operator is installed and configured.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external">Finding your login</xref>.</note>
+        </li>
+        <li>You are logged in to the <xref format="html" href="https://console.openshiftusgov.com/" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com/" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console</xref> as a user who has Organization Administrator permission.</li>
+        <li>If you are not an Organization Administrator, you must be a member of a group that has the <b>User Access administrator</b> role assigned to it.</li>
+        <li>A minimum of one cloud integration is configured for cost management.</li>
+        <li>You started the <b>Create role</b> wizard.</li>
+      </ul>
+      <p>This procedure describes how to create roles with cost management permissions from scratch.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the <b>Create role</b> window, click on the radio button <b>Create a role from scratch</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Enter a <b>Role name</b> (required) and a <b>Role description</b> (optional).</cmd>
+      </step>
+      <step>
+        <cmd>Click the <b>Next</b> button to display the <b>Add permissions</b> window.</cmd>
+      </step>
+      <step>
+        <cmd>Enter <codeph>cost</codeph> in the <b>Filter by application</b> field to display the cost management service and click on the <b>cost-management</b> check box.</cmd>
+      </step>
+      <step>
+        <cmd>When the <b>Add permissions</b> window appears, click on the check box for each cost management permission to include in this role.</cmd>
+      </step>
+      <step>
+        <cmd>Click on the <b>Next</b> button to display the <b>Define Cost Management resources</b> window.</cmd>
+      </step>
+      <step>
+        <cmd>You will see a drop-down list of available <b>Resource definitions</b> for each service permission you added to the role. You must click on the check box for at least one resource in each cost management permission.</cmd>
+      </step>
+      <step>
+        <cmd>Click the <b>Next</b> button to review details. You can click the <b>Submit</b> button to submit the role, the <b>Back</b> button to go back and make changes, or the <b>Cancel</b> button to cancel the action.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

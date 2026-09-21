@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="assembly-configuring-integration-with-pagerduty">
+  <title>Configure a PagerDuty integration</title>
+  <shortdesc>You can configure the Red Hat Hybrid Cloud Console to send event notifications to a PagerDuty service. The PagerDuty integration supports events from all Hybrid Cloud Console services.</shortdesc>
+  <conbody>
+    <p>When an issue in the Hybrid Cloud Console is detected, PagerDuty automatically notifies the appropriate team members through phone calls, SMS, emails, or push notifications. PagerDuty uses scheduling to ensure team members are alerted only during their designated times. You can create escalation policies to escalate an issue to another team member if the first on-call team member does not respond to the alert. PagerDuty also provides incident management features for a coordinated response to resolve issues.</p>
+    <p>If you have any issues with the Hybrid Cloud Console integration with PagerDuty, contact Red Hat for support. To open a Red Hat support case directly from the Hybrid Cloud Console:</p>
+    <ol>
+      <li>Click <b>Help</b> (the <b>?</b> icon) to open the help panel.</li>
+      <li>Select the <b>My support cases</b> tab.</li>
+      <li>Click <b>Open a support case</b> and add information about the issue.</li>
+    </ol>
+    <p>PagerDuty will not provide troubleshooting. The Hybrid Cloud Console integration with PagerDuty is fully supported by Red Hat.</p>
+  </conbody>
+</concept>

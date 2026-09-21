@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="azure-integrations-services">
+  <title>Connect your Microsoft Azure account</title>
+  <shortdesc>Connect your Microsoft Azure account with the Hybrid Cloud Console to receive various benefits, depending on the services that you connect with. These benefits include gold images, auto-registration of provisioned systems, subscription reporting, and Red Hat Lightspeed.</shortdesc>
+  <conbody>
+    <p>You can connect your Microsoft Azure account to the following services in the Red Hat Hybrid Cloud Console:</p>
+    <section id="_cost_management">
+      <title>Cost management</title>
+      <p>Connect your Microsoft Azure account to cost management to track your cloud costs. You can use the cost management service to perform financially related tasks, such as:</p>
+      <ul>
+        <li>Visualizing, understanding, and analyzing the use of resources and costs</li>
+        <li>Forecasting your future consumption and comparing them with budgets</li>
+        <li>Optimizing resources and consumption</li>
+        <li>Identifying patterns of usage for further analysis</li>
+        <li>Integrating with third-party tools that can benefit from cost and resourcing data</li>
+      </ul>
+    </section>
+    <section id="_rhel_management_bundle">
+      <title>RHEL management bundle</title>
+      <p>Connect your Microsoft Azure account to the RHEL management bundle in the Hybrid Cloud Console to use your existing Red Hat product subscriptions on Microsoft Azure.</p>
+      <p>The RHEL management bundle grants access to additional capabilities which are useful to deploying Red Hat products on the public cloud, including:</p>
+      <ul>
+        <li>Red Hat gold images: You can use Red Hat cloud images in Microsoft Azure and bring your own subscription instead of paying hourly.</li>
+        <li>Autoregistration: This allows cloud instances to automatically connect to console.redhat.com when provisioned so you can use Red Hat Lightspeed services.
+          <note type="important">To use RHEL management, you must enable <b>Simple Content Access</b>.</note>
+        </li>
+      </ul>
+    </section>
+    <section id="_azure_lighthouse">
+      <title>Azure Lighthouse</title>
+      <p>Azure Lighthouse is a Microsoft Azure service that provides secure access control and managed services for customers and partners. If you add the RHEL management bundle to your Microsoft Azure integration, the Hybrid Cloud Console cloud integrations wizard takes you to Azure Lighthouse to deploy a custom template to link your Red Hat and Microsoft Azure accounts.</p>
+      <p>In your Azure account, deploying the template sets up two Azure roles for RHEL Management:</p>
+      <ul>
+        <li><codeph>Reader</codeph>: This role allows the Hybrid Cloud Console to view all resources, but it cannot make any changes.</li>
+        <li><codeph>Managed Services Registration assignment Delete</codeph>: This role enables clean-up of the authorization when you remove the Hybrid Cloud Console integration.</li>
+      </ul>
+      <p>For more information about the Azure Resource Manager template, see <i>Deploy the Azure Resource Manager template</i> in the Azure documentation.</p>
+    </section>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://access.redhat.com/articles/simple-content-access" scope="external">
+      <linktext>Red Hat Knowledge Article: Simple Content Access</linktext>
+    </link>
+    <link format="html" href="https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/general#reader" scope="external">
+      <linktext>Azure documentation</linktext>
+    </link>
+  </related-links>
+</concept>

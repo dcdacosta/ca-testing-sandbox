@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="GUID-300a17a9-a605-4068-9a6b-2d99f8ce5cf4">
+  <title>Configure notification preferences</title>
+  <shortdesc>Services in the Hybrid Cloud Console send notifications when certain events occur. Your Organization Administrator configures which notifications you can receive.</shortdesc>
+  <conbody>
+    <p>You can choose how to receive notifications that your Organization Administrator or Notifications administrator has configured so you can be informed about events occurring in your systems. You can also choose not to receive some or all notifications.</p>
+  </conbody>
+</concept>

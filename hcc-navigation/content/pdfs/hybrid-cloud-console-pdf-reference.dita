@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/reference.dtd">
+<reference id="GUID-d9025f4c-ebdd-4852-9866-9767a41d7c47">
+  <title>Red Hat Hybrid Cloud Console PDF reference</title>
+  <shortdesc>A listing of all available PDF documentation for Red Hat Hybrid Cloud Console.</shortdesc>
+  <refbody>
+    <table colsep="1" frame="all" id="table_aap_pdfs" pgwide="1" rowsep="1">
+      <tgroup cols="2">
+        <colspec colname="c1" colnum="1" colwidth="1*"/>
+        <colspec colname="c2" colnum="2" colwidth="3*"/>
+        <thead>
+          <row>
+            <entry>Guide</entry>
+            <entry>PDF Link</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>Discover</entry>
+            <entry><xref format="html" href="https://your-s3-bucket-link/hcc-discover-pdf.pdf" scope="external">Red Hat Hybrid Cloud Console Discover</xref></entry>
+          </row>
+          <row>
+            <entry>Get Started</entry>
+            <entry><xref format="html" href="https://your-s3-bucket-link/hcc-get-started-pdf.pdf" scope="external">Red Hat Hybrid Cloud Console Get Started</xref></entry>
+          </row>
+          <row>
+            <entry>Administer</entry>
+            <entry><xref format="html" href="https://your-s3-bucket-link/hcc-administer-pdf.pdf" scope="external">Red Hat Hybrid Cloud Console Administer</xref></entry>
+          </row>
+          <row>
+            <entry>Observe</entry>
+            <entry><xref format="html" href="https://your-s3-bucket-link/hcc-observe-pdf.pdf" scope="external">Red Hat Hybrid Cloud Console Observe</xref></entry>
+          </row>
+          <row>
+            <entry>Secure</entry>
+            <entry><xref format="html" href="https://your-s3-bucket-link/hcc-secure-pdf.pdf" scope="external">Red Hat Hybrid Cloud Console Secure</xref></entry>
+          </row>
+          <row>
+            <entry>Integrate</entry>
+            <entry><xref format="html" href="https://your-s3-bucket-link/hcc-integrate-pdf.pdf" scope="external">Red Hat Hybrid Cloud Console Integrate</xref></entry>
+          </row>
+          <row>
+            <entry>Extend</entry>
+            <entry><xref format="html" href="https://your-s3-bucket-link/hcc-extend-pdf.pdf" scope="external">Red Hat Hybrid Cloud Console Extend</xref></entry>
+          </row>
+          <row>
+            <entry>Troubleshoot</entry>
+            <entry><xref format="html" href="https://your-s3-bucket-link/hcc-troubleshoot-pdf.pdf" scope="external">Red Hat Hybrid Cloud Console Troubleshoot</xref></entry>
+          </row>
+          <row>
+            <entry>Reference</entry>
+            <entry><xref format="html" href="https://your-s3-bucket-link/hcc-reference-pdf.pdf" scope="external">Red Hat Hybrid Cloud Console Reference</xref></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refbody>
+</reference>

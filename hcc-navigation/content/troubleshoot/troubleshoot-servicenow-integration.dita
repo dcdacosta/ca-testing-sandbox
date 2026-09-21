@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/reference.dtd">
+<reference id="ref-notif-snow-troubleshooting">
+  <title>Troubleshoot a ServiceNow integration</title>
+  <shortdesc>If ServiceNow is not receiving events from the Red Hat Hybrid Cloud Console, verify the configuration:</shortdesc>
+  <refbody>
+    <section>
+      <ul>
+        <li>Ensure that the integration in the <xref format="html" href="https://console.openshiftusgov.com" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console</xref> is enabled and has type <codeph>ServiceNow</codeph>.</li>
+        <li>Ensure that the integration in the Red Hat Hybrid Cloud Console has a correct URL. The URL should start with <codeph>https://&lt;instance.servicenow.com&gt;/api/x_rhtpp_rh_webhook/flow_templates_for_red_hat_insights</codeph>.</li>
+        <li>Ensure that the <codeph>x_rhtpp_rh_webhook.rest</codeph> user role is defined in ServiceNow. Otherwise, notifications from the Hybrid Cloud Console will not work even if the application has been installed correctly.</li>
+        <li>Ensure that the <codeph>rh_insights_integration</codeph> ServiceNow user exists, is active, and has the <codeph>x_rhtpp_rh_webhook.rest</codeph> role assigned.</li>
+        <li>If necessary, reset the password for the <codeph>rh_insights_integration</codeph> ServiceNow user, and reset the user password in the integration on the <xref format="html" href="https://console.openshiftusgov.com" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console</xref>.</li>
+      </ul>
+    </section>
+  </refbody>
+  <related-links>
+    <link format="html" href="https://docs.redhat.com/documentation/en-us/red_hat_hybrid_cloud_console/1-latest/html-single/configuring_notifications_on_the_red_hat_hybrid_cloud_console_with_fedramp/index#proc-troubleshoot_notifications" otherprops="FEDRAMP" scope="external">
+      <linktext>Troubleshooting notification failures</linktext>
+    </link>
+    <link format="html" href="troubleshoot-notif-failures.dita" otherprops="PUBLIC" scope="external">
+      <linktext>Troubleshoot notification failures</linktext>
+    </link>
+  </related-links>
+</reference>

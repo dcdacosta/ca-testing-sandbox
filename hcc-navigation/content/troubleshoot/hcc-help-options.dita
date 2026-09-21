@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="hcc-help-options">
+  <title>Hybrid Cloud Console help options</title>
+  <shortdesc>There are several ways to get help with Red Hat services from within the Hybrid Cloud Console.</shortdesc>
+  <conbody>
+    <p>From the <b>Help</b> panel, you can:</p>
+    <ul>
+      <li>Get help from AI assistants</li>
+      <li>Open a Red Hat support case</li>
+      <li>Check the status of Red Hat web sites</li>
+      <li>Access quick starts and documentation learning resources</li>
+      <li>Access API documentation</li>
+      <li>Submit feedback about the Hybrid Cloud Console</li>
+    </ul>
+    <p>From the chat icon at the bottom of the screen, or from the robot icon in the <b>Help</b> panel, you can access several AI assistants. Use these AI assistants to help you find answers and configure settings specific to your use case, including:</p>
+    <ul>
+      <li>Ask Red Hat</li>
+      <li>RHEL Lightspeed</li>
+      <li>OpenShift Assisted Installer</li>
+      <li>Hybrid Cloud Console virtual assistant</li>
+    </ul>
+  </conbody>
+</concept>

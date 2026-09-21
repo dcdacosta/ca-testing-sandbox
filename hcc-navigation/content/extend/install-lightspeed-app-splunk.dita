@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-notif-splunk-install-config">
+  <title>Install the Red Hat Lightspeed application for Splunk</title>
+  <shortdesc>Install and configure the Red Hat Insights (Red Hat Lightspeed) application for Splunk to integrate Splunk with the Hybrid Cloud Console so that Splunk can receive event notifications from the Hybrid Cloud Console. The setup automation performs the following tasks:</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You have Organization Administrator permissions for the Hybrid Cloud Console.</li>
+        <li>You have Splunk login credentials:
+          <ul>
+            <li>To install applications on Splunk Cloud Platform, you must have the Splunk Cloud Administrator <codeph>sc-admin</codeph> role.</li>
+            <li>To install applications on Splunk Enterprise, you must have the <codeph>admin</codeph> role. For more information about creating the <codeph>admin</codeph> role, see <xref format="html" href="https://docs.splunk.com/Documentation/Splunk/9.1.0/Security/Secureyouradminaccount" scope="external">Create secure administration credentials</xref> in the Splunk documentation.</li>
+          </ul>
+        </li>
+        <li>Popup blockers are disabled in your browser.</li>
+      </ul>
+      <ul id="ul_1">
+        <li>Creates a user group with the Notifications administrator role using Organization Administrator permissions. You can also create the user group manually. For more information about manual configuration, see <xref format="html" href="manually-configure-notif-admin-group.dita#proc-notif-splunk-manual-config-admin" scope="external"/>.</li>
+        <li>Uses the Splunk HEC URL and HEC token to create a new integration called SPLUNK_AUTOMATION, with the integration type Splunk.</li>
+        <li>Creates a new behavior group called SPLUNK_AUTOMATION_GROUP on the RHEL bundle. The group includes an action to send notifications to the SPLUNK_AUTOMATION Splunk integration.</li>
+        <li>Assigns the new behavior group SPLUNK_AUTOMATION_GROUP to all Hybrid Cloud Console services. This forwards the events from all services to Splunk. Currently, the behavior group forwards events from the Advisor, Policies, Drift, Compliance, Malware Detection, Patch, and Vulnerability services.</li>
+      </ul>
+      <p>When Splunk begins to receive notifications from the Hybrid Cloud Console, the Red Hat Insights application for Splunk dashboard shows event activity. Each number contains a hyperlink to the Hybrid Cloud Console.</p>
+      <p> <image href="../images/img-evnt-splunk-dashboard2.png" id="image_1" placement="inline">
+          <alt>img evnt splunk dashboard2</alt></image> </p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Install the Red Hat Insights (Red Hat Lightspeed) application for Splunk: </cmd>
+        <substeps>
+          <substep>
+            <cmd>Log in to Splunk.</cmd>
+          </substep>
+          <substep>
+            <cmd>On the home page, click <b>Find more apps</b> under the <b>Apps</b> heading on the left of the screen. The <b>Browse More Apps</b> page opens.</cmd>
+          </substep>
+          <substep>
+            <cmd>Enter <b>Red Hat Insights</b> in the filter box and then press the Enter key.</cmd>
+          </substep>
+          <substep>
+            <cmd>Select <b>Red Hat Insights</b> and then click <b>Install</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Confirm or enter your Splunk username and password and then click <b>Agree and Install</b>. When the installation process completes, the <b>Complete</b> dialog box opens.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Set up the Red Hat Insights application for Splunk: </cmd>
+        <substeps>
+          <substep>
+            <cmd>In the <b>Complete</b> dialog box, click <b>Open the App</b>. The <b>App configuration</b> page opens.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click <b>Continue to app setup page</b>. The <b>Set up integration with Red Hat Insights</b> page opens. The page includes the HTTP Event Collector (HEC) name and default index fields. </cmd>
+            <info>
+              <p> <image href="../images/img-evnt-splunk-start2.png" placement="inline">
+                  <alt>img evnt splunk start2</alt></image> </p>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Under <b>Create Red Hat Default Index</b>, click <b>Settings &gt; Index</b>. The <b>Indexes</b> page opens in a new tab.</cmd>
+          </substep>
+          <substep>
+            <cmd>On the <b>Indexes</b> page, click <b>New Index</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Type a name for the index in the <b>Name</b> field (for example, <codeph>redhatinsights</codeph>).</cmd>
+          </substep>
+          <substep>
+            <cmd>Enter values in the <b>Max raw data size</b> and <b>Searchable retention (days)</b> field.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click <b>Save</b>. The index you created appears in the <b>Indexes</b> list. It is enabled by default.</cmd>
+          </substep>
+          <substep>
+            <cmd>On the first Splunk screen, on the <b>Set up integration with Red Hat</b> page, type the name for the HEC in the HEC name field (for example, <codeph>redhatinsights</codeph>).</cmd>
+          </substep>
+          <substep>
+            <cmd>Type the name of the index you just created in the <b>Default</b> index field (for example, <codeph>redhatinsights</codeph>) and then click <b>Next</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click <b>Review</b> and then click <b>Submit</b>. The HEC name that you created appears in the <b>HEC Name</b> field.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click <b>Next</b> to create the HEC URL and HEC Token. </cmd>
+            <info>
+              <p> <image href="../images/img-evnt-create-hec.png" placement="inline">
+                  <alt>img evnt create hec</alt></image> </p>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Configure Splunk integration in Red Hat Insights (Red Hat Lightspeed): </cmd>
+        <substeps>
+          <substep>
+            <cmd>Click <b>Copy</b> to copy the HEC URL value in Splunk Enterprise.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click <b>Next: Configure Splunk integration in Red Hat Insights</b>. The Hybrid Cloud Console opens in a new browser tab. </cmd>
+            <info>
+              <note type="note">The <b>Next: Configure Splunk integration in Red Hat Insights</b> button is disabled until you click the <b>Copy</b> button for either the HEC URL or HEC token.</note>
+            </info>
+          </substep>
+          <substep>
+            <cmd>In the Hybrid Cloud Console, navigate to <b>Settings</b> &gt; <b>Integrations</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click the <b>Reporting &amp; Automation</b> tab.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click <b>Add Integration</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click <b>Splunk</b> and then click <b>Next</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Enter a name for the integration (for example, <b>SPLUNK_INTEGRATION</b>).</cmd>
+          </substep>
+          <substep>
+            <cmd>Paste the HEC URL value into the <b>Endpoint URL</b> field.</cmd>
+          </substep>
+          <substep>
+            <cmd>Enter the Splunk HTTP event collector token in the <b>Secret token</b> field. </cmd>
+            <info>
+              <note type="note">
+                <p>If the new tab for the console does not open, disable the popup blocker in your browser.</p>
+              </note>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Add the port, if needed. The default port for Splunk Cloud Platform is 443. The default port for Splunk Enterprise and Splunk Cloud free trial is 8088. </cmd>
+            <info>
+              <p> <image href="../images/img-evnt-paste-hec-in-hcc2.png" placement="inline">
+                  <alt>img evnt paste hec in hcc2</alt></image> </p>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Optional: If you are using Splunk Cloud, edit the HEC URL that you pasted into the <b>Splunk HEC URL</b> field on the <b>Integrations</b> page to match the Splunk Cloud format: </cmd>
+            <info>
+              <ul>
+                <li>Use the following format for Splunk Cloud Platform on all clouds except Google Cloud:
+                  <codeblock>&lt;protocol&gt;://http-inputs-&lt;host&gt;.splunkcloud.com:&lt;port&gt;</codeblock>
+                </li>
+                <li>Use the following format for Splunk Cloud Platform on Google Cloud:
+                  <codeblock>&lt;protocol&gt;://http-inputs.&lt;host&gt;.splunkcloud.com:&lt;port&gt;</codeblock>
+                  <p>Replace the following placeholders:</p>
+                </li>
+                <li><codeph>protocol</codeph>: Either <codeph>http</codeph> or <codeph>https</codeph>.</li>
+                <li><codeph>host</codeph>: The name of the Splunk Cloud Platform instance that runs the HEC, followed by the domain <codeph>.splunkcloud.com</codeph>.</li>
+                <li><codeph>port</codeph>: The HEC port number (443 by default on Splunk Cloud Platform instances).
+                  <p>Examples:</p>
+                </li>
+                <li>Splunk Cloud Platform on GCP using JSON:
+                  <codeblock>https://http-inputs.myhost.splunkcloud.com:443</codeblock>
+                </li>
+                <li>Splunk Cloud free trial on AWS using raw events:
+                  <codeblock>https://http-inputs-otherhost.splunkcloud.com:443</codeblock>
+                </li>
+              </ul>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Complete the setup process: </cmd>
+        <substeps>
+          <substep>
+            <cmd>Copy the <b>HEC Token</b> value in Splunk and paste it into the <b>Splunk HEC Token</b> field in on the Hybrid Cloud Console <b>Integrations</b> page.</cmd>
+          </substep>
+          <substep>
+            <cmd>In the Hybrid Cloud Console, click <b>Run configuration</b>. The Hybrid Cloud Console sets up the integration, creates the behavior group, and associates Hybrid Cloud Console events to the behavior group. The status message section on the right side of the page shows the status of each of these actions. </cmd>
+            <info>
+              <p> <image href="../images/img-evnt-run-config-in-hcc.png" placement="inline">
+                  <alt>img evnt run config in hcc</alt></image> </p>
+            </info>
+          </substep>
+          <substep>
+            <cmd>When the setup completes successfully, click <b>Next: Review</b>. The application returns the message <codeph>Splunk integration in Insights completed</codeph>. </cmd>
+            <info>
+              <p> <image href="../images/img-evnt-hcc-config-complete.png" placement="inline">
+                  <alt>img evnt hcc config complete</alt></image> </p>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Click <b>Go back to the Splunk application</b>. This redirects you to the <b>Set up integration with Red Hat</b> screen in Splunk.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click <b>Finish set up</b> to complete the setup in Splunk. </cmd>
+            <info>
+              <p> <image href="../images/img-evnt-splunk-setup-complete.png" placement="inline">
+                  <alt>img evnt splunk setup complete</alt></image> </p>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Click <b>Go to dashboard</b> to be redirected to your Splunk dashboard. </cmd>
+            <info>
+              <p> <image href="../images/img-evnt-splunk-dashboard.png" placement="inline">
+                  <alt>img evnt splunk dashboard</alt></image> </p>
+              <note type="note">
+                <p>If the integration configuration fails during the Red Hat Insights application setup process, contact Red Hat support.</p>
+              </note>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>To view a list of Hybrid Cloud Console events on the Splunk dashboard, click the <b>Events</b> tab. Each event is hyperlinked to the Hybrid Cloud Console. </cmd>
+        <info>
+          <p> <image href="../images/splunk-events-log.png" placement="inline">
+              <alt>splunk events log</alt></image> </p>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+  <related-links>
+    <link format="html" href="https://www.splunk.com/en_us/software/splunk-enterprise.html" scope="external">
+      <linktext>Splunk Enterprise</linktext>
+    </link>
+    <link format="html" href="https://docs.splunk.com/Documentation/SplunkCloud/8.2.2112/Admin/SelfServiceAppInstall" scope="external">
+      <linktext>Install apps on your Splunk Cloud deployment</linktext>
+    </link>
+    <link format="html" href="https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/UsetheHTTPEventCollector#More_information_on_HEC" scope="external">
+      <linktext>Configure HTTP Event Collector on Splunk Enterprise</linktext>
+    </link>
+    <link format="html" href="https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/UsetheHTTPEventCollector#More_information_on_HEC" scope="external">
+      <linktext>Configure HTTP Event Collector on Splunk Cloud Platform</linktext>
+    </link>
+    <link format="html" href="../observe/control-team-access-notif-settings.dita" scope="external">
+      <linktext>Control team access to notification settings</linktext>
+    </link>
+    <link format="html" href="../observe/configure-notifications-hcc-services.dita" scope="external">
+      <linktext>Configure notifications for Hybrid Cloud Console services</linktext>
+    </link>
+  </related-links>
+</task>

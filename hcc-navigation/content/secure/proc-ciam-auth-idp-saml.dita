@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-ciam-auth-idp-saml">
+  <title>Configure identity provider (IdP) integration for SAML</title>
+  <shortdesc>You must provide certain information about your identity provider when you use Security Assertion Markup Language (SAML) authentication. Gather this information before you begin IdP integration for SAML.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Confirm you are logged in to the Red Hat Hybrid Cloud Console as an Organization Administrator and have started the IdP integration.</li>
+      </ul>
+      <p>The following information is required to complete IdP integration for SAML.</p>
+      <p>Information that you provide:</p>
+      <ul id="ul_1">
+        <li>Identity provider Entity ID (EID): The EID attribute is in your SAML metadata configuration.</li>
+        <li>SSO authentication request URL: The URL that receives SAML authentication requests; i.e. the URL of your internal log in page.</li>
+        <li>Service provider issuer: The issuer that will be used to uniquely identify the SAML Service Provider. This could be a URL, GUID, or a string of alphanumeric characters. Spaces and most special characters will not be accepted. This value <i>does not</i> come from the Identity Provider (IdP) metadata file.</li>
+        <li>x509 certificate: Identity provider integration for SAML requires an x509 certificate. This certificate is a Base64 privacy-enhanced electronic mail (PEM) file that checks for signatures. The identity provider integration provided by Red Hat uses the x509 certificate to verify the assertion signature. Response and assertion encryption is not currently enforced; however, a valid x509 certificate allows decryption of the responses and assertions.</li>
+        <li>SAML metadata: The SAML metadata can be imported from a XML-format file or it can be manually entered. When you import the SAML XML metadata file, the x509 certificate is automatically parsed. File import is recommended.</li>
+      </ul>
+      <p>Information Red Hat provides:</p>
+      <ul id="ul_2">
+        <li>Service provider metadata URL: Service provider metadata used to integrate Red Hat with your identity provider.</li>
+        <li>Redirect or ACS URL: The redirect URL to use when configuring your identity provider. This is where your identity provider will redirect users to authenticate to Red Hat.</li>
+      </ul>
+      <note type="note">Microsoft Entra ID adds <b>spn:</b> to the beginning of any non-URL value in the service provider issuer field. This field might also be referred to as a client, application, or a Service Provider Entity ID. Make sure the Entra ID value and the IdP configuration values match.</note>
+      <note type="note">Okta Single Sign On identifies the service provider issuer field as <b>Audience Description</b>. Look for that value in your Okta admin console and copy it into the service provider issuer field</note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>On the Identity Provider Integration page, click <b>SAML 2.0</b>.</cmd>
+      </step>
+      <step>
+        <cmd>You can upload most of the information from a SAML metadata file in XML format. The following information is parsed from the SAML metadata file: </cmd>
+        <info>
+          <ul>
+            <li>Identity provider Entity ID</li>
+            <li>Single sign-on authentication request URL</li>
+          </ul>
+        </info>
+      </step>
+      <step>
+        <cmd>Manually enter the service provider issuer information. This information must be provided by you. The service provider issuer is how the Red Hat single sign-on system will be identified in your IdP. It is also known as the "service provider Entity ID." </cmd>
+        <info>
+          <note type="note">Only alphanumeric characters are allowed in the service provider issuer information. Do not use spaces or non-alphanumeric characters.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>The <b>URLs required for identity provider configuration </b>are provided by Red Hat and are required by your internal identity provider. Copy the URLs and enter them appropriately in your identity provider.</cmd>
+        <info>
+          <ul>
+            <li> <b>Service provider metadata URL</b> </li>
+            <li> <b>Redirect URL / Assertion Consumption Service (ACS) URL</b> </li>
+          </ul>
+        </info>
+      </step>
+      <step>
+        <cmd>After you verify the information is complete for your identity provider integration, click <b>Create SAML identity provider integration</b>. A page appears that shows you the configuration information. </cmd>
+        <info>
+          <note type="note">If any information is missing or incorrect, update the form and resubmit.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>Click <b>Test and enable</b> to complete the identity provider integration. This opens a new window for you to enter your login ID and password. </cmd>
+        <info>
+          <note type="note">Make sure pop-ups are enabled in your browser.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>On a successful test, click the <b>Enable</b> button to enable for your organization. If you choose not to enable, you must retest.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+  <related-links>
+    <link format="html" href="https://access.redhat.com/articles/7092870" scope="external">
+      <linktext>Troubleshooting Hybrid Cloud Console Identity Provider Integration</linktext>
+    </link>
+  </related-links>
+</task>

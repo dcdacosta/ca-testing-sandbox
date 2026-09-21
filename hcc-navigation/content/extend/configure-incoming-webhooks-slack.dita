@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-notif-slack-config">
+  <title>Configure incoming webhooks in Slack</title>
+  <shortdesc>To prepare Slack for integration with the Hybrid Cloud Console, you must configure incoming webhooks in Slack.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You have owner or admin permissions to the Slack instance where you want to add incoming webhooks.</li>
+        <li>You have App Manager permissions to add Slack apps to a channel.</li>
+        <li>You have a Slack channel or user to receive notifications.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Create a Slack app: </cmd>
+        <substeps>
+          <substep>
+            <cmd>Go to the <xref format="html" href="https://api.slack.com/messaging/webhooks" scope="external">Slack API</xref> web page and click the <b>Create your Slack app</b> button. This opens the <b>Create an app</b> dialog.</cmd>
+          </substep>
+          <substep>
+            <cmd>Select <b>From scratch</b> to use the Slack configuration UI to create your app.</cmd>
+          </substep>
+          <substep>
+            <cmd>Enter a name for your app and select the workspace where you want to receive notifications. </cmd>
+            <info>
+              <note type="note">If you see a message that administrator approval is required, you can request approval in the next step.</note>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Click <b>Create App</b> to finish creating the Slack app.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Enable incoming webhooks: </cmd>
+        <substeps>
+          <substep>
+            <cmd>Under the <b>Features</b> heading in the navigation panel, click <b>Incoming Webhooks</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Toggle the <b>Activate Incoming Webhooks</b> switch to <b>On</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click the <b>Request to Add New Webhook</b> button. If required, enter a message to your administrators to grant access to your app and click <b>Submit Request</b>. A success message confirms you have configured this correctly.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Create an incoming webhook: </cmd>
+        <substeps>
+          <substep>
+            <cmd>Under <b>Settings</b> in the navigation panel, click <b>Install App</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>In the <b>Install App</b> section, click the <b>Install to <i>workspace</i></b> button.</cmd>
+          </substep>
+          <substep>
+            <cmd>Select the channel where you want your Slack app to post notifications, or select a user to send notifications to as direct messages.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click <b>Allow</b> to save changes.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Optional: Configure how your Hybrid Cloud Console notifications appear in Slack: </cmd>
+        <substeps>
+          <substep>
+            <cmd>Under <b>Settings</b> in the navigation panel, click <b>Basic Information</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Scroll down to <b>Display Information</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Edit your app name, description, icon, and background color as desired.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click <b>Save Changes</b>.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Copy the webhook URL: </cmd>
+        <substeps>
+          <substep>
+            <cmd>Under <b>Features</b>, click <b>Incoming Webhooks</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click the <b>Copy</b> button next to the webhook URL. You will use the URL to set up the integration in the Hybrid Cloud Console in <xref href="configure-slack-integration-console.dita#proc-notif-console-config-for-slack"/>.</cmd>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+    <postreq id="postreq_1">
+      <p><b>Verify your integration:</b></p>
+      <ul id="ul_1">
+        <li>Open the Slack channel or user you selected during configuration, and check for a message confirming you have added the integration.</li>
+      </ul>
+    </postreq>
+  </taskbody>
+  <related-links>
+    <link format="html" href="https://api.slack.com/messaging/webhooks" scope="external">
+      <linktext>Sending messages using incoming webhooks</linktext>
+    </link>
+    <link format="html" href="https://slack.com/help/articles/360041352714-Create-more-advanced-workflows-using-webhooks" scope="external">
+      <linktext>Build a workflow: Create a workflow that starts outside of Slack</linktext>
+    </link>
+    <link format="html" href="https://api.slack.com/admins/approvals" scope="external">
+      <linktext>Managing app approvals in Enterprise Grid workspaces</linktext>
+    </link>
+    <link format="html" href="https://slack.com/help" scope="external">
+      <linktext>Slack Help Center</linktext>
+    </link>
+  </related-links>
+</task>

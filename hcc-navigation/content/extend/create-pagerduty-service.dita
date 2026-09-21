@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-notif-console-create-pagerduty-service">
+  <title>Create a PagerDuty service</title>
+  <shortdesc>Create a PagerDuty service that you will integrate with the Hybrid Cloud Console so that your organization will receive notifications about the Hybrid Cloud Console.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to PagerDuty.</li>
+        <li>At least one PagerDuty team exists.</li>
+      </ul>
+      <note type="note">If you already have a PagerDuty service that you want to integrate with the Hybrid Cloud Console, see <xref href="generate-key-for-pagerduty-service.dita#proc-notif-console-adding-intetration-to-pagerduty-service"/>.</note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>On the PagerDuty home page, click <b>Services</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>New Service</b>. The <b>Create a Service</b> wizard opens.</cmd>
+      </step>
+      <step>
+        <cmd>Enter a name and description for the new service, for example <i>Red Hat PagerDuty Service</i>, and then click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Either select an existing escalation policy, or generate a new one, and then click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>On the <b>Reduce Noise</b> screen, make any desired selection and then click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>On the <b>Create a Service</b> screen, select the <b>Events API V2</b> integration and then click <b>Create Service</b>.</cmd>
+      </step>
+      <step>
+        <cmd>If necessary, on the <b>Integrations</b> page, click the arrow next to <b>Events API V2</b> to expand the panel.</cmd>
+      </step>
+      <step>
+        <cmd>Copy the integration key next to <b>Events API v2 Overview</b>. You will use this key to integrate the service with the Hybrid Cloud Console.</cmd>
+      </step>
+    </steps>
+    <postreq>
+      <ul>
+        <li>To integrate your PagerDuty service with the Hybrid Cloud Console, see <xref href="add-pagerduty-account-as-integration.dita#adding-pagerduty-integration"/>.</li>
+      </ul>
+    </postreq>
+  </taskbody>
+  <related-links>
+    <link format="html" href="https://support.pagerduty.com/main/docs/services-and-integrations#create-a-service" scope="external">
+      <linktext>Create a PagerDuty Service</linktext>
+    </link>
+  </related-links>
+</task>

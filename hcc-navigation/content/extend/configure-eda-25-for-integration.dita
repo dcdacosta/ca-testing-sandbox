@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-notif-eda-25-config">
+  <title>Configure Event-Driven Ansible 2.5 for integration</title>
+  <shortdesc>You can configure Event-Driven Ansible 2.5 to receive event notifications from the Red Hat Hybrid Cloud Console or a third-party application.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You have an environment with Ansible Automation Platform and Event-Driven Ansible 2.5 installed.</li>
+        <li>You have Organization Administrator or Notifications administrator permissions for the Hybrid Cloud Console.</li>
+        <li>You have a Github repository that contains at least one rulebook that uses the Red Hat Lightspeed EDA collection as a source. For examples, see <xref format="html" href="https://console.redhat.com/ansible/automation-hub/repo/published/redhat/insights_eda/docs/" scope="external">Event-Driven Ansible for Red Hat Insights</xref>.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In your Ansible Automation Platform 2.5 environment, navigate to <b>Automation Decisions</b> &gt; <b>Infrastructure</b> &gt; <b>Credentials</b>.</cmd>
+      </step>
+      <step>
+        <cmd>On the <b>Credentials</b> page, click <b>Create credential</b>.</cmd>
+      </step>
+      <step>
+        <cmd>On the <b>Create credential</b> page, enter a name for the credential, for example <b>Red Hat Lightspeed</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the <b>Organization</b> type, and then select <b>Token Event Stream</b> under <b>Credential type</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Enter a token and copy it. The token value is used for token authentication between the Hybrid Cloud Console and your Ansible Automation Platform with Event-Driven Ansible. </cmd>
+        <info>
+          <note type="note">The token value can be any random string of characters, including uppercase or lowercase letters, numbers, and symbols. You can find token generators on the web.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>Enter <codeph>X-Insight-Token</codeph> under <b>HTTP Header Key</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Save credential</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Navigate to <b>Automation Decisions</b> &gt; <b>Event Streams</b> and click <b>Create event stream</b>.</cmd>
+      </step>
+      <step>
+        <cmd>On the <b>Create event stream</b> page, enter a name for the event stream, for example <b>Red Hat Lightspeed event stream</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select your organization under <b>Organization</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select <b>Token Event Stream</b> under <b>Event stream type</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the credential that you created, for example <b>Red Hat Lightspeed</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Create event stream</b>.</cmd>
+      </step>
+      <step>
+        <cmd>On the <b>Details</b> tab of your event stream page, copy the event stream endpoint URL. This URL is used when setting up your Event-Driven Ansible integration in the Hybrid Cloud Console.</cmd>
+      </step>
+      <step>
+        <cmd>Import an Ansible rulebook from your Github repository: </cmd>
+        <substeps>
+          <substep>
+            <cmd>To create an Ansible project, navigate to <b>Red Hat Ansible Automation Platform</b> &gt; <b>Automation Decisions</b> &gt; <b>Projects</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>On the <b>Create project</b> page, enter a name for the project, for example <b>Red Hat Lightspeed</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Under <b>Source control URL</b>, paste the URL for the Github repository that contains your Red Hat Lightspeed rulebook and then click <b>Create project</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>To activate your Red Hat Lightspeed rulebook, navigate to <b>Red Hat Ansible Automation Platform</b> &gt; <b>Automation Decisions</b> &gt; <b>Rulebook Activations</b> and click <b>Create rulebook activation</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Enter a name for your activation, for example <b>Red Hat Lightspeed rulebook</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Under <b>Organization</b>, select your organization.</cmd>
+          </substep>
+          <substep>
+            <cmd>Under <b>Project</b>, select <b>Red Hat Lightspeed</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Under <b>Rulebook</b>, select a rulebook from the list.</cmd>
+          </substep>
+          <substep>
+            <cmd>Select the gear icon next to <b>Event streams</b> and select the event stream that you created.</cmd>
+          </substep>
+          <substep>
+            <cmd>Under <b>Descision enviroment</b>, select <b>Default Decision Environment</b> and then click <b>Create rulebook activation</b>. The rulebook page appears.</cmd>
+          </substep>
+          <substep>
+            <cmd>Wait for the activation status to change to <b>Running</b>.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>In the Hybrid Cloud Console, navigate to <xref format="html" href="https://console.openshiftusgov.com/settings/integrations" otherprops="FEDRAMP" scope="external">Settings &gt; Integrations</xref><xref format="html" href="https://console.redhat.com/settings/integrations" otherprops="PUBLIC" scope="external">Settings &gt; Integrations</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the <b>Reporting &amp; Automation</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Add integration</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select <b>Event-Driven Ansible</b> as the integration type, and then click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>In the <b>Integration name</b> field, enter a name for your integration (for example, <i>My EDA Integration</i>).</cmd>
+      </step>
+      <step>
+        <cmd>Enter the event stream URL that you copied earlier into the <b>Endpoint URL</b> field. This is the endpoint that points to the Event-Driven Ansible listener. This endpoint URL must be accessible for the Hybrid Cloud Console to send HTTP POST events. You might need to configure your network access or firewall, or both, to accept HTTP POST events from the Hybrid Cloud Console.</cmd>
+      </step>
+      <step>
+        <cmd>Enter the secret token that you created earlier. </cmd>
+        <info>
+          <note type="note">
+            <p>A secret token is essential for protecting the data sent to the integration endpoint and should always be used when integrating the Hybrid Cloud Console with third-party applications.</p>
+          </note>
+        </info>
+      </step>
+      <step>
+        <cmd>Click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Review the integration details, and then click <b>Submit</b> to enable the integration. </cmd>
+        <info>
+          <p>Your Event-Driven Ansible integration is now listed on the <b>Integrations</b> &gt; <b>Reporting &amp; Automation</b> page. Under <b>Last connection attempt</b>, the status is <b>Ready</b> to show the connection can accept notifications from the console.</p>
+        </info>
+      </step>
+    </steps>
+    <postreq>
+      <p><b>Verify your configuration:</b></p>
+      <p>Create a test notification to confirm you have correctly connected Event-Driven Ansible to the Hybrid Cloud Console:</p>
+      <ol id="ol_1">
+        <li>Next to your Event-Driven Ansible integration on the <b>Integrations</b> &gt; <b>Reporting &amp; Automation</b> page, click the options icon (⋮) and click <b>Test</b>.</li>
+        <li>In the <b>Integration Test</b> screen, enter a message and click <b>Send</b>. If you leave the field empty, the Hybrid Cloud Console sends a default message.</li>
+        <li>In Ansible Automation Platform with Event-Driven Ansible, navigate to <b>Automation Decisions</b> &gt; <b>Event Streams</b>.</li>
+        <li>On the <b>Details</b> tab of your event stream, confirm that the number under <b>Events received</b> has increased.</li>
+        <li>In the Hybrid Cloud Console, go to <b>Notifications</b> &gt; <b>Event Log</b> and check that the <b>Integration: Event-Driven Ansible</b> event is listed with a green label.</li>
+      </ol>
+      <ul>
+        <li>For more Event-Driven Ansible configuration information and examples of Red Hat Lightspeed rulebooks, see the <b>Documentation</b> tab in the <codeph>insights_eda</codeph> collection available from the <xref format="html" href="https://console.openshiftusgov.com/ansible/automation-hub" otherprops="FEDRAMP" scope="external">Ansible Automation Hub Collections</xref><xref format="html" href="https://console.redhat.com/ansible/automation-hub" otherprops="PUBLIC" scope="external">Ansible Automation Hub Collections</xref> page.</li>
+      </ul>
+    </postreq>
+  </taskbody>
+  <related-links>
+    <link format="html" href="https://docs.redhat.com/documentation/en-us/red_hat_hybrid_cloud_console/1-latest/html-single/configuring_notifications_on_the_red_hat_hybrid_cloud_console_with_fedramp/index#assembly-config-user-access_notifications" otherprops="FEDRAMP" scope="external">
+      <linktext>Configure User Access to manage notifications</linktext>
+    </link>
+    <link format="html" href="../observe/control-team-access-notif-settings.dita" otherprops="PUBLIC" scope="external">
+      <linktext>Control team access to notification settings</linktext>
+    </link>
+  </related-links>
+</task>

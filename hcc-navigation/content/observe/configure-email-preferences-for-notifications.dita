@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-notif-config-user-preferences">
+  <title>Select email notification type and frequency</title>
+  <shortdesc>Each user in the Red Hat Hybrid Cloud Console must opt in to receive email notifications emails about events. You can select the services from which to receive notifications as well as the frequency.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Red Hat Hybrid Cloud Console.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>You have configured relevant events in the console.</li>
+        <li>A Notifications administrator or Organization Administrator has configured behavior groups to receive event notifications.</li>
+      </ul>
+      <note type="important">If you select <b>Instant notification</b> for any service, you might receive a very large number of emails.</note>
+    </prereq>
+    <steps>
+      <step otherprops="PUBLIC">
+        <cmd>In the Hybrid Cloud Console, navigate to <xref format="html" href="https://console.openshiftusgov.com/settings/notifications/user-preferences" otherprops="FEDRAMP" scope="external">Settings &gt; Notifications &gt; Notification Preferences</xref><xref format="html" href="https://console.redhat.com/settings/notifications/user-preferences" otherprops="PUBLIC" scope="external">Settings &gt; Notifications &gt; Notification Preferences</xref>. The <b>My Notifications</b> page appears. On the <b>My Notifications</b> page, the available services are grouped by category, for example OpenShift or Red Hat Enterprise Linux.</cmd>
+      </step>
+      <step otherprops="FEDRAMP">
+        <cmd>In the Hybrid Cloud Console, navigate to <xref format="html" href="https://console.openshiftusgov.com/settings/notifications/user-preferences" otherprops="FEDRAMP" scope="external">Settings &gt; Notifications &gt; My User Preferences</xref><xref format="html" href="https://console.redhat.com/settings/notifications/user-preferences" otherprops="PUBLIC" scope="external">Settings &gt; Notifications &gt; My User Preferences</xref>. The <b>My Notifications</b> page appears. On the <b>My Notifications</b> page, the available services are grouped by category, for example Red Hat Enterprise Linux.</cmd>
+      </step>
+      <step>
+        <cmd>Select the service you want to configure your notifications for, for example, Advisor or Inventory. A list of the available event notifications for the selected service opens.</cmd>
+      </step>
+      <step>
+        <cmd>At the top of the list, click <b>Select all</b> to enable all notifications for the service, or select one of the following options for each event listed: </cmd>
+        <info>
+          <note type="note">You cannot disable OpenShift notifications on this page because your cluster is managed by Red Hat. These notifications are the primary way that Red Hat Site Reliability Engineering (SRE) will contact you to inform you about cluster problems and request actions you must take to resolve them. Cluster owners cannot unsubscribe from email notifications. If you are not a cluster owner and you do not want to receive notification emails, you can ask your cluster owner or administrator to remove you from the list of cluster notification contacts as described in <xref format="html" href="https://docs.redhat.com/en/documentation/red_hat_openshift_service_on_aws/4/html/cluster_administration/rosa-cluster-notifications#remove-notification-contact_rosa-cluster-notifications" scope="external">Removing notification contacts from your cluster</xref>.</note>
+          <ul>
+            <li><b>Daily digest</b>: Receive a daily summary of triggered application events that occur in a 24 hour time frame.</li>
+            <li><b>Instant notification</b>: Receive an email immediately for each triggered application event. For errata alerts, instant notifications are batched and sent in 15-minute intervals.
+              <note type="important">Some services do not offer both instant notification and daily digest. If you select <b>Instant notification</b> for any service, you might receive a very large number of emails.</note>
+            </li>
+            <li><b>Weekly report</b>: Receive an email that contains the Advisor Weekly Report.</li>
+          </ul>
+        </info>
+      </step>
+      <step otherprops="PUBLIC">
+        <cmd>Update your information and then click <b>Save</b>. Email notifications are delivered in the format and frequency that you selected. If notifications are configured for integrated third-party applications, the notifications are sent to those applications as well.</cmd>
+      </step>
+      <step otherprops="FEDRAMP">
+        <cmd>Update your information and then click <b>Save</b>. Email notifications are delivered in the format and frequency that you selected. </cmd>
+        <info>
+          <note type="note">If you decide to stop receiving notifications, select <b>Deselect all</b> or uncheck the boxes for the events you do not want to be notified about, and then click <b>Save</b>. You will no longer receive any email notifications unless you return to this screen and enable them once again.</note>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

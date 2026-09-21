@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-notif-snow-install-config">
+  <title>Install and configure the ServiceNow Flow Templates</title>
+  <shortdesc>You can use the Flow Templates for Red Hat Lightspeed application to integrate ServiceNow with the Hybrid Cloud Console to create ServiceNow flows from triggered events in the Hybrid Cloud Console.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You have Organization Administrator permissions for the Hybrid Cloud Console.</li>
+        <li>Notifications administrator permissions are configured in User Access.</li>
+        <li>You have a Red Hat subscription and you can access the Red Hat Hybrid Cloud Console.</li>
+        <li>Popup blockers are disabled in your browser.</li>
+        <li>ServiceNow IntegrationHub Enterprise Pack Installer plugin is installed. If it is not installed, request the plugin from ServiceNow.</li>
+        <li>You have access to the following ServiceNow roles:
+          <ul>
+            <li><codeph>admin</codeph></li>
+            <li><codeph>x_rhtpp_rh_webhook.rest</codeph></li>
+            <li><codeph>sn_appclient.app_client_company_installer</codeph> (can only install applications that match the instance company), or <codeph>sn_appclient.app_client_user</codeph>.</li>
+          </ul>
+        </li>
+        <li>In ServiceNow you have incident (write) access for table permissions.</li>
+        <li>You are using the San Diego or later release of ServiceNow.</li>
+      </ul>
+      <p>To integrate ServiceNow with Red Hat Hybrid Cloud Console, you must install the ServiceNow IntegrationHub Enterprise Pack Installer plugin. After the plugin and the application are configured, event data flows from the Hybrid Cloud Console to your ServiceNow instance. A ServiceNow REST API asynchronous trigger receiver is used within the application flow.</p>
+      <p>For information about configuring notifications after you have integrated ServiceNow with the Hybrid Cloud Console, see <xref format="html" href="https://docs.redhat.com/documentation/en-us/red_hat_hybrid_cloud_console/1-latest/html-single/configuring_notifications_on_the_red_hat_hybrid_cloud_console_with_fedramp/index" otherprops="FEDRAMP" scope="external"><i>Configuring notifications on the Red Hat Hybrid Cloud Console with FedRAMP</i></xref><xref format="html" href="../observe/configure-notifications-hcc-services.dita#assembly-intro" otherprops="PUBLIC" scope="external"/>.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Log in to your ServiceNow instance.</cmd>
+      </step>
+      <step>
+        <cmd>Navigate to the <xref format="html" href="https://store.servicenow.com/sn_appstore_store.do#!/store/home" scope="external">ServiceNow Store home page</xref> and install or update the Flow Templates: </cmd>
+        <info>
+          <ul>
+            <li>Install the Flow Templates for Red Hat Lightspeed application from the ServiceNow Store (or as an <xref format="html" href="https://docs.servicenow.com/bundle/sandiego-application-development/page/build/system-update-sets/task/t_RetrieveAnUpdateSet.html" scope="external">Update Set</xref>).
+              <ol>
+                <li><xref format="html" href="https://docs.servicenow.com/bundle/tokyo-platform-administration/page/administer/users-and-groups/task/t_CreateAUser.html" scope="external">Create a new user</xref> with User ID <codeph>rh_insights_integration</codeph>.</li>
+                <li>Check <b>Internal Integration User</b> for the user you just created.</li>
+                <li>Ensure that the user is Active.</li>
+                <li>Assign role <codeph>x_rhtpp_rh_webhook.rest</codeph> to the user.</li>
+                <li>Generate a password for the user. Copy this information for use during the setup process.
+                  <note type="note">For information about installing an application that you purchased from the ServiceNow Store to make it available on your instance, see <xref format="html" href="https://docs.servicenow.com/bundle/sandiego-application-development/page/build/applications/task/t_InstallApplications.html" scope="external">Install a ServiceNow Store Application</xref></note>
+                </li>
+              </ol>
+            </li>
+          </ul>
+        </info>
+      </step>
+      <step>
+        <cmd>Open the <xref format="html" href="https://console.openshiftusgov.com" otherprops="FEDRAMP" scope="external">Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com" otherprops="PUBLIC" scope="external">Hybrid Cloud Console</xref> in a new browser window or tab.</cmd>
+      </step>
+      <step>
+        <cmd>Navigate to <b>Settings</b> &gt; <b>Integrations</b>, select the <b>Reporting &amp; Automation</b> tab, and complete the following steps: </cmd>
+        <substeps>
+          <substep>
+            <cmd>Click <b>Add integration</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Select <b>ServiceNow</b> as the integration type, and then click <b>Next</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Enter a name for the integration, such as <i>ServiceNow integration</i>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Provide the <b>Endpoint URL</b> and replace <codeph>&lt;instance.servicenow.com&gt;</codeph> with your ServiceNow instance: </cmd>
+            <info>
+              <p> <codeph>https://&lt;instance.servicenow.com&gt;/api/x_rhtpp_rh_webhook/flow_templates_for_red_hat_insights</codeph> </p>
+            </info>
+          </substep>
+          <substep>
+            <cmd>The checkbox to Enable SSL is checked by default.</cmd>
+          </substep>
+          <substep>
+            <cmd>In the <b>Secret token</b> field, paste the generated password of the <codeph>rh_insights_integration</codeph> user that you created in ServiceNow.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Optional: Associate events with the integration. Doing this automatically creates a behavior group. </cmd>
+        <info>
+          <note type="note">You can skip this step and associate the event types later.</note>
+        </info>
+        <substeps>
+          <substep>
+            <cmd>Select a product family, for example <b>OpenShift</b>, <b>Red Hat Enterprise Linux</b>, or <b>Console</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Select the event types you would like your integration to react to.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>To enable the integration, review the integration details and click <b>Submit</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Refresh the <b>Integrations</b> page to show the ServiceNow integration in the <b>Integrations</b> &gt; <b>Reporting &amp; Automation</b> list. Under <b>Last connection attempt</b>, the status is <b>Ready</b> to show the connection can accept notifications from the Hybrid Cloud Console.</cmd>
+      </step>
+    </steps>
+    <postreq id="postreq_1">
+      <p><b>Verify your configuration:</b></p>
+      <ul id="ul_1">
+        <li>To confirm that the application has been configured successfully, view the event log on the Red Hat Hybrid Cloud Console, and view <b>Flow Executions</b> on your ServiceNow instance (<b>Process Automation &gt; Flow Administration &gt; Today’s Executions</b>).</li>
+      </ul>
+      <p>Note that events are generated on certain conditions (for example, when a system configured with Red Hat Lightspeed checks in). If no events appear in ServiceNow, check the Event log to see whether any events matching the conditions have occurred.</p>
+      <note type="note">If the integration configuration fails during the Red Hat Lightspeed setup process, contact Red Hat support.</note>
+    </postreq>
+  </taskbody>
+</task>

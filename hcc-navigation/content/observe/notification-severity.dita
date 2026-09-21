@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="con-notif-severity">
+  <title>Notification severity</title>
+  <shortdesc>Notifications sent to email or third-party applications are labeled with a severity level for most events. This allows you to easily determine the importance of the event and filter the notifications you receive by severity.</shortdesc>
+  <conbody>
+    <p>Notification severity levels include Critical, Important, Moderate, Low, and None, similar to the <i>Red Hat security ratings</i>. A notification labeled <b>Critical</b> has the highest impact and should be reviewed urgently, while a notification labeled <b>Low</b> is informative only.</p>
+    <p>The following table contains details about each severity level:</p>
+    <table>
+      <title>Severity levels for console notifications</title>
+      <tgroup cols="4">
+        <colspec colname="col_1" colwidth="25*"/>
+        <colspec colname="col_2" colwidth="25*"/>
+        <colspec colname="col_3" colwidth="25*"/>
+        <colspec colname="col_4" colwidth="25*"/>
+        <thead>
+          <row>
+            <entry>Severity level</entry>
+            <entry>Description</entry>
+            <entry>Action</entry>
+            <entry>Examples</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <p>Critical</p>
+            </entry>
+            <entry>
+              <p>Urgent notification about an event with impact to your systems</p>
+            </entry>
+            <entry>
+              <p>Review and take action immediately</p>
+            </entry>
+            <entry>
+              <p>Subscription security updates and bug fixes (errata), Advisor recommendations, compliance below threshold</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Important</p>
+            </entry>
+            <entry>
+              <p>Errors or other events that may impact your systems</p>
+            </entry>
+            <entry>
+              <p>Review and take action as needed</p>
+            </entry>
+            <entry>
+              <p>Compliance upload failures, failed RHEL tasks, successful Ansible on AWS provisioning</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Moderate</p>
+            </entry>
+            <entry>
+              <p>Warning</p>
+            </entry>
+            <entry>
+              <p>Review and consider if action needs to be taken</p>
+            </entry>
+            <entry>
+              <p>Subscription utilization threshold exceeded, User Access default groups customized, Red Hat access request created, stale cost management data</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Low</p>
+            </entry>
+            <entry>
+              <p>Information only</p>
+            </entry>
+            <entry>
+              <p>No action required</p>
+            </entry>
+            <entry>
+              <p>New User Access role available, integrations availability status change</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>None</p>
+            </entry>
+            <entry>
+              <p>Debug or informative updates</p>
+            </entry>
+            <entry>
+              <p>No action required</p>
+            </entry>
+            <entry>
+              <p>User-modified User Access groups and custom roles, stale RHEL inventory, RHEL tasks successfully completing</p>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://access.redhat.com/security/updates/classification" scope="external">
+      <linktext>Red Hat security ratings</linktext>
+    </link>
+  </related-links>
+</concept>

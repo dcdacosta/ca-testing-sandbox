@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-notif-example-content-notif-prefs">
+  <title>Example: Opt into content notifications</title>
+  <shortdesc>Each user in the Red Hat Hybrid Cloud Console must configure their notification preferences to receive email notifications about events. You can select the services from which to receive notifications as well as the frequency.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Hybrid Cloud Console.</li>
+        <li>You have configured relevant events in the console.</li>
+        <li>A Notifications administrator or Organization Administrator has configured behavior groups to receive event notifications from the content service.</li>
+      </ul>
+      <p>This example shows how to opt in to event notifications from the Red Hat Lightspeed content service, and opt out of errata notifications. The content service sends notifications for advisories that affect one or more of your registered systems, instead of sending notifications about all advisories affecting products in your subscription.</p>
+      <p>When you receive a notification from the content service (a content advisory), it indicates you have at least one system affected by the advisory.</p>
+      <note type="note">To be notified about subscription-level advisories that impact any of your subscribed products, opt in to errata notifications. See <xref format="html" href="https://access.redhat.com/articles/7112807" scope="external">Understanding Red Hat Lightspeed Events and Notifications in the Hybrid Cloud Console</xref> for more information about Red Hat Lightspeed events and how they are triggered.</note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the Hybrid Cloud Console, navigate to <ph otherprops="PUBLIC"><xref format="html" href="https://console.openshiftusgov.com/settings/notifications/user-preferences" otherprops="FEDRAMP" scope="external">Settings &gt; Notifications &gt; Notification Preferences</xref>. The <b>My Notifications</b> page appears.</ph><ph otherprops="FEDRAMP"><xref format="html" href="https://console.openshiftusgov.com/settings/notifications/user-preferences" scope="external">Settings &gt; Notifications &gt; My User Preferences</xref><xref format="html" href="https://console.redhat.com/settings/notifications/user-preferences" otherprops="PUBLIC" scope="external">Settings &gt; Notifications &gt; Notification Preferences</xref>. The <b>My Notifications</b> page appears.</ph><ph otherprops="FEDRAMP"><xref format="html" href="https://console.openshiftusgov.com/settings/notifications/user-preferences" scope="external">Settings &gt; Notifications &gt; My User Preferences</xref>. The <b>My Notifications</b> page appears.]</ph></cmd>
+      </step>
+      <step>
+        <cmd>Opt in to content notifications: </cmd>
+        <substeps>
+          <substep>
+            <cmd>Search for the <b>Content</b> service and select it. A list of the available event notifications for the content service opens.</cmd>
+          </substep>
+          <substep>
+            <cmd>At the top of the list, click <b>Select all</b> to enable all notifications for the content service, or select one of the following options: </cmd>
+            <info>
+              <ul>
+                <li><b>Daily digest</b>: Receive a daily summary of content advisory events that occur in a 24 hour time frame.</li>
+                <li><b>Instant notification</b>: Receive an email immediately for each content advisory.
+                  <note type="important">If you select <b>Instant notification</b> for any service, you might receive a very large number of emails.</note>
+                </li>
+              </ul>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Update your information and then click <b>Save</b>. Email notifications are delivered in the format and frequency that you selected. <ph otherprops="PUBLIC">If notifications are configured for integrated third-party applications, the notifications are sent to those applications as well.]</ph></cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Opt out of errata notifications so that you do not receive all notifications for your subscription: </cmd>
+        <substeps>
+          <substep>
+            <cmd>On the <b>My Notifications</b> page, search for the <b>Errata</b> service and select it. A list of the available event notifications for the errata service opens.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click <b>Deselect all</b> or uncheck the boxes for the events you do not want to be notified about, and then click <b>Save</b>. You will no longer receive any email notifications unless you return to this screen and enable them once again.</cmd>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+    <postreq>
+      <p otherprops="PUBLIC">Optionally, you can further customize how you want to receive notifications by integrating third-party tools with the Hybrid Cloud Console.</p>
+      <p otherprops="PUBLIC">In addition to receiving email notifications, you can receive notifications in Event-Driven Ansible, Microsoft Teams, Slack, ServiceNow, and other applications. To configure a third-party integration to receive notifications, see <xref format="html" href="../extend/integrate-communication-apps.dita#integrate-comm-apps" scope="external"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

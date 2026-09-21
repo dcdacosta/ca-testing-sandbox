@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-insights-rbac-restoring-default-access">
+  <title>Restore the Default access group</title>
+  <shortdesc>You can restore the <b>Default access</b> group to its state as provided by Red Hat services. When you do so, the <b>Custom default access</b> group is removed along with any changes made to that group.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the <xref format="html" href="https://console.openshiftusgov.com/" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com/" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console</xref> as a user who has Organization Administrator permission.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>If you are not an Organization Administrator, you must be a member of a group that has the <b>User Access administrator</b> role assigned to it.</li>
+        <li>The <b>Custom default access</b> group must exist.</li>
+      </ul>
+      <p>There is no way to recover the <b>Custom default access</b> group when you restore the <b>Default access</b> group.</p>
+      <p>Reasons to restore the <b>Default access</b> group:</p>
+      <ul id="ul_1">
+        <li>You made changes to the <b>Default access</b> group that were not intended.</li>
+        <li>You want to start over with the <b>Default access group</b>.</li>
+        <li>You want to remove the <b>Custom default access</b> group.</li>
+        <li>You want to pick up changes to the the <b>Default access</b> group pushed out by Red Hat services and abandon the <b>Custom default access</b> group.</li>
+      </ul>
+      <note type="note">One of the default groups, either the <b>Default access</b> group or the <b>Custom default access</b> group, always exists on your system.</note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Navigate to the <xref format="html" href="https://console.openshiftusgov.com/iam/user-access/groups" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console &gt; Settings &gt; Identity &amp; Access Management &gt; User Access &gt; Groups</xref><xref format="html" href="https://console.redhat.com/iam/user-access/groups" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console &gt; Settings &gt; Identity &amp; Access Management &gt; User Access &gt; Groups</xref>. The <b>Groups</b> page is displayed.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Custom default access</b> on the <b>Groups</b> page.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Restore to default</b> and accept the caution message. </cmd>
+        <info>
+          <p>The <b>Default access</b> group appears on the <b>Groups</b> page.</p>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

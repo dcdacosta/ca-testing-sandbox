@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/map.dtd">
+<map>
+  <title>Secure Red Hat user accounts with two-factor authentication (2FA)</title>
+  <topicref chunk="to-content" href="con-ciam-2fa-about.dita" navtitle="Secure Red Hat user accounts with 2FA" type="concept">
+    <topicref href="proc-ciam-2fa-auth-factors.dita" navtitle="Require 2FA for all users in your organization" toc="no" type="task">
+    </topicref>
+    <topicref href="proc-ciam-2fa-enabling.dita" navtitle="Set up 2FA for your individual Red Hat account" toc="no" type="task">
+    </topicref>
+    <topicref href="proc-ciam-2fa-disabling.dita" navtitle="Remove your 2FA requirement" toc="no" type="task">
+    </topicref>
+    <topicref href="proc-ciam-2fa-recovery-codes-backup.dita" toc="no" type="concept">
+      <topicref href="proc-ciam-2fa-recovery-create.dita" navtitle="Create recovery codes for 2FA" toc="no" type="task">
+      </topicref>
+      <topicref href="proc-ciam-2fa-recovery-disable.dita" navtitle="Remove recovery codes for 2FA" toc="no" type="task">
+      </topicref>
+    </topicref>
+    <topicref href="proc-ciam-2fa-recovery-authticate.dita" toc="no" type="concept">
+      <topicref href="proc-ciam-2fa-login.dita" navtitle="Sign in with your 2FA authenticator app" toc="no" type="task">
+      </topicref>
+      <topicref href="proc-ciam-2fa-recovery-login.dita" navtitle="Sign in with your 2FA recovery codes" toc="no" type="task">
+      </topicref>
+    </topicref>
+    <topicref href="proc-ciam-2fa-verifying.dita" toc="no" type="concept">
+      <topicref href="proc-ciam-2fa-verifying-email.dita" navtitle="Verify your email information" toc="no" type="task">
+      </topicref>
+      <topicref href="proc-ciam-2fa-verifying-phone.dita" navtitle="Verify your phone information" toc="no" type="task">
+      </topicref>
+    </topicref>
+    <topicref href="proc-ciam-2fa-revoke-regain.dita" toc="no" type="concept">
+      <topicref href="proc-ciam-2fa-revoke-now.dita" navtitle="Revoke 2FA via phone" toc="no" type="task">
+      </topicref>
+      <topicref href="proc-ciam-2fa-revoke-7day.dita" navtitle="Revoke 2FA via email" toc="no" type="task">
+      </topicref>
+    </topicref>
+  </topicref>
+  <!-- Add topics and maps to create your job to be done -->
+  <!-- <topicref href="<GUID>" type="[reference|task|concept|map]" scope="local"></topicref> -->
+</map>

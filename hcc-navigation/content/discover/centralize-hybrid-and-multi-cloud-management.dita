@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="GUID-d4380b89-c60d-4fff-bd58-cd4d3aed227a">
+  <title>Centralize hybrid and multi-cloud management</title>
+  <shortdesc>Use the Hybrid Cloud Console to manage your Red Hat Enterprise Linux (RHEL) infrastructure, Red Hat OpenShift cluster fleet, Red Hat Ansible Automation Platform infrastructure, and application services.</shortdesc>
+  <conbody>
+    <p>You can perform the following tasks from the Hybrid Cloud Console:</p>
+    <ul id="ul_1">
+      <li>Use Red Hat Lightspeed to reduce risk and downtime, improve compliance, and optimize spend for your RHEL <ph otherprops="PUBLIC">, Ansible Automation Platform,</ph> and Red Hat OpenShift resources.</li>
+      <li otherprops="PUBLIC">View information about your RHEL systems, Red Hat OpenShift clusters, and Ansible Automation Platform nodes from a single interface.</li>
+      <li otherprops="FEDRAMP">View information about your RHEL systems and Red Hat OpenShift clusters nodes from a single interface.</li>
+      <li otherprops="PUBLIC">Manage, update, and deploy different types of Red Hat OpenShift clusters and install cluster add-ons such as data services.</li>
+      <li otherprops="FEDRAMP">Manage, update, and deploy different types of Red Hat OpenShift clusters and install cluster add-ons.</li>
+      <li>Deploy applications on Red Hat OpenShift.</li>
+      <li>Manage security policies and build pipelines.</li>
+    </ul>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://cloud.redhat.com/getting-started" otherprops="PUBLIC" scope="external">
+      <linktext>Hybrid Cloud Console information page</linktext>
+    </link>
+  </related-links>
+</concept>

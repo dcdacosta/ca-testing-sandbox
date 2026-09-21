@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="assembly-config-example-content-errata">
+  <title>Example: How to select the services from which you want to receive notifications</title>
+  <shortdesc>Event notifications are triggered differently in different Hybrid Cloud Console services. Events can be system-based (impacting individual registered systems), account-based (impacting multiple systems within an account), or subscription-based (impacting a product within a subscription).</shortdesc>
+  <conbody>
+    <p>You can customize your own notification preferences so that you receive the type of notifications you want in the Hybrid Cloud Console. For example, for advisory notifications:</p>
+    <ul>
+      <li>To receive an notification only if one of your registered systems is affected by an advisory, subscribe to account-based notifications by opting in to Red Hat Lightspeed content service notifications.</li>
+      <li>To receive an notification about subscription-based updates such as bug fixes or new releases that impact any product in your subscriptions, opt in to errata notifications.</li>
+    </ul>
+    <note type="important">Content service events only are triggered once per account, even if multiple systems are affected. The event is sent again if all affected systems are fixed and a new system is found with the advisory. See <i>Understanding Red Hat Lightspeed Events and Notifications in the Hybrid Cloud Console</i>.</note>
+    <p>This example shows you how to configure notifications so that you only receive email notifications for advisories that impact specific systems in your inventory, instead of notifications for any product within your Red Hat subscription.</p>
+    <p> <b>Key concepts</b> </p>
+    <dl>
+      <dlentry>
+        <dt>Errata advisory</dt>
+        <dd>
+          <p>Errata refers to the correction or update of a software package based on a security issue, bug, or the availability of a new feature. The advisory (or errata advisory) is the published text, while the errata is the packaged release. There are 3 types of errata advisories: Red Hat Security Advisory (RHSA), Red Hat Bug Advisory (RHBA), and Red Hat Enhancement Advisory (RHEA). For more detailed information about errata and types of advisories, see <i>Explaining Red Hat Errata (RHSA, RHBA, and RHEA)</i>.</p>
+          <p>An errata notification is sent when a product within your subscription is affected, allowing you to determine the impact to your systems and what action (if any) to take.</p>
+        </dd>
+      </dlentry>
+      <dlentry>
+        <dt>Content advisory</dt>
+        <dd>
+          <p>A content advisory is similar to an errata advisory, but contains only the advisories that actually affect one or more of your systems so you can apply updates. The Red Hat Lightspeed content service in the Hybrid Cloud Console provides content advisories. <ph otherprops="PUBLIC">See <i>Managing system content and patch updates on RHEL systems</i> for more information.</ph><ph otherprops="FEDRAMP">See <i>Managing system content and patch updates on RHEL systems with FedRAMP</i> for more information.</ph></p>
+        </dd>
+      </dlentry>
+    </dl>
+    <dl>
+      <dlentry>
+        <dt>The notifications workflow</dt>
+        <dd>Before you can receive notifications from the content service, an Organization Administrator or Notifications Administrator must configure a behavior group to allow content notifications to be sent to specific users in the organization.</dd>
+      </dlentry>
+    </dl>
+    <p>After you are added to the behavior group, you can select the services you want to receive notifications from, as well as the frequency, from <b>Notification Preferences</b>.</p>
+    <p>When an event occurs, all users on the account who opted in within their user preferences to receive notifications will receive the notification of the event.</p>
+    <p otherprops="PUBLIC">You can further customize how you want to receive notifications by integrating third-party tools with the Hybrid Cloud Console. In addition to receiving email notifications, you can receive notifications in Event-Driven Ansible, Microsoft Teams, Slack, ServiceNow, and other applications. To configure third-party integrations for notifications, see <i>Integrating the Red Hat Hybrid Cloud Console with third-party applications</i>.</p>
+    <note type="note">
+      <ul>
+        <li>See <i>Understanding errata</i> in the Subscriptions documentation for information about errata notifications.</li>
+      </ul>
+    </note>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://access.redhat.com/articles/explaining_redhat_errata" otherprops="PUBLIC" scope="external">
+      <linktext>Explaining Red Hat Errata (RHSA)</linktext>
+    </link>
+    <link format="html" href="https://docs.redhat.com/en/documentation/red_hat_lightspeed/1-latest/html-single/managing_system_content_and_patch_updates_on_rhel_systems/index" otherprops="PUBLIC" scope="external">
+      <linktext>Managing system content and patch updates on RHEL systems</linktext>
+    </link>
+    <link format="html" href="../extend/integrate-communication-apps.dita" otherprops="PUBLIC" scope="external">
+      <linktext>Integrate communication applications</linktext>
+    </link>
+    <link format="html" href="https://docs.redhat.com/en/documentation/subscription_central/1-latest/html-single/getting_started_with_rhel_system_registration/index#understanding_errata_con" otherprops="PUBLIC" scope="external">
+      <linktext>Understanding errata</linktext>
+    </link>
+    <link format="html" href="https://access.redhat.com/articles/7112807" otherprops="PUBLIC" scope="external">
+      <linktext>Understanding Red Hat Lightspeed Events and Notifications in the Hybrid Cloud Console</linktext>
+    </link>
+    <link format="html" href="https://access.redhat.com/articles/explaining_redhat_errata" otherprops="FEDRAMP" scope="external">
+      <linktext>Explaining Red Hat Errata (RHSA</linktext>
+    </link>
+    <link format="html" href="https://docs.redhat.com/en/documentation/red_hat_lightspeed/1-latest/html/managing_system_content_and_patch_updates_on_rhel_systems_with_fedramp/index" otherprops="FEDRAMP" scope="external">
+      <linktext>Managing system content and patch updates on RHEL systems with FedRAMP</linktext>
+    </link>
+    <link format="html" href="https://docs.redhat.com/en/documentation/subscription_central/1-latest/html-single/getting_started_with_rhel_system_registration/index#understanding_errata_con" otherprops="FEDRAMP" scope="external">
+      <linktext>Understanding errata</linktext>
+    </link>
+    <link format="html" href="https://access.redhat.com/articles/7112807" otherprops="FEDRAMP" scope="external">
+      <linktext>Understanding Red Hat Lightspeed Events and Notifications in the Hybrid Cloud Console</linktext>
+    </link>
+  </related-links>
+</concept>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="assembly-tam-procedures">
+  <title>Enable temporary access to your Red Hat account for customer support</title>
+  <shortdesc>When a customer has a question about their account on the Red Hat Hybrid Cloud Console, they can grant temporary access to their account to a Red Hat associate, usually a Red Hat Technical Account Manager (TAM) or a Red Hat Customer Experience and Engagement support engineer. </shortdesc>
+  <conbody>
+    <p>After the customer grants account access, the Red Hat TAM or support engineer can log in to the customer account and access the account information on the Red Hat Hybrid Cloud Console, they can grant temporary access to their account to a Red Hat associate, usually a Red Hat Technical Account Manager (TAM) or a Red Hat Customer Experience and Engagement support engineer. After the customer grants account access, the Red Hat TAM or support engineer can log in to the customer account and access the account information on the Red Hat Hybrid Cloud Console as though they were a member of the customer’s account.</p>
+    <p>For more information about Red Hat support services, see <i>Red Hat Service offerings</i>.</p>
+    <p>When a Red Hat Technical Account Manager (TAM) or a Red Hat Customer Experience and Engagement support engineer requests access to a customer account, what they can see and do is limited by which user access roles are assigned to the access request and is also limited to customer account information that is available on the Red Hat Hybrid Cloud Console.</p>
+    <p>For more information about default user access roles, see reference section, <i>Predefined User Access roles</i>.</p>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://www.redhat.com/en/services" scope="external">
+      <linktext>Red Hat Service offerings</linktext>
+    </link>
+  </related-links>
+</concept>

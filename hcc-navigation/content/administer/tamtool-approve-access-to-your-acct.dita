@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-insights-rbac-tamtool-cust-appprove">
+  <title>Approve access to your account</title>
+  <shortdesc>As a customer and Organization Administrator, you can grant access to your account by approving the Red Hat access request. An access request notification popup appears briefly when the Organization Administrator is logged in and receives a request.</shortdesc>
+  <taskbody>
+    <prereq>
+      <p>Collaborate with a Red Hat support engineer and provide the following information so that the support engineer can create an access request request for your approval.</p>
+      <ul>
+        <li>You are logged in to the <xref format="html" href="https://console.openshiftusgov.com/" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com/" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console</xref> as a user who has Organization Administrator permission.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>Your Red Hat customer account number.</li>
+        <li>A start date for system access.</li>
+        <li>An end date for system access.</li>
+        <li>An understanding of which user access roles the access request will grant to the Red Hat support engineer.</li>
+      </ul>
+      <p>You can view a list of all account access requests for your system and the status of each from the <xref format="html" href="https://console.openshiftusgov.com/iam/user-access/access-requests" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console &gt; Settings &gt; Identity &amp; Access Management &gt; User Access &gt; Red Hat Access Requests</xref><xref format="html" href="https://console.redhat.com/iam/user-access/access-requests" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console &gt; Settings &gt; Identity &amp; Access Management &gt; User Access &gt; Red Hat Access Requests</xref>.</p>
+      <note type="note">Only the Organization Administrator can approve or deny an access request. The User Access administrator role does not provide permissions to approve or deny an access request.</note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Navigate to the <xref format="html" href="https://console.openshiftusgov.com/iam/user-access/access-requests" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console &gt; Settings &gt; Identity &amp; Access Management &gt; User Access &gt; Red Hat Access Requests</xref><xref format="html" href="https://console.redhat.com/iam/user-access/access-requests" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console &gt; Settings &gt; Identity &amp; Access Management &gt; User Access &gt; Red Hat Access Requests</xref>. A list of all access requests is displayed.</cmd>
+      </step>
+      <step>
+        <cmd>The recommended approach is that you click on the Request ID number, a string of hexadecimal digits.</cmd>
+      </step>
+      <step>
+        <cmd>Carefully review the request details and the Roles requested.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Approve</b> to approve the request. The action is confirmed and the status changes to Approved.</cmd>
+      </step>
+      <step>
+        <cmd>Use the edit function to change your response.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

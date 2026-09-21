@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-notif-assoc-behavior-group-with-events">
+  <title>Associate a behavior group with events</title>
+  <shortdesc>Use the following procedure to associate a notifications service behavior group with triggering events.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Red Hat Hybrid Cloud Console.</li>
+        <li>You have Notifications administrator privileges configured in User Access.</li>
+        <li>A Notifications administrator has already created the behavior group.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the Hybrid Cloud Console, select the gear icon and then select <xref format="html" href="https://console.openshiftusgov.com/settings/my-user-access" otherprops="FEDRAMP" scope="external"><b>Settings</b></xref><xref format="html" href="https://console.redhat.com/settings/my-user-access" otherprops="PUBLIC" scope="external"><b>Settings</b></xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Under <b>Settings</b>, expand <b>Notifications</b> and select an <b>application bundle</b> where the behavior group was created, such as Red Hat Enterprise Linux or OpenShift.</cmd>
+      </step>
+      <step>
+        <cmd>Select a behavior group with which to associate events. You can enter the name of the group in the search box, or scroll through the behavior group cards.</cmd>
+      </step>
+      <step>
+        <cmd>In the list of events for the application bundle, click the pencil icon on the far right of the event name row. This will enable a drop-down list in the behavior column for the event.</cmd>
+      </step>
+      <step>
+        <cmd>Click the behavior drop-down list and select the behavior group(s) you want to associate with the event.</cmd>
+      </step>
+      <step>
+        <cmd>Click the checkmark in the event row to accept your selection for that event.</cmd>
+      </step>
+      <step>
+        <cmd>Repeat the previous step for each event. </cmd>
+        <info>
+          <note type="note">Events can have multiple behavior groups associated with them. It is also possible that a behavior group is not associated with any event. In that case, when an event occurs, no action is taken.</note>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

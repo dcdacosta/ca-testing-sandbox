@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="GUID-8e26c1b0-f32c-4422-a4e5-f0dc78f9f310">
+  <title>Log in to create a new user account</title>
+  <shortdesc>You create a new user account with your organization when you first log in at Red Hat Customer Portal.</shortdesc>
+  <taskbody>
+    <prereq id="prereq_1">
+      <ul id="ul_1">
+        <li>Ensure company single-sign on integration is enabled.</li>
+        <li>Ensure your organization’s account is enabled for auto-user registration.</li>
+        <li>Ensure you have a valid email with your organization.</li>
+        <li>Confirm you received information from your Organization Administrator with a link to click to complete auto-user registration.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Click the registration link provided by your Organization Administrator.</cmd>
+      </step>
+      <step>
+        <cmd>You are redirected to your organization's internal log in page. Log in with your organization credentials.</cmd>
+      </step>
+      <step>
+        <cmd>You are redirected to the Red Hat new user registration form. Fill out all required fields and click <b>Create account</b>.</cmd>
+        <info>
+          <note>In some instances, a new page may open that requires you to read and acknowledge the Red Hat account agreements in order to continue.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>Check your email for a Red Hat account <b>verification link</b>. Click the verification link in the email to complete your account set up.</cmd>
+      </step>
+    </steps>
+    <result id="result_1">Your Red Hat user account is now successfully set up and registered with your organization’s corporate Red Hat account.</result>
+  </taskbody>
+</task>

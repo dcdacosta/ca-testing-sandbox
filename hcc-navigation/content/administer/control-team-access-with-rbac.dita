@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-granting-group-access">
+  <title>Control team access using Role-based Access Control (RBAC)</title>
+  <shortdesc>You can manage access for your teams by creating a group and adding roles, users, and service accounts to the group. The roles and their permissions determine the type of access granted to all members of the group.</shortdesc>
+</task>

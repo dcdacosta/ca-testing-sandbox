@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/reference.dtd">
+<reference id="con-notif-concepts">
+  <title>Notification service concepts</title>
+  <shortdesc>Review key concepts to understand how the notifications service works:</shortdesc>
+  <refbody>
+    <section>
+      <table>
+        <title>Notifications concepts</title>
+        <tgroup cols="2">
+          <colspec colname="col_1" colwidth="50*"/>
+          <colspec colname="col_2" colwidth="50*"/>
+          <thead>
+            <row>
+              <entry>Concept</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <p>Actions</p>
+              </entry>
+              <entry>
+                <p>Operations are performed in response to an event, for example sending an email. Actions are defined in behavior groups that are configured by a Notifications administrator.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>Application bundle</p>
+              </entry>
+              <entry>
+                <p>Application bundle refers to an application group within the Hybrid Cloud Console, such as Red Hat Enterprise Linux, OpenShift, or Subscription Services.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>Behavior groups</p>
+              </entry>
+              <entry>
+                <p>Behavior groups determine what actions to take when an event occurs, and whether to notify all account users or only designated administrators. After a Notifications administrator creates a behavior group, they associate it with event types which enables Notifications administrators to apply the same actions to all application-specific events.</p>
+                <p><b>NOTE:</b> Notifications administrators configure notification behavior groups separately for each application bundle.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>Email preferences</p>
+              </entry>
+              <entry>
+                <p>Individual users with access to applications on the Hybrid Cloud Console set their personal email preferences. Users can configure personal email notifications to arrive either instantly, as the event occurs, or consolidated into a daily digest that arrives at midnight, 00:00 Coordinated Universal Time (UTC), for all accounts.</p>
+                <p>For errata alerts, instant notifications are batched and sent in 15-minute intervals.</p>
+                <p><b>IMPORTANT:</b> Selecting instant notification for any service can potentially result in the recipient receiving a very large number of emails.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>Event type</p>
+              </entry>
+              <entry>
+                <p>Event types are application-specific system changes that trigger the application or service to initiate notification actions. Event types are created by application developers at Red Hat and are unique for each application bundle.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>Notification</p>
+              </entry>
+              <entry>
+                <p>A message that a user receives from the notifications service as a result of a event occurring in the Hybrid Cloud Console. A notification can be delivered as an email, a message in a configured third-party tool, or in the Event Log in the console.</p>
+              </entry>
+            </row>
+            <row otherprops="PUBLIC">
+              <entry>
+                <p>Integrations</p>
+              </entry>
+              <entry>
+                <p>Integrations define the method of delivery of notifications configured by the Notifications administrator. After integrations are configured, the notifications service sends the HTTP POST messages to endpoints.</p>
+              </entry>
+            </row>
+            <row otherprops="PUBLIC">
+              <entry>
+                <p>Severity</p>
+              </entry>
+              <entry>
+                <p>Email notifications and notifications sent to third-party integrations show a severity level for most events. This allows you to easily determine the importance of the event and filter the notifications you receive by severity. Severity levels include Critical, Important, Moderate, Low, and None. See <xref href="notification-severity.dita#con-notif-severity"/> for details.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>User access roles</p>
+              </entry>
+              <entry>
+                <p>The following User Access roles interact with notifications:</p>
+                <p>* Organization Administrator</p>
+                <p>* Notifications administrator</p>
+                <p>* Notifications viewer</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </refbody>
+</reference>

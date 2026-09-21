@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/map.dtd">
+<map id="GUID-92b945a0-3c52-4fe3-b8aa-ee82c1367b12">
+  <!-- Use a map to build the structure of your HTML output. -->
+  <title>Streamline Red Hat user authentication with identity provider (IdP) integration</title>
+  <topicref chunk="to-content" href="con-ciam-iam-auth-about.dita" navtitle="Streamline authentication with IdP integration" type="concept">
+    <topicref href="con-ciam-iam-auth-limitations.dita" navtitle="Understand limitations of IdP integration" toc="no" type="concept">
+    </topicref>
+    <topicref href="proc-ciam-iam-auth-using.dita" navtitle="Configure IdP integration for your organization" toc="no" type="concept">
+      <topicref href="proc-ciam-iam-auth-idp.dita" navtitle="Connect your IdP" toc="no" type="task">
+      </topicref>
+      <topicref href="proc-ciam-auth-idp-oidc.dita" navtitle="Configure IdP integration for OIDC" toc="no" type="task">
+      </topicref>
+      <topicref href="proc-ciam-auth-idp-saml.dita" navtitle="Configure IdP integration for SAML" toc="no" type="task">
+      </topicref>
+    </topicref>
+    <topicref href="proc-ciam-auth-idp-delete.dita" navtitle="Delete, disable, or update your IdP integration" toc="no" type="concept">
+      <topicref href="proc-ciam-auth-idp-change-cert.dita" toc="no" type="task">
+      </topicref>
+      <topicref href="proc-ciam-auth-idp-disable.dita" navtitle="Pause your IdP integration for maintenance" toc="no" type="task">
+      </topicref>
+    </topicref>
+    <topicref href="ref-ciam-iam-auth-defaults.dita" navtitle="IdP integration requirements and technical defaults" toc="no" type="reference">
+      <topicref href="ref-ciam-iam-auth-saml-reqs-defs.dita" navtitle="SAML requirements and defaults" toc="no" type="reference">
+      </topicref>
+      <topicref href="ref-ciam-iam-auth-oidc-reqs-defs.dita" navtitle="OIDC requirements and defaults" toc="no" type="reference">
+      </topicref>
+      <topicref href="ref-ciam-iam-auth-oidc-secret-characters.dita" navtitle="Disallowed characters for OIDC secrets" toc="no" type="reference">
+      </topicref>
+    </topicref>
+  </topicref>
+  <!-- Add topics and maps to create your job to be done -->
+  <!-- <topicref href="<GUID>" type="[reference|task|concept|map]" scope="local"></topicref> -->
+</map>

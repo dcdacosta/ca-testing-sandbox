@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-rbac-restricting-access">
+  <title>Restrict service access to a single user</title>
+  <shortdesc>You can create a new group that contains a single user and add a role to that group. The role you add provides the service access permissions you want that single user to have. If you add other users to the group, the added users will have the same group permissions.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the <xref format="html" href="https://console.openshiftusgov.com/" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com/" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console</xref> as a user who has Organization Administrator permission.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>If you are not an Organization Administrator, you must be a member of a group that has the <b>User Access administrator</b> role assigned to it.</li>
+      </ul>
+      <p>The roles you add to the group can be from the predefined list of roles provided with User Access, from custom roles created by an Organization Administrator, or a combination of both.</p>
+      <p otherprops="PUBLIC">For more information about predefined roles, see section <xref format="html" href="predefined-user-access-roles-ref.dita#assembly-insights-rbac-reference" scope="external">Predefined User Access roles</xref>.</p>
+      <p>When you add a user to a new group, the user acquires the permissions of the new group and also inherits the permissions of all other groups they belong to. The permissions of the new group are added to their existing permissions.</p>
+      <note type="important">In this procedure you modify the <b>Default access</b> group. Once modified, the <b>Default access</b> group name changes to <b>Custom default access</b>. The <b>Custom default access</b> group is no longer updated with changes pushed out by Red Hat from the <xref format="html" href="https://console.openshiftusgov.com/" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com/" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console</xref>.</note>
+      <note type="tip">You can restore the <b>Default access</b> group, which removes the <b>Custom default access</b> group and any changes you made. <ph otherprops="PUBLIC">See <xref format="html" href="restore-default-access-group.dita#proc-insights-rbac-restoring-default-access" scope="external">Restore the Default access group</xref>.</ph></note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Navigate to the <xref format="html" href="https://console.openshiftusgov.com/iam/user-access/groups" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console &gt; Settings &gt; Identity &amp; Access Management &gt; User Access &gt; Groups</xref><xref format="html" href="https://console.redhat.com/iam/user-access/groups" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console &gt; Settings &gt; Identity &amp; Access Management &gt; User Access &gt; Groups</xref>. The <b>Groups</b> page is displayed.</cmd>
+      </step>
+      <step>
+        <cmd>Remove all roles from the <b>Default access</b> group. </cmd>
+        <info>
+          <p>Because all users in your organization belong to the <b>Default access</b> group, you cannot add or remove single users in <b>Default access</b> to create access control. By removing all roles, users do not inherit role permissions from <b>Default access</b>.</p>
+        </info>
+        <substeps>
+          <substep>
+            <cmd>Select the checkbox above the roles list to select all roles in the group.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click the more options icon (⋮) &gt; <b>Remove</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click <b>Remove roles</b> to confirm.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Save the changes to <b>Default access</b> group. The name changes to <b>Custom default access</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Create a new group that contains the users and roles for the allowed access permissions. </cmd>
+        <info>
+          <p>For example, create a group <b>Security Admin</b> that contains the users who will have full access to vulnerability service.</p>
+        </info>
+        <substeps>
+          <substep>
+            <cmd>Create a group <b>Security Admin</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Add one or several users to the group from the <b>Members</b> list.</cmd>
+          </substep>
+          <substep>
+            <cmd>Add the <b>Vulnerability administrator</b> role. </cmd>
+            <info>
+              <p>Each user you add to this group has full access to the vulnerability service.</p>
+              <note type="note">If you want an Organization Administrator to have access, add the Organization Administrator user to the group.</note>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+  </taskbody>
+</task>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/reference.dtd">
+<reference id="ref-if-address-troubleshooting">
+  <title>Troubleshoot connection issues between third-party integrations and Red Hat Lightspeed</title>
+  <shortdesc>If you experience connection issues between your third-party application and Red Hat Lightspeed, ensure that your third-party application accepts incoming requests from the following Red Hat IP addresses:</shortdesc>
+  <refbody>
+    <section>
+      <ul>
+        <li> <codeph>23.20.194.86</codeph> </li>
+        <li> <codeph>23.22.242.238</codeph> </li>
+        <li> <codeph>34.192.36.110</codeph> </li>
+        <li> <codeph>44.217.190.178</codeph> </li>
+        <li> <codeph>54.147.218.140</codeph> </li>
+        <li> <codeph>54.205.249.13</codeph> </li>
+      </ul>
+      <p>Depending on your network configuration, you may need to modify your firewall configurations to permit inbound connections from Red Hat Lightspeed.</p>
+      <p>For the most up-to-date list of IP addresses, see <xref format="html" href="https://access.redhat.com/articles/6985526" scope="external">IP allowlist for Red Hat Hybrid Cloud Console and Red Hat Lightspeed notifications and integrations</xref>.</p>
+    </section>
+  </refbody>
+</reference>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="using-ai-assistants">
+  <title>Access Red Hat's AI assistants</title>
+  <shortdesc>Access Ask Red Hat, RHEL Lightspeed, OpenShift Assisted Installer, or the Hybrid Cloud Console virtual assistant.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Hybrid Cloud Console.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref href="access-hcc.dita#finding-login"/>.</note>
+        </li>
+        <li>Your account has valid Red Hat subscriptions for the selected AI assistant:
+          <ul>
+            <li>Ask Red Hat requires one active subscription or trial subscription.</li>
+            <li>RHEL Lightspeed requires a RHEL subscription. See the <xref format="html" href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/interacting_with_the_command-line_assistant_powered_by_rhel_lightspeed/introducing-rhel-lightspeed-for-rhel-systems" scope="external">RHEL Lightspeed documentation</xref> for more details.</li>
+            <li>OpenShift Assisted Installer and the Hybrid Cloud Console virtual assistant do not have a specific subscription requirement.</li>
+          </ul>
+        </li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Click the AI assistants icon in the lower right of the Hybrid Cloud Console screen. The AI assistants panel opens. You can also access the AI assistants from the help panel by clicking the <b>Help</b> button, then clicking the robot icon.</cmd>
+      </step>
+      <step>
+        <cmd>Select an AI assistant from the <b>AI Assistant</b> list to start a conversation with Ask Red Hat, RHEL Lightspeed, OpenShift Assisted Installer, or the Hybrid Cloud Console virtual assistant.</cmd>
+      </step>
+      <step>
+        <cmd>Click an example question, or type your query in the <b>Send a message</b> field and then press the <b>Enter</b> key.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/map.dtd">
+<map>
+  <title>Extend</title>
+  <topichead navtitle="Extend">
+    <topicref href="manage-alerts-preferred-platform.dita" locktitle="yes" navtitle="Manage alerts from your preferred platform" type="reference">
+      <topicref href="integrate-communication-apps.dita" locktitle="yes" navtitle="Integrate communication applications" type="concept">
+        <topicref chunk="to-content" href="set-up-google-chat-integration.dita" locktitle="yes" navtitle="Set up a Google Chat integration" type="concept">
+          <topicref href="configure-incoming-webhooks-gchat.dita" locktitle="yes" navtitle="Configure incoming webhooks in Google Chat" toc="no" type="task">
+          </topicref>
+          <topicref href="configure-gchat-integration.dita" locktitle="yes" navtitle="Configure the Google Chat integration" toc="no" type="task">
+          </topicref>
+          <topicref href="create-behavior-group-gchat-integration.dita" locktitle="yes" navtitle="Create the behavior group for the Google Chat integration" toc="no" type="task">
+          </topicref>
+        </topicref>
+        <topicref chunk="to-content" href="set-up-slack-integration.dita" locktitle="yes" navtitle="Set up a Slack integration" type="concept">
+          <topicref href="configure-incoming-webhooks-slack.dita" locktitle="yes" navtitle="Configure incoming webhooks in Slack" toc="no" type="task">
+          </topicref>
+          <topicref href="configure-slack-integration-console.dita" locktitle="yes" navtitle="Configure the Slack integration" toc="no" type="task">
+          </topicref>
+          <topicref href="create-behavior-group-slack-integration.dita" locktitle="yes" navtitle="Create the behavior group for the Slack integration" toc="no" type="task">
+          </topicref>
+        </topicref>
+        <topicref chunk="to-content" href="set-up-microsoft-teams-integration.dita" locktitle="yes" navtitle="Set up a Microsoft Teams integration" type="concept">
+          <topicref href="configure-incoming-webhooks-microsoft-teams.dita" locktitle="yes" navtitle="Configure incoming webhooks in Microsoft Teams" toc="no" type="task">
+          </topicref>
+          <topicref href="configure-microsoft-teams-integration.dita" locktitle="yes" navtitle="Configure the Microsoft Teams integration" toc="no" type="task">
+          </topicref>
+          <topicref href="create-behavior-group-microsoft-teams-integration.dita" locktitle="yes" navtitle="Create the behavior group for the Microsoft Teams integration" toc="no" type="task">
+          </topicref>
+        </topicref>
+      </topicref>
+      <topicref href="integrate-reporting-automation-apps.dita" locktitle="yes" navtitle="Integrate reporting and automation applications" type="concept">
+        <topicref chunk="to-content" href="configure-splunk-integration.dita" locktitle="yes" navtitle="Configure a Splunk integration" type="concept">
+          <topicref href="install-lightspeed-app-splunk.dita" locktitle="yes" navtitle="Install the Red Hat Lightspeed application for Splunk" toc="no" type="task">
+          </topicref>
+          <topicref href="enable-hec-token.dita" locktitle="yes" navtitle="Enable the HEC token" toc="no" type="task">
+          </topicref>
+          <topicref href="manually-configure-notif-admin-group.dita" locktitle="yes" navtitle="Manually configure a Notifications administrator group in your account" toc="no" type="task">
+          </topicref>
+          <topicref href="manually-configure-splunk-integration.dita" locktitle="yes" navtitle="Manually configure a Splunk integration" toc="no" type="task">
+          </topicref>
+          <topicref href="update-lightspeed-app-for-splunk.dita" locktitle="yes" navtitle="Update the Red Hat Lightspeed application for Splunk" toc="no" type="task">
+          </topicref>
+        </topicref>
+        <topicref chunk="to-content" href="configure-pagerduty-integration.dita" locktitle="yes" navtitle="Configure a PagerDuty integration" type="concept">
+          <topicref href="create-pagerduty-service.dita" locktitle="yes" navtitle="Create a PagerDuty service" toc="no" type="task">
+          </topicref>
+          <topicref href="generate-key-for-pagerduty-service.dita" locktitle="yes" navtitle="Generate an integration key for an existing PagerDuty service" toc="no" type="task">
+          </topicref>
+          <topicref href="add-pagerduty-account-as-integration.dita" locktitle="yes" navtitle="Add a PagerDuty account as an integration" toc="no" type="task">
+          </topicref>
+          <topicref href="create-behavior-group-pagerduty-integration.dita" locktitle="yes" navtitle="Create the behavior group for the PagerDuty integration" toc="no" type="task">
+          </topicref>
+        </topicref>
+        <topicref chunk="to-content" href="configure-eda-integration.dita" locktitle="yes" navtitle="Configure an Event-Driven Ansible integration" type="concept">
+          <topicref href="add-eda-integration-verify-connection.dita" locktitle="yes" navtitle="Add the Event-Driven Ansible integration and verify the connection" toc="no" type="task">
+          </topicref>
+          <topicref href="configure-eda-25-for-integration.dita" locktitle="yes" navtitle="Configure Event-Driven Ansible 2.5 for integration" toc="no" type="task">
+          </topicref>
+          <topicref href="create-behavior-group-eda-integration.dita" locktitle="yes" navtitle="Create the behavior group for the Event-Driven Ansible integration" toc="no" type="task">
+          </topicref>
+        </topicref>
+        <topicref chunk="to-content" href="configure-servicenow-integration.dita" locktitle="yes" navtitle="Configure a ServiceNow integration" type="concept">
+          <topicref href="install-configure-servicenow-flow-templates.dita" locktitle="yes" navtitle="Install and configure the ServiceNow Flow Templates" toc="no" type="task">
+          </topicref>
+        </topicref>
+      </topicref>
+      <topicref href="integrate-other-apps-with-webhooks.dita" locktitle="yes" navtitle="Integrate other third-party applications with webhooks" type="concept">
+        <topicref chunk="to-content" href="about-webhook-integrations.dita" type="concept">
+          <topicref href="configure-webhook-integration.dita" locktitle="yes" navtitle="Configure a webhook integration" toc="no" type="task">
+          </topicref>
+          <topicref href="create-behavior-group-webhook-integration.dita" locktitle="yes" navtitle="Create the behavior group for a webhook integration" toc="no" type="task">
+          </topicref>
+        </topicref>
+      </topicref>
+      <topicref href="edit-delete-remove-integrations.dita" locktitle="yes" navtitle="Edit, delete, or remove integrations" type="task">
+      </topicref>
+    </topicref>
+  </topichead>
+</map>

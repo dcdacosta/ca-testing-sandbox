@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="assembly-insights-rbac-intro">
+  <title>Manage user permissions with Role-based Access Control (RBAC)</title>
+  <shortdesc>In a Software as a Service (SaaS) platform such as the Red Hat Hybrid Cloud Console, strict access control is essential. A Red Hat customer account might have hundreds of authenticated users, yet not all users need the same level of access to the SaaS services available on the Hybrid Cloud Console.</shortdesc>
+  <conbody>
+    <p>The User Access feature is an implementation of role-based access control (RBAC) that allows Organization Administrators to centrally manage user permissions to various services hosted on the Hybrid Cloud Console.</p>
+    <note type="note">User Access does not manage OpenShift Cluster Manager permissions. For OpenShift Cluster Manager, all users in the organization can view information, but only an Organization Administrator and cluster owners can perform actions on clusters.</note>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://docs.redhat.com/en/documentation/openshift_cluster_manager/1-latest/html/managing_clusters/assembly-user-management-ocm_assembly-cluster-subscriptions" scope="external">
+      <linktext>Configuring access to clusters in OpenShift Cluster Manager</linktext>
+    </link>
+  </related-links>
+</concept>

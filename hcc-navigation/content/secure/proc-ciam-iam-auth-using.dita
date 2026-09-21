@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="proc-ciam-auth-using">
+  <title>Configure identity provider (IdP) integration for your organization</title>
+  <shortdesc>Identity provider integration is a component of the Identity and Access Management services provided by Red Hat Hybrid Cloud Console.</shortdesc>
+  <conbody>
+    <p>Identity Provider Integration establishes your corporate single sign-on (SSO) solution as a valid identity provider for the Red Hat single sign-on system. IdP integration supports <b>Open ID Connect (OIDC)</b> and <b>Security Assertion Markup Language (SAML)</b> authentication.</p>
+    <note type="important">
+      <p>When you modify your identity provider integration, users in your organization must re-link their user accounts in the following situations:</p>
+      <ul id="ul_1">
+        <li>You delete an existing identity provider and configure a new one.</li>
+        <li>The identifier for your identity provider changes, for instance, if your company changes SSO or IdP vendors.
+          <ul id="ul_2">
+            <li>For SAML configurations, the identifier is the <codeph>nameid</codeph> attribute.</li>
+            <li>For OIDC configurations, the identifier is the <codeph>sub</codeph> claim.</li>
+          </ul>
+        </li>
+        <li>A user leaves and returns to your organization. The user can replace a preexisting link with a new link when the <b>One-time account linking required</b> login message is displayed.</li>
+      </ul>
+    </note>
+  </conbody>
+</concept>

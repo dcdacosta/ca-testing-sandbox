@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="con-rbac-granular-permissions">
+  <title>About granular permissions</title>
+  <shortdesc>Granular permissions allow an Organization Administrator to define role permissions for one or more applications. Many of the predefined roles provide wildcard permissions, which is equivalent to a super user role with full access to all actions.</shortdesc>
+  <conbody>
+    <p>By defining granular permissions, you can create (or modify) roles with limited permissions, such as read-only, or read and update but not delete.</p>
+    <p>As an example, compare the predefined roles of Cost Administrator and Cost Price List Viewer.</p>
+    <table>
+      <tgroup cols="4">
+        <colspec colname="col_1" colwidth="25*"/>
+        <colspec colname="col_2" colwidth="25*"/>
+        <colspec colname="col_3" colwidth="25*"/>
+        <colspec colname="col_4" colwidth="25*"/>
+        <thead>
+          <row>
+            <entry>Role</entry>
+            <entry>Application</entry>
+            <entry>Resource</entry>
+            <entry>Operation</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <p>Cost Administrator</p>
+            </entry>
+            <entry>
+              <p>cost-management</p>
+            </entry>
+            <entry>
+              <p>* (all)</p>
+            </entry>
+            <entry>
+              <p>* (all)</p>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <p>Cost Price List Viewer</p>
+            </entry>
+            <entry>
+              <p>cost-management</p>
+            </entry>
+            <entry>
+              <p>cost_model</p>
+            </entry>
+            <entry>
+              <p>read</p>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <p>By creating a new role, you can define the applications, resources, and operations that are specific to that role.</p>
+  </conbody>
+</concept>

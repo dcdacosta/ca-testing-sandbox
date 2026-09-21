@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="con-ciam-user-limitations">
+  <title>Understand the limitations of identity provider integration</title>
+  <shortdesc>When you integrate an external identity provider (IdP) or single sign-on (SSO) solution with Red Hat services, specific technical restrictions and account requirements apply to user authentication.</shortdesc>
+  <conbody>
+    <p>If a user cannot authenticate with your organization's SSO solution, that user cannot log in to any Red Hat service that relies on a <b>web-based authentication flow</b>. A limited number of Red Hat services do not utilize web-based authentication; these services are <b>not compatible</b> with federated single sign-on.</p>
+    <note>If you revoke a user's corporate credentials in your IdP, the user can still use a Red Hat username and password to log in to services that do not use web-based authentication.</note>
+    <p>Users who do not have an account in your corporate IdP cannot authenticate. This restriction applies to vendors and external partners who use a Red Hat login associated with your organization's Red Hat account. When you enable identity provider integration, external users must have an account in your corporate IdP to maintain access to Red Hat services.</p>
+    <note>To use identity provider integration, you must create user accounts by using supported registration methods, such as inviting users or auto-user registration.</note>
+    <p>Identity provider integration is supported on the following Red Hat account types:</p>
+    <ul>
+      <li>A Red Hat Corporate account type. Personal account types are not supported.</li>
+      <li>Accounts with an active, non-evaluation subscription.</li>
+      <li>Approved Red Hat partner accounts.</li>
+    </ul>
+    <p>To remove user access to all Red Hat services, an Organization Administrator must deactivate the Red Hat user account. Use the <b>user management tool</b> to deactivate accounts. A deactivated account can no longer access any Red Hat service.</p>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://www.redhat.com/wapps/ugc/protected/usermgt/userList.html" scope="external">
+      <linktext>User management tool</linktext>
+    </link>
+  </related-links>
+</concept>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="proc-rbac-creating-role-from-scratch">
+  <title>Create a role from scratch</title>
+  <shortdesc>Create a role from scratch when you want to create a role with specific granular permissions.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the <xref format="html" href="https://console.openshiftusgov.com/" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com/" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console</xref> as a user who has Organization Administrator permission.</li>
+        <li>If you are not an Organization Administrator, you must be a member of a group that has the <b>User Access administrator</b> role assigned to it.</li>
+        <li>You started the <b>Create role</b> wizard.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the <b>Create role</b> wizard, click the <b>Create a role from scratch</b> button.</cmd>
+      </step>
+      <step>
+        <cmd>Enter a <b>Role name</b>, which is required.</cmd>
+      </step>
+      <step>
+        <cmd>Optionally, enter a <b>Role description</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Click the <b>Next</b> button. If the role name already exists, you must provide a different name before you can proceed.</cmd>
+      </step>
+      <step>
+        <cmd>Use the <b>Add permissions</b> window to select the application permissions to include in your role. By default, permissions are listed by application.</cmd>
+      </step>
+      <step>
+        <cmd>Optionally use the filter drop-down to to filter by Applications, Resources, or Operations. </cmd>
+        <info>
+          <note type="tip">Use the list at the top of the wizard page to view all the permissions added to the role. You can click a permission to delete it.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>Click the <b>Next</b> button to review details. You can click the <b>Submit</b> button to submit the role, the <b>Back</b> button to go back and make changes, or the <b>Cancel</b> button to cancel the action. </cmd>
+        <info>
+          <p>The role you created is available to add to a User Access group.</p>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

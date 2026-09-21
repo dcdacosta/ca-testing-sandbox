@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="customizing-main-page">
+  <title>Customize your Hybrid Cloud Console home page </title>
+  <shortdesc>By default, your Hybrid Cloud Console home page displays several widgets for services and products. You can add or remove widgets to customize your home page to suit your requirements and access your most-used services from one page.</shortdesc>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>To customize your home page, complete any of the following tasks: </cmd>
+        <info>
+          <ul>
+            <li>On the <xref format="html" href="https://console.openshiftusgov.com" otherprops="FEDRAMP" scope="external">Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com" otherprops="PUBLIC" scope="external">Hybrid Cloud Console</xref> home page, click <b>Add widgets</b>. A list of widgets appears near the top of the screen.</li>
+            <li>Drag the <b>Move widget</b> icon (⠿) on any widget to add it to or move it on the home page.</li>
+            <li>Click the options icon (⋮) to lock, maximize, minimize, or remove the widget.</li>
+            <li>To customize the height of a widget, drag up or down on any widget corner.</li>
+          </ul>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

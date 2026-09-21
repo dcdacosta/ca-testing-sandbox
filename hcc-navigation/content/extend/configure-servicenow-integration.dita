@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="assembly-installing-configuring-insights-for-snow">
+  <title>Configure a ServiceNow integration</title>
+  <shortdesc>The ServiceNow Flow Templates for Red Hat Lightspeed application integrates with Red Hat Lightspeed services. The templates provide ServiceNow flows for creating incidents out of found vulnerabilities, performance, system configuration recommendation, and other risks.</shortdesc>
+  <conbody>
+    <p>This application forwards selected Hybrid Cloud Console events to ServiceNow. The Flow Templates for Red Hat Lightspeed application seamlessly integrates with the Hybrid Cloud Console so that you can focus on handling the data on the ServiceNow application side in the same way you manage other sources of data.</p>
+    <p>You can use the Flow Templates for Red Hat Lightspeed application to handle events from the following Hybrid Cloud Console services:</p>
+    <ul>
+      <li>Advisor</li>
+      <li>Vulnerability</li>
+      <li>Any additional Red Hat Hybrid Cloud Console events that you might have configured</li>
+    </ul>
+    <p>If you have any issues with the Red Hat Lightspeed application for ServiceNow, contact Red Hat for support. To open a Red Hat support case directly from the Hybrid Cloud Console:</p>
+    <ol>
+      <li>Click <b>Help</b> (the <b>?</b> icon) to open the help panel.</li>
+      <li>Select the <b>My support cases</b> tab.</li>
+      <li>Click <b>Open a support case</b> and add information about the issue.</li>
+    </ol>
+    <p>ServiceNow will not provide troubleshooting. The Red Hat Lightspeed application for ServiceNow is fully supported by Red Hat.</p>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://docs.servicenow.com/bundle/sandiego-application-development/page/administer/flow-designer/concept/flow-designer.html" scope="external">
+      <linktext>ServiceNow Flow Designer</linktext>
+    </link>
+    <link format="html" href="https://store.servicenow.com/sn_appstore_store.do#!/store/home" scope="external">
+      <linktext>ServiceNow Store</linktext>
+    </link>
+    <link format="html" href="https://docs.servicenow.com/bundle/sandiego-application-development/page/build/applications/task/t_InstallApplications.html" scope="external">
+      <linktext>Install a ServiceNow Store Application</linktext>
+    </link>
+    <link format="html" href="../observe/configure-notifications-hcc-services.dita" scope="external">
+      <linktext>Configure notifications for Hybrid Cloud Console services</linktext>
+    </link>
+    <link format="html" href="../troubleshoot/troubleshoot-third-party-integrations.dita" scope="external">
+      <linktext>Troubleshoot Hybrid Cloud Console integrations</linktext>
+    </link>
+  </related-links>
+</concept>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/task.dtd">
+<task id="opening-a-support-case">
+  <title>Open a Red Hat support case</title>
+  <shortdesc>You can open a Red Hat support case from the Red Hat Hybrid Cloud Console for help with the Red Hat services that are associated with your Hybrid Cloud Console account login.</shortdesc>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>In the <xref format="html" href="https://console.openshiftusgov.com" otherprops="FEDRAMP" scope="external">Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com" otherprops="PUBLIC" scope="external">Hybrid Cloud Console</xref>, click the <b>Help</b> button to open the help panel, then select the <b>Support</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Open a support case</b>. The <b>Customer Support</b> page on the Red Hat Customer Portal opens. The <b>Account</b> and <b>Owner</b> fields are automatically populated with your account information.</cmd>
+      </step>
+      <step>
+        <cmd>Select the product and version your issue relates to, and an appropriate category, and then click <b>Continue</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Enter a concise but descriptive title and problem summary and further details about the symptoms being experienced.</cmd>
+      </step>
+      <step>
+        <cmd>Review the list of suggested Red Hat Knowledgebase solutions for a potential match against the problem that you are reporting, or enter keywords to search for more solutions. If the suggested articles do not address the issue, click <b>Continue</b>. </cmd>
+        <info>
+          <note type="note">Articles might not be available for your issue.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>Provide additional information in the fields about business impact, environment, and frequency of the issue.</cmd>
+      </step>
+      <step>
+        <cmd>Optional: Upload log or other diagnostic files to attach to your request in the <b>File uploader and analyzer</b> box. These types of files help support engineers resolve your issues quickly. The prompts under this box change depending on the product that you selected.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Continue</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Edit the support level, severity, and your contact details, and then click <b>Continue</b>. The summary page opens.</cmd>
+      </step>
+      <step>
+        <cmd>Review the information that you entered, and then click <b>Submit</b>. A confirmation screen displays a case number for your issue and the message <b>We’ve added your case to our queue</b>.</cmd>
+      </step>
+    </steps>
+    <postreq id="postreq_1">
+      <p><b>View your support case:</b></p>
+      <ol id="ol_1">
+        <li>Click <b>Cases</b> to view a list of all support cases.</li>
+        <li>Find your case in the list.</li>
+        <li>Click the case ID number to view your case.</li>
+      </ol>
+    </postreq>
+  </taskbody>
+</task>

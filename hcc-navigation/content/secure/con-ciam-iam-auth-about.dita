@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
+<concept id="con-ciam-iam-auth-about">
+  <title>Streamline user authentication with identity provider (IdP) integration</title>
+  <shortdesc>As an organization administrator, you can integrate your preferred identity provider with Red Hat services and applications to let users authenticate through sso.redhat.com using their corporate credentials for single sign-on.</shortdesc>
+  <conbody>
+    <p>With identity provider integration, you can configure one identity provider (IdP) as an authenticator and a second IdP to rely on that authentication to allow users to log in. For example, you can rely on an IdP such as Microsoft Entra ID to authenticate your users. When Microsoft Entra ID authenticates the user, Red Hat Single Sign-On—also an IdP—accepts the authentication so that the user can complete the login process and access their Red Hat account. Instead of configuring user credentials multiple times across separate systems, you can configure your Red Hat account to accept the external IdP authentication.</p>
+    <p>After you integrate the IdP services, users need only one set of credentials to access their Red Hat account. These credentials consist of the username and password from your corporate identity provider.</p>
+    <p>An Organization Administrator can create, update, and delete identity providers associated with your organization account. Additional user access services for role-based access control (RBAC) provide user access authorization to other resources within the Red Hat account. For more information about user access services, see <i>User Access Configuration Guide for Role-Based Access Control</i>.</p>
+  </conbody>
+</concept>
