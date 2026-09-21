@@ -10,17 +10,17 @@
         <li> You have an active Lightwell Network membership.</li>
         <li> You have created a Lightwell Network service account. For more information, see <xref format="dita" href="../get-started/create-a-red-hat-lightwell-network-service-account.dita" scope="local"/></li>
         <li>You have chosen the repository tier that matches your environment. For more information, see <xref format="dita" href="../get-started/choose-the-right-repository.dita" scope="local"/></li>
-        <li>Your Artifactory naming policy allows the <codeph>.rhlw-0000X</codeph> version suffix, for example, <codeph>5.3.17.rhlw-00001</codeph> or <codeph>5.3.17.rhlw-00001-n0001</codeph> depending on your repository. These suffixes are the standard identifiers for Lightwell-patched libraries.</li>
+        <li>Your Artifactory naming policy allows the <codeph>.rhlw-0000X</codeph> version suffix, for example, <codeph>5.2.17.rhlw-00003</codeph> or <codeph>5.2.17.rhlw-00001-n0003</codeph> depending on your repository. These suffixes are the standard identifiers for Lightwell-patched libraries.</li>
       </ul>
     </prereq>
     <steps>
       <step>
         <cmd>In the JFrog Platform console, navigate to <menucascade>
             <uicontrol>Administration</uicontrol>
-            <uicontrol>Repositories</uicontrol></menucascade>.</cmd>
+            <uicontrol>Repository</uicontrol></menucascade>.</cmd>
       </step>
       <step>
-        <cmd>Click <b>Create a Repository</b> and select <b>Remote</b>.</cmd>
+        <cmd>Click <b>Create a Repository</b> and select <b>Local</b>.</cmd>
       </step>
       <step>
         <cmd>Select <b>PyPI</b> as the package type. </cmd>

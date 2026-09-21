@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Secure</title>
+  <topichead navtitle="Secure">
+    <topicref href="eco-secure-git-connector-test.dita" type="reference">
+    </topicref>
+  </topichead>
+</map>

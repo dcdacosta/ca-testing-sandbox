@@ -14,6 +14,8 @@
   </mapref>
   <mapref format="ditamap" href="observe/rhwa-4-22-0-observe.ditamap" type="map">
   </mapref>
+   <mapref format="ditamap" href="secure/rhwa-4-22-0-secure.ditamap" type="map">
+  </mapref>
   <mapref format="ditamap" href="troubleshoot/rhwa-4-22-0-troubleshoot.ditamap" type="map">
   </mapref>
   <topichead navtitle="Download PDF">

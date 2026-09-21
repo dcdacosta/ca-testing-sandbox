@@ -39,6 +39,10 @@
             <entry><xref format="html" href="https://your-s3-bucket-link/rhwa-observe-4-22-0-pdf.pdf" scope="external">Observe Workload Availability for Red Hat OpenShift 4.22-0</xref></entry>
             <entry>Instructions for monitoring workload performance, setting up alerts, and analyzing system metrics.</entry>
           </row>
+            <row>
+            <entry><xref format="html" href="https://your-s3-bucket-link/rhwa-secure-4-22-0-pdf.pdf" scope="external">Secure Workload Availability for Red Hat OpenShift 4.22-0</xref></entry>
+            <entry>Instructions for monitoring workload performance, setting up alerts, and analyzing system metrics.</entry>
+          </row>
           <row>
             <entry><xref format="html" href="https://your-s3-bucket-link/rhwa-troubleshoot-4-22-0-pdf.pdf" scope="external">Troubleshoot Workload Availability for Red Hat OpenShift 4.22-0</xref></entry>
             <entry>Diagnostic steps, log collection, and resolution guides for common operational issues.</entry>
