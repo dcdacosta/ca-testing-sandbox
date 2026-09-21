@@ -2,6 +2,6 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="eco-rn-rhwa-4-21-0">
   <title>Workload Availability for Red Hat OpenShift 4.21-0 release notes</title>
-  <shortdesc>Workload Availability for Red Hat OpenShift version 4.21-0 is now available.</shortdesc>
+  <shortdesc>Workload Availability for Red Hat OpenShift version 4.21-0 is now available. Introducing a non-conflicting change here in Git.</shortdesc>
   <conbody/>
 </concept>
