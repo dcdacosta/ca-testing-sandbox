@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="hcc-help-panel">
+  <title>Help panel</title>
+  <shortdesc>From the <b>Help</b> panel, you can get support for Red Hat services from within the Hybrid Cloud Console and access AI assistants, the Red Hat status page, and your support cases.</shortdesc>
+  <conbody>
+    <p>The help panel also contains links to learning resources and API documentation. You can submit feedback about the Hybrid Cloud Console from the help panel as well.</p>
+    <p>To open the help panel, click the <b>Help</b> button at the top of the console. The help panel remains open in the console user interface until closed, allowing you to keep resources open to guide you while you navigate the console and complete tasks. To close the help panel, click the <b>Help</b> button again or the <b>X</b> on the panel.</p>
+  </conbody>
+  <related-links>
+    <link href="../reference/quick-starts-learning-resources.dita#learning-resources">
+    </link>
+    <link href="../reference/use-api-documentation.dita#using-api-documentation">
+    </link>
+  </related-links>
+</concept>

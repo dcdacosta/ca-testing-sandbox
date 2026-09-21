@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="GUID-04246e18-0bf9-4cea-a5e6-fc883e1d25b2">
+  <title>Log in to the the Hybrid Cloud Console</title>
+  <shortdesc>Log in to the Red Hat Hybrid Cloud Console with your Red Hat account.</shortdesc>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Enter <xref format="html" href="https://console.redhat.com" otherprops="PUBLIC" scope="external">https://console.redhat.com</xref> in a web browser. If you are not logged in, the <b>Log in to your Red Hat account</b> page opens.</cmd>
+      </step>
+      <step>
+        <cmd>Log in to the Hybrid Cloud Console with your Red Hat credentials.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
-<concept id="assembly-integrating-reporting">
-  <title>Integrate reporting and automation applications</title>
-  <shortdesc>Receive and manage event notifications where you manage other sources of data by connecting the Hybrid Cloud Console with Splunk, ServiceNow, Event-Driven Ansible, or PagerDuty.</shortdesc>
-  <conbody>
-  </conbody>
-</concept>

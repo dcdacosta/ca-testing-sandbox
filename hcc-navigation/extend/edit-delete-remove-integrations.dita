@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-notif-editing-removing-integrations">
+  <title>Edit, delete, or remove integrations</title>
+  <shortdesc>The Notifications administrator can edit, remove, or disable any Hybrid Cloud Console integration listed on the <b>Integrations</b> page.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Red Hat Hybrid Cloud Console as an Organization Administrator or a Notifications administrator.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>You have configured an integration in the Red Hat Hybrid Cloud Console.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the Hybrid Cloud Console, navigate to <xref format="html" href="https://console.openshiftusgov.com/settings/integrations" otherprops="FEDRAMP" scope="external">Settings &gt; Integrations</xref><xref format="html" href="https://console.redhat.com/settings/integrations" otherprops="PUBLIC" scope="external">Settings &gt; Integrations</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Click the <b>Integrations</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click the options icon (⋮) on the far right of the integration name row, and then click <b>Edit</b>, <b>Delete</b>, or <b>Disable</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Make and save changes, delete, or disable the integration.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+  <related-links>
+    <link format="html" href="integrate-communication-apps.dita" scope="external">
+      <linktext>Integrating the Red Hat Hybrid Cloud Console with third-party applications</linktext>
+    </link>
+  </related-links>
+</task>

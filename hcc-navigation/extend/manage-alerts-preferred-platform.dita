@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="assembly-integrating-comms">
+  <title>Manage alerts from your preferred platform</title>
+  <shortdesc>You can integrate third-party applications with the Hybrid Cloud Console.</shortdesc>
+  <refbody>
+    <section id="section_1"><!--<title></title>-->
+      <p>You can integrate the Red Hat Hybrid Cloud Console with Splunk, ServiceNow, Slack, Event-Driven Ansible, Microsoft Teams, Google Chat, and more applications to route event-triggered notifications to those third-party applications. Integrating third-party applications expands the scope of notifications beyond emails and messages, so that you can view and manage Hybrid Cloud Console events from your preferred platform dashboard or communications tool.</p>
+      <p>To learn more about notifications, see <xref format="html" href="https://docs.redhat.com/documentation/en-us/red_hat_hybrid_cloud_console/1-latest/html-single/configuring_notifications_on_the_red_hat_hybrid_cloud_console_with_fedramp/index" otherprops="FEDRAMP" scope="external"><i>Configuring notifications on the Red Hat Hybrid Cloud Console with FedRAMP</i></xref><xref format="html" href="../observe/configure-notifications-hcc-services.dita#assembly-intro" otherprops="PUBLIC" scope="external"/>.</p>
+    </section>
+  </refbody>
+  <related-links>
+    <link format="html" href="../integrate/integrate-external-infrastructure-with-rh-services.dita" scope="external">
+      <linktext>Integrate external infrastructure to share data with Red Hat services</linktext>
+    </link>
+  </related-links>
+</reference>

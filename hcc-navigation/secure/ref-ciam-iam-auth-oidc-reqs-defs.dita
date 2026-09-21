@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="ref-ciam-iam-auth-oidc-reqs-defs">
+  <title>OIDC requirements and defaults</title>
+  <shortdesc>The following table identifies Red Hat identity system defaults and expectations for identity provider integration with OIDC.</shortdesc>
+  <refbody>
+    <section>
+      <table>
+        <title>IdP integration defaults for OIDC configuration</title>
+        <tgroup cols="2">
+          <colspec colname="col_1" colwidth="25*"/>
+          <colspec colname="col_2" colwidth="75*"/>
+          <thead>
+            <row>
+              <entry>Name</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <p>Federated Logout</p>
+              </entry>
+              <entry>
+                <p>Red Hat does not currently support any federated logout options. Doing so would result in your users being logged out of both Red Hat as well as your company’s SSO if they were to “log out” of a Red Hat service or application.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>Signatures</p>
+              </entry>
+              <entry>
+                <p>IdP integration validates signatures and requires that tokens must be signed.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>PKCE</p>
+              </entry>
+              <entry>
+                <p>For enhanced security, use Proof Key for Code Exchange (PKCE), which is an extension to the OAuth 2.0 authorization code flow. Red Hat encourages that you use S256 as the PKCE method.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </refbody>
+</reference>

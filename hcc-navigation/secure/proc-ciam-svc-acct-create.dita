@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-ciam-svc-acct-create">
+  <title>Create a service account and generate credentials</title>
+  <shortdesc>You can create a service account and generate the client ID and secret to use with that account.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Ensure you are logged in to the <xref format="html" href="https://console.redhat.com/" scope="external">Red Hat Hybrid Cloud Console</xref>.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>From the <xref format="html" href="https://console.redhat.com/" scope="external">Red Hat Hybrid Cloud Console</xref>, Click the settings icon (⚙) and click <b>Service Accounts</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Create service account</b> to set up the account.</cmd>
+      </step>
+      <step>
+        <cmd>Enter a Service account name and a Short description and click <b>Create</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Copy the generated <b>Client ID</b> and <b>Client secret</b> values to a secure location. You’ll specify these credentials when configuring a connection to a service. </cmd>
+        <info>
+          <note type="important">The <b>Client secret</b> is displayed only once, so ensure that you’ve successfully and securely saved the copied credentials before closing the credentials window.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>After you save the Client ID and secret to a secure location, select the confirmation check box in the credentials window and close the window. The Client secret is not displayed again.</cmd>
+      </step>
+      <step>
+        <cmd>The service account and its Client ID appear on the <xref format="html" href="https://console.redhat.com/iam/service-accounts/" scope="external"><b>Service Accounts</b></xref> page.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

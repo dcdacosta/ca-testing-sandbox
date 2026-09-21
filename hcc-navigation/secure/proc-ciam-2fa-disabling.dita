@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-ciam-2fa-disabling">
+  <title>Remove your two-factor authentication (2FA) requirement</title>
+  <shortdesc>You can remove the two-factor authentication for your Red Hat user account.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Ensure you have a registered Red Hat user account with two-factor authentication enabled..</li>
+        <li>Ensure you have a smartphone or other device with the Google Authenticator app or the FreeOTP app installed.</li>
+      </ul>
+      <note>You will be required to reenable two-factor authentication at your next login attempt if your Organization Administrator requires two-factor authentication for all users in the organization.</note>
+      <note>A new token is added to your authenticator app each time you disable and re-enable 2FA for your Red Hat account. It is your responsibility to manage disabled tokens on your device.</note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Log in to your Red Hat user account using two-factor authentication. </cmd>
+        <info>
+          <p>For instructions on signing in to your Red Hat user account using two-factor authentication, see <xref href="proc-ciam-2fa-login.dita#proc-ciam-2fa-login"/> </p>
+          <p>If you have lost your authenticator device and need <xref format="html" href="https://access.redhat.com/support/contact/" scope="external">Red Hat Support</xref> to revoke your two-factor authentication, see <xref href="proc-ciam-2fa-revoke-regain.dita#proc-ciam-2fa-revoke-regain"/>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Click your user avatar in the upper right corner of the page. </cmd>
+        <substeps>
+          <substep>
+            <cmd>Click <b>Account details</b>. A page opens where you can edit your account information.</cmd>
+          </substep>
+          <substep>
+            <cmd>If you log in through <xref format="html" href="https://console.redhat.com/" scope="external">Red Hat Hybrid Cloud Console</xref>, click <b>My profile</b> under your user avatar to edit your account information. </cmd>
+            <stepresult>
+              <p>A page opens where you can review your account information.</p>
+              <note type="note">Depending on which login portal you use, a different icon may appear.</note>
+            </stepresult>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Click <b>Login &amp; password</b>.</cmd>
+      </step>
+      <step>
+        <cmd>On the <b>Login &amp; password</b> page click <b>Manage 2-factor authentication</b>. The <b>Signing in</b> page opens.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Delete</b> to remove two-factor authentication for your user login. </cmd>
+        <info>
+          <note type="note">The <b>Delete</b> button disables, or turns off two-factor authentication for your user login. If you reenable two-factor authentication, you will repeat the enable authentication steps, which adds a new token to your authenticator app. The token associated with the disabled authenticator will no longer work.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>For verification you must log in again with two-factor authentication. A page appears where you click <b>CONFIRM DELETION</b> to remove two-factor authentication from your user account. After you confirm deletion, you return to the <b>Signing in</b> page.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

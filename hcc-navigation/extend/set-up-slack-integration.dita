@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="assembly-configuring-insights-integration-with-slack">
+  <title>Set up a Slack integration</title>
+  <shortdesc>You can configure the Hybrid Cloud Console to send event notifications to a Slack channel or directly to a user. The Slack integration supports events from all Hybrid Cloud Console services.</shortdesc>
+  <conbody>
+    <note type="note">
+      <p>The Slack integration in this example is configured for Red Hat Enterprise Linux. The integration also works with Red Hat OpenShift and Hybrid Cloud Console events.</p>
+    </note>
+    <p>The Slack integration uses incoming webhooks to receive event data.</p>
+    <p>If you have any issues with the Hybrid Cloud Console integration with Slack, contact Red Hat for support. Slack will not provide troubleshooting. The Hybrid Cloud Console integration with Slack is fully supported by Red Hat.</p>
+    <p>To open a Red Hat support case directly from the Hybrid Cloud Console:</p>
+    <ol>
+      <li>Click <b>Help</b> (the <b>?</b> icon) to open the help panel.</li>
+      <li>Select the <b>My support cases</b> tab.</li>
+      <li>Click <b>Open a support case</b> and add information about the issue.</li>
+    </ol>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://api.slack.com/messaging/webhooks" scope="external">
+      <linktext>Sending messages using incoming webhooks</linktext>
+    </link>
+    <link format="html" href="../observe/create-behavior-group.dita" scope="external">
+      <linktext>Create a notifications behavior group</linktext>
+    </link>
+    <link format="html" href="../troubleshoot/troubleshoot-third-party-integrations.dita" scope="external">
+      <linktext>Troubleshoot Hybrid Cloud Console integrations</linktext>
+    </link>
+  </related-links>
+</concept>

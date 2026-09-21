@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="ref-ciam-iam-auth-saml-reqs-defs">
+  <title>SAML requirements and defaults</title>
+  <shortdesc>The following table identifies Red Hat identity system defaults and expectations for identity provider integration with SAML.</shortdesc>
+  <refbody>
+    <section>
+      <table>
+        <title>IdP integration defaults for SAML configuration</title>
+        <tgroup cols="2">
+          <colspec colname="col_1" colwidth="25*"/>
+          <colspec colname="col_2" colwidth="75*"/>
+          <thead>
+            <row>
+              <entry>Name</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <p>SSO initiation type</p>
+              </entry>
+              <entry>
+                <p>The Red Hat identity system (sso.redhat.com) supports Service Provider-initiated single sign-on. Red Hat does not support IdP-initiated single sign-on.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>SSO binding</p>
+              </entry>
+              <entry>
+                <p>Only POST is allowed for new IdPs.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>Name ID</p>
+              </entry>
+              <entry>
+                <p>Red Hat expects an ID that allows for unspecified identification of authenticating users. The organization must determine the preferred identifier. Commonly used IDs are a UUID, an email address, a username, etc.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>Other required attributes</p>
+              </entry>
+              <entry>
+                <p>Red Hat does not require any other attributes to be provided for authenticating users.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>ACS URL</p>
+              </entry>
+              <entry>
+                <p>This is provided by the Identity Provider Integration tool after a customer has completed the initial setup for their IdP. Red Hat also provides a link to the SAML metadata URL that the customer can bind with if they so choose (this would allow for them to review the configured IdP in-depth).</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>Assertion Signing</p>
+              </entry>
+              <entry>
+                <p>Red Hat requires that integrating customers sign their assertions. We require that a valid x509 certificate is provided during IdP configuration that can be used to verify the assertion signature.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>Response/Assertion Encryption</p>
+              </entry>
+              <entry>
+                <p>Encryption is not currently enforced, but, as long as a valid x509 is provided, Red Hat will be able to decrypt responses/assertions.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>Signing AuthN requests</p>
+              </entry>
+              <entry>
+                <p>Red Hat signs AuthN requests and encourages integrating parties to verify this signature. The key Red Hat uses to do this will be discoverable in the provided SAML metadata (mentioned above, this will be presented after the IdP has been created).</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>Federated Logout</p>
+              </entry>
+              <entry>
+                <p>Red Hat does not currently support any federated logout options. Doing so would result in your users being logged out of both Red Hat as well as your company’s SSO if they were to log out of a Red Hat service or application.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </refbody>
+</reference>

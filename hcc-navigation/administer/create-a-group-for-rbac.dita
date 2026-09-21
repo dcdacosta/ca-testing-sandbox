@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="GUID-02a0192b-fa4c-4ae8-8295-b5ecfe874a3f">
+  <title>Create a group for RBAC</title>
+  <shortdesc>Create a new group for role-based access control (RBAC).</shortdesc>
+  <taskbody>
+    <prereq id="prereq_1">
+      <ul id="ul_1">
+        <li>You are logged in to the <xref format="html" href="https://console.openshiftusgov.com/" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com/" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console</xref> as a user who has Organization Administrator permission.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login.</note>
+        </li>
+        <li>If you are not an Organization Administrator, you must be a member of a group that has the <b>User Access administrator</b> role assigned to it.
+          <note type="note">Only the Organization Administrator can assign the <b>User Access administrator</b> role to a group.</note>
+        </li>
+      </ul>
+      <p>The <b>Members</b> tab shows all users that you can add to the group. When you add users to a group, they become members of that group. A group member inherits the roles of all other groups they belong to.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Navigate to the <xref format="html" href="https://console.openshiftusgov.com/iam/user-access/groups" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console &gt; Settings &gt; Identity &amp; Access Management &gt; User Access &gt; Groups</xref><xref format="html" href="https://console.redhat.com/iam/user-access/groups" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console &gt; Settings &gt; Identity &amp; Access Management &gt; User Access &gt; Groups</xref> to open the <b>Groups</b> page.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Create group</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Follow the guided actions provided by the wizard to add users and roles.</cmd>
+      </step>
+      <step>
+        <cmd>To grant additional group access, edit the group and add additional roles.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

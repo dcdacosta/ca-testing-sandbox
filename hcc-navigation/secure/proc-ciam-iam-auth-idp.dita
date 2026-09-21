@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-ciam-iam-auth-idp">
+  <title>Connect your identity provider (IdP)</title>
+  <shortdesc>The Organization Administrator can set up and configure identity provider integration for your organization. Identity provider integration supports SAML and OIDC.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Ensure you have a user account with Organization Administrator permissions</li>
+        <li>Depending on the authorization protocol, SAML or OIDC, gather information that identifies the IdP that you are integrating:
+          <ul>
+            <li>For SAML configuration, see the requirements in <xref href="proc-ciam-auth-idp-saml.dita#proc-ciam-auth-idp-saml"/>.</li>
+            <li>For OIDC configuration, see the requirements in <xref href="proc-ciam-auth-idp-oidc.dita#proc-ciam-auth-idp-oidc"/>.</li>
+          </ul>
+        </li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Log in to Red Hat Hybrid Cloud Console as a user who has Organization Administrator permission.</cmd>
+      </step>
+      <step>
+        <cmd>From the home page after you log in, click ⚙ (<b>Settings</b>).</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Authentication Policy</b>.</cmd>
+      </step>
+      <step>
+        <cmd>When the <b>Authentication Policy</b> window appears, click <b>Identity Provider Integration</b>.</cmd>
+        <steptroubleshooting>
+          <note type="tip">You can navigate directly to <xref format="html" href="https://console.redhat.com/iam/authentication-policy/identity-provider-integration" scope="external">Identity Provider Integration</xref>.</note>
+        </steptroubleshooting>
+      </step>
+      <step>
+        <cmd>Click <b>Set up an identity provider</b> and choose an authentication protocol for your identity provider. </cmd>
+      </step>
+      <step>
+        <cmd>Select <b>SAML 2.0</b> or <b>OpenID Connect</b> and continue the configuration. </cmd>
+        <info>
+          <ul>
+            <li> <xref href="proc-ciam-auth-idp-saml.dita#proc-ciam-auth-idp-saml"/> </li>
+            <li> <xref href="proc-ciam-auth-idp-oidc.dita#proc-ciam-auth-idp-oidc"/> </li>
+          </ul>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

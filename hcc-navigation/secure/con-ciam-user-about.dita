@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="con-ciam-user-about">
+  <title>Access Red Hat services using your company credentials with single sign-on (SSO) integration</title>
+  <shortdesc>Company single sign-on is an integration between the Red Hat single sign-on system and your organization’s identity provider (IdP).</shortdesc>
+  <conbody>
+    <p>This type of integration is commonly known as “3rd party IdP” or “federated IdP.” This type of integration allows users to access Red Hat services, like the Customer Portal, Hybrid Cloud Console, and Partner Connect using their existing company credentials. This integration ensures that the same login used for internal resources also grants authenticated access to the Red Hat ecosystem. Any Red Hat website, app, or service using the Red Hat single sign-on system for authentication is accessible through company single sign-on integration.</p>
+  </conbody>
+</concept>

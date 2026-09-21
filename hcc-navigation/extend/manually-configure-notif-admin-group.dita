@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-notif-splunk-manual-config-admin">
+  <title>Manually configure a Notifications administrator group in your account</title>
+  <shortdesc>The Red Hat Insights (Red Hat Lightspeed) application for Splunk automated installation and setup process automatically configures a Notifications administrator role and group in your Hybrid Cloud Console account. However, you can create the Notifications administrator manually.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Hybrid Cloud Console with the Organization Administrator role.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Click <b>Settings</b> &gt; <b>Identity &amp; Access Management</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Under <b>Identity &amp; Access Management</b>, expand <b>User Access</b> if necessary, and select <b>Groups</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Create group</b>. The <b>Name and description</b> page appears.</cmd>
+      </step>
+      <step>
+        <cmd>Enter a name for the group (for example, <codeph>splunknotifgroup</codeph>), enter a description, and then click <b>Next</b>. The <b>Add roles</b> page opens.</cmd>
+      </step>
+      <step>
+        <cmd>To add the Notifications administrator role, enter <codeph>notif</codeph> in the search box.</cmd>
+      </step>
+      <step>
+        <cmd>Select <b>Notifications administrator</b> from the search results list, and then click <b>Next</b>. The <b>Add Members</b> page opens.</cmd>
+      </step>
+      <step>
+        <cmd>Select the users to add to this group. You can use the search box to search for specific names.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Next</b>. The <b>Review Details</b> page opens.</cmd>
+      </step>
+      <step>
+        <cmd>Review the information, and then click <b>Submit</b> to create the group.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Exit</b>. The <b>Groups</b> page opens.</cmd>
+      </step>
+    </steps>
+    <postreq id="postreq_1">
+      <p><b>Verify your group:</b></p>
+      <ol id="ol_1">
+        <li>Enter the new group name in the search box.</li>
+        <li>Click the group name. The page for the group opens.</li>
+        <li>On the <b>Roles</b> tab, verify that the group has the <b>Notifications administrator</b> role.</li>
+        <li>Click the <b>Members</b> tab and verify that the group includes the correct members.</li>
+      </ol>
+    </postreq>
+  </taskbody>
+</task>

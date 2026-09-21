@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="con-ciam-user-sync-auth-identities">
+  <title>Learn about the scope of single sign-on (SSO)</title>
+  <shortdesc>Organization Administrators can directly manage authentication security protocols for Red Hat services through the authentication requirements of your company's single sign-on system.</shortdesc>
+  <conbody>
+    <p>Single sign-on provides a better authentication experience for users, as users themselves can maintain one less set of login credentials. Currently, company single sign-on integration has the following scope:</p>
+    <ul>
+      <li>Link the same company IdP with multiple Red Hat accounts.</li>
+      <li>Link one company user identity with one Red Hat user identity.</li>
+      <li>Use corporate SSO/IdP to authenticate to the Red Hat Customer Portal or any Red Hat application with a web-based authentication flow which uses the Red Hat single sign-on system.</li>
+      <li>Support for OpenID Connect (OIDC).</li>
+      <li>Support for Security Assertion Markup Language (SAML).</li>
+    </ul>
+  </conbody>
+  <related-links>
+    <link format="dita" href="con-ciam-iam-auth-about.dita" scope="local">
+      <linktext>Streamline user authentication with identity provider (IdP) integration</linktext>
+    </link>
+  </related-links>
+</concept>

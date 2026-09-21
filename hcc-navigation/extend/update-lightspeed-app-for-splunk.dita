@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-notif-splunk-update">
+  <title>Update the Red Hat Lightspeed application for Splunk</title>
+  <shortdesc>To update the Red Hat Insights (Red Hat Lightspeed) application for Splunk, the procedure is similar to the steps required for the initial installation. These steps ensure the application is properly set up with your environment after the update.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You have Organization Administrator permissions for the Hybrid Cloud Console.</li>
+        <li>You have Splunk login credentials:
+          <ul>
+            <li>To install applications on Splunk Cloud Platform, you must have the Splunk Cloud Administrator <codeph>sc-admin</codeph> role.</li>
+            <li>To install applications on Splunk Enterprise, you must have the <codeph>admin</codeph> role. For more information about creating the <codeph>admin</codeph> role, see <xref format="html" href="https://docs.splunk.com/Documentation/Splunk/9.1.0/Security/Secureyouradminaccount" scope="external">Create secure administration credentials</xref> in the Splunk documentation.</li>
+            <li>You have a Splunkbase account.</li>
+          </ul>
+        </li>
+        <li>You have the Red Hat Insights application installed on Splunk.</li>
+        <li>Popup blockers are disabled in your browser.</li>
+      </ul>
+      <note type="note">Updating the Red Hat Insights application does not trigger a Splunk restart. Additionally, no system restart is required as part of this process.</note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>From the Splunk dashboard, click <b>Apps</b> &gt; <b>Manage Apps</b> to view a list of apps.</cmd>
+      </step>
+      <step>
+        <cmd>Locate the Red Hat Insights application, and then click the <b>Splunkbase</b> link under the <b>App Origin</b> column.</cmd>
+      </step>
+      <step>
+        <cmd>Log in to Splunkbase. The Red Hat Insights application page opens.</cmd>
+      </step>
+      <step>
+        <cmd>Click the <b>Download</b> button to download the Red Hat Insights application <i>.tgz</i> file.</cmd>
+      </step>
+      <step>
+        <cmd>Return to the Splunk dashboard and click <b>Apps</b> &gt; <b>Manage Apps</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Click the <b>Install App From File</b> button to open the installation dialog.</cmd>
+      </step>
+      <step>
+        <cmd>In the installation dialog, click <b>Browse</b> and then select the Red Hat Insights application <i>.tgz</i> file you downloaded.</cmd>
+      </step>
+      <step>
+        <cmd>Select the <b>Upgrade app</b> checkbox to confirm you want to overwrite the previous version of the Red Hat Insights application.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Upload</b>.</cmd>
+        <stepresult>When the upload is complete, a success banner displays to confirm that the app has been upgraded.</stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

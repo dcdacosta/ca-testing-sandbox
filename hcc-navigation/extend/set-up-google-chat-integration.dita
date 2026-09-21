@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="assembly-configuring-integration-with-gchat">
+  <title>Set up a Google Chat integration</title>
+  <shortdesc>You can configure the Red Hat Hybrid Cloud Console to send event notifications to a new or existing Google space in Google Chat. The Google Chat integration supports events from all Hybrid Cloud Console services.</shortdesc>
+  <conbody>
+    <p>The integration with the Hybrid Cloud Console notifications service uses incoming webhooks to receive event data. Each Red Hat account configures how and who can receive these events, with the ability to perform actions depending on the event type.</p>
+    <p>If you have any issues with the Hybrid Cloud Console integration with Google Chat, contact Red Hat for support. To open a Red Hat support case directly from the Hybrid Cloud Console:</p>
+    <ol>
+      <li>Click <b>Help</b> (the <b>?</b> icon) to open the help panel.</li>
+      <li>Select the <b>My support cases</b> tab.</li>
+      <li>Click <b>Open a support case</b> and add information about the issue.</li>
+    </ol>
+    <p>Google will not provide troubleshooting. The Hybrid Cloud Console integration with Google Chat is fully supported by Red Hat.</p>
+  </conbody>
+  <related-links>
+    <link format="html" href="../troubleshoot/troubleshoot-third-party-integrations.dita" scope="external">
+      <linktext>Troubleshoot Hybrid Cloud Console integrations</linktext>
+    </link>
+    <link format="html" href="https://developers.google.com/chat/how-tos/webhooks" scope="external">
+      <linktext>Google Chat documentation about incoming webhooks</linktext>
+    </link>
+    <link format="html" href="../observe/create-behavior-group.dita" scope="external">
+      <linktext>Create a notifications behavior group</linktext>
+    </link>
+  </related-links>
+</concept>

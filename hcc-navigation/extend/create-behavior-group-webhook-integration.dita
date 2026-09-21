@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-notif-console-config-behavior-group-webhooks">
+  <title>Create the behavior group for a webhook integration</title>
+  <shortdesc>A behavior group defines which notifications will be sent to external services when a specific event is received by the notifications service. You can link events from any Red Hat Hybrid Cloud Console service to your behavior group.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Hybrid Cloud Console as an Organization Administrator or as a user with Notifications administrator permissions.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>A webhook integration is configured. For configuration steps, see <xref href="configure-webhook-integration.dita#proc-notif-webhooks-config"/>.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the Hybrid Cloud Console, navigate to <xref format="html" href="https://console.openshiftusgov.com/settings/notifications" otherprops="FEDRAMP" scope="external">Settings &gt; Notifications</xref><xref format="html" href="https://console.redhat.com/settings/notifications" otherprops="PUBLIC" scope="external">Settings &gt; Notifications</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Under <b>Notifications</b>, select <b>Configure Events</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the application bundle tab you want to configure event notification behavior for: <b>Red Hat Enterprise Linux</b>, <b>Console</b>, or <b>OpenShift</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Click the <b>Behavior Groups</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Create new group</b> to open the <b>Create behavior group</b> wizard.</cmd>
+      </step>
+      <step>
+        <cmd>Type a name for the behavior group and click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>In the <b>Actions and Recipients</b> step, select <b>Integration: Webhook</b> from the <b>Actions</b> drop-down list.</cmd>
+      </step>
+      <step>
+        <cmd>From the <b>Recipient</b> drop-down list, select the name of the webhook integration you created and click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>In the <b>Associate event types</b> step, select one or more events for which you want to send notifications (for example, <b>Policies: Policy triggered</b>) and click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Review your behavior group settings and click <b>Finish</b>. The new behavior group appears on the <b>Notifications</b> &gt; <b>Configure Events</b> page in the <b>Behavior Groups</b> tab.</cmd>
+      </step>
+    </steps>
+    <postreq>
+      <p><b>Verify your integration:</b></p>
+      <ol id="ol_1">
+        <li>Create an event that will trigger a Hybrid Cloud Console notification. For example, run <codeph>insights-client</codeph> on a system that will trigger a policy event.</li>
+        <li>Wait a few minutes, and then navigate to your third-party application to check for a notification.</li>
+        <li>In the Hybrid Cloud Console, go to <b>Settings</b> &gt; <b>Notifications</b> &gt; <b>Event Log</b> and check for an event that shows the label <b>Integration: Webhook</b>.
+          <ul id="ul_1">
+            <li>If the label is green, the notification succeeded.</li>
+            <li>If the label is red, verify that the incoming webhook connector was properly created in your application, and that the correct incoming webhook URL is added in the Hybrid Cloud Console integration configuration.
+              <note otherprops="FEDRAMP" type="note">See <xref format="html" href="https://docs.redhat.com/documentation/en-us/red_hat_hybrid_cloud_console/1-latest/html-single/configuring_notifications_on_the_red_hat_hybrid_cloud_console_with_fedramp/index#proc-troubleshoot_notifications" scope="external">Troubleshooting notification failures</xref> in the notifications documentation for more details.</note>
+              <note otherprops="PUBLIC" type="note">See <xref format="html" href="../troubleshoot/troubleshoot-notif-failures.dita#proc-troubleshoot" scope="external">Troubleshoot notification failures</xref> in the notifications documentation for more details.</note>
+            </li>
+          </ul>
+        </li>
+      </ol>
+      <ul>
+        <li>For webhook configuration examples, see these articles in the Red Hat blog:
+          <ul>
+            <li><xref format="html" href="https://www.redhat.com/en/blog/exploring-red-hat-insights-integration-jira-software" scope="external">Exploring Red Hat Insights integration with Jira Software</xref></li>
+            <li><xref format="html" href="https://www.redhat.com/en/blog/configuring-hybrid-cloud-console-forward-notifications-events-jira-webhook-trigger" scope="external">Configuring Hybrid Cloud Console to forward notifications events to a Jira webhook trigger</xref></li>
+            <li><xref format="html" href="https://www.redhat.com/en/blog/integrate-red-hat-insights-your-existing-operational-workflow" scope="external">Integrate Red Hat Insights into your existing operational workflow</xref></li>
+          </ul>
+        </li>
+      </ul>
+    </postreq>
+  </taskbody>
+  <related-links>
+    <link href="../observe/create-behavior-group.dita">
+    </link>
+  </related-links>
+</task>

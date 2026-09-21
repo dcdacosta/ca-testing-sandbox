@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
-<concept id="hcc-notifications">
-  <title>Stay informed about events impacting your environment </title>
-  <shortdesc>Services in the Hybrid Cloud Console send notifications when certain events occur. Your Organization Administrator configures which notifications you can receive. You can choose how to receive notifications and view the types of events for which notifications can be sent.</shortdesc>
-  <conbody>
-  </conbody>
-</concept>

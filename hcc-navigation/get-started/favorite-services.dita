@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="finding-a-service">
+  <title>Favorite your most used services</title>
+  <shortdesc>To easily access your most used services, add them to your <xref format="html" href="https://console.openshiftusgov.com/favoritedservices" scope="external">Favorited Services</xref> page by clicking the star icon next to the name of a service. You can also add the widget for <b>My favorite services</b> to your home page for quick access. </shortdesc>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>In the <xref format="html" href="https://console.openshiftusgov.com" otherprops="FEDRAMP" scope="external">Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com" otherprops="PUBLIC" scope="external">Hybrid Cloud Console</xref>, open the <b>All Services</b> page.</cmd>
+      </step>
+      <step>
+        <cmd>To search for a service, enter a service name, product, or keyword in the <b>Find a service</b> search bar.</cmd>
+      </step>
+      <step>
+        <cmd>After you find the service that you are looking for, complete any of the following tasks: </cmd>
+        <info>
+          <ul>
+            <li>To add a service to the <b>Favorites</b> page, hover over the service name and click the star icon that appears. Any service that you add as a favorite displays a yellow star next to the service name.</li>
+            <li>To view your list of favorite services, click <b>Favorites</b>. The <b>Favorited Services</b> page opens with a list of the services that you selected.</li>
+            <li>To remove a service from your <b>Favorites</b> page, click the star icon next to the service. The star disappears and the service is no longer listed on the <b>Favorites</b> page.</li>
+          </ul>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

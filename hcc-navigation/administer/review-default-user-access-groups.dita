@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="con-rbac-how-to-use-rbac">
+  <title>Review default User Access groups</title>
+  <shortdesc>The User Access feature is based on managing roles rather than by individually assigning permissions to specific users. </shortdesc>
+  <conbody>
+    <p>In User Access, each role has a specific set of permissions. For example, a role might allow read permission for an application. Another role might allow write permission for an application.</p>
+    <p>You create groups that contain roles and, by extension, the permissions assigned to each role. You assign users (or service accounts) to groups. This means each user in a group is assigned the permissions of the roles in that group.</p>
+    <p>By creating different groups and adding or removing roles for that group, you control the permissions allowed for that group. When you add one or more users to a group, those users can perform all actions that are allowed for that group.</p>
+    <p>Red Hat provides two default access groups for User Access:</p>
+    <ul>
+      <li><b>Default admin access</b> group. The <b>Default admin access</b> group is limited to Organization Administrator users in your organization. You cannot change or modify the roles in the <b>Default admin access</b> group.</li>
+      <li><b>Default access</b> group. The <b>Default access</b> group contains all authenticated users in your organization. These users automatically inherit a selection of predefined roles.
+        <note type="note">You can make changes to the <b>Default access</b> group. However, when you do so, its name changes to <b>Custom default access</b> group.</note>
+      </li>
+    </ul>
+    <p>Red Hat provides a set of predefined roles. Depending on the application, the predefined roles for each supported application might have different permissions that are tailored to the application.</p>
+  </conbody>
+</concept>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-ciam-2fa-recovery-create">
+  <title>Create recovery codes for two-factor authentication (2FA)</title>
+  <shortdesc>You can use a recovery code to authenticate and log in to your account if you lose your authenticator device or your authenticator app is not available. Create recovery codes after you enable two-factor authentication for your account. </shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Enable two-factor authentication for your account.
+          <p><xref href="proc-ciam-2fa-enabling.dita#proc-ciam-2fa-enabling"/></p>
+        </li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Log in to your Red Hat user account on any Red Hat site, such as <xref format="html" href="https://access.redhat.com" scope="external">Red Hat Customer Portal</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Click your user avatar in the upper right corner of the page. </cmd>
+        <substeps>
+          <substep>
+            <cmd>Click <b>Account details</b>. A page opens where you can edit your account information.</cmd>
+          </substep>
+          <substep>
+            <cmd>If you log in through <xref format="html" href="https://console.redhat.com/" scope="external">Red Hat Hybrid Cloud Console</xref>, click <b>My profile</b> under your user avatar to edit your account information. </cmd>
+            <info>
+              <p>A page opens where you can review your account information.</p>
+              <note type="note">Depending on which login portal you use, a different icon may appear.</note>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Click <b>Account details</b>. A page opens where you can edit your account information.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Login &amp; password</b>.</cmd>
+      </step>
+      <step>
+        <cmd>On the <b>Login &amp; password</b> page scroll down to <b>2-factor authentication</b> and click <b>Manage 2-factor authentication</b>. The <b>Signing in</b> page opens.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Set up recovery codes</b>.</cmd>
+      </step>
+      <step>
+        <cmd>The <b>Recovery codes</b> page opens and shows a list of unique codes.</cmd>
+      </step>
+      <step>
+        <cmd>Carefully follow the instructions on this page to print, download, or copy the list of codes. </cmd>
+        <info>
+          <note type="important">Keep the recovery codes in a safe place. When you enable recovery codes, the next time you log in you will be asked for a recovery code.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>Click <b>Complete setup</b> to return to the <b>Signing in</b> page.</cmd>
+      </step>
+      <step>
+        <cmd>The <b>Signing in</b> page verifies when you created the recovery codes and how many have been used. </cmd>
+        <info>
+          <p> <image href="../images/img-recovery-code-enabled.png" placement="inline">
+            <alt>img recovery code enabled</alt>
+            </image> </p>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
-<concept id="integrate-comm-apps">
-  <title>Integrate communication applications</title>
-  <shortdesc>Receive event notifications in your preferred communications application by connecting the Hybrid Cloud Console with Microsoft Teams, Google Chat, or Slack.</shortdesc>
-  <conbody>
-  </conbody>
-</concept>

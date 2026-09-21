@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="ref-ciam-iam-auth-defaults">
+  <title>Identity provider integration requirements and technical defaults</title>
+  <shortdesc>Use the following information to help align your identity provider configurations with Red Hat’s technical requirements and defaults for SAML and OIDC integrations to ensure secure authentication and protocol compatibility.</shortdesc>
+</reference>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="navigating-global-learning-resources">
+  <title>Navigate the All learning resources page</title>
+  <shortdesc>Use the All learning resources page to view and filter all learning resources available on the Red Hat Hybrid Cloud Console. You can access the <xref format="html" href="https://console.redhat.com/learning-resources?tab=all" scope="external">All learning resources</xref> page directly or from the help panel.</shortdesc>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>In the <xref format="html" href="https://console.openshiftusgov.com" otherprops="FEDRAMP" scope="external">Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com" otherprops="PUBLIC" scope="external">Hybrid Cloud Console</xref>, click the <b>Help</b> button to open the help panel, then select the <b>Learn</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click the <b>All learning catalog</b> link. The All learning resources page opens.</cmd>
+      </step>
+      <step>
+        <cmd>Perform any of the following tasks: </cmd>
+        <info>
+          <ul>
+            <li>To filter by product family, content type, or use case, select one or more check boxes.</li>
+            <li>To find a specific resource, enter the resource name or partial name in the search box.</li>
+            <li>To bookmark a resource, click the bookmark icon on any resource tile. The bookmarked resources are listed on the <b>My bookmarked resources</b> tab and on the <b>Bookmarked learning resources</b> widget on the home page.</li>
+          </ul>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

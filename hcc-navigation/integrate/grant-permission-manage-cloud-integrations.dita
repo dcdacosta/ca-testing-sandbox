@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="assembly-config-user-access-integrations">
+  <title>Grant permission to manage cloud integrations</title>
+  <shortdesc>To configure cloud and Red Hat integrations, you must be a member of a group with the Cloud administrator role. This group must be configured in User Access by an Organization Administrator. In the Red Hat Hybrid Cloud Console, an Organization Administrator performs the following high-level steps.</shortdesc>
+  <conbody>
+    <ol>
+      <li>Create a User Access group for cloud administrators.</li>
+      <li>Add the Cloud administrator role to the group.</li>
+      <li>Add members (users with account access) to the group.</li>
+    </ol>
+    <p><b>Organization Administrator: </b> The Organization Administrator configures the User Access group for cloud administrators, then adds the Cloud administrator role and users to the group.</p>
+    <p><b>Cloud administrator: </b> The Cloud administrator configures how services interact with cloud and Red Hat integrations. The Cloud administrator can add, remove, and edit integrations available in the Hybrid Cloud Console.</p>
+  </conbody>
+  <related-links>
+    <link format="html" href="../administer/control-team-access-with-rbac.dita" scope="external">
+      <linktext>Control team access using Role-based Access Control (RBAC)</linktext>
+    </link>
+  </related-links>
+</concept>

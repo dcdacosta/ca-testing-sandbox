@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="gcp-integrations-services">
+  <title>Connect your Google Cloud account</title>
+  <shortdesc>You can connect your Google Cloud account to cost management and the RHEL management bundle in the Red Hat Hybrid Cloud Console:</shortdesc>
+  <conbody>
+    <section id="_cost_management">
+      <title>Cost management</title>
+      <p>Connect your Google Cloud account to cost management to track your cloud costs. You can use the cost management service to perform financially related tasks, such as:</p>
+      <ul>
+        <li>Visualizing, understanding, and analyzing the use of resources and costs</li>
+        <li>Forecasting your future consumption and comparing them with budgets</li>
+        <li>Optimizing resources and consumption</li>
+        <li>Identifying patterns of usage for further analysis</li>
+        <li>Integrating with third-party tools that can benefit from cost and resourcing data</li>
+      </ul>
+    </section>
+    <section id="_rhel_management_bundle">
+      <title>RHEL management bundle</title>
+      <p>Connect your Google Cloud account to the RHEL management bundle in the Hybrid Cloud Console to use your Red Hat product subscriptions on Google Cloud.</p>
+      <p>The RHEL management bundle grants access to additional capabilities which are useful to deploying Red Hat products on the public cloud, including:</p>
+      <ul>
+        <li>Red Hat gold images: You can use Red Hat cloud images in Google Cloud and bring your own subscription instead of paying hourly.</li>
+        <li>Autoregistration: This allows cloud instances to automatically connect to console.redhat.com when provisioned so you can use Red Hat Lightspeed services.
+          <note type="important">To use RHEL management, you must enable Simple Content Access.</note>
+        </li>
+      </ul>
+    </section>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://access.redhat.com/articles/simple-content-access" scope="external">
+      <linktext>Red Hat Knowledge Article: Simple Content Access</linktext>
+    </link>
+  </related-links>
+</concept>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="con-rbac-default-user-access-group">
+  <title>The <b>Default access</b> group</title>
+  <shortdesc>The <b>Default access</b> group is provided by Red Hat on the Hybrid Cloud Console. It contains a set of roles that are predefined in the Hybrid Cloud Console. The <b>Default access</b> group includes all authenticated users in your organization.</shortdesc>
+  <conbody>
+    <p>The <b>Default access</b> group contains a subset of all predefined roles. The <b>Default access</b> group is automatically updated when <b>Default access</b> group roles are added in the Hybrid Cloud Console.</p>
+    <p>As an Organization Administrator, you can add roles to and remove roles from the <b>Default access</b> group. When you do so, its name changes to <b>Custom default access</b> group. The changes you make to this group affect all authenticated users in your organization.</p>
+  </conbody>
+  <related-links>
+    <link format="html" href="predefined-user-access-roles-ref.dita" otherprops="FEDRAMP" scope="external">
+      <linktext>Predefined User Access roles</linktext>
+    </link>
+  </related-links>
+</concept>

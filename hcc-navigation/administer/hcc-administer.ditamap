@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Administer</title>
+  <topichead navtitle="Administer">
+    <topicref href="manage-user-permissions-rbac-models.dita" locktitle="yes" navtitle="Manage user permissions with Role-based Access Control (RBAC)" type="concept">
+      <topicref chunk="to-content" href="user-access-concepts.dita" locktitle="yes" navtitle="User Access concepts" type="concept">
+        <topicref href="who-can-manage-user-access.dita" locktitle="yes" navtitle="Who can manage User Access" toc="no" type="concept">
+        </topicref>
+        <topicref href="additive-access.dita" locktitle="yes" navtitle="Additive access" toc="no" type="concept">
+        </topicref>
+      </topicref>
+      <topicref chunk="to-content" href="review-default-user-access-groups.dita" locktitle="yes" navtitle="Review default User Access groups" type="concept">
+        <topicref href="default-admin-access-group.dita" locktitle="yes" navtitle="The Default admin access group" toc="no" type="concept">
+        </topicref>
+        <topicref href="default-access-group.dita" locktitle="yes" navtitle="The Default access group" toc="no" type="concept">
+        </topicref>
+        <topicref href="custom-default-access-group.dita" locktitle="yes" navtitle="The Custom default access group" toc="no" type="concept">
+        </topicref>
+        <topicref href="restore-default-access-group.dita" locktitle="yes" navtitle="Restore the Default access group" toc="no" type="task">
+        </topicref>
+      </topicref>
+      <topicref chunk="to-content" href="configure-consolidated-user-access-roles.dita" locktitle="yes" navtitle="Configure consolidated User Access roles" type="concept">
+        <topicref href="prepare-default-access-for-consolidated-roles.dita" locktitle="yes" toc="no" type="task">
+        </topicref>
+        <topicref href="create-new-group-rhel-viewer-consolidated-roles.dita" locktitle="yes" navtitle="Create a new group for RHEL viewers" toc="no" type="task">
+        </topicref>
+      </topicref>
+      <topicref chunk="to-content" href="control-team-access-with-rbac.dita" locktitle="yes" navtitle="Control team access using Role-based Access Control (RBAC)" type="task">
+        <topicref href="create-a-group-for-rbac.dita" toc="no" type="task">
+        </topicref>
+        <topicref href="create-user-access-admin.dita" locktitle="yes" navtitle="Create a User Access administrator" toc="no" type="task">
+        </topicref>
+        <topicref href="edit-or-remove-user-access-group.dita" locktitle="yes" navtitle="Edit or remove a User Access group" toc="no" type="task">
+        </topicref>
+        <topicref href="add-org-admin-to-group.dita" locktitle="yes" navtitle="Add an Organization Administrator to a group" toc="no" type="task">
+        </topicref>
+        <topicref href="add-role-to-group.dita" locktitle="yes" navtitle="Add a role to a group" toc="no" type="task">
+        </topicref>
+        <topicref href="add-user-to-group.dita" locktitle="yes" navtitle="Add a user to a group" toc="no" type="task">
+        </topicref>
+        <topicref href="restrict-access-single-user.dita" locktitle="yes" navtitle="Restrict service access to a single user" toc="no" type="task">
+        </topicref>
+        <topicref href="disable-group-access.dita" locktitle="yes" navtitle="Disable group access" toc="no" type="task">
+        </topicref>
+        <topicref href="predefined-user-access-roles-ref.dita" locktitle="yes" navtitle="Predefined User Access roles" toc="no" type="concept">
+        </topicref>
+      </topicref>
+      <topicref chunk="to-content" href="view-roles-and-user-permissions.dita" type="concept">
+        <topicref href="view-roles-and-permissions.dita" locktitle="yes" navtitle="View roles and permissions" toc="no" type="task">
+        </topicref>
+        <topicref href="view-user-permissions.dita" locktitle="yes" navtitle="View user permissions" toc="no" type="task">
+        </topicref>
+      </topicref>
+      <topicref chunk="to-content" href="custom-user-access-roles.dita" type="concept">
+        <topicref href="create-edit-custom-roles-for-services.dita" locktitle="yes" navtitle="How to create custom roles" toc="no" type="task">
+        </topicref>
+        <topicref href="about-granular-permissions.dita" locktitle="yes" navtitle="About granular permissions" toc="no" type="concept">
+        </topicref>
+        <topicref href="copy-existing-role.dita" locktitle="yes" navtitle="Copy an existing role" toc="no" type="task">
+        </topicref>
+        <topicref href="create-role-from-scratch.dita" locktitle="yes" navtitle="Create a role from scratch" toc="no" type="task">
+        </topicref>
+        <topicref href="edit-custom-role-names.dita" locktitle="yes" navtitle="Edit custom role names" toc="no" type="task">
+        </topicref>
+        <topicref href="remove-permissions-custom-role.dita" locktitle="yes" navtitle="Remove permissions from a custom role" toc="no" type="task">
+        </topicref>
+        <topicref href="create-cost-mgmt-service-roles.dita" locktitle="yes" navtitle="Create cost management service roles" toc="no" type="task">
+        </topicref>
+        <topicref href="example-create-cost-mgmt-role-from-scratch.dita" locktitle="yes" navtitle="Example: Create a cost management role from scratch" toc="no" type="task">
+          <topicref href="create-group-service-account.dita" locktitle="yes" type="task">
+          </topicref>
+        </topicref>
+      </topicref>
+      <topicref chunk="to-content" href="tamtool-enable-temp-access-rh-account.dita" locktitle="yes" navtitle="Enable temporary access to your Red Hat account for customer support" type="concept">
+        <topicref href="tamtool-provide-access-customer-account.dita" locktitle="yes" navtitle="Provide access to a customer account using the access request feature" toc="no" type="reference">
+        </topicref>
+        <topicref href="tamtool-approve-access-to-your-acct.dita" toc="no" type="task">
+        </topicref>
+        <topicref href="tamtool-deny-access-to-your-acct.dita" toc="no" type="task">
+        </topicref>
+        <topicref href="tamtool-request-access-to-customer-acct.dita" toc="no" type="task">
+        </topicref>
+      </topicref>
+    </topicref>
+  </topichead>
+</map>

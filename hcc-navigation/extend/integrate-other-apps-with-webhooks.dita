@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="assembly-configuring-integration-with-webhooks">
+  <title>Integrate other third-party applications with webhooks</title>
+  <shortdesc>For third-party applications that do not have a native Hybrid Cloud Console integration available, you can use the webhook integration type to receive event notifications from the Hybrid Cloud Console in your chosen application.</shortdesc>
+</concept>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="adding-ocp-integration">
+  <title>Create an OpenShift Container Platform integration</title>
+  <shortdesc>You can connect your Red Hat OpenShift Container Platform environment to the Red Hat Hybrid Cloud Console as an integration so that you can use OpenShift Container Platform data with cost management.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Red Hat Hybrid Cloud Console as an Organization Administrator or as a user with Cloud Administrator permissions.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>You have access to an OpenShift Container Platform environment that you want to use with the Hybrid Cloud Console.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Go to <b>Settings</b> &gt; <b>Integrations</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the <b>Red Hat</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Add integration</b> to open the integrations wizard. If this is the first integration you are adding, skip this step.</cmd>
+      </step>
+      <step>
+        <cmd>Select <b>Red Hat OpenShift Container Platform</b>, and then click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Enter a descriptive name for the integration, for example, <i>my_ocp_integration</i>, and then click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select <b>Cost Management</b> as the application, and then click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>To install and configure the <codeph>costmanagement-metrics-operator</codeph>, use the steps in the wizard, and then click <b>Next</b>. Refer to <xref format="html" href="../../cost-management/integrate/integrating-os.dita#integrating-os" scope="external"/> for additional information.</cmd>
+      </step>
+      <step>
+        <cmd>Enter the <b>Cluster Identifier</b>, and then click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Review the integration details, and then click <b>Add</b> to finish adding the integration.</cmd>
+      </step>
+    </steps>
+    <result>
+      <ol>
+        <li>Go to the <b>Integrations</b> page, and select the <b>Red Hat</b> tab.</li>
+        <li>Confirm that your OpenShift Container Platform integration is listed and the status is <b>Ready</b>.</li>
+      </ol>
+    </result>
+  </taskbody>
+</task>

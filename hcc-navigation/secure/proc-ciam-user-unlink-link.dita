@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-ciam-user-unlink-link">
+  <title>Update your linked company SSO</title>
+  <shortdesc>If you link your Red Hat user account to an incorrect company SSO account, or you link the wrong Red Hat user account to the SSO account, you can unlink then link to the correct SSO account</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Ensure you have a registered Red Hat user account.</li>
+        <li>Ensure your Red Hat company account is set up to use company SSO integration.</li>
+      </ul>
+    </prereq>
+    <context>
+      <note type="note">A Red Hat user can only be linked to one user per external Identity Provider (IdP). Two external accounts from the same IdP cannot link to the same Red Hat user.</note>
+    </context>
+    <steps>
+      <step>
+        <cmd>Use your browser to navigate to <xref format="html" href="http://sso.redhat.com" scope="external">sso.redhat.com</xref>and log in.</cmd>
+        <info>
+          <note type="tip">As a shortcut, navigate directly to <xref format="html" href="https://sso.redhat.com/auth/realms/redhat-external/account/account-security/linked-accounts" scope="external">Linked accounts</xref>.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>Click <b>Account security</b> on the left menu.</cmd>
+      </step>
+      <step>
+        <cmd>Click the<b>Linked accounts</b> option from the dropdown menu.</cmd>
+        <stepresult>The <b>Linked accounts</b> page opens.</stepresult>
+      </step>
+      <step>
+        <cmd>Click <b>Unlink account</b> to unlink your Red Hat user account.</cmd>
+        <stepresult>A message is displayed when the identity provider link is successfully removed. Your account is no longer linked.</stepresult>
+      </step>
+      <step>
+        <cmd>Restart the linking process with the correct Red Hat user account and company SSO account. <xref href="proc-ciam-user-sso-login-first-time.dita#proc-ciam-user-sso-login-first-time"/></cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

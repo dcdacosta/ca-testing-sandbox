@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="con-insights-rbac-consolidated-roles">
+  <title>Configure consolidated User Access roles</title>
+  <shortdesc>The Red Hat Hybrid Cloud Console provides three consolidated User Access roles with ease of use in mind. These roles help simplify how the Organization Administrator creates groups and permissions for various levels of access to the Red Hat Lightspeed services.</shortdesc>
+  <conbody>
+    <p>The consolidated roles are as follows:</p>
+    <p><b>RHEL viewer</b>: The RHEL viewer role provides users visibility without the ability to make changes. It allows read-only access to Red Hat Lightspeed. You can view system configurations, compliance reports, inventory data, patch information, vulnerabilities, and overall resource states and activities. The only action permitted with this role is to generate activation keys.</p>
+    <p><b>RHEL operator</b>: The RHEL operator role allows active management of your Red Hat Lightspeed environment. With this role you can edit system configurations, inventory details, policies, and notification/integration settings. The RHEL operator role allows many of the RHEL administrator role functions, but it is restricted from editing compliance policies, content source templates or policies, or tasks. In addition, the RHEL operator role cannot execute remediation plans.</p>
+    <p><b>RHEL administrator</b>: The RHEL administrator role provides comprehensive administrative privileges across your RHEL systems and Red Hat Lightspeed. With this role you can manage system configurations, inventory, compliance policies, notifications, patch management, remediations, malware detection, and advisor recommendations. The RHEL administrator role can also view and modify all vulnerability settings.</p>
+  </conbody>
+  <related-links>
+    <link format="html" href="predefined-user-access-roles-ref.dita" scope="external">
+      <linktext>Predefined User Access roles</linktext>
+    </link>
+  </related-links>
+</concept>

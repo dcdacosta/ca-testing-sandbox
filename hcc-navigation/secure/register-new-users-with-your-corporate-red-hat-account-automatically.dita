@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="GUID-0891ff9d-d653-4e29-870c-0df87e963b94">
+  <title>Register new users to your corporate Red Hat account automatically with auto-user registration</title>
+  <shortdesc>New Red Hat user accounts can automatically be registered with their organization’s corporate Red Hat account via auto-user registration.</shortdesc>
+  <conbody>
+    <p>The Organization Administrator allows users in the organization to register their user ID for access to the organization’s Red Hat account. Without auto-user registration enabled, the Organization Administrator is responsible for individually adding each user to the organization account.</p>
+    <p>The Organization Administrator enables auto-user registration after setting up identity provider integration. Identity provider integration must be active before enabling auto-user registration. If your identity provider integration is disabled, auto-user registration will also be disabled.</p>
+    <p>When auto-user registration is enabled, new users click on a provided auto-user registration link and complete the process to create and register their individual Red Hat accounts with their organization’s Red Hat account.</p>
+    <note>Auto-user registration only impacts users creating Red Hat accounts for the first time. Pre-existing Red Hat account users will remain unaffected.</note>
+  </conbody>
+</concept>

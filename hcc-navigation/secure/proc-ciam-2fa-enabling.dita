@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-ciam-2fa-enabling">
+  <title>Set up two-factor authentication (2FA) for your individual Red Hat account</title>
+  <shortdesc>To secure your individual Red Hat user account when organization-wide two-factor authentication is <b>not required</b>, you will need to enable 2FA and set up an authenticator app on your smartphone or other device. </shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Ensure you are using a registered Red Hat user account.</li>
+        <li>Ensure you have a smartphone or other device with the Google Authenticator app or the FreeOTP app installed.</li>
+      </ul>
+      <note type="note">Google Authenticator and FreeOTP Authenticator are the only supported token generators for providing two-factor authentication one-time codes. Hardware tokens, SMS (text-message) tokens, and other apps are not supported. You can install these apps on your smartphone or other compatible Android or iOS device.</note>
+      <note type="note">If your company policy requires two-factor authentication to access your Red Hat account and you have not yet enabled two-factor authentication, you will see the instructions to enable two-factor authentication immediately after you log in. </note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Log in to your Red Hat user account on any Red Hat site, such as <xref format="html" href="https://access.redhat.com" scope="external">Red Hat Customer Portal</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Click your user avatar in the upper right corner of the panel. </cmd>
+        <substeps>
+          <substep>
+            <cmd>Click <b>Account details</b>. A page opens where you can edit your account information.</cmd>
+          </substep>
+          <substep>
+            <cmd>If you log in through <xref format="html" href="https://console.redhat.com/" scope="external">Red Hat Hybrid Cloud Console</xref>, click <b>My profile</b> under your user avatar to edit your account information. </cmd>
+            <stepresult>
+              <p>A page opens where you can review your account information.</p>
+              <note type="note">Depending on which login portal you use, a different icon may appear.</note>
+            </stepresult>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Click <b>Login &amp; password</b>.</cmd>
+      </step>
+      <step>
+        <cmd>On the <b>Login &amp; password</b> page click <b>Manage two-factor authentication</b>. The <b>Signing in</b> page opens.</cmd>
+      </step>
+      <step>
+        <cmd>On the <b>Signing in</b> page, click <b>Set up authenticator application</b>. You must log in again to verify your account before the <b>Enable two-factor authentication</b> page opens.</cmd>
+      </step>
+      <step>
+        <cmd>Open the authenticator app on your smart phone and select the option to add a token. You can use one of these methods to add a token for the Red Hat two-factor authentication. </cmd>
+        <substeps>
+          <substep>
+            <cmd>Use the authenticator app to scan the QR code that opens on the <b>two-factor authentication</b> page.</cmd>
+          </substep>
+          <substep>
+            <cmd>Alternatively, you can click <b>Unable to scan? Enter the key instead</b> which displays a 32-character key string that you must enter into your authenticator app.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>After you scan the QR code (or enter the key string), the authenticator app creates an initial one-time 6-digit code. Enter this code into the <b>One-time code</b> field.</cmd>
+      </step>
+      <step>
+        <cmd>You can enter an optional name in the <b>Device name</b> field. This name can remind you which of your mobile devices has the authenticator app for this login. </cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Enable</b> to complete setting up two-factor authentication.</cmd>
+        <info>
+          <note>
+            <p>While you update your signing in options, you might be asked to log in again. This is a normal action and is provided to increase account security.</p>
+          </note>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p>The <b>Signing In</b> page opens when the authenticator app was set up and any optional name you gave to the app.</p>
+      <p> <image href="../images/img-RH-2FA-enable-complete.png" placement="inline">
+          <alt>img RH 2FA enable complete</alt></image> </p>
+    </result>
+  </taskbody>
+</task>

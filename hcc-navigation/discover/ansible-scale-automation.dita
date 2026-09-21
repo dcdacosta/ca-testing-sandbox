@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="ansible-on-hybrid-cloud-console">
+  <title>Scale automation for your Ansible Automation Platform infrastructure </title>
+  <shortdesc>The Red Hat Hybrid Cloud Console provides a centralized view of analytics, content management, and policy and governance for Red Hat Ansible Automation Platform. It supports hybrid cloud automation on Ansible Automation Platform through the following features and components:</shortdesc>
+  <refbody>
+    <section>
+      <ul>
+        <li>Automation playbooks and collections that are tested and supported by Red Hat and our partners</li>
+        <li>Aggregated health monitoring and analytics</li>
+        <li>A private catalog to make automation available to appropriate teams at a faster pace</li>
+        <li>Policy and governance that is applied to all of these resources</li>
+      </ul>
+      <note type="note">Go to the <xref format="html" href="https://console.redhat.com/ansible" scope="external">Red Hat Ansible Automation Platform</xref> area of the Hybrid Cloud Console to access services and features for Ansible Automation Platform.</note>
+      <p>The following services are available directly on the Hybrid Cloud Console for Ansible Automation Platform:</p>
+      <ul>
+        <li>Automation hub: Access Ansible Certified Content Collections from the Hybrid Cloud Console. For more information, see <xref format="html" href="https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.6/html-single/managing_automation_content/index" scope="external">Managing automation content</xref>.</li>
+        <li>Automation analytics: View reports to evaluate how automation is deployed across your Ansible automation environment and the associated cost savings. For more information, see <xref format="html" href="https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.6/html-single/using_automation_analytics/index" scope="external">Using automation analytics</xref>.</li>
+      </ul>
+      <p>The following capabilities run on Ansible Automation Platform and integrate with the Hybrid Cloud Console, but are not Hybrid Cloud Console-native services. These features are configured and executed in Ansible Automation Platform:</p>
+      <ul>
+        <li>Inventory source: Integrate Red Hat Lightspeed as an inventory source in Ansible Automation Platform to pull system data into automation workflows. To configure a Red Hat Lightspeed-sourced inventory, see the <xref format="html" href="https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.6/html/using_automation_execution/controller-inventories#proc-controller-inv-source-insights" scope="external">Red Hat Lightspeed</xref> section in <i>Using automation execution</i>.</li>
+        <li>Remediations: Automation controller integrates with Red Hat Lightspeed to scan your inventory for vulnerabilities and configuration conflicts, then mitigates problems by running a Red Hat Lightspeed maintenance plan. For more information, see <xref format="html" href="https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.6/html/using_automation_execution/controller-setting-up-insights" scope="external">Setting up Red Hat Lightspeed Remediations</xref>.</li>
+        <li>Event-Driven Ansible (EDA): The Red Hat Lightspeed EDA Collection provides event-driven automation integrations for Red Hat Lightspeed findings, enabling Event-Driven Ansible to consume signals and trigger automated remediation or workflows. For more information, see the <xref format="html" href="https://console.redhat.com/ansible/automation-hub/repo/published/redhat/insights_eda/" scope="external">Red Hat Lightspeed EDA Collection</xref>.</li>
+      </ul>
+    </section>
+  </refbody>
+  <related-links>
+    <link format="html" href="https://docs.redhat.com/documentation/en-us/red_hat_ansible_automation_platform" scope="external">
+      <linktext>Red Hat Ansible Automation Platform documentation page</linktext>
+    </link>
+    <link format="html" href="https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.6/html/planning_your_installation/index" scope="external">
+      <linktext>Planning your Ansible Automation Platform installation</linktext>
+    </link>
+    <link format="html" href="https://docs.redhat.com/documentation/en-us/ansible_on_clouds/2.x/html/red_hat_ansible_automation_platform_on_microsoft_azure_guide" scope="external">
+      <linktext>Red Hat Ansible Automation Platform on Microsoft Azure Guide</linktext>
+    </link>
+  </related-links>
+</reference>

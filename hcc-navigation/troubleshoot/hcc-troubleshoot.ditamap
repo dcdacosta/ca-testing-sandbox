@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Troubleshoot</title>
+  <topichead navtitle="Troubleshoot">
+    <topicref chunk="to-content" href="understand-support-resources.dita" locktitle="yes" navtitle="Understand your available support resources" type="concept">
+      <topicref href="open-rh-support-case.dita" locktitle="yes" navtitle="Open a Red Hat support case" toc="no" type="task">
+      </topicref>
+      <topicref href="hcc-help-options.dita" locktitle="yes" navtitle="Help options" toc="no" type="concept">
+        <topicref href="hcc-help-panel.dita" locktitle="yes" navtitle="Help panel" type="concept">
+        </topicref>
+        <topicref href="provide-feedback-console.dita" locktitle="yes" navtitle="Provide feedback about the console" type="task">
+        </topicref>
+      </topicref>
+    </topicref>
+    <topicref href="troubleshoot-notif-failures.dita" locktitle="yes" navtitle="Troubleshoot notification failures" type="task">
+    </topicref>
+    <topicref href="check-for-service-outages.dita" locktitle="yes" navtitle="Check for Red Hat service outages" type="task">
+    </topicref>
+    <topicref chunk="to-content" href="troubleshoot-third-party-integrations.dita" locktitle="yes" navtitle="Troubleshoot third-party integrations" type="reference">
+      <topicref href="troubleshoot-connection-ip-address.dita" locktitle="yes" navtitle="Troubleshoot connection issues between third-party integrations and Red Hat Lightspeed" toc="no" type="reference">
+      </topicref>
+      <topicref href="troubleshoot-servicenow-integration.dita" locktitle="yes" navtitle="Troubleshoot a ServiceNow integration" toc="no" type="reference">
+      </topicref>
+      <topicref href="troubleshoot-splunk-integration.dita" locktitle="yes" navtitle="Troubleshoot a Splunk integration" toc="no" type="reference">
+      </topicref>
+    </topicref>
+  </topichead>
+</map>

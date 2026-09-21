@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-notif-splunk-manual-config-notifications">
+  <title>Manually configure a Splunk integration</title>
+  <shortdesc>The Red Hat Insights (Red Hat Lightspeed) application for Splunk automated installation and setup process automatically configures Splunk integration to your Hybrid Cloud Console account. Use this procedure if you want to configure the integration manually.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You have an HTTP Event Collector (HEC) URL from Splunk Cloud or Splunk Enterprise.</li>
+        <li>You have the HEC token value from Splunk Cloud or Splunk Enterprise.</li>
+        <li>You are logged in to the Hybrid Cloud Console with the Notifications administrator role.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>Your Splunk instance has an SSL certificate that is signed by a globally trusted certificate authority (CA).</li>
+        <li>Your Splunk instance must be accessible to the Red Hat IP addresses listed in <xref format="html" href="../troubleshoot/troubleshoot-connection-ip-address.dita#ref-if-address-troubleshooting" scope="external"/>.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the Hybrid Cloud Console, navigate to <xref format="html" href="https://console.openshiftusgov.com/settings/integrations" otherprops="FEDRAMP" scope="external">Settings &gt; Integrations</xref><xref format="html" href="https://console.redhat.com/settings/integrations" otherprops="PUBLIC" scope="external">Settings &gt; Integrations</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the <b>Reporting &amp; Automation</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Add integration</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select <b>Splunk</b> as the integration type, and then click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Enter a name for your new integration in the <b>Integration name</b> field (for example, <codeph>redhat_splunk</codeph>).</cmd>
+      </step>
+      <step>
+        <cmd>In the <b>Endpoint URL</b> field, add your Splunk HEC endpoint URL: </cmd>
+        <substeps>
+          <substep>
+            <cmd>For Splunk Enterprise, Splunk uses port 8088 by default. For example: <codeph>https://&lt;splunk-endpoint&gt;:8088</codeph></cmd>
+          </substep>
+          <substep>
+            <cmd>For Splunk Cloud, Splunk uses port 443. For more information about Splunk Cloud on AWS or GCP, see <xref format="html" href="https://docs.splunk.com/Documentation/SplunkCloud/latest/Data/UsetheHTTPEventCollector#Send_data_to_HTTP_Event_Collector" scope="external">Send data to HTTP Event Collector</xref>. </cmd>
+            <info>
+              <note type="note">
+                <p>The service automatically adds <codeph>&lt;endpoint&gt;</codeph> (the <codeph>http</codeph> path). You do not need to include it in the form input for the Endpoint URL.</p>
+              </note>
+              <p>The following examples show endpoint URLs with the correct port numbers for Splunk platforms.</p>
+              <ul>
+                <li>On premise (Splunk Enterprise): <codeph>https://splunk.company.com:8088</codeph></li>
+                <li>Splunk Cloud (on AWS): <codeph>https://http-inputs-mycompany.splunkcloud.com:443</codeph></li>
+                <li>Splunk Cloud (on GCP): <codeph>https://http-inputs.mycompany.splunkcloud.com:443</codeph></li>
+              </ul>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>In the <b>Secret token</b> field, add the Splunk HEC token value.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Review the integration details and click <b>Submit</b>.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

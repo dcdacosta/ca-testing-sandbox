@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-viewing-roles-and-permissions">
+  <title>View roles and permissions</title>
+  <shortdesc>View details about the roles and permissions for User Access in the <xref format="html" href="https://console.openshiftusgov.com/" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com/" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console</xref> from the <b>Roles</b> page.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the <xref format="html" href="https://console.openshiftusgov.com/" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com/" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console</xref> as a user who has Organization Administrator permission.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>If you are not an Organization Administrator, you must be a member of a group that has the <b>User Access administrator</b> role assigned to it.</li>
+      </ul>
+      <p otherprops="PUBLIC">For a list of predefined roles provided by Red Hat, see <xref format="html" href="predefined-user-access-roles-ref.dita#assembly-insights-rbac-reference" scope="external">Predefined User Access roles</xref>.</p>
+      <note type="note">You cannot modify a predefined role.</note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Navigate to the <xref format="html" href="https://console.openshiftusgov.com/iam/user-access/roles" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console &gt; Settings &gt; Identity &amp; Access Management &gt; User Access &gt; Roles</xref><xref format="html" href="https://console.redhat.com/iam/user-access/roles" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console &gt; Settings &gt; Identity &amp; Access Management &gt; User Access &gt; Roles</xref>. User Access roles are displayed. You can scroll through the list of all roles.</cmd>
+      </step>
+      <step>
+        <cmd>In the table, click either the role <b>Name</b> or the role <b>Permissions</b> to see details about the permissions assigned to the role. For example, if you click on the <b>Cost Price List viewer</b> role, you see the following information: <image href="../images/rbac-cost-viewer-permissions-detail.png" placement="break">
+            <alt>rbac cost viewer permissions detail</alt></image></cmd>
+        <info>
+          <note type="note">An asterisk <b> * </b> indicates a wildcard permission. A wildcard permission grants access to all resource types and allows all operations for the applications in a role.</note>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

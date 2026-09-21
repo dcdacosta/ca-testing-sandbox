@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="adding-pagerduty-integration">
+  <title>Add a PagerDuty account as an integration</title>
+  <shortdesc>You can connect your PagerDuty account to the Red Hat Hybrid Cloud Console as an integration so that the Hybrid Cloud Console sends event notifications to a PagerDuty service through phone calls, SMS, emails, or push notifications.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Red Hat Hybrid Cloud Console as an Organization Administrator or as a user with Notifications administrator permissions.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>You have a PagerDuty integration key. For information about generating an integration key, see one of the following sections:
+          <ul>
+            <li><xref href="create-pagerduty-service.dita#proc-notif-console-create-pagerduty-service"/></li>
+            <li><xref href="generate-key-for-pagerduty-service.dita#proc-notif-console-adding-intetration-to-pagerduty-service"/></li>
+          </ul>
+        </li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Go to <xref format="html" href="https://console.openshiftusgov.com/settings/integrations" otherprops="FEDRAMP" scope="external">Settings &gt; Integrations</xref><xref format="html" href="https://console.redhat.com/settings/integrations" otherprops="PUBLIC" scope="external">Settings &gt; Integrations</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the <b>Reporting &amp; Automation</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Add integration</b> to open the <b>Add integration</b> wizard. If this is the first integration you are adding, skip this step.</cmd>
+      </step>
+      <step>
+        <cmd>Select <b>PagerDuty</b>, and then click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Enter a descriptive name for the integration, for example, <i>PagerDuty Integration</i>.</cmd>
+      </step>
+      <step>
+        <cmd>Enter the integration key for the PagerDuty account you are integrating. See <xref href="create-pagerduty-service.dita#proc-notif-console-create-pagerduty-service"/> for information about creating an integration key.</cmd>
+      </step>
+      <step>
+        <cmd>Specify an alert severity.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Optional: Associate events with the integration. Doing this automatically creates a behavior group. </cmd>
+        <info>
+          <note type="note">You can skip this step and associate the event types later.</note>
+        </info>
+        <substeps>
+          <substep>
+            <cmd>Select a product family, for example <b>OpenShift</b>, <b>Red Hat Enterprise Linux</b>, or <b>Console</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Select the event types you would like your integration to react to.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>To enable the integration, review the integration details and click <b>Submit</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Refresh the <b>Integrations</b> page to show the PagerDuty integration in the <b>Integrations</b> &gt; <b>Reporting &amp; Automation</b> list. Under <b>Last connection attempt</b>, the status is <b>Ready</b> to show the connection can accept notifications from the Hybrid Cloud Console.</cmd>
+      </step>
+    </steps>
+    <postreq id="postreq_1">
+      <p><b>Verify your integration:</b></p>
+      <p>Create a test notification to confirm you have correctly connected PagerDuty to the Hybrid Cloud Console:</p>
+      <ol id="ol_1">
+        <li>Go to the <b>Integrations</b> page, and select the <b>Reporting &amp; Automation</b> tab.</li>
+        <li>Confirm that your PagerDuty integration is listed and the status is <b>Ready</b>.</li>
+        <li>Next to your PagerDuty integration, click the options icon (⋮) and click <b>Test</b>.</li>
+        <li>In the <b>Integration Test</b> screen, enter a message and click <b>Send</b>. If you leave the field empty, the Hybrid Cloud Console sends a default message.</li>
+        <li>Open your PagerDuty instance and check for the message sent from the Hybrid Cloud Console.</li>
+        <li>In the Hybrid Cloud Console, go to <b>Notifications</b> &gt; <b>Event Log</b> and check that the <b>Integration: PagerDuty</b> event is listed with a green label.</li>
+      </ol>
+    </postreq>
+  </taskbody>
+  <related-links>
+    <link format="html" href="../observe/control-team-access-notif-settings.dita" scope="external">
+      <linktext>Control team access to notification settings</linktext>
+    </link>
+  </related-links>
+</task>

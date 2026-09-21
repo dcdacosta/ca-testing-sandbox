@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="redhat-cloud-integrations">
+  <title>Connect your Red Hat OpenShift Container Platform environment</title>
+  <shortdesc>You can connect your Red Hat OpenShift Container Platform environment to the Red Hat Hybrid Cloud Console as a cloud integration, so that the cost management service on the Hybrid Cloud Console can use data from your environment to track your cloud costs.</shortdesc>
+  <conbody>
+    <p>You can use the cost management service to perform financially related tasks, such as:</p>
+    <ul>
+      <li>Visualizing, understanding, and analyzing the use of resources and costs</li>
+      <li>Forecasting your future consumption and comparing them with budgets</li>
+      <li>Optimizing resources and consumption</li>
+      <li>Identifying patterns of usage for further analysis</li>
+      <li>Integrating with third-party tools that can benefit from cost and resourcing data</li>
+    </ul>
+    <note type="note">
+      <p>For Red Hat OpenShift Container Platform 4.6 and later, install the <codeph>costmanagement-metrics-operator</codeph> from the OpenShift Container Platform web console.</p>
+    </note>
+  </conbody>
+  <related-links>
+    <link format="html" href="../../cost-management/integrate/integrating-os.dita" scope="external">
+      <linktext>Integrate OpenShift Container Platform data into cost management</linktext>
+    </link>
+  </related-links>
+</concept>

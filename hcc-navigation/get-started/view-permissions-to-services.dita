@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="viewing-user-access">
+  <title>View your permissions to services</title>
+  <shortdesc>Your Organization Administrator grants and manages your access to the different services in the Red Hat Hybrid Cloud Console. You can view your permissions for each service on the console.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Hybrid Cloud Console.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Open the <b>Settings</b> menu from the gear icon (⚙) to open a drop-down menu.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>My User Access</b>. The <b>My User Access</b> page opens.</cmd>
+      </step>
+      <step>
+        <cmd>Select a services group, for example Red Hat Enterprise Linux. A table of services appears. Your permissions are listed in the <b>Operation</b> column.</cmd>
+      </step>
+    </steps>
+    <tasktroubleshooting>
+      <p>If you need additional permissions, you can use the console virtual assistant to send a request to your Organization Administrator. After you enter the details of your request, you will be prompted with <b>Are you sure you’d like to proceed?</b>. Click <b>Yes</b> to send your request.</p>
+    </tasktroubleshooting>
+  </taskbody>
+</task>

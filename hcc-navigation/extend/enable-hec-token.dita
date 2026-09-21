@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-notif-splunk-enabling-hec">
+  <title>Enable the HEC token</title>
+  <shortdesc>Before Splunk can receive Hybrid Cloud Console events, you must enable the HEC token. For more information about the HEC token in Splunk Cloud, see <xref format="html" href="https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/UsetheHTTPEventCollector#More_information_on_HEC" scope="external">Configure HTTP Event Collector on Splunk Cloud Platform</xref> in the Splunk documentation.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You have Organization Administrator permissions for the Hybrid Cloud Console.</li>
+        <li>You have Splunk login credentials:
+          <ul>
+            <li>On Splunk Cloud Platform, you must have the Splunk Cloud Administrator <codeph>sc-admin</codeph> role.</li>
+            <li>On Splunk Enterprise, you must have the <codeph>admin</codeph> role. For more information about creating the <codeph>admin</codeph> role, see <xref format="html" href="https://docs.splunk.com/Documentation/Splunk/9.1.0/Security/Secureyouradminaccount" scope="external">Create secure administration credentials</xref> in the Splunk documentation.</li>
+          </ul>
+        </li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>From the Splunk home page, navigate to <b>Settings</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select <b>Data Inputs</b>, and then select <b>HTTP Event Collector</b>. The HTTP Event Collector page shows the HEC, its Token value, the corresponding index that you selected during setup, and the status of the HEC. </cmd>
+        <info>
+          <p> <image href="../images/img-evnt-splunk-hec-screen.png" placement="inline">
+              <alt>img evnt splunk hec screen</alt></image> </p>
+        </info>
+      </step>
+      <step>
+        <cmd>Click <b>Global Settings</b> in the upper right corner of the page. The Edit Global Settings dialog box displays. </cmd>
+        <info>
+          <p> <image href="../images/img-evnt-splunk-global-settings.png" placement="inline">
+              <alt>img evnt splunk global settings</alt></image> </p>
+        </info>
+      </step>
+      <step>
+        <cmd>Select <b>Enabled</b>. This enables the HEC token that was automatically created during the setup process. </cmd>
+        <info>
+          <note type="note">The HEC token uses a default HTTP port number of 8088. If you are using a different port (such as port 443 for Splunk Cloud), you must update your Hybrid Cloud Console Splunk integration to match.</note>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+  <related-links>
+    <link format="html" href="https://docs.splunk.com/Documentation/Splunk/8.2.6/Data/UsetheHTTPEventCollector#Configure_HTTP_Event_Collector_on_Splunk_Enterprise" scope="external">
+      <linktext>Set up and use HTTP Event Collector on Splunk Enterprise</linktext>
+    </link>
+  </related-links>
+</task>

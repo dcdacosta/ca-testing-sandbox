@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="GUID-8676c725-5d39-4c32-9b4a-ddc8f1a775ca">
+  <!-- Use a map to build the structure of your HTML output. -->
+  <title>Access Red Hat services using your company credentials with single sign-on (SSO) integration</title>
+  <topicref chunk="to-content" href="con-ciam-user-about.dita" navtitle="Access Red Hat services with SSO" type="concept">
+    <topicref href="con-ciam-user-sync-auth-identities.dita" navtitle="Learn about the scope of SSO" toc="no" type="concept">
+    </topicref>
+    <topicref href="con-ciam-user-sso-eligibility.dita" navtitle="Check account eligibility for SSO integration" toc="no" type="concept">
+    </topicref>
+    <topicref href="con-ciam-user-services-require-login.dita" navtitle="Navigate limitations of SSO integration" toc="no" type="concept">
+    </topicref>
+    <topicref href="proc-ciam-user-login-intro.dita" navtitle="Manage authentication and access your account" toc="no" type="concept">
+      <topicref href="proc-ciam-user-email-login.dita" navtitle="Log in without SSO integration" toc="no" type="task">
+      </topicref>
+      <topicref href="proc-ciam-user-sso-login-first-time.dita" navtitle="Link your account to your company SSO" toc="no" type="task">
+      </topicref>
+      <topicref href="proc-ciam-user-sso-login.dita" navtitle="Access your account after linking SSO" toc="no" type="task">
+      </topicref>
+      <topicref href="proc-ciam-user-unlink-link.dita" toc="no" type="task">
+      </topicref>
+    </topicref>
+    <topicref href="ref-ciam-user-sso.dita" toc="no" type="reference">
+    </topicref>
+  </topicref>
+  <!-- Add topics and maps to create your job to be done -->
+  <!-- <topicref href="<GUID>" type="[reference|task|concept|map]" scope="local"></topicref> -->
+</map>

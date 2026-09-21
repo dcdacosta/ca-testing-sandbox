@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="con-rbac-additive-access">
+  <title>Additive access</title>
+  <shortdesc>User access on the Red Hat Hybrid Cloud Console uses an additive model, which means that there are no <b>deny</b> roles. In other words, actions are only permitted.</shortdesc>
+  <conbody>
+    <p>To control access, assign the appropriate roles with the desired permissions to groups, then add users to those groups. The access permitted to any individual user is a sum of all roles assigned to all groups to which that user belongs.</p>
+  </conbody>
+</concept>

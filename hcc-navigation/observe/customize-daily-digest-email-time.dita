@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-notif-config-email-settings">
+  <title>Customize the daily digest email notification time</title>
+  <shortdesc>You can choose to receive a summary of triggered application events occurring in your Red Hat Hybrid Cloud Console services in a daily digest email, instead of being notified as events occur.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Hybrid Cloud Console as an Organization Administrator or as a user with Notifications administrator permissions.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+      </ul>
+      <p>By default, the daily digest is sent at 00:00 Coordinated Universal Time (UTC).</p>
+      <p>Organization Administrators and Notifications administrators can customize the time the daily digest is sent. The daily digest provides a snapshot of events occurring over a 24-hour time frame, starting from the time you specify in the notifications settings.</p>
+    </prereq>
+    <steps>
+      <step otherprops="PUBLIC">
+        <cmd>In the Hybrid Cloud Console, navigate to <xref format="html" href="https://console.openshiftusgov.com/settings/notifications/user-preferences" otherprops="FEDRAMP" scope="external">Settings &gt; Notifications &gt; Notification Preferences</xref><xref format="html" href="https://console.redhat.com/settings/notifications/user-preferences" otherprops="PUBLIC" scope="external">Settings &gt; Notifications &gt; Notification Preferences</xref>. The <b>My Notifications</b> page appears.</cmd>
+      </step>
+      <step otherprops="FEDRAMP">
+        <cmd>In the Hybrid Cloud Console, navigate to <xref format="html" href="https://console.openshiftusgov.com/settings/notifications/user-preferences" otherprops="FEDRAMP" scope="external">Settings &gt; Notifications &gt; My User Preferences</xref><xref format="html" href="https://console.redhat.com/settings/notifications/user-preferences" otherprops="PUBLIC" scope="external">Settings &gt; Notifications &gt; My User Preferences</xref>. The <b>My Notifications</b> page appears.</cmd>
+      </step>
+      <step>
+        <cmd>On the <b>My Notifications</b> page, click <b>Edit time settings</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select <b>Custom time</b> and then specify the time and time zone to send your account’s daily digest email.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Save</b>. The daily digest email is sent each day at the time you selected. </cmd>
+        <info>
+          <note type="note">After you save a new time, the Hybrid Cloud Console converts the new time to the UTC time zone.</note>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

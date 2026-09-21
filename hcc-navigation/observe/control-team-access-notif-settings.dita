@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="assembly-config-user-access">
+  <title>Control team access to notification settings</title>
+  <shortdesc>To configure notifications settings, you must be a member of a group with the Notifications administrator role. This group must be configured in User Access by an Organization Administrator.</shortdesc>
+  <conbody>
+    <p>In the Red Hat Hybrid Cloud Console, an Organization Administrator performs the following high-level steps:</p>
+    <ol>
+      <li>Create a User Access group for Notifications administrators.</li>
+      <li>Add the Notifications administrator role to the group.</li>
+      <li>Add members (users with account access) to the group.
+        <dl>
+          <dlentry>
+            <dt>Organization Administrator</dt>
+            <dd>
+              <p>The Organization Administrator configures the User Access group for Notifications administrators, then adds the Notifications administrator role and users to the group.</p>
+            </dd>
+          </dlentry>
+          <dlentry>
+            <dt>Notifications administrator</dt>
+            <dd>
+              <p>Notifications administrators configure how services interact with notifications. Notifications administrators configure behavior groups to define how services notify users about events. <ph otherprops="PUBLIC">Administrators can configure additional integrations as they become available, as well as edit, disable, and remove existing integrations.</ph></p>
+            </dd>
+          </dlentry>
+          <dlentry>
+            <dt>Notifications viewer</dt>
+            <dd>
+              <p>The Notifications viewer role is automatically granted to everyone on the account and limits how a user can interact with notifications service views and configurations. A viewer can view notification configurations, but cannot modify or remove them. <ph otherprops="PUBLIC">A viewer cannot configure, modify, or remove integrations.</ph></p>
+            </dd>
+          </dlentry>
+        </dl>
+      </li>
+    </ol>
+  </conbody>
+  <related-links>
+    <link format="html" href="../administer/manage-user-permissions-rbac-models.dita" scope="external">
+      <linktext>Manage user permissions with Role-based Access Control (RBAC)</linktext>
+    </link>
+  </related-links>
+</concept>

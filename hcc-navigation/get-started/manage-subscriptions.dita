@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="managing-subscriptions">
+  <title>Manage your Red Hat subscriptions</title>
+  <shortdesc>With a Red Hat subscription, you can download Red Hat tested and certified enterprise software. Your active subscriptions provide continuous access to Red Hat software as is developed by Red Hat and its partners.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Hybrid Cloud Console.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>You have at least one Red Hat subscription.</li>
+      </ul>
+      <p>Subscription Services, available from the Hybrid Cloud Console, simplifies how you interact with your subscriptions by providing subscription management capabilities, historical subscriptions usage reporting, and hybrid committed spend drawdown data. By using Subscription Services, you can more effectively manage and track your subscriptions over their life cycle.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>On the home page of the Hybrid Cloud Console, scroll to the <b>Subscription Services</b> tile.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>View all subscriptions</b>. The Subscription Services overview page opens and the Subscription Services menu appears in the left navigation panel.</cmd>
+      </step>
+      <step>
+        <cmd>Review the options available from the Subscription Services menu: </cmd>
+        <info>
+          <ul>
+            <li><b>Overview</b>: Provides information about Subscription Services and includes links to purchase subscriptions.</li>
+            <li><b>Subscriptions Inventory</b>: Lists all of the current subscriptions in your account, including their statuses and subscription details. For more information about subscriptions inventory, see <xref format="html" href="https://docs.redhat.com/documentation/en-us/subscription_central/1-latest/html-single/viewing_and_managing_your_subscription_inventory_on_the_hybrid_cloud_console/index" scope="external">Viewing and managing your subscription inventory on the Hybrid Cloud Console</xref>.</li>
+            <li><b>Subscriptions Usage</b>: Reports account-level information about the usage of select Red Hat subscriptions, organized by major Red Hat platforms. Subscriptions usage simplifies how you interact with your subscriptions by providing both historical subscriptions usage data and an ability to make informed, forward-facing decisions based on that usage and your remaining subscription capacity. For more information about Subscriptions Usage, see <xref format="html" href="https://docs.redhat.com/documentation/en-us/subscription_central/1-latest/html/getting_started_with_the_subscriptions_service/index" scope="external">Getting Started with the Subscriptions Service</xref>.</li>
+            <li><b>Hybrid Committed Spend</b>: Automatically aggregates and processes cost and usage data from the required integrations and shares this data with other Hybrid Cloud Console services such as subscriptions usage and cost management. Therefore, configuring integrations for hybrid committed spend reduces the need for manual reporting of hybrid committed spend data. For more information about hybrid committed spend, see <xref format="html" href="https://docs.redhat.com/documentation/en-us/hybrid_committed_spend/1-latest/html-single/getting_started_with_hybrid_committed_spend/index" scope="external">Getting started with hybrid committed spend</xref>.
+              <note type="note">To access hybrid committed spend, your organization must sign a hybrid committed spend contract and your account must have permission to view hybrid committed spend. Contact your Red Hat sales or support representative for more information.</note>
+            </li>
+            <li><b>Manifests</b>: Provides the ability to create, export, and perform other management tasks on manifests for Red Hat Satellite Server. A manifest is a set of encrypted files that contains the subscription information that is required to import subscriptions into Satellite. For more information about manifests, see <xref format="html" href="https://docs.redhat.com/documentation/en-us/subscription_central/1-latest/html-single/creating_and_managing_manifests_for_a_connected_satellite_server/index" scope="external">Creating and managing manifests for a connected Satellite Server</xref>.</li>
+          </ul>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+  <related-links>
+    <link format="html" href="https://docs.redhat.com/documentation/en-us/subscription_central/1-latest" scope="external">
+      <linktext>Subscription Central product documentation page</linktext>
+    </link>
+  </related-links>
+</task>

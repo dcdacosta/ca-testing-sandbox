@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
-<concept id="proc-ciam-2fa-recovery-authenticate">
-  <title>Access your account securely</title>
-  <shortdesc>When two-factor authentication is enabled and configured, you can use an authenticator application or a recovery code to securely log in to your Red Hat account. This process provides a second layer of authentication to ensure that only authorized users can access the account.</shortdesc>
-  <conbody>
-  </conbody>
-</concept>

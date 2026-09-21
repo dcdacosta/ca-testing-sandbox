@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="proc-ciam-2fa-verifying">
+  <title>Verify your information for account recovery</title>
+  <shortdesc>Red Hat requires a verified email and phone number to ensure you have reliable recovery options for your account.</shortdesc>
+  <conbody>
+    <p>To proceed with two-factor authentication, ensure your account has a verified email and phone number. This information is required in order for Red Hat Customer Service to assist you with the account recovery process should you lose access.</p>
+  </conbody>
+</concept>

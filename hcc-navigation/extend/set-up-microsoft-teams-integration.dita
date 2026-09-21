@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="assembly-configuring-integration-with-teams">
+  <title>Set up a Microsoft Teams integration</title>
+  <shortdesc>You can configure the Red Hat Hybrid Cloud Console to send event notifications to all users on a new or existing channel in Microsoft Teams. The Microsoft Teams integration supports events from all services in the Hybrid Cloud Console and uses incoming webhooks to receive event data.</shortdesc>
+  <conbody>
+    <p>If you have any issues with integrating the Hybrid Cloud Console with Microsoft Teams, contact Red Hat for support. To open a Red Hat support case directly from the Hybrid Cloud Console:</p>
+    <ol>
+      <li>Click <b>Help</b> (the <b>?</b> icon) to open the help panel.</li>
+      <li>Select the <b>My support cases</b> tab.</li>
+      <li>Click <b>Open a support case</b> and add information about the issue.</li>
+    </ol>
+    <p>Microsoft will not provide troubleshooting. The Hybrid Cloud Console integration with Microsoft Teams is fully supported by Red Hat.</p>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook" scope="external">
+      <linktext>Create Incoming Webhooks</linktext>
+    </link>
+    <link format="html" href="https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/what-are-webhooks-and-connectors" scope="external">
+      <linktext>Webhooks and Connectors</linktext>
+    </link>
+    <link format="html" href="https://adaptivecards.microsoft.com/" scope="external">
+      <linktext>Adaptive Cards</linktext>
+    </link>
+    <link format="html" href="../troubleshoot/troubleshoot-third-party-integrations.dita" scope="external">
+      <linktext>Troubleshoot Hybrid Cloud Console integrations</linktext>
+    </link>
+  </related-links>
+</concept>

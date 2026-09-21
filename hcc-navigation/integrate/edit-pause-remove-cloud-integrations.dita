@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="managing-integrations">
+  <title>Edit, pause, or remove cloud integrations</title>
+  <shortdesc>From the <b>Integrations</b> page, you can edit integrations, pause or resume data collection, or remove existing integrations from the Hybrid Cloud Console.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Red Hat Hybrid Cloud Console as an Organization Administrator or as a user with Cloud Administrator permissions.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>You have a cloud or Red Hat integration in the Hybrid Cloud Console.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Go to <xref format="html" href="https://console.openshiftusgov.com/settings/integrations" otherprops="FEDRAMP" scope="external">Settings &gt; Integrations</xref><xref format="html" href="https://console.redhat.com/settings/integrations" otherprops="PUBLIC" scope="external">Settings &gt; Integrations</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Find the integration you want to edit under the <b>Cloud</b> or <b>Red Hat</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click the options icon (⋮) next to the integration and select one of the following tasks: </cmd>
+        <info>
+          <ul>
+            <li><b>Pause</b>: Temporarily disable data collection for connected Hybrid Cloud Console services. If the integration is currently paused, click <b>Resume</b> to continue collecting data for connected services.</li>
+            <li><b>Remove</b>: Permanently delete the integration and all collected data from the Hybrid Cloud Console.</li>
+            <li><b>Edit</b>: View integration details and make changes to the integration configuration in the Hybrid Cloud Console. You can rename the integration, check its availability, connect additional services, or edit the configuration or remove connected services.</li>
+          </ul>
+        </info>
+      </step>
+    </steps>
+    <postreq id="postreq_1">
+      <p><b>Verify your changes:</b></p>
+      <ul id="ul_1">
+        <li>Go to the <b>Integrations</b> page and confirm that your desired changes have been made.</li>
+      </ul>
+    </postreq>
+  </taskbody>
+</task>

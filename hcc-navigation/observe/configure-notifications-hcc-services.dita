@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="assembly-intro">
+  <title>Configure notifications for Hybrid Cloud Console services</title>
+  <shortdesc>Use the notifications service on the Red Hat Hybrid Cloud Console so that you do not have to check your user interface for event-triggered notifications. Instead, when events occur, the service automatically sends notifications about the events to you.</shortdesc>
+  <conbody>
+    <note type="important">Groups and roles, including the Notifications administrator role, must be configured by an Organization Administrator in order for events to be reported through email and integrations.</note>
+    <p>Through the notifications service, Red Hat Hybrid Cloud Console services have a standardized way of notifying users of events. By setting up behavior groups, a Notifications administrator specifies the notification delivery method and whether event notifications are sent to all users on an account, specific users, or only to Organization Administrators.</p>
+    <p>For example, the Notifications administrator can configure the service to send an email notification for new-recommendation hits on a system. <ph otherprops="PUBLIC">Similarly, the Notifications administrator might decide to trigger a notification that sends a message to a third-party application using the webhook integration type.</ph></p>
+    <p>An Organization Administrator designates Notifications administrators by creating a User Access group with the Notifications administrator role, then adding account members to the group. A Notifications administrator then configures notification behavior groups that define actions taken when service-specific events occur.</p>
+    <p otherprops="PUBLIC">The notifications service transmits event-triggered notifications to users’ email accounts or to third-party applications using webhooks.</p>
+    <p otherprops="FEDRAMP">The notifications service transmits event-triggered notifications to users’ email accounts.</p>
+    <p>Users on the Hybrid Cloud Console account set their own preferences for receiving email notifications. In <b>Settings &gt; Notifications &gt; Notification preferences</b>, each user configures their personal settings to receive event notification emails as an instant notification or daily digest. Note that some services do not offer both instant notification and daily digest. For errata alerts, instant notifications are batched and sent out in 15-minute intervals.</p>
+    <note otherprops="PUBLIC" type="important">Selecting <b>Instant notification</b> for any service can cause the recipient to receive a very large number of emails.</note>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://console.redhat.com/settings/notifications/user-preferences" scope="external">
+      <linktext>Notification preferences page</linktext>
+    </link>
+  </related-links>
+</concept>

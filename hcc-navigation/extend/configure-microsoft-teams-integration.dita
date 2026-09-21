@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-notif-console-config-for-teams">
+  <title>Configure the Microsoft Teams integration</title>
+  <shortdesc>After you configure Microsoft Teams for integration with the Hybrid Cloud Console, add the Microsoft Teams incoming webhook URL in the Hybrid Cloud Console so you can receive notifications about events from your Red Hat services in Microsoft Teams.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Hybrid Cloud Console as an Organization Administrator or as a user with Notifications administrator permissions. For more information about setting up Notifications administrator permissions, see <xref format="html" href="../observe/control-team-access-notif-settings.dita#assembly-config-user-access" scope="external"/> in the notifications documentation.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>You have the incoming webhook URL from Microsoft Teams.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the Hybrid Cloud Console, navigate to <xref format="html" href="https://console.openshiftusgov.com/settings/integrations" otherprops="FEDRAMP" scope="external">Settings &gt; Integrations</xref><xref format="html" href="https://console.redhat.com/settings/integrations" otherprops="PUBLIC" scope="external">Settings &gt; Integrations</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Click the <b>Communications</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Add integration</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select <b>Microsoft Office Teams</b> as the integration type, and then click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>In the <b>Integration name</b> field, enter a name for your integration (for example, <i>console-teams</i>).</cmd>
+      </step>
+      <step>
+        <cmd>Paste the incoming webhook URL (HTTP POST URL) that you copied from Microsoft Teams into the <b>Endpoint URL</b> field.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Optional: Associate events with the integration. Doing this automatically creates a behavior group. </cmd>
+        <info>
+          <note type="note">You can skip this step and associate the event types later.</note>
+        </info>
+        <substeps>
+          <substep>
+            <cmd>Select a product family, for example <b>OpenShift</b>, <b>Red Hat Enterprise Linux</b>, or <b>Console</b>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Select the event types you would like your integration to react to.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Click the <b>Integrations</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Add Integration</b>: </cmd>
+        <substeps>
+          <substep>
+            <cmd>In the <b>Integration name</b> field, enter a name for your integration (for example, <i>console-teams</i>).</cmd>
+          </substep>
+          <substep>
+            <cmd>Select <b>Microsoft Teams</b> from the <b>Type</b> drop-down list.</cmd>
+          </substep>
+          <substep>
+            <cmd>Paste the incoming webhook URL that you copied from Microsoft Teams into the <b>Endpoint URL</b> field.</cmd>
+          </substep>
+          <substep>
+            <cmd>Click <b>Save</b> to enable the integration. </cmd>
+            <info>
+              <p>Your Microsoft Teams integration is now listed on the <b>Integrations</b> &gt; <b>Communications</b> page. Under <b>Last connection attempt</b>, the status is <b>Ready</b> to show the connection can accept notifications from the console.</p>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>To enable the integration, review the integration details and click <b>Submit</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Refresh the <b>Integrations</b> page to show the Microsoft Teams integration in the <b>Integrations</b> &gt; <b>Communications</b> list. Under <b>Last connection attempt</b>, the status is <b>Ready</b> to show the connection can accept notifications from the Hybrid Cloud Console.</cmd>
+      </step>
+    </steps>
+    <postreq id="postreq_1">
+      <p><b>Verify your configuration:</b></p>
+      <p>Create a test notification to confirm you have correctly connected Microsoft Teams to the Hybrid Cloud Console:</p>
+      <ol id="ol_1">
+        <li>Next to your Microsoft Teams integration on the <b>Integrations</b> &gt; <b>Communications</b> page, click the options icon (⋮) and click <b>Test</b>.</li>
+        <li>In the <b>Integration Test</b> screen, enter a message and click <b>Send</b>. If you leave the field empty, the Hybrid Cloud Console sends a default message.</li>
+        <li>Open your Microsoft Teams channel and check for the message sent from the Hybrid Cloud Console.</li>
+        <li>In the Hybrid Cloud Console, go to <b>Notifications</b> &gt; <b>Event Log</b> and check that the <b>Integration: Microsoft Teams</b> event is listed with a green label.</li>
+      </ol>
+    </postreq>
+  </taskbody>
+</task>

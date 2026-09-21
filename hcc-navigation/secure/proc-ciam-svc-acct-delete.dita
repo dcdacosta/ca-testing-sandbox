@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-ciam-svc-acct-delete">
+  <title>Delete a service account</title>
+  <shortdesc>You can delete a service account. You must be the owner of a service account if you want to reset it or delete it. The Organization Administrator user can reset or delete any service account.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Ensure you are logged in to the <xref format="html" href="https://console.redhat.com/" scope="external">Red Hat Hybrid Cloud Console</xref>.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>From the <xref format="html" href="https://console.redhat.com/" scope="external">Red Hat Hybrid Cloud Console</xref>, Click the settings icon (⚙) and click <b>Service Accounts</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Identify the service account you want to delete and click the options icon (⋮).</cmd>
+      </step>
+      <step>
+        <cmd>Verify that you want to delete this account and click <b>Delete service account</b>.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

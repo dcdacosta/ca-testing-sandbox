@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="rhel-lightspeed-assistant">
+  <title>RHEL Lightspeed</title>
+  <shortdesc>The RHEL Lightspeed assistant can help provide answers to questions about Red Hat Enterprise Linux (RHEL) systems, support with troubleshooting, recommendations, help with understanding log files, and more.</shortdesc>
+  <conbody>
+  </conbody>
+  <related-links>
+    <link format="html" href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/interacting_with_the_command-line_assistant_powered_by_rhel_lightspeed/introducing-rhel-lightspeed-for-rhel-systems" scope="external">
+      <linktext>Introducing RHEL Lightspeed for RHEL systems</linktext>
+    </link>
+  </related-links>
+</concept>

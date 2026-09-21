@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="virtual-assistant">
+  <title>Virtual assistant</title>
+  <shortdesc>The Hybrid Cloud Console virtual assistant can help with tasks such as changing your personal information, requesting access from your administrator, displaying critical vulnerabilities, and providing recommendations from Advisor.</shortdesc>
+  <conbody>
+    <p>While it is not possible to retrieve the identity of your Organization Administrator from the Hybrid Cloud Console, you can use the virtual assistant to send a message to your Organization Administrator to request access to Hybrid Cloud Console services.</p>
+  </conbody>
+</concept>

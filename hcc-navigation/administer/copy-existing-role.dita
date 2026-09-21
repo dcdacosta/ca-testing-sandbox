@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-rbac-copying-existing-role">
+  <title>Copy an existing role</title>
+  <shortdesc>Copy an existing role when that role already contains many of the permissions you want to use and you need to change, add, or remove some permissions.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the <xref format="html" href="https://console.openshiftusgov.com/" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com/" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console</xref> as a user who has Organization Administrator permission.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>If you are not an Organization Administrator, you must be a member of a group that has the <b>User Access administrator</b> role assigned to it.</li>
+        <li>You started the <b>Create role</b> wizard.</li>
+      </ul>
+      <p>An existing role can be one of the predefined roles provided by Red Hat or it can be a previously created custom role.</p>
+      <p otherprops="PUBLIC">For a list of predefined roles provided by Red Hat, see section <xref format="html" href="predefined-user-access-roles-ref.dita#assembly-insights-rbac-reference" scope="external">Predefined User Access roles</xref>.</p>
+      <note type="note">You cannot modify a predefined role.</note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the <b>Create role</b> wizard, click the <b>Copy an existing role</b> button.</cmd>
+      </step>
+      <step>
+        <cmd>Click the button next to the role you want to copy.</cmd>
+      </step>
+      <step>
+        <cmd>Click the <b>Next</b> button.</cmd>
+      </step>
+      <step>
+        <cmd>The <b>Name and description</b> window shows a copy of the <b>Role name</b> and the existing <b>Role description</b> filled in. Make changes as needed.</cmd>
+      </step>
+      <step>
+        <cmd>Click the <b>Next</b> button. If the role name already exists, you must provide a different name before you can proceed.</cmd>
+      </step>
+      <step>
+        <cmd>Use the <b>Add permissions</b> window to select the application permissions to include in your role. By default, permissions are listed by application. </cmd>
+        <info>
+          <note type="tip">Custom roles only support granular permissions. Wildcard permissions, such as <codeph>approval:*:*</codeph> are not copied into a custom role.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>Optionally use the filter drop-down to to filter by Applications, Resources, or Operations. </cmd>
+        <info>
+          <note type="tip">Use the list at the top of the wizard page to view all the permissions added to the role. You can click a permission to delete it.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>Click the <b>Next</b> button to review details. You can click the <b>Submit</b> button to submit the role, the <b>Back</b> button to go back and make changes, or the <b>Cancel</b> button to cancel the action.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>The role you created is available to add to a User Access group.</p>
+    </result>
+  </taskbody>
+</task>

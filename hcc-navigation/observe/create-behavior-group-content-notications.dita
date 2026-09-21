@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-notif-example-content-creating-behavior-group">
+  <title>Example: Create a behavior group for content notifications</title>
+  <shortdesc>To allow users in the organization to receive notifications from the content service, a Notifications administrator creates a new behavior group in the Hybrid Cloud Console for certain users.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li otherprops="PUBLIC">An Organization Administrator has configured notification groups, roles, and members. See <xref format="html" href="control-team-access-notif-settings.dita#assembly-config-user-access" scope="external"/> for more details.</li>
+        <li>You are logged in to the Hybrid Cloud Console as a Notifications administrator. To verify you have Notifications administrator permissions, check <xref format="html" href="https://console.openshiftusgov.com/iam/my-user-access" otherprops="FEDRAMP" scope="external">My User Access</xref><xref format="html" href="https://console.redhat.com/iam/my-user-access" otherprops="PUBLIC" scope="external">My User Access</xref>.</li>
+      </ul>
+      <p>From the <b>Create behavior group</b> wizard, select and assign notifications to users or groups of users, and associate Hybrid Cloud Console events with behavior groups.</p>
+      <p>You can associate events with multiple behavior groups. If a behavior group is not associated with any event, no notifications are sent when an event occurs.</p>
+      <note type="important">If your organization has configured workspaces to control user access to systems, review your notifications configuration to ensure that only appropriate groups of users are configured to receive notifications. If you do not review your notifications configuration, users might receive alerts triggered by systems outside of their workspace permission scope. <ph otherprops="PUBLIC">See <xref format="html" href="https://docs.redhat.com/documentation/en-us/red_hat_insights/1-latest/html-single/viewing_and_managing_system_inventory/index" scope="external">Viewing and managing system inventory</xref> for more information about configuring workspaces.</ph><ph otherprops="FEDRAMP">See <xref format="html" href="https://docs.redhat.com/en/documentation/red_hat_lightspeed/1-latest/html/viewing_and_managing_system_inventory_with_fedramp/index" scope="external">Viewing and managing system inventory with FedRAMP</xref> for more information about configuring workspaces.</ph></note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the Hybrid Cloud Console, navigate to <xref format="html" href="https://console.openshiftusgov.com/settings/notifications" otherprops="FEDRAMP" scope="external">Settings &gt; Notifications</xref><xref format="html" href="https://console.redhat.com/settings/notifications" otherprops="PUBLIC" scope="external">Settings &gt; Notifications</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Under <b>Notifications</b>, select <b>Configure Events</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the application bundle tab you want to configure event notification behavior for. For this example, select <b>Red Hat Enterprise Linux</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Click the <b>Behavior Groups</b> tab.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Create new group</b> to open the <b>Create behavior group</b> wizard.</cmd>
+      </step>
+      <step>
+        <cmd>Enter a group name (such as <i>Content advisories</i>), and then click <b>Next</b>. <image href="../images/img-hcc-notif-create-behavior-group-content.png" placement="break">
+            <alt>Creating a new behavior group using the behavior group wizard, named Content Advisories</alt></image></cmd>
+      </step>
+      <step otherprops="PUBLIC">
+        <cmd>From the <b>Actions</b> drop-down list, specify how you want to receive the notification. For this example, select <b>Send an email</b>: <image href="../images/img-hcc-notif-create-behavior-group-actions-email.png" placement="break">
+            <alt>Creating a new behavior group using the behavior group wizard, selecting an Action from the Action drop down menu</alt></image></cmd>
+      </step>
+      <step otherprops="PUBLIC">
+        <cmd>Select a recipient from the <b>Recipient</b> drop-down list. You can specify that the email notification go to all users in the organization, or you can limit the recipients to administrators in the organization. If User Access groups are configured, you can select a User Access group to receive email notifications. </cmd>
+        <info>
+          <ul>
+            <li>Optional: To receive notifications in a third-party tool, click <b>Add action</b> to configure an additional notification method. If you select an integration such as <b>Integration: Slack</b>, <b>Integration: Splunk</b>, or <b>Integration: Webhook</b>, select an integration endpoint from the <b>Recipient</b> drop-down list.
+              <note type="note">Configure endpoints for each integration in <b>Settings &gt; Integrations</b>. If an action is disabled, no integrations exist for that event type. To configure third-party integrations to receive notifications, see <xref format="html" href="../extend/integrate-communication-apps.dita#integrate-comm-apps" scope="external"/>.</note>
+            </li>
+          </ul>
+        </info>
+      </step>
+      <step otherprops="FEDRAMP">
+        <cmd>From the <b>Actions</b> drop-down list, select <b>Send an email</b>.</cmd>
+      </step>
+      <step otherprops="FEDRAMP">
+        <cmd>Select a recipient from the <b>Recipient</b> drop-down list. You can specify that the email notification go to all users in the organization, or you can limit the recipients to administrators in the organization. If User Access groups are configured, you can select a User Access group to receive email notifications.</cmd>
+      </step>
+      <step>
+        <cmd>When you have finished configuring how to receive your notifications, click <b>Next</b>.</cmd>
+      </step>
+      <step>
+        <cmd>From the <b>Associate event types</b> screen, select the <b>Content</b> event type to be notified of content advisories, and then click <b>Next</b>. <image href="../images/img-hcc-notif-create-behavior-group-content-events.png" placement="break">
+            <alt>Creating a new behavior group using the behavior group wizard, selecting the Content service</alt></image></cmd>
+      </step>
+      <step>
+        <cmd>Review the settings you selected for the behavior group. To save the settings and create the behavior group, click <b>Finish</b>.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+  <related-links>
+    <link format="html" href="create-behavior-group.dita" otherprops="PUBLIC" scope="external">
+      <linktext>Create a notifications behavior group</linktext>
+    </link>
+    <link format="html" href="../administer/control-team-access-with-rbac.dita" otherprops="PUBLIC" scope="external">
+      <linktext>Control team access using Role-based Access Control (RBAC)</linktext>
+    </link>
+  </related-links>
+</task>

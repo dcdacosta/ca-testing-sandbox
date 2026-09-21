@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-rbac-creating-cost-mgmt-app-from-scratch">
+  <title>Example: Create a cost management role from scratch</title>
+  <shortdesc>You can create a role from scratch in the Red Hat Hybrid Cloud Console.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the <xref format="html" href="https://console.openshiftusgov.com/" otherprops="FEDRAMP" scope="external">Red Hat Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com/" otherprops="PUBLIC" scope="external">Red Hat Hybrid Cloud Console</xref> as a user who has Organization Administrator permission.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>If you are not an Organization Administrator, you must be a member of a group that has the <b>User Access administrator</b> role assigned to it.</li>
+        <li>A minimum of one cloud integration is configured for cost management.</li>
+        <li>You started the <b>Create role</b> wizard.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Start the <b>Create role</b> wizard and click on <b>Create a role from scratch</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Enter <codeph>AWS Org Unit Cost Viewer</codeph> for <b>Role name</b> and then click the <b>Submit</b> button. A description is not required.</cmd>
+      </step>
+      <step>
+        <cmd>Enter <codeph>cost</codeph> in the <b>Filter by application</b> field to display the cost management application and click on the <b>cost-management</b> check box.</cmd>
+      </step>
+      <step>
+        <cmd>Click the check box on the line that contains <codeph>aws.organizational_unit</codeph> and then click the <b>Next</b> button to display a drop-down list of available <b>Resource definitions</b> for the permission.</cmd>
+      </step>
+      <step>
+        <cmd>Click on the check box for at least one resource listed in the <b>Resource definitions</b> list and then click the <b>Next</b> button to review details.</cmd>
+      </step>
+      <step>
+        <cmd>After you review the details for this role, which show the <b>Permissions</b> and <b>Resource definitions</b>, click the <b>Submit</b> button to submit the role.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

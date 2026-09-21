@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-troubleshoot">
+  <title>Troubleshoot notification failures</title>
+  <shortdesc>The notifications service event log enables Notifications administrators to see when notifications are not working properly. The event log provides a list of all triggered events on the Red Hat Hybrid Cloud Console account, and actions taken for the past 14 days.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Hybrid Cloud Console as a user with Notifications administrator or Organization Administrator permissions.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+      </ul>
+      <p>In the <b>Action taken</b> column, each event shows the notification method highlighted in green or red to indicate the status of the message transmission. The filterable event log is a useful troubleshooting tool to see a failed notification event and identify potential issues with endpoints.</p>
+      <div otherprops="PUBLIC">
+        <p>After seeing a failed action in the event log, the Notifications administrator can check the endpoint and the status of the last five connection attempts on the Integrations screen.</p>
+        <p>In the integrations service, the following connection statuses are reflected by color:</p>
+        <ul id="ul_1">
+          <li><b>Green:</b> Five previous transmissions were successful.</li>
+          <li><b>Red:</b> Five previous transmissions were unsuccessful (timeout, 404 error, etc).</li>
+          <li><b>Yellow:</b> Connection is degraded; at least two of the five previous transmissions were unsuccessful.</li>
+          <li><b>Unknown:</b> The integration has not yet been called, or is not associated with a behavior group.</li>
+        </ul>
+      </div>
+      <image href="../images/img-notif-event-log.png" id="image_1" otherprops="PUBLIC" placement="break">
+        <alt>img notif event log</alt>
+      </image>
+      <p>The event log can answer questions related to receipt of emails. By showing the email action for an event as green, the event log enables a Notifications administrator to confirm that emails were sent successfully.</p>
+      <p otherprops="PUBLIC">Even when notifications and integrations are configured properly, individual users on the Hybrid Cloud Console account must configure their user preferences to receive emails.</p>
+      <p otherprops="FEDRAMP">Even when notifications are configured properly, individual users on the Hybrid Cloud Console account must configure their user preferences to receive emails.</p>
+      <p otherprops="PUBLIC">Before users receive notifications using the webhook integration type, a Notifications administrator must configure endpoints for your organization’s preferred webhook application.</p>
+      <note otherprops="PUBLIC" type="note">Notifications for Red Hat Lightspeed services are triggered based on service-specific criteria. For more details about Red Hat Lightspeed events, see <xref format="html" href="https://access.redhat.com/articles/7112807" scope="external">Understanding Red Hat Lightspeed (Insights) Events and Notifications in the Hybrid Cloud Console</xref>.</note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the Hybrid Cloud Console, navigate to <xref format="html" href="https://console.openshiftusgov.com/settings/notifications/eventlog" otherprops="FEDRAMP" scope="external">Settings &gt; Notifications &gt; Event Log</xref><xref format="html" href="https://console.redhat.com/settings/notifications/eventlog" otherprops="PUBLIC" scope="external">Settings &gt; Notifications &gt; Event Log</xref>. </cmd>
+        <info>
+          <ul>
+            <li>Filter the events list by event, application, application bundle, action type, or action status.</li>
+            <li>Select the time frame to show events from today, yesterday, the last seven days, the last 14 days (default), or set a custom range within the last 14 days.</li>
+            <li>Sort the <b>Date and time</b> column in ascending or descending order.</li>
+          </ul>
+        </info>
+      </step>
+      <step>
+        <cmd>Navigate to <xref format="html" href="https://console.openshiftusgov.com/settings/notifications/configure-events" otherprops="FEDRAMP" scope="external">Settings &gt; Notifications &gt; Configure Events</xref><xref format="html" href="https://console.redhat.com/settings/notifications/configure-events" otherprops="PUBLIC" scope="external">Settings &gt; Notifications &gt; Configure Events</xref>, and verify or change settings by event.</cmd>
+      </step>
+      <step otherprops="PUBLIC">
+        <cmd>Ask users to check their user preferences for receiving email notifications. Even when notifications and integrations are configured properly, individual users on the Hybrid Cloud Console account must configure their user preferences to receive emails.</cmd>
+      </step>
+      <step otherprops="FEDRAMP">
+        <cmd>Ask users to check their user preferences for receiving email notifications. Even when notifications and integrations are configured properly, individual users on the Hybrid Cloud Console account must configure their user preferences to receive emails.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+  <related-links>
+    <link format="html" href="https://access.redhat.com/articles/6985526" scope="external">
+      <linktext>IP allowlist for Red Hat Hybrid Cloud Console and Red Hat Lightspeed notifications and integrations</linktext>
+    </link>
+    <link format="dita" href="troubleshoot-third-party-integrations.dita">
+    </link>
+    <link format="html" href="https://docs.redhat.com/documentation/en-us/red_hat_hybrid_cloud_console/1-latest/html/configuring_notifications_on_the_red_hat_hybrid_cloud_console_with_fedramp/proc-notif-config-user-preferences_notifications" otherprops="FEDRAMP" scope="external">
+      <linktext>Configuring user preferences for email notifications</linktext>
+    </link>
+    <link format="html" href="../observe/configure-email-preferences-for-notifications.dita" otherprops="PUBLIC" scope="external">
+      <linktext>Configure email preferences for notifications</linktext>
+    </link>
+  </related-links>
+</task>

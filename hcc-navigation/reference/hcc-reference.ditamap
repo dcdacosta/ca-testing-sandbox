@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Reference</title>
+  <topichead navtitle="Reference">
+    <topicref chunk="to-content" href="quick-starts-learning-resources.dita" locktitle="yes" navtitle="Access quick starts and learning resources" type="concept">
+      <topicref href="navigate-all-learning-resources.dita" locktitle="yes" navtitle="Navigate the All learning resources page" toc="no" type="task">
+      </topicref>
+      <topicref href="bookmark-learning-resources.dita" locktitle="yes" navtitle="Bookmark learning resources" toc="no" type="task">
+      </topicref>
+    </topicref>
+    <topicref href="use-api-documentation.dita" locktitle="yes" navtitle="Use API documentation to develop Red Hat services" type="task">
+    </topicref>
+  </topichead>
+</map>

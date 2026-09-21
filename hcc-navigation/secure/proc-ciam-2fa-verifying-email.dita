@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-ciam-2fa-verify-email">
+  <title>Verify your email information</title>
+  <shortdesc>You may receive an email verification request while logging in to a Red Hat portal. Follow the steps to verify your email address when this request appears:</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Ensure you have a registered Red Hat user account.</li>
+        <li>Ensure you have an email address where you can receive a verification notice.</li>
+        <li>Confirm that you receive an email verification request notice when you log in to a Red Hat platform.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Log in to your Red Hat user account.</cmd>
+      </step>
+      <step>
+        <cmd>When a verification alert message appears, click <b>Resend verification email</b> if you have not yet received a verification email.</cmd>
+      </step>
+      <step>
+        <cmd>Check your email for an email verification message from <codeph>no-reply@redhat.com</codeph>.</cmd>
+      </step>
+      <step>
+        <cmd>Follow the instructions in the email for verifying your email address.</cmd>
+      </step>
+      <step>
+        <cmd>When you complete the instructions, a verification window appears.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

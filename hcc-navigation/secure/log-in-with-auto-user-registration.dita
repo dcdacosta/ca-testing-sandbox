@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="GUID-22b2f0a8-c06c-42e3-8c95-ccbff9d3aecc">
+  <title>Log in with auto-user registration</title>
+  <shortdesc>New users on a Red Hat account in your organization are prompted to complete the registration process when they first log in.</shortdesc>
+</concept>

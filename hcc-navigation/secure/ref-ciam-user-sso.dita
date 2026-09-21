@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="ref-ciam-user-sso">
+  <title>Terms and definitions</title>
+  <shortdesc>The following table provides more information on commonly used terms throughout this section.</shortdesc>
+  <refbody>
+    <section>
+      <table>
+        <title>Terms and definitions</title>
+        <tgroup cols="2">
+          <colspec colname="col_1" colwidth="50*"/>
+          <colspec colname="col_2" colwidth="50*"/>
+          <thead>
+            <row>
+              <entry>Term</entry>
+              <entry>Definition</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <p>Federated identity</p>
+              </entry>
+              <entry>
+                <p>An electronic identity linked across multiple distinct identity management systems. See the <xref format="html" href="https://en.wikipedia.org/wiki/Federated_identity" scope="external">Wikipedia Federated identity reference</xref>.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>IdP</p>
+              </entry>
+              <entry>
+                <p>Identity provider. See the <xref format="html" href="https://en.wikipedia.org/wiki/Identity_provider" scope="external">Wikipedia Identity provider reference</xref>.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>SSO</p>
+              </entry>
+              <entry>
+                <p>Single sign-on. True single sign-on allows the user to log in once and access services without re-entering authentication factors. See the <xref format="html" href="https://en.wikipedia.org/wiki/Single_sign-on" scope="external">Wikipedia Single_sign-on reference</xref>.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </refbody>
+</reference>

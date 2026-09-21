@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="troubleshooting">
+  <title>Troubleshoot Hybrid Cloud Console integrations</title>
+  <shortdesc>If you experience issues while integrating a third-party application with the Hybrid Cloud Console, review the following troubleshooting solutions.</shortdesc>
+  <refbody>
+    <section>
+      <note otherprops="PUBLIC" type="note">
+        <p>Notifications for Red Hat Lightspeed services are triggered based on service-specific criteria. For more details about Red Hat Lightspeed events, see <xref format="html" href="https://access.redhat.com/articles/7112807" scope="external">Understanding Red Hat Insights Events and Notifications in the Hybrid Cloud Console</xref>.</p>
+      </note>
+    </section>
+  </refbody>
+</reference>

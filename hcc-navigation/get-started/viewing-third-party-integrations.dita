@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="viewing-third-party-integrations">
+  <title>View third-party integrations</title>
+  <shortdesc>Your Organization Administrator can integrate the Red Hat Hybrid Cloud Console with Splunk, ServiceNow, Slack, Event-Driven Ansible, Microsoft Teams, and Google Chat to route event-triggered notifications to those third-party applications.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You are logged in to the Hybrid Cloud Console.
+          <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="access-hcc.dita#finding-login" scope="external"/>.</note>
+        </li>
+        <li>An Organization Administrator has integrated third-party applications with the Hybrid Cloud Console.</li>
+      </ul>
+      <note>You can view third-party integration information from the Hybrid Cloud Console but, unless you are an Organization Administrator or a Notifications administrator, you cannot make any changes.</note>
+      <note type="note">If you are an Organization Administrator, see <xref format="html" href="../integrate/integrate-external-infrastructure-with-rh-services.dita#assembly-adding-cloud-integrations" scope="external"><i>Integrate external infrastructure to share data with Red Hat services</i></xref>.</note>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>In the Hybrid Cloud Console, select <b>Settings</b> &gt; <b>Integrations</b>. The <b>Integrations</b> window appears.</cmd>
+      </step>
+      <step>
+        <cmd>To check which third-party applications are configured to receive event notifications, select the <b>Communications</b>, <b>Reporting &amp; Automation</b>, or <b>Webhooks</b> tab.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-ciam-2fa-login">
+  <title>Sign in to your account with your 2FA authenticator application</title>
+  <shortdesc>Use a one-time code provided by your authenticator app to log in to your Red Hat user account on any Red Hat site, such as <xref format="html" href="https://access.redhat.com" scope="external">Red Hat Customer Portal</xref>.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Ensure you have a registered Red Hat user account with two-factor authentication enabled.
+          <p><xref href="proc-ciam-2fa-enabling.dita#proc-ciam-2fa-enabling"/></p>
+        </li>
+        <li>Ensure you have a smartphone or other device with the Google Authenticator app or the FreeOTP app installed.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Open the authenticator app.</cmd>
+      </step>
+      <step>
+        <cmd>Use your browser to navigate to a Red Hat site, such as <xref format="html" href="https://access.redhat.com" scope="external">Red Hat Customer Portal</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Enter your Red Hat login.</cmd>
+      </step>
+      <step>
+        <cmd>Enter your Red Hat password. A page opens to verify two-factor authentication.</cmd>
+      </step>
+      <step>
+        <cmd>Enter the 6-digit one-time code from your authenticator app into the <b>One-time code</b> box and click <b>Log in</b>. </cmd>
+        <info>
+          <note>The authenticator app refreshes the one-time code every 30 seconds. Because of the timing, you might need to enter a refreshed code if the initial code does not work.</note>
+        </info>
+      </step>
+    </steps>
+    <tasktroubleshooting>
+      <p>If the 6-digit one-time code is not accepted, you will remain on the verification page. You can try the following actions:</p>
+      <ol>
+        <li>Wait a few seconds and enter a new code from your authenticator app.</li>
+        <li>If you have more than one token enabled in your authenticator app, make sure you are using the token for your Red Hat account. For example, you might have two-factor authentication tokens for a Google account, a banking account, and a Red Hat account.</li>
+        <li>If you cannot successfully log in to your Red Hat with two-factor authentication enabled, contact <xref format="html" href="https://access.redhat.com/support/contact/" scope="external">Red Hat Support</xref> for assistance in resetting your account.</li>
+      </ol>
+    </tasktroubleshooting>
+  </taskbody>
+</task>

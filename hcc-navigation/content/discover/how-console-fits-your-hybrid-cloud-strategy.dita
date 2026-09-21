@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../../dtd/libs/fmdita/dita_resources/DITA-1.3/dtd/technicalContent/dtd/concept.dtd">
-<concept id="hybrid-cloud-console">
-  <title>How the console fits into your hybrid cloud strategy </title>
-  <shortdesc>You can use the Red Hat Hybrid Cloud Console to access a comprehensive set of hosted services from a single interface. The Hybrid Cloud Console provides the content, tooling, and visibility developers and IT administrators need to build, deploy, and optimize workloads across the hybrid cloud.</shortdesc>
-</concept>

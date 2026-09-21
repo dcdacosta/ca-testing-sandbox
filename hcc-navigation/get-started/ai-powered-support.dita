@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="GUID-8e590241-eada-4b1d-9f69-70a2faa7b5e4">
+  <title>AI-powered support</title>
+  <shortdesc>You can access several AI-powered tools within the Hybrid Cloud Console to help with your tasks.</shortdesc>
+  <conbody>
+    <p>Depending on your needs, you can use Ask Red Hat, RHEL Lightspeed, OpenShift Assisted Installer, or the Hybrid Cloud Console virtual assistant to help you find answers, configure settings, and more.</p>
+    <p>The AI assistants retain your chat history, can remain open in the console as you work, and can be minimized. You can use multiple AI assistants at the same time and toggle between your conversations.</p>
+  </conbody>
+</concept>

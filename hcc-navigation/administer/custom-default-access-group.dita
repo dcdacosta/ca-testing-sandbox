@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="con-rbac-custom-default-user-access-group">
+  <title>The Custom default access group</title>
+  <shortdesc>When you manually modify the <b>Default access</b> group, its name changes to <b>Custom default access</b>, which indicates it was modified. Moreover, it is no longer automatically updated from the Red Hat Hybrid Cloud Console.</shortdesc>
+  <conbody>
+    <p>From that point forward, an Organization Administrator is responsible for all updates and changes to the <b>Custom default access</b> group. The group is no longer managed or updated by the Hybrid Cloud Console.</p>
+    <note type="important">You cannot delete the <b>Default access</b> group or <b>Custom default access</b> group.</note>
+    <p>You can restore the <b>Default access</b> group, which removes the <b>Custom default access</b> group and any changes you made.</p>
+  </conbody>
+  <related-links>
+    <link format="html" href="restore-default-access-group.dita" otherprops="PUBLIC" scope="external">
+      <linktext>Restore the Default access group</linktext>
+    </link>
+  </related-links>
+</concept>

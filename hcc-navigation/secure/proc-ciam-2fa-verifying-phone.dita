@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-ciam-2fa-verify-phone">
+  <title>Verify your phone information</title>
+  <shortdesc>You may receive a phone number verification request while logging in to a Red Hat portal. Follow the steps to verify your phone number when this request appears: </shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Ensure you have a registered Red Hat user account.</li>
+        <li>Ensure you have a phone number where you can receive direct voice calls.</li>
+        <li>Confirm that you receive a phone number verification request when you log in to a Red Hat platform.</li>
+      </ul>
+    </prereq>
+    <context>
+      <note type="note">The phone number is required and must be able to receive phone calls directly to you if you need to recover your account.</note>
+    </context>
+    <steps>
+      <step>
+        <cmd>Log in to your Red Hat user account, and navigate to the <b><xref format="html" href="https://www.redhat.com/wapps/ugc/protected/personalInfo.html" scope="external">Account details</xref></b> page.</cmd>
+      </step>
+      <step>
+        <cmd>Enter your contact phone number, including any country code, in the verification window.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Submit</b>.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

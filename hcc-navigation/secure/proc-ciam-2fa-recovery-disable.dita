@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="proc-ciam-2fa-recovery-disable">
+  <title>Remove recovery codes for two-factor authentication (2FA)</title>
+  <shortdesc>You can remove existing recovery codes from your Red Hat account. If you remove recovery codes for codes completely, you do not recieve the option to <i>"Use a recovery code instead"</i> when attempting to log in to your Red Hat account.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>Ensure you have created recovery codes for your Red Hat account.
+          <p><xref href="proc-ciam-2fa-recovery-create.dita#proc-ciam-2fa-recovery-create"/></p>
+        </li>
+        <li>Confirm that you can log in to your user account.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Log in to your Red Hat user account on any Red Hat site, such as <xref format="html" href="https://access.redhat.com" scope="external">Red Hat Customer Portal</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>Click your user avatar in the upper right corner of the panel. </cmd>
+        <substeps>
+          <substep>
+            <cmd>Click <b>Account details</b>. A page opens where you can edit your account information.</cmd>
+          </substep>
+          <substep>
+            <cmd>If you log in through <xref format="html" href="https://console.redhat.com/" scope="external">Red Hat Hybrid Cloud Console</xref>, click <b>My profile</b> under your user avatar to edit your account information. </cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Click <b>Account details</b>. A page opens where you can edit your account information.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Login &amp; password</b>.</cmd>
+      </step>
+      <step>
+        <cmd>On the <b>Login &amp; password</b> page scroll down to <b>2-factor authentication</b> and click <b>Manage 2-factor authentication</b>. The <b>Signing in</b> page opens.</cmd>
+      </step>
+      <step>
+        <cmd>Scroll down to <b>Recovery codes</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Click <b>Remove</b>. </cmd>
+        <info>
+          <p> <image href="../images/img-recovery-code-enabled.png" placement="inline">
+              <alt>img recovery code enabled</alt></image> </p>
+          <p>After you remove recovery codes, you can create a new set.</p>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

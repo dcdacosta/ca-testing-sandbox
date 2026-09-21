@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="preview">
+  <title>Preview features in development</title>
+  <shortdesc>Red Hat is constantly developing the Red Hat Hybrid Cloud Console. You can use the Preview environment to interact with new functionality that is actively being developed, iterations on existing functionality, or participate in public previews for upcoming applications.</shortdesc>
+  <taskbody>
+    <context>
+      <p>For more information about the Hybrid Cloud Console Preview environment, see <xref format="html" href="https://access.redhat.com/support/policy/updates/hybridcloud-console/lifecycle" scope="external">Red Hat Hybrid Cloud Console Preview Environment Access</xref>.</p>
+    </context>
+    <steps-unordered>
+      <step>
+        <cmd>To enable preview features, in the <xref format="html" href="https://console.openshiftusgov.com" otherprops="FEDRAMP" scope="external">Hybrid Cloud Console</xref><xref format="html" href="https://console.redhat.com" otherprops="PUBLIC" scope="external">Hybrid Cloud Console</xref> toggle the switch at the top of the console next to <b>You’re in Hybrid Cloud Console production. To see new pre-production features, turn on Preview mode</b>.</cmd>
+      </step>
+      <step>
+        <cmd>To disable preview features, toggle the switch at the top of the console next to <b>You’re in Hybrid Cloud Console Preview mode. To return to production, turn off Preview mode</b>.</cmd>
+      </step>
+    </steps-unordered>
+  </taskbody>
+</task>

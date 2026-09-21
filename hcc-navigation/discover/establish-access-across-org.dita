@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="user-access">
+  <title>Establish access across your organization</title>
+  <shortdesc>The User Access feature is an implementation of role-based access control (RBAC) that controls user access to various services hosted on the Red Hat Hybrid Cloud Console. You configure the User Access feature to grant user access to services hosted on the Hybrid Cloud Console.</shortdesc>
+  <conbody>
+    <p>User access on the Hybrid Cloud Console uses an additive model, which means that actions are only permitted, not denied. To control access, administrators assign the appropriate roles with the desired permissions to groups, then add users to those groups. The access permitted to an individual user is the sum of all roles assigned to all groups to which that user belongs.</p>
+    <p otherprops="PUBLIC">For Red Hat Enterprise Linux (RHEL) systems, you can configure workspaces to organize systems in your inventory and apply access management rules to those systems. Use workspace configuration to restrict system access to only those who require it.</p>
+    <note otherprops="PUBLIC" type="note">Configuring access management using workspaces is available in the Hybrid Cloud Console Preview environment.</note>
+  </conbody>
+  <related-links>
+    <link format="html" href="../administer/manage-user-permissions-rbac-models.dita" scope="external">
+      <linktext>Manage user permissions with Role-based Access Control (RBAC)</linktext>
+    </link>
+    <link format="html" href="https://console.openshiftusgov.com/iam/learning-resources" otherprops="FEDRAMP" scope="external">
+      <linktext>Identity &amp; Access Management Learning Resources</linktext>
+    </link>
+    <!-- <link href="../get-started/virtual-assistant.dita#virtual-assistant" otherprops="PUBLIC"/> -->
+    <link format="html" href="https://docs.redhat.com/en/documentation/red_hat_lightspeed/1-latest/html/viewing_and_managing_system_inventory/deploying-insights-with-rhca" otherprops="PUBLIC" scope="external">
+      <linktext>Viewing and managing system inventory</linktext>
+    </link>
+    <link format="html" href="../get-started/preview-features.dita" otherprops="PUBLIC" scope="external">
+      <linktext>Preview Hybrid Cloud Console features in development</linktext>
+    </link>
+  </related-links>
+</concept>
