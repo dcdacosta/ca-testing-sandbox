@@ -17,31 +17,31 @@
         <tbody>
           <row>
             <entry><xref format="html" href="https://your-s3-bucket-link/rhwa-whats-new-4-22-0-pdf.pdf" scope="external">What's new Workload Availability for Red Hat OpenShift 4-22-0</xref></entry>
-            <entry/>
+            <entry>Highlights new features, key enhancements, and deprecated functionality in version 4.22-0.</entry>
           </row>
           <row>
             <entry><xref format="html" href="https://your-s3-bucket-link/rhwa-discover-4-22-0-pdf.pdf" scope="external">Discover Workload Availability for Red Hat OpenShift 4.22-0</xref></entry>
-            <entry/>
+            <entry>Overview of core concepts, architecture, and capabilities for high-availability workloads.</entry>
           </row>
           <row>
             <entry><xref format="html" href="https://your-s3-bucket-link/rhwa-install-4-22-0-pdf.pdf" scope="external">Install Workload Availability for Red Hat OpenShift 4.22-0</xref></entry>
-            <entry/>
+            <entry>Step-by-step instructions for deployment, system prerequisites, and initial environment setup.</entry>
           </row>
           <row>
             <entry><xref format="html" href="https://your-s3-bucket-link/rhwa-administer-4-22-0-pdf.pdf" scope="external">Administer Workload Availability for Red Hat OpenShift 4.22-0</xref></entry>
-            <entry/>
+            <entry>Operational guidelines for managing day-to-day cluster health, security, and user roles.</entry>
           </row>
           <row>
             <entry><xref format="html" href="https://your-s3-bucket-link/rhwa-configure-4-22-0-pdf.pdf" scope="external">Configure Workload Availability for Red Hat OpenShift 4.22-0</xref></entry>
-            <entry/>
+            <entry>Setup procedures for custom policies, resource allocation, failover rules, and integration settings.</entry>
           </row>
           <row>
             <entry><xref format="html" href="https://your-s3-bucket-link/rhwa-observe-4-22-0-pdf.pdf" scope="external">Observe Workload Availability for Red Hat OpenShift 4.22-0</xref></entry>
-            <entry/>
+            <entry>Instructions for monitoring workload performance, setting up alerts, and analyzing system metrics.</entry>
           </row>
           <row>
             <entry><xref format="html" href="https://your-s3-bucket-link/rhwa-troubleshoot-4-22-0-pdf.pdf" scope="external">Troubleshoot Workload Availability for Red Hat OpenShift 4.22-0</xref></entry>
-            <entry/>
+            <entry>Diagnostic steps, log collection, and resolution guides for common operational issues.</entry>
           </row>
         </tbody>
       </tgroup>

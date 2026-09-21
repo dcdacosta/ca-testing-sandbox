@@ -9,7 +9,11 @@
         <dt>Predisclosure repository added to Lightwell Network</dt>
         <dd>
           <p dir="ltr">The Predisclosure repository is now available in the <ph conref="../common-product/content-references-for-lightwell-network.dita#GUID-be6d0fc9-e264-42c1-a929-9aadc647de95/product-name"/>. This repository builds on the existing Remediated repository by delivering fixes for novel vulnerabilities before public disclosure.</p>
-          <p dir="ltr"><b>Key features and behaviors</b></p>
+          <p dir="ltr"><b>Key features and behaviors</b><fig>
+            <title>The AEM Guides review annotation toolbar</title>
+            <image href="../images/annotation-toolbar.png" id="image_5" scale="50">
+            </image>
+          </fig></p>
           <ul id="ul_1">
             <li>Packages in this repository are built on the latest remediated builds and are maintained with moderate and higher severity CVE fixes.</li>
             <li>As vulnerabilities are publicly disclosed and addressed upstream, corresponding fixes are promoted from the Predisclosure repository into the Remediated repository.</li>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap/dtd/bookmap.dtd">
+<bookmap id="rhwa-install-4-22-0-pdf">
+  <title>Install</title>
+  <bookmeta>
+    <prodinfo>
+      <prodname>Workload Availability for Red Hat OpenShift</prodname>
+      <vrmlist>
+        <vrm version="4.22-0"/>
+      </vrmlist>
+    </prodinfo>
+  </bookmeta>
+  <frontmatter>
+    <booklists>
+      <toc/>
+    </booklists>
+  </frontmatter>
+  <chapter format="ditamap" href="../install/rhwa-4-22-0-install.ditamap">
+  </chapter>
+</bookmap>

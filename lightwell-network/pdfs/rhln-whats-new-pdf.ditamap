@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap/dtd/bookmap.dtd">
+<bookmap id="rhln-whats-new-pdf">
+  <title>What's new</title>
+  <bookmeta>
+    <prodinfo>
+      <prodname>Lightwell Network</prodname>
+    </prodinfo>
+  </bookmeta>
+  <frontmatter>
+    <booklists>
+      <toc/>
+    </booklists>
+  </frontmatter>
+  <chapter format="ditamap" href="../whats-new/rhln-whats-new.ditamap">
+  </chapter>
+</bookmap>
