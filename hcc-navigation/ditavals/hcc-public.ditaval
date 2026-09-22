@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<val>
+  <prop action="exclude" att="otherprops" val="FEDRAMP">
+  </prop>
+  <prop action="include" att="otherprops" val="PUBLIC">
+  </prop>
+  <prop action="exclude" att="otherprops" val="not-getting-started">
+  </prop>
+</val>
