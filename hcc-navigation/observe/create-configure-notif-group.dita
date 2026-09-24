@@ -8,7 +8,8 @@
       <ul>
         <li>You are logged in to the Red Hat Hybrid Cloud Console as an Organization Administrator.
           <note otherprops="PUBLIC" type="note">You cannot log in to the Hybrid Cloud Console with your email address unless your email address is the same as your Red Hat login. For more information, see <xref format="html" href="../get-started/access-hcc.dita#finding-login" scope="external"/>.</note>
-        </li>
+  </li>
+  <li>Cats rule, dogs drool!</li>
       </ul>
     </prereq>
     <steps>
