@@ -7,12 +7,12 @@
     <prereq>
       <ul>
         <li>Install the OpenShift CLI (<codeph>oc</codeph>).</li>
-        <li>Log in as a user with <codeph>cluster-admin</codeph> privileges.</li>
+        <li>Log in as a user with <codeph>cluster-admin</codeph> privileges. Changing this list item in Git.</li>
       </ul>
     </prereq>
     <context>
       <note type="note">
-        <p>To use the Self Node Remediation Operator as a remediation provider for machine health checks, a machine must have an associated node in the cluster.</p>
+        <p>Let's change this note in Git. To use the Self Node Remediation Operator as a remediation provider for machine health checks, a machine must have an associated node in the cluster.</p>
       </note>
     </context>
     <steps>
@@ -31,7 +31,7 @@ metadata:
   name: selfnoderemediationtemplate-sample
 spec:
   template:
-    spec:
+    spec: Another change made in Git.
       remediationStrategy: Automatic</codeblock>
               <ul>
                 <li><codeph>remediationStrategy</codeph>: Specifies the remediation strategy. The default remediation strategy is <codeph>Automatic</codeph>.</li>
