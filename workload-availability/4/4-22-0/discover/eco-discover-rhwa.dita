@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="eco-discover-rhwa">
-  <title>Ensure workload continuity during node failures with RHWA</title>
-  <shortdesc>Discover job category - placeholder for concept topic content.</shortdesc>
+  <title>Git title change topic A</title>
+  <shortdesc>Changing the short description in GIT.</shortdesc>
   <conbody/>
 </concept>
