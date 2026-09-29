@@ -6,6 +6,7 @@
   <taskbody>
     <prereq id="prereq_1">
       <ul id="ul_1">
+        <li>Testing if I can sync changes to a file locked in AEM.</li>
         <li>You have administrator access to your JFrog Artifactory instance.</li>
         <li> You have an active Lightwell Network membership.</li>
         <li> You have created a Lightwell Network service account. For more information, see <xref format="dita" href="../get-started/create-a-red-hat-lightwell-network-service-account.dita" scope="local"/></li>
