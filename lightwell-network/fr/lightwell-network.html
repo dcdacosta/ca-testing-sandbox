@@ -1,0 +1,1025 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2026"><meta name="generator" content="DITA-OT"><meta name="description" content="Stay up to date about new Lightwell Network features that you can use to keep your open source dependencies secure."><title>What's new in Lightwell Network</title><link rel="stylesheet" type="text/css" href="commonltr.css"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="GUID-2dd1193e-1c3f-4ff5-b404-9bcdab533d55">
+  <h1 class="title topictitle1" id="ariaid-title1">What's new in Lightwell Network</h1>
+  
+  <div class="body conbody"><p class="shortdesc">Stay up to date about new Lightwell Network features that you can use to keep your open source dependencies secure.</p>
+    <dl class="dl">
+      
+        <dt class="dt dlterm">Predisclosure repository added to Lightwell Network</dt>
+        <dd class="dd">
+          <p dir="ltr" class="p">The Predisclosure repository is now available in the <span class="ph">Lightwell Network</span>. This repository builds on the existing Remediated repository by delivering fixes for novel vulnerabilities before public disclosure.</p>
+          <p dir="ltr" class="p"><strong class="ph b">Key features and behaviors</strong></p>
+          <ul class="ul" id="GUID-2dd1193e-1c3f-4ff5-b404-9bcdab533d55__ul_1">
+            <li class="li">Packages in this repository are built on the latest remediated builds and are maintained with moderate and higher severity CVE fixes.</li>
+            <li class="li">As vulnerabilities are publicly disclosed and addressed upstream, corresponding fixes are promoted from the Predisclosure repository into the Remediated repository.</li>
+          </ul>
+          <p dir="ltr" class="p"><strong class="ph b">Important operational considerations</strong></p>
+          <ul class="ul" id="GUID-2dd1193e-1c3f-4ff5-b404-9bcdab533d55__ul_2">
+            <li class="li"><strong class="ph b">Repository migration:</strong> Novel fixes are moved directly into the predisclosure repository. If you previously mirrored or pulled these specific artifacts into a local repository, such as JFrog Artifactory, they will no longer be available at their former Remediated path.</li>
+            <li class="li"><strong class="ph b">Existing novel builds:</strong> Pre-existing novel fixes moved during this update do not retrospectively display the new <code class="ph codeph">-nxxxx</code> suffix. Only newly created builds reflect the updated versioning format.</li>
+          </ul>
+        </dd>
+      
+    </dl>
+  </div>
+</article><article class="topic concept nested0" aria-labelledby="ariaid-title2" id="red-hat-ligthwell-network">
+  <h1 class="title topictitle1" id="ariaid-title2">What is <span class="ph">Lightwell Network</span>?</h1>
+  
+  <div class="body conbody"><p class="shortdesc"><span class="ph">Lightwell Network</span> is a membership-based service that secures your open source software supply chain across both active development and live production environments without disrupting your existing workflows.</p>
+    <p class="p"><span class="ph">Lightwell Network</span> provides verified, securely rebuilt versions of the latest open source libraries to support your active development pipelines. For your existing applications, it applies targeted security patches directly to the exact dependency versions you already run. As a result, you can eliminate vulnerabilities without executing risky system upgrades or altering your core application logic.</p>
+  </div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title3" id="membership-deliverables">
+  <h2 class="title topictitle2" id="ariaid-title3">Membership benefits</h2>
+  
+  <div class="body conbody"><p class="shortdesc">As a <span class="ph">Lightwell Network</span> member, you get access to a verified catalog of secure, patched open source artifacts through the Red Hat Lightwell Network.</p>
+    <p class="p">The membership includes the following supply chain deliverables:</p>
+    <ul class="ul">
+      <li class="li">Patched and signed artifacts</li>
+      <li class="li">Software Bill of Materials (SBOM) documentation, such as CycloneDX</li>
+      <li class="li">SLSA L3 build provenance that is built by using a secure supply chain and signed with Sigstore or cosign</li>
+    </ul>
+  </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title4" id="lightwell-network-repositories">
+  <h2 class="title topictitle2" id="ariaid-title4"><span class="ph">Lightwell Network</span> repositories</h2>
+  
+  <div class="body conbody"><p class="shortdesc"><span class="ph">Lightwell Network</span> provides signed, Supply Chain Levels for Software Artifacts (SLSA) Level 3-compliant repositories with verified build provenance. These repositories secure your open source dependencies using native formats for the ecosystem.</p>
+    <p class="p">With a <span class="ph">Lightwell Network</span> membership, you gain access to three repositories of signed artifacts per ecosystem: Validated repository, Remediated repository, and Predisclosure repository.</p>
+    <dl class="dl">
+      
+        <dt class="dt dlterm">Validated repository</dt>
+        <dd class="dd">
+          <p class="p">The Validated repository provides securely rebuilt versions of the latest open source libraries to protect your software supply chain. Red Hat rebuilds these packages by using Red Hat Secure Software Pipelines.</p>
+          <ul class="ul">
+            <li class="li"><strong class="ph b">Integration requirements:</strong> Functions exactly like standard community libraries. You need to make only a one-time change to your repository URL, with no application code modifications required.</li>
+            <li class="li"><strong class="ph b">When to use:</strong> Dependencies that require verified, reproducible builds but do not yet need security patches.</li>
+            <li class="li"><strong class="ph b">Use cases:</strong>
+              <ul class="ul" id="lightwell-network-repositories__ul_2">
+                <li class="li">Developing new features.</li>
+                <li class="li">Adding new open source packages to your project.</li>
+                <li class="li">Upgrading to the latest community versions.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+      
+      
+        <dt class="dt dlterm">Remediated repository</dt>
+        <dd class="dd">
+          <p class="p">The Remediated repository provides community-approved security fixes for the exact library versions you already use in production. This resolves critical vulnerabilities without the risk of a full system upgrade.</p>
+          <ul class="ul">
+            <li class="li"><strong class="ph b">Integration requirements:</strong>Update your dependency configuration to point to the package version featuring the Lightwell Network suffix.</li>
+            <li class="li"><strong class="ph b">When to use:</strong> Dependencies that need active CVE remediation without version upgrades.</li>
+            <li class="li"><strong class="ph b">Use cases:</strong>
+              <ul class="ul" id="lightwell-network-repositories__ul_3">
+                <li class="li">Maintaining live production applications.</li>
+                <li class="li">Securing pinned dependencies without risking breaking updates.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+      
+    </dl>
+    <dl class="dl">
+      
+        <dt class="dt dlterm">Predisclosure repository</dt>
+        <dd class="dd">
+          <p class="p">The Predisclosure repository houses libraries that contain security fixes for novel vulnerabilities that are not publicly disclosed or have not been accepted by the upstream communities. As Red Hat discloses and addresses vulnerabilities upstream, the fixes are promoted from the Predisclosure repository to the Remediated repository. This provides you with the flexibility to choose between a proactive fix by using the Predisclosure repository, or an upstream vetted fix by using the Remediated repository.</p>
+          <div class="p">
+            <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">The Predisclosure repository is not available as part of the <span class="ph">Lightwell Network</span>&nbsp;membership for R1 Institutions.</div></div>
+          </div>
+          <ul class="ul" id="lightwell-network-repositories__ul_4">
+            <li class="li"><strong class="ph b">Integration requirements:</strong> Update your dependency configuration to point to the package version featuring the Lightwell Network suffix.</li>
+            <li class="li"><strong class="ph b">When to use:</strong> When you need the most recent security fixes, and are not concerned about acceptance by the upstream community.</li>
+            <li class="li"><strong class="ph b">Use cases:</strong>
+              <ul class="ul" id="lightwell-network-repositories__ul_5">
+                <li class="li">Maintaining live production applications with robust CI/CD support.</li>
+              </ul>
+            </li>
+          </ul>
+        </dd>
+      
+    </dl>
+  </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title5" id="build-tool-integration">
+  <h2 class="title topictitle2" id="ariaid-title5">Build tool integration benefits</h2>
+  
+  <div class="body conbody"><p class="shortdesc"><span class="ph">Lightwell Network</span> connects seamlessly with your existing development pipelines so that you never have to modify your application code.</p>
+    <p class="p">By making a single configuration change to your enterprise build tools, such as Artifactory, Nexus, or Maven, you immediately connect to the secure Red Hat repository.</p>
+    <p class="p">Integrating with your build tools provides the following key benefits:</p>
+    <ul class="ul">
+      <li class="li">Routes all the dependency resolutions directly through the secure repository.</li>
+      <li class="li">Automatically pulls patched artifacts during your next dependency resolution.</li>
+      <li class="li">Enhances your existing repositories with a secure, verified set of packages.</li>
+    </ul>
+  </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title6" id="patch-delivery-lifecycle">
+  <h2 class="title topictitle2" id="ariaid-title6">Patch delivery lifecycle</h2>
+  
+  <div class="body conbody"><p class="shortdesc"><span class="ph">Lightwell Network</span> fully automates the open source patch delivery lifecycle. It routes, validates, and deploys patched artifacts directly through your existing build tools.</p>
+    <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">To accelerate vulnerability remediation, <span class="ph">Lightwell Network</span> uses automated AI-assistance for patch generation. All AI-generated patches undergo strict automated testing and human validation before distribution.</div></div>
+    <ol class="ol">
+      <li class="li"><strong class="ph b">Onboarding:</strong> You configure your existing build tools, such as Maven, Nexus, or Artifactory, to mirror the secure Red Hat repository.</li>
+      <li class="li"><strong class="ph b">Distribution:</strong> Red Hat publishes newly signed artifacts to the secure repository so that you automatically receive them during your next dependency resolution.</li>
+      <li class="li"><strong class="ph b">Validation:</strong> Red Hat tests the patched artifacts for upstream regression and compatibility to ensure that their original behavior is preserved.</li>
+      <li class="li"><strong class="ph b">Deployment:</strong> Your build pipelines transparently pull the patched artifacts, requiring minimal to no modifications to your application code.</li>
+      <li class="li"><strong class="ph b">Upstream contribution:</strong> Red Hat submits the backported patch to the originating open source project and works with the upstream community to merge it.</li>
+      <li class="li"><strong class="ph b">Disclosure:</strong> Red Hat publicly discloses the vulnerability and its corresponding patch, and releases Vulnerability Exploitability eXchange (VEX) and Open Source Vulnerabilities (OSV) data to the broader ecosystem as appropriate.</li>
+    </ol>
+  </div>
+</article></article><article class="topic reference nested0" aria-labelledby="ariaid-title7" id="GUID-c5ad3945-8cea-4f6f-ae64-f9aa981fbc3e">
+  <h1 class="title topictitle1" id="ariaid-title7">Support policy</h1>
+  
+  <div class="body refbody"><p class="shortdesc">Review the official support policy, service level agreements, and lifecycle information for <span class="ph">Lightwell Network</span>.</p>
+    <section class="section" id="GUID-c5ad3945-8cea-4f6f-ae64-f9aa981fbc3e__section_1">
+      <p class="p"><a class="xref" href="https://access.redhat.com/support/policy/updates/lightwell" target="_blank" rel="external noopener">Lightwell Support Policy</a></p>
+    </section>
+  </div>
+</article><article class="topic concept nested0" aria-labelledby="ariaid-title8" id="get-started-with-lightwell-network">
+  <h1 class="title topictitle1" id="ariaid-title8">Get started with Lightwell Network</h1>
+  
+  <div class="body conbody"><p class="shortdesc">Get started with Lightwell Network by learning how patched artifacts are versioned, choosing the right repository for your environment, and configuring your artifact repository manager or build tool to consume secure dependencies from Red Hat.</p>
+  </div>
+<article class="topic concept nested1" aria-labelledby="ariaid-title9" id="choose-the-right-repository">
+  <h2 class="title topictitle2" id="ariaid-title9">Choose the right repository for your environment</h2>
+  
+  <div class="body conbody"><p class="shortdesc">The Lightwell Network provides three repository tiers for each language ecosystem: Validated, Remediated, and Predisclosure. All of these tiers deliver artifacts in the native format for your ecosystem.</p>
+    <p class="p">Most environments layer multiple tiers in a repository manager such as Artifactory or Nexus, with a virtual or group repository, ordered by precedence: typically, Predisclosure first, then Remediated, then Validated. This ensures that you always resolve the most current, most patched artifact. Lightwell provides the source tiers, and you build and control the combined view.</p>
+    <p class="p">Choose the repository that matches your needs, and use the corresponding URL when configuring your build tool. </p>
+    <table class="table"><caption></caption><colgroup><col style="width:11.111059259293826%"><col style="width:22.222185185209877%"><col style="width:33.333377777748154%"><col style="width:33.333377777748154%"></colgroup><thead class="thead">
+          <tr class="row">
+            <th class="entry" id="choose-the-right-repository__entry__1">Repository</th>
+            <th class="entry" id="choose-the-right-repository__entry__2">Validated</th>
+            <th class="entry" id="choose-the-right-repository__entry__3">Remediated</th>
+            <th class="entry" id="choose-the-right-repository__entry__4">Predisclosure</th>
+          </tr>
+        </thead><tbody class="tbody">
+          <tr class="row">
+            <td class="entry" headers="choose-the-right-repository__entry__1">
+              <p class="p">Purpose</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__2">
+              <p class="p">Trust and verification of upstream code</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__3">
+              <p class="p">Delivery of backported security fixes</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__4">
+              <p dir="ltr" class="p">Security fixes for novel vulnerabilities before public disclosure</p>
+            </td>
+          </tr>
+          <tr class="row">
+            <td class="entry" headers="choose-the-right-repository__entry__1">
+              <p class="p">Contents</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__2">
+              <p class="p">Upstream-parity artifacts, signed provenance record, and software bill of materials (SBOM)</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__3">
+              <p class="p">Lightwell-patched libraries with <code class="ph codeph">.rhlw-0000X</code> suffix</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__4">
+              <p dir="ltr" class="p">Content is rebuilt on top of the latest Remediated builds, and extends the versioning with an additional <code class="ph codeph">-nxxxx</code> suffix</p>
+            </td>
+          </tr>
+          <tr class="row">
+            <td class="entry" headers="choose-the-right-repository__entry__1">
+              <p class="p">Build standard</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__2">
+              <p class="p">SLSA Level 3</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__3">
+              <p class="p">SLSA Level 3</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__4">
+              <p class="p">SLSA Level 3</p>
+            </td>
+          </tr>
+          <tr class="row">
+            <td class="entry" headers="choose-the-right-repository__entry__1">
+              <p class="p">When to use</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__2">
+              <p class="p">Dependencies that require verified, reproducible builds but do not yet need security patches</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__3">
+              <p class="p">Dependencies that need active CVE remediation without version upgrades</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__4">
+              <p class="p">Critical software dependencies where security is paramount and a proper testing pipeline validates application behavior</p>
+            </td>
+          </tr>
+          <tr class="row">
+            <td class="entry" headers="choose-the-right-repository__entry__1">
+              <p class="p">Java URL</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__2">
+              <p class="p">packages.redhat.com/lightwell/java/validated/</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__3">
+              <p class="p">packages.redhat.com/lightwell/java/remediated/</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__4">
+              <p class="p">packages.redhat.com/lightwell/java/predisclosure/</p>
+            </td>
+          </tr>
+          <tr class="row">
+            <td class="entry" headers="choose-the-right-repository__entry__1">
+              <p class="p">Python URL</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__2">
+              <p class="p">packages.redhat.com/lightwell/python/validated/</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__3">
+              <p class="p">packages.redhat.com/lightwell/python/remediated/</p>
+            </td>
+            <td class="entry" headers="choose-the-right-repository__entry__4">
+              <p class="p">packages.redhat.com/lightwell/python/predisclosure/</p>
+            </td>
+          </tr>
+        </tbody></table>
+  </div>
+  <nav role="navigation" class="related-links"><div class="linklist relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="#lightwell-network-repositories" title="Lightwell Network provides signed, Supply Chain Levels for Software Artifacts (SLSA) Level 3-compliant repositories with verified build provenance. These repositories secure your open source dependencies using native formats for the ecosystem.">Lightwell Network repositories</a></li></ul></div></nav>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title10" id="lightwell-patched-artifact-versions">
+  <h2 class="title topictitle2" id="ariaid-title10">Repository version suffixes</h2>
+  
+  <div class="body conbody"><p class="shortdesc">If you are using the remediated repository or predisclosure repository, your artifacts include backported security fixes identified by a version suffix. </p>
+    <dl class="dl">
+      
+        <dt class="dt dlterm">Remediated repository</dt>
+        <dd class="dd">
+          <p class="p">Red Hat backports fixes to existing upstream versions. You choose the specific version you want to update, and the scope of each security patch is limited to the fix itself. </p>
+          <p class="p">Patched artifacts are identified by a version suffix appended to the original upstream version:</p>
+          <ul class="ul" id="lightwell-patched-artifact-versions__ul_1">
+            <li class="li"><code class="ph codeph">.rhlw-0000X</code> — A sequential counter tracking cumulative security patches applied to that version.</li>
+          </ul>
+          <p class="p">For example, <code class="ph codeph">5.3.17.rhlw-00001</code> means:</p>
+          <ul class="ul" id="lightwell-patched-artifact-versions__ul_2">
+            <li class="li">The base upstream version is 5.3.17.</li>
+            <li class="li">This is the first Lightwell build that contains security patches applied to this version.</li>
+          </ul>
+          <p class="p">A subsequent fix to the same version would produce <code class="ph codeph">5.3.17.rhlw-00002</code>. These suffixed versions are available to resolve when your build tool is configured to use the remediated repository.</p>
+        </dd>
+      
+      
+        <dt class="dt dlterm">Predisclosure repository</dt>
+        <dd class="dd">
+          <p dir="ltr" class="p">Red Hat includes fixes for novel vulnerabilities before public disclosure. Each package in this repository extends the versioning from the remediated repository with an additional <code class="ph codeph">-nXXXX</code> suffix.</p>
+          <p dir="ltr" class="p">For example, if the Remediated version upon which this repository is built is <code class="ph codeph">5.3.17.rhlw-00001</code> then the predisclosure version looks like <code class="ph codeph">5.3.17.rhlw-00001-n0001</code></p>
+          <p dir="ltr" class="p">New builds increment the suffix and contain the cumulative set of patches.</p>
+        </dd>
+      
+    </dl>
+  </div>
+</article><article class="topic concept nested1" aria-labelledby="ariaid-title11" id="authenticate-to-lightwell-network">
+  <h2 class="title topictitle2" id="ariaid-title11">Lightwell Network repository access</h2>
+  
+  <div class="body conbody"><p class="shortdesc">Access to the Lightwell Network is controlled through Red Hat entitlement certificates. Each certificate is linked to your organization ID, ensuring that your build tool can only resolve artifacts from repositories you are authorized to access.</p>
+    <p class="p">Every Lightwell Network membership includes an entitlement certificate that you configure in your build tool. This certificate serves two purposes:</p>
+    <ul class="ul">
+      <li class="li"><strong class="ph b">Authentication:</strong> Confirms your identity as a Lightwell Network member.</li>
+      <li class="li"><strong class="ph b">Authorization:</strong> Scopes your access to repositories based on your organization ID.</li>
+    </ul>
+    <p class="p">Your entitlement certificate scopes access to the repositories included in your membership. Attempts to access repositories not included in your membership are denied with a <code class="ph codeph">403 Forbidden</code> error.</p>
+  </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title12" id="GUID-d07d0bd4-933c-471b-8f89-b5bf2f2d75e1">
+  <h2 class="title topictitle2" id="ariaid-title12">Create a Lightwell Network service account</h2>
+  
+  <div class="body taskbody"><p class="shortdesc">Create a registry service account to authenticate your build tools with the Lightwell Network.</p>
+    <section class="section prereq" id="GUID-d07d0bd4-933c-471b-8f89-b5bf2f2d75e1__prereq_1"><div class="tasklabel"><h3 class="sectiontitle tasklabel">Before you begin</h3></div>
+      <ul class="ul" id="GUID-d07d0bd4-933c-471b-8f89-b5bf2f2d75e1__ul_1">
+        <li class="li">You have a Red Hat account associated with your Lightwell Network membership.</li>
+      </ul>
+    </section>
+    <section><div class="tasklabel"><h3 class="sectiontitle tasklabel">Procedure</h3></div><ol class="ol steps"><li class="li step">
+        <span class="ph cmd">Navigate to the Registry Service Account Management Application at <a class="xref" href="https://access.redhat.com/terms-based-registry/" target="_blank" rel="external noopener">Registry Service Accounts</a> and log in with your Red Hat credentials.</span>
+      </li><li class="li step">
+        <span class="ph cmd">Click <strong class="ph b">New Service Account</strong>.</span>
+      </li><li class="li step">
+        <span class="ph cmd">Enter a name and description for the service account, and click <strong class="ph b">Create</strong>.</span>
+      </li><li class="li step">
+        <span class="ph cmd">Click the service account you created to view its credentials.</span>
+      </li><li class="li step">
+        <span class="ph cmd">Note the following values:</span>
+        <ol type="a" class="ol substeps" id="GUID-d07d0bd4-933c-471b-8f89-b5bf2f2d75e1__substeps_1">
+          <li class="li substep">
+            <span class="ph cmd"><strong class="ph b">Username: </strong>The full string including the prepended portion, in the format <code class="ph codeph">XXXXXXX|service-account-name</code><strong class="ph b">.</strong></span>
+          </li>
+          <li class="li substep">
+            <span class="ph cmd"><strong class="ph b">Password/Token:</strong>The token displayed on the service account detail page.</span>
+          </li>
+        </ol>
+      </li><li class="li step">
+        <span class="ph cmd">Store these credentials securely. You will use them to configure authentication in your build tool or artifact repository manager.</span>
+      </li></ol></section>
+  </div>
+  <nav role="navigation" class="related-links"><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="https://access.redhat.com/articles/RegistryAuthentication" target="_blank" rel="external noopener">Creating Registry Service Accounts</a></li></ul></div></nav>
+</article></article><article class="topic concept nested0" aria-labelledby="ariaid-title13" id="GUID-b9f21897-474c-49d2-b311-5ce2e6535523">
+  <h1 class="title topictitle1" id="ariaid-title13">Configure your artifact repository manager</h1>
+  
+  <div class="body conbody"><p class="shortdesc">If you utilize a centralized manager for artifact repositories, set it up to proxy the Lightwell Network. Follow the specific instructions for your chosen repository manager. </p>
+  </div>
+<article class="topic task nested1" aria-labelledby="ariaid-title14" id="GUID-3b951a7d-d00b-42d6-bda4-7029a62bb385">
+  <h2 class="title topictitle2" id="ariaid-title14">Configure Artifactory to use the <span class="ph">Lightwell Network</span> Java repository</h2>
+  
+  <div class="body taskbody"><p class="shortdesc">Configure JFrog Artifactory to proxy the Lightwell Network Java repository so that your organization's build tools resolve dependencies through your centralized Artifactory instance.</p>
+    <section class="section prereq" id="GUID-3b951a7d-d00b-42d6-bda4-7029a62bb385__prereq_1"><div class="tasklabel"><h3 class="sectiontitle tasklabel">Before you begin</h3></div>
+      <ul class="ul" id="GUID-3b951a7d-d00b-42d6-bda4-7029a62bb385__ul_1">
+        <li class="li">You have administrator access to your JFrog Artifactory instance.</li>
+        <li class="li"> You have an active Lightwell Network membership.</li>
+        <li class="li"> You have created a Lightwell Network service account. For more information, see <a class="xref" href="#GUID-d07d0bd4-933c-471b-8f89-b5bf2f2d75e1" title="Create a registry service account to authenticate your build tools with the Lightwell Network.">Create a Lightwell Network service account</a></li>
+        <li class="li">You have chosen the repository tier that matches your environment. For more information, see <a class="xref" href="#choose-the-right-repository" title="The Lightwell Network provides three repository tiers for each language ecosystem: Validated, Remediated, and Predisclosure. All of these tiers deliver artifacts in the native format for your ecosystem.">Choose the right repository for your environment</a></li>
+        <li class="li">Your Artifactory naming policy allows the <code class="ph codeph">.rhlw-0000X</code> version suffix, for example, <code class="ph codeph">5.3.17.rhlw-00001</code> or <code class="ph codeph">5.3.17.rhlw-00001-n0001</code> depending on your repository. These suffixes are the standard identifiers for Lightwell-patched libraries.</li>
+      </ul>
+    </section>
+    <section><div class="tasklabel"><h3 class="sectiontitle tasklabel">Procedure</h3></div><ol class="ol steps"><li class="li step">
+        <span class="ph cmd">In the JFrog Platform console, navigate to <span class="ph menucascade"><span class="ph uicontrol">Administration</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Repositories</span></span>.</span>
+      </li><li class="li step">
+        <span class="ph cmd">Click <strong class="ph b">Create a Repository</strong> and select <strong class="ph b">Remote</strong>.</span>
+      </li><li class="li step">
+        <span class="ph cmd">Select <strong class="ph b">Maven</strong> as the package type. </span>
+      </li><li class="li step">
+        <span class="ph cmd">On the <strong class="ph b">Basic</strong> tab, set the following values:</span>
+        <ol type="a" class="ol substeps" id="GUID-3b951a7d-d00b-42d6-bda4-7029a62bb385__substeps_2">
+          <li class="li substep">
+            <span class="ph cmd">In the <strong class="ph b">Repository Key</strong> field, enter <code class="ph codeph">lightwell-remote</code>. </span>
+          </li>
+          <li class="li substep">
+            <span class="ph cmd">In the <strong class="ph b">URL</strong> field, replace the default URL with the URL for your chosen repository tier, for example, <code class="ph codeph">https://packages.redhat.com/lightwell/java/remediated/</code></span>
+          </li>
+          <li class="li substep">
+            <span class="ph cmd">In the <strong class="ph b">User Name</strong> field, enter your registry service account username in the format <code class="ph codeph">XXXXXXX|service-account-name</code>. </span>
+          </li>
+          <li class="li substep">
+            <span class="ph cmd">In the <strong class="ph b">Password / Access Token</strong> field, enter your registry service account token. </span>
+          </li>
+        </ol>
+      </li><li class="li step">
+        <span class="ph cmd">Under <strong class="ph b">Maven Settings</strong>, select the <strong class="ph b">List Remote Artifacts</strong> checkbox to ensure that repository content is browsable. </span>
+      </li><li class="li step">
+        <span class="ph cmd">Verify that the <span class="ph uicontrol">Enable Token Authentication</span> checkbox is cleared and all other fields remain at their default values.</span>
+      </li><li class="li step">
+        <span class="ph cmd">Leave the remaining fields at their default values.</span>
+      </li></ol></section>
+    <section class="section postreq" id="GUID-3b951a7d-d00b-42d6-bda4-7029a62bb385__postreq_1"><div class="tasklabel"><h3 class="sectiontitle tasklabel">What to do next</h3></div>
+      <ul class="ul" id="GUID-3b951a7d-d00b-42d6-bda4-7029a62bb385__ul_2">
+        <li class="li">Navigate to the lightwell-remote repository in your Artifactory instance and verify that artifacts are being cached from the Lightwell Network repository.</li>
+        <li class="li">Configure your Maven or Gradle build tool to resolve dependencies through your Artifactory instance. For instructions on connecting your Maven client to Artifactory, see <a class="xref" href="https://docs.jfrog.com/artifactory/docs/maven-repositories#connect-your-maven-client-to-artifactory" target="_blank" rel="external noopener">Connect your Maven Client to Artifactory</a></li>
+      </ul>
+    </section>
+  </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title15" id="GUID-9ab88fbf-83b2-48c5-9a18-f75bef668b49">
+  <h2 class="title topictitle2" id="ariaid-title15">Configure Artifactory to use the Lightwell Network Python repository</h2>
+  
+  <div class="body taskbody"><p class="shortdesc">Configure JFrog Artifactory to proxy the Lightwell Network Python repository so that your organization's build tools resolve dependencies through your centralized Artifactory instance.</p>
+    <section class="section prereq" id="GUID-9ab88fbf-83b2-48c5-9a18-f75bef668b49__prereq_1"><div class="tasklabel"><h3 class="sectiontitle tasklabel">Before you begin</h3></div>
+      <ul class="ul" id="GUID-9ab88fbf-83b2-48c5-9a18-f75bef668b49__ul_1">
+        <li class="li">You have administrator access to your JFrog Artifactory instance.</li>
+        <li class="li"> You have an active Lightwell Network membership.</li>
+        <li class="li"> You have created a Lightwell Network service account. For more information, see <a class="xref" href="#GUID-d07d0bd4-933c-471b-8f89-b5bf2f2d75e1" title="Create a registry service account to authenticate your build tools with the Lightwell Network.">Create a Lightwell Network service account</a></li>
+        <li class="li">You have chosen the repository tier that matches your environment. For more information, see <a class="xref" href="#choose-the-right-repository" title="The Lightwell Network provides three repository tiers for each language ecosystem: Validated, Remediated, and Predisclosure. All of these tiers deliver artifacts in the native format for your ecosystem.">Choose the right repository for your environment</a></li>
+        <li class="li">Your Artifactory naming policy allows the <code class="ph codeph">.rhlw-0000X</code> version suffix, for example, <code class="ph codeph">5.3.17.rhlw-00001</code> or <code class="ph codeph">5.3.17.rhlw-00001-n0001</code> depending on your repository. These suffixes are the standard identifiers for Lightwell-patched libraries.</li>
+      </ul>
+    </section>
+    <section><div class="tasklabel"><h3 class="sectiontitle tasklabel">Procedure</h3></div><ol class="ol steps"><li class="li step">
+        <span class="ph cmd">In the JFrog Platform console, navigate to <span class="ph menucascade"><span class="ph uicontrol">Administration</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Repositories</span></span>.</span>
+      </li><li class="li step">
+        <span class="ph cmd">Click <strong class="ph b">Create a Repository</strong> and select <strong class="ph b">Remote</strong>.</span>
+      </li><li class="li step">
+        <span class="ph cmd">Select <strong class="ph b">PyPI</strong> as the package type. </span>
+      </li><li class="li step">
+        <span class="ph cmd">On the <strong class="ph b">Basic</strong> tab, set the following values:</span>
+        <ol type="a" class="ol substeps" id="GUID-9ab88fbf-83b2-48c5-9a18-f75bef668b49__substeps_2">
+          <li class="li substep">
+            <span class="ph cmd">In the <strong class="ph b">Repository Key</strong> field, enter <code class="ph codeph">lightwell-python-validated</code>. </span>
+          </li>
+          <li class="li substep">
+            <span class="ph cmd">In the <strong class="ph b">URL</strong> field, enter the following URL:<code class="ph codeph">https://packages.redhat.com/api/pulp-content/lightwell/python/validated/</code></span>
+          </li>
+          <li class="li substep">
+            <span class="ph cmd">In the <strong class="ph b">Registry URL</strong> field, enter the following URL:<code class="ph codeph">https://packages.redhat.com/lightwell/python/validated/</code></span>
+          </li>
+          <li class="li substep">
+            <span class="ph cmd">Leave the <strong class="ph b">Registry Index Location URL Suffix</strong> at the default value of <code class="ph codeph">simple</code></span>
+          </li>
+          <li class="li substep">
+            <span class="ph cmd">In the <strong class="ph b">User Name</strong> field, enter your registry service account username in the format <code class="ph codeph">XXXXXXX|service-account-name</code>. </span>
+          </li>
+          <li class="li substep">
+            <span class="ph cmd">In the <strong class="ph b">Password / Access Token</strong> field, enter your registry service account token. </span>
+          </li>
+        </ol>
+      </li><li class="li step">
+        <span class="ph cmd">Leave the remaining fields at their default values.</span>
+      </li></ol></section>
+    <section class="section postreq" id="GUID-9ab88fbf-83b2-48c5-9a18-f75bef668b49__postreq_1"><div class="tasklabel"><h3 class="sectiontitle tasklabel">What to do next</h3></div>
+      <ul class="ul" id="GUID-9ab88fbf-83b2-48c5-9a18-f75bef668b49__ul_2">
+        <li class="li">Navigate to the lightwell-remote repository in your Artifactory instance and verify that artifacts are being cached from the Lightwell Network repository.</li>
+        <li class="li">Configure your Python build tool to resolve packages through your Artifactory instance. For instructions on connecting your PyPI client to Artifactory, see <a class="xref" href="https://docs.jfrog.com/artifactory/docs/pypi-repositories#connect-your-pypi-client-to-artifactory" target="_blank" rel="external noopener"> Connect Your PyPI Client to Artifactory</a></li>
+      </ul>
+    </section>
+  </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title16" id="GUID-cc67c046-ee0a-446f-883e-fc2e9c58fac0">
+  <h2 class="title topictitle2" id="ariaid-title16">Configure Nexus to use the Lightwell Network repository</h2>
+  
+  <div class="body taskbody"><p class="shortdesc">Configure Sonatype Nexus Repository Manager to proxy the Lightwell Network repository so that your organization's build tools resolve dependencies through your centralized Nexus instance.</p>
+    <section class="section prereq" id="GUID-cc67c046-ee0a-446f-883e-fc2e9c58fac0__prereq_1"><div class="tasklabel"><h3 class="sectiontitle tasklabel">Before you begin</h3></div>
+      <ul class="ul">
+        <li class="li">You have administrator access to your Sonatype Nexus Repository Manager instance.</li>
+        <li class="li">You have an active Lightwell Network membership.</li>
+        <li class="li">You have created a Lightwell Network service account. For more information, see <a class="xref" href="#GUID-d07d0bd4-933c-471b-8f89-b5bf2f2d75e1" title="Create a registry service account to authenticate your build tools with the Lightwell Network.">Create a Lightwell Network service account</a></li>
+        <li class="li">You have chosen the repository tier that matches your environment. For more information, see <a class="xref" href="#choose-the-right-repository" title="The Lightwell Network provides three repository tiers for each language ecosystem: Validated, Remediated, and Predisclosure. All of these tiers deliver artifacts in the native format for your ecosystem.">Choose the right repository for your environment</a>.</li>
+      </ul>
+    </section>
+    <section><div class="tasklabel"><h3 class="sectiontitle tasklabel">Procedure</h3></div><ol class="ol steps"><li class="li step">
+        <span class="ph cmd">Create a new <strong class="ph b">Maven2 (proxy)</strong> repository. </span>
+      </li><li class="li step">
+        <span class="ph cmd">Set the following values:</span>
+        <ol type="a" class="ol substeps" id="GUID-cc67c046-ee0a-446f-883e-fc2e9c58fac0__substeps_2">
+          <li class="li substep">
+            <span class="ph cmd">In the <strong class="ph b">Remote Storage</strong> field, enter the URL for your chosen repository tier, for example, <code class="ph codeph">https://packages.redhat.com/lightwell/java/remediated/</code>. </span>
+          </li>
+          <li class="li substep">
+            <span class="ph cmd">In the <strong class="ph b">Layout Policy</strong> field, select <strong class="ph b">Strict</strong> to ensure proper resolution of .rhlw suffixes. </span>
+          </li>
+        </ol>
+      </li><li class="li step">
+        <span class="ph cmd">In the Authentication section, enter the following values:</span>
+        <ol type="a" class="ol substeps" id="GUID-cc67c046-ee0a-446f-883e-fc2e9c58fac0__substeps_3">
+          <li class="li substep">
+            <span class="ph cmd">In the <strong class="ph b">Username</strong> field, enter your registry service account username in the format <code class="ph codeph">XXXXXXX|service-account-name</code>.</span>
+          </li>
+          <li class="li substep">
+            <span class="ph cmd">In the <strong class="ph b">Password</strong> field, enter your registry service account token.</span>
+          </li>
+        </ol>
+      </li></ol></section>
+    <section class="section postreq" id="GUID-cc67c046-ee0a-446f-883e-fc2e9c58fac0__postreq_1"><div class="tasklabel"><h3 class="sectiontitle tasklabel">What to do next</h3></div>
+      <ul class="ul" id="GUID-cc67c046-ee0a-446f-883e-fc2e9c58fac0__ul_1">
+        <li class="li">Navigate to the proxy repository in your Nexus instance and verify that artifacts are being fetched from the Lightwell Network repository.</li>
+      </ul>
+    </section>
+  </div>
+</article></article><article class="topic concept nested0" aria-labelledby="ariaid-title17" id="configure-your-build-tool">
+  <h1 class="title topictitle1" id="ariaid-title17">Configure your build tool</h1>
+  
+  <div class="body conbody"><p class="shortdesc">Add a Lightwell Network repository to your existing build configuration so that your dependencies resolve through the Lightwell Network. Select the procedure that matches your language ecosystem.</p>
+  </div>
+<article class="topic task nested1" aria-labelledby="ariaid-title18" id="configure-your-java-build-tool">
+  <h2 class="title topictitle2" id="ariaid-title18">Configure your Java build tool to use the Lightwell Network repository</h2>
+  
+  <div class="body taskbody"><p class="shortdesc">Configure your Java build tool to resolve dependencies through the Lightwell Network repository by adding the repository to your existing build configuration.</p>
+    <section class="section prereq"><div class="tasklabel"><h3 class="sectiontitle tasklabel">Before you begin</h3></div>
+      <ul class="ul">
+        <li class="li">You have an active Lightwell Network membership.</li>
+        <li class="li">You have created a Lightwell Network service account. For more information, see <a class="xref" href="#GUID-d07d0bd4-933c-471b-8f89-b5bf2f2d75e1" title="Create a registry service account to authenticate your build tools with the Lightwell Network.">Create a Lightwell Network service account</a></li>
+        <li class="li">You have chosen the repository tier that matches your environment. For more information, see <a class="xref" href="#choose-the-right-repository" title="The Lightwell Network provides three repository tiers for each language ecosystem: Validated, Remediated, and Predisclosure. All of these tiers deliver artifacts in the native format for your ecosystem.">Choose the right repository for your environment</a>.</li>
+        <li class="li">You have one of the following Java build tools configured:
+          <ul class="ul">
+            <li class="li">Apache Maven</li>
+            <li class="li">Gradle</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section class="section context"><div class="tasklabel"><h3 class="sectiontitle tasklabel">About this task</h3></div>
+      <p class="p">Select the configuration method that matches your build tool.</p>
+    </section>
+    <section><div class="tasklabel"><h3 class="sectiontitle tasklabel">Procedure</h3></div><ul class="ul steps-unordered"><li class="li step stepexpand">
+        <span class="ph cmd"> <strong class="ph b">If you are using Apache Maven:</strong> </span>
+        <div class="itemgroup info"></div>
+        <ol class="ol substeps">
+          <li class="li substep substepexpand">
+            <span class="ph cmd">Open your Maven <span class="ph filepath">settings.xml</span> file.</span>
+          </li>
+          <li class="li substep substepexpand">
+            <span class="ph cmd">Add one of the following blocks inside your existing <code class="ph codeph">&lt;profiles&gt; </code>section, and add the corresponding <code class="ph codeph">&lt;activeProfile&gt;</code> entry inside your existing <code class="ph codeph">&lt;activeProfiles&gt;</code> section. If your <span class="ph filepath">settings.xml </span>file does not have these sections, add the entire block: </span>
+            <div class="itemgroup info">
+              <div class="p"><strong class="ph b">Validated repository:</strong>
+                <pre class="pre codeblock language-xml"><code> &lt;settings&gt;
+    &lt;profiles&gt;
+      &lt;profile&gt;
+        &lt;id&gt;lightwell-validated&lt;/id&gt;
+        &lt;repositories&gt;
+          &lt;repository&gt;
+            &lt;id&gt;lightwell-validated&lt;/id&gt;
+            &lt;name&gt;Lightwell Network - Validated&lt;/name&gt;
+            &lt;url&gt;https://packages.redhat.com/lightwell/java/validated/&lt;/url&gt;
+            &lt;releases&gt;
+              &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;/releases&gt;
+            &lt;snapshots&gt;
+              &lt;enabled&gt;false&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+          &lt;/repository&gt;
+        &lt;/repositories&gt;
+      &lt;/profile&gt;
+    &lt;/profiles&gt;
+    &lt;activeProfiles&gt;
+      &lt;activeProfile&gt;lightwell-validated&lt;/activeProfile&gt;
+    &lt;/activeProfiles&gt;
+  &lt;/settings&gt;</code></pre>
+              </div>
+              <div class="p"><strong class="ph b">Remediated repository:</strong>
+                <pre class="pre codeblock"><code> &lt;settings&gt;
+    &lt;profiles&gt;
+      &lt;profile&gt;
+        &lt;id&gt;lightwell-remediated&lt;/id&gt;
+        &lt;repositories&gt;
+          &lt;repository&gt;
+            &lt;id&gt;lightwell-remediated&lt;/id&gt;
+            &lt;name&gt;Lightwell Network - Remediated&lt;/name&gt;
+            &lt;url&gt;https://packages.redhat.com/lightwell/java/remediated/&lt;/url&gt;
+            &lt;releases&gt;
+              &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;/releases&gt;
+            &lt;snapshots&gt;
+              &lt;enabled&gt;false&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+          &lt;/repository&gt;
+        &lt;/repositories&gt;
+      &lt;/profile&gt;
+    &lt;/profiles&gt;
+    &lt;activeProfiles&gt;
+      &lt;activeProfile&gt;lightwell-remediated&lt;/activeProfile&gt;
+    &lt;/activeProfiles&gt;
+  &lt;/settings&gt;
+</code></pre>
+              </div>
+              <div class="p"><strong class="ph b">Predisclosure repository:</strong>
+                <pre class="pre codeblock"><code>&lt;settings&gt;
+    &lt;profiles&gt;
+      &lt;profile&gt;
+        &lt;id&gt;lightwell-predisclosure&lt;/id&gt;
+        &lt;repositories&gt;
+          &lt;repository&gt;
+            &lt;id&gt;lightwell-remediated&lt;/id&gt;
+            &lt;name&gt;Lightwell Network - Predisclosure&lt;/name&gt;                     &lt;url&gt;https://packages.redhat.com/lightwell/java/predisclosure/&lt;/url&gt;
+            &lt;releases&gt;
+              &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;/releases&gt;
+            &lt;snapshots&gt;
+              &lt;enabled&gt;false&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+          &lt;/repository&gt;
+        &lt;/repositories&gt;
+      &lt;/profile&gt;
+    &lt;/profiles&gt;
+    &lt;activeProfiles&gt;
+      &lt;activeProfile&gt;lightwell-predisclosure&lt;/activeProfile&gt;
+    &lt;/activeProfiles&gt;
+  &lt;/settings&gt;</code></pre>
+              </div>
+            </div>
+          </li>
+          <li class="li substep substepexpand">
+            <span class="ph cmd">Add a <code class="ph codeph">&lt;server&gt;</code>block inside the <code class="ph codeph">&lt;servers&gt;</code> section of your <span class="ph filepath">settings.xml</span> file to configure authentication. The <code class="ph codeph">&lt;id&gt;</code> must match the repository <code class="ph codeph">&lt;id&gt;</code> in your profile. If your <span class="ph filepath">settings.xml</span> file does not have a <code class="ph codeph">&lt;servers&gt;</code> section, add one.</span>
+            <div class="itemgroup info">
+              <div class="p"><strong class="ph b">Validated repository:</strong>
+                <pre class="pre codeblock"><code>&lt;servers&gt; 
+    &lt;server&gt; 
+        &lt;id&gt;lightwell-validated&lt;/id&gt; 
+        &lt;username&gt;&lt;service_account_username&gt;&lt;/username&gt; 
+        &lt;password&gt;&lt;service_account_token&gt;&lt;/password&gt;
+    &lt;/server&gt;
+&lt;/servers&gt;</code></pre>
+              </div>
+              <div class="p"><strong class="ph b">Remediated repository</strong>
+                <pre class="pre codeblock"><code>&lt;servers&gt; 
+    &lt;server&gt; 
+        &lt;id&gt;lightwell-remediated&lt;/id&gt; 
+        &lt;username&gt;&lt;service_account_username&gt;&lt;/username&gt; 
+        &lt;password&gt;&lt;service_account_token&gt;&lt;/password&gt;
+    &lt;/server&gt; 
+&lt;/servers&gt;</code></pre>
+              </div>
+              <div class="p"><strong class="ph b">Predisclosure repository</strong>
+                <pre class="pre codeblock"><code>&lt;servers&gt; 
+    &lt;server&gt; 
+        &lt;id&gt;lightwell-remediated&lt;/id&gt; 
+        &lt;username&gt;&lt;service_account_username&gt;&lt;/username&gt; 
+        &lt;password&gt;&lt;service_account_token&gt;&lt;/password&gt;
+    &lt;/server&gt; 
+&lt;/servers&gt;</code></pre>
+              </div>
+              <p class="p">where:</p>
+              <p class="p"><code class="ph codeph">&lt;service_account_username&gt;</code>: &nbsp;Specifies your registry service account username in the format <code class="ph codeph">XXXXXXX|service-account-name</code></p>
+              <p class="p"><code class="ph codeph">&lt;service_account_token&gt;</code>: &nbsp;Specifies your registry service account token.</p>
+            </div>
+          </li>
+          <li class="li substep substepexpand">
+            <span class="ph cmd">Save the file.</span>
+          </li>
+        </ol>
+        <div class="itemgroup info">
+          <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">To switch to the other repository tier, replace the block with the one for the other tier.</div></div>
+        </div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd"> <strong class="ph b">If you are using Gradle:</strong> </span>
+        <ol class="ol substeps">
+          <li class="li substep substepexpand">
+            <span class="ph cmd">Open your <span class="ph filepath">build.gradle</span> file.</span>
+          </li>
+          <li class="li substep substepexpand">
+            <span class="ph cmd">Add the following repositories block. Ensure the Lightwell Network repository is placed above <code class="ph codeph">mavenCentral()</code> to prioritize patched versions: </span>
+            <div class="itemgroup info">
+              <div class="p"><strong class="ph b">Validated repository:</strong>
+                <pre class="pre codeblock language-json"><code> repositories {
+      maven {
+          name = "lightwell-validated"
+          url "https://packages.redhat.com/lightwell/java/validated/"
+          credentials { 
+               username = "&lt;service_account_username&gt;"
+               password = "&lt;service_account_token&gt;"
+            }
+      mavenCentral()
+  }
+</code></pre>
+              </div>
+              <div class="p"><strong class="ph b">Remediated repository</strong>
+                <pre class="pre codeblock"><code>repositories {
+      maven {
+          name = "lightwell-remediated"
+          url "https://packages.redhat.com/lightwell/java/remediated/"
+          credentials { 
+               username = "&lt;service_account_username&gt;"
+               password = "&lt;service_account_token&gt;"
+            }
+      }
+      mavenCentral()
+  }</code></pre>
+              </div>
+              <div class="p"><strong class="ph b">Predisclosure repository</strong>
+                <pre class="pre codeblock"><code>repositories {
+      maven {
+          name = "lightwell-predisclosure"
+          url "https://packages.redhat.com/lightwell/java/predisclosure/"
+          credentials { 
+               username = "&lt;service_account_username&gt;"
+               password = "&lt;service_account_token&gt;"
+            }
+      }
+      mavenCentral()
+  }</code></pre>
+              </div>
+              <p class="p">where:</p>
+              <p class="p"><code class="ph codeph">&lt;service_account_username&gt;</code>: Specifies your registry service account username in the format <code class="ph codeph">XXXXXXX|service-account-name</code>.</p>
+              <p class="p"><code class="ph codeph">&lt;service_account_token&gt;</code>: Specifies your registry service account token</p>
+              <p class="p">To use the validated repository instead, replace remediated with validated in the URL.</p>
+            </div>
+          </li>
+          <li class="li substep substepexpand">
+            <span class="ph cmd">Add your service account credentials to your <code class="ph codeph">~/.gradle/gradle.properties</code> file.</span>
+            <div class="itemgroup info">
+              <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                <p class="p"> Do not store credentials directly in your <code class="ph codeph">build.gradle</code> file. Do not commit credentials to version control. Store them securely, for example, in your <code class="ph codeph">~/.gradle/gradle.properties</code> file.</p>
+              </div></div>
+            </div>
+          </li>
+          <li class="li substep substepexpand">
+            <span class="ph cmd">Save the file.</span>
+          </li>
+        </ol>
+      </li></ul></section>
+    <section class="section postreq"><div class="tasklabel"><h3 class="sectiontitle tasklabel">What to do next</h3></div>
+      <ol class="ol">
+        <li class="li">Run a build to confirm that dependencies resolve through the Lightwell Network repository:
+          <p class="p">For maven, run the following command:</p>
+          <pre class="pre codeblock"><code>$ mvn dependency:resolve</code></pre>
+          <p class="p">For Gradle, run the following command:</p>
+          <pre class="pre codeblock"><code>$ gradle dependencies</code></pre>
+        </li>
+        <li class="li">Verify that the build output shows artifacts resolving from the Lightwell Network repository URL.</li>
+        <li class="li">If you are using the Remediated or Predisclosure repository, add a remediated dependency to your project and verify that the resolved artifact includes the <code class="ph codeph">.rhlw-0000X </code>or <code class="ph codeph">.rhlw-0000X-nXXXX</code> version suffix, for example, <code class="ph codeph">5.3.17.rhlw-00001</code> or <code class="ph codeph">5.3.17.rhlw-00001-n0001</code>.</li>
+      </ol>
+    </section>
+  </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title19" id="configure-your-python-build-tool">
+  <h2 class="title topictitle2" id="ariaid-title19">Configure your Python build tool to use the Lightwell Network repository</h2>
+  
+  <div class="body taskbody"><p class="shortdesc">Configure your Python build tool to resolve dependencies through the Lightwell Network repository by adding the repository to your existing configuration.</p>
+    <section class="section prereq"><div class="tasklabel"><h3 class="sectiontitle tasklabel">Before you begin</h3></div>
+      <ul class="ul">
+        <li class="li">You have an active Lightwell Network membership.</li>
+        <li class="li">You have created a Lightwell Network service account. For more information, see <a class="xref" href="#GUID-d07d0bd4-933c-471b-8f89-b5bf2f2d75e1" title="Create a registry service account to authenticate your build tools with the Lightwell Network.">Create a Lightwell Network service account</a></li>
+        <li class="li">You have chosen the repository tier that matches your environment. For more information, see <a class="xref" href="#choose-the-right-repository" title="The Lightwell Network provides three repository tiers for each language ecosystem: Validated, Remediated, and Predisclosure. All of these tiers deliver artifacts in the native format for your ecosystem.">Choose the right repository for your environment</a>.</li>
+        <li class="li">You have Python 3.12 installed.</li>
+        <li class="li">You have one of the following Python build tools configured:
+          <ul class="ul">
+            <li class="li">pip</li>
+            <li class="li">Pipenv</li>
+            <li class="li">Poetry</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section class="section context"><div class="tasklabel"><h3 class="sectiontitle tasklabel">About this task</h3></div>
+      <p class="p">Select the configuration method that matches your build tool. Run the command that corresponds to your chosen repository tier. </p>
+    </section>
+    <section><div class="tasklabel"><h3 class="sectiontitle tasklabel">Procedure</h3></div><ul class="ul steps-unordered"><li class="li step">
+        <span class="ph cmd"> <strong class="ph b">If you are using pip:</strong> </span>
+        <ol class="ol substeps">
+          <li class="li substep substepexpand">
+            <span class="ph cmd">Configure authentication by adding your service account credentials to your <code class="ph codeph">~/.netrc</code> file. Create the file if it does not exist:</span>
+            <div class="itemgroup info">
+              <pre class="pre codeblock"><code>machine packages.redhat.com login &lt;service_account_username&gt; password &lt;service_account_token&gt;</code></pre>
+              <p class="p">where:</p>
+              <p class="p"><code class="ph codeph">&lt;service_account_username&gt;</code>: Specifies your registry service account username in the format <code class="ph codeph">XXXXXXX|service-account-name</code></p>
+              <p class="p"><code class="ph codeph">&lt;service_account_token&gt;</code>: Specifies your registry service account token</p>
+            </div>
+          </li>
+          <li class="li substep substepexpand">
+            <span class="ph cmd">Run one of the following commands to set the Lightwell Network repository as your default index:</span>
+            <div class="itemgroup info">
+              <p class="p">To set the Validated repository as your default index:</p>
+              <pre class="pre codeblock"><code>$ pip config set global.index-url https://packages.redhat.com/lightwell/python/validated/simple</code></pre>
+              <p class="p">To set the Remediated repository as your default index:</p>
+              <pre class="pre codeblock"><code>$ pip config set global.index-url https://packages.redhat.com/lightwell/python/remediated/simple</code></pre>
+              <p class="p">To set the Predisclosure repository as your default index:</p>
+              <pre class="pre codeblock"><code>$ pip config set global.index-url https://packages.redhat.com/lightwell/python/predisclosure/simple </code></pre>
+            </div>
+          </li>
+        </ol>
+      </li><li class="li step">
+        <span class="ph cmd"> <strong class="ph b">If you are using Pipenv:</strong> </span>
+        <ol class="ol substeps">
+          <li class="li substep substepexpand">
+            <span class="ph cmd">Configure authentication by adding your service account credentials to your <code class="ph codeph">~/.netrc</code> file. Create the file if it does not exist:</span>
+            <div class="itemgroup info">
+              <pre class="pre codeblock"><code>machine packages.redhat.com login &lt;service_account_username&gt; password &lt;service_account_token&gt;</code></pre>
+              <p class="p">where:</p>
+              <p class="p"><code class="ph codeph">&lt;service_account_username&gt;</code>: Specifies your registry service account username in the format <code class="ph codeph">XXXXXXX|service-account-name</code></p>
+              <p class="p"><code class="ph codeph">&lt;service_account_token&gt;</code>: Specifies your registry service account token</p>
+            </div>
+          </li>
+          <li class="li substep substepexpand">
+            <span class="ph cmd">Run one of the following commands to install from the Lightwell Network repository:</span>
+            <div class="itemgroup info">
+              <p class="p">To install from the Validated repository:</p>
+              <pre class="pre codeblock"><code>$ pipenv install --index https://packages.redhat.com/lightwell/python/validated/simple</code></pre>
+              <p class="p">To install from the Remediated repository:</p>
+              <pre class="pre codeblock"><code>$ pipenv install --index https://packages.redhat.com/lightwell/python/remediated/simple</code></pre>
+              <p class="p">To install from the Predisclosure repository:</p>
+              <pre class="pre codeblock"><code>$ pipenv install --index https://packages.redhat.com/lightwell/python/predisclosure/simple</code></pre>
+            </div>
+          </li>
+        </ol>
+      </li><li class="li step">
+        <span class="ph cmd"> <strong class="ph b">If you are using Poetry:</strong> </span>
+        <ol class="ol substeps">
+          <li class="li substep substepexpand">
+            <span class="ph cmd">Configure authentication for the Lightwell repository by running the following command:</span>
+            <div class="itemgroup info">
+              <pre class="pre codeblock"><code>$ poetry config http-basic.lightwell "&lt;service_account_username&gt;" "&lt;service_account_token&gt;"</code></pre>
+              <p class="p">where:</p>
+              <p class="p"><code class="ph codeph">&lt;service_account_username&gt;</code>: Specifies your registry service account username in the format <code class="ph codeph">XXXXXXX|service-account-name</code></p>
+              <p class="p"><code class="ph codeph">&lt;service_account_token&gt;</code>: Specifies your registry service account token</p>
+            </div>
+          </li>
+          <li class="li substep substepexpand">
+            <span class="ph cmd">Run one of the following commands to add the Lightwell Network repository as the default source:</span>
+            <div class="itemgroup info">
+              <p class="p">To add the Validated repository:</p>
+              <pre class="pre codeblock"><code>$ poetry source add --priority=default lightwell https://packages.redhat.com/lightwell/python/validated</code></pre>
+              <p class="p">To add the Remediated repository:</p>
+              <pre class="pre codeblock"><code>$ poetry source add --priority=default lightwell https://packages.redhat.com/lightwell/python/remediated</code></pre>
+              <p class="p">To add the Predisclosure repository:</p>
+              <pre class="pre codeblock"><code>$ poetry source add --priority=default lightwell https://packages.redhat.com/lightwell/python/disclosure</code></pre>
+            </div>
+          </li>
+        </ol>
+      </li></ul></section>
+    <section class="section postreq"><div class="tasklabel"><h3 class="sectiontitle tasklabel">What to do next</h3></div>
+      <ol class="ol">
+        <li class="li">Create and activate a virtual environment:
+          <pre class="pre codeblock"><code>$ python3.12 -m venv venv
+$ source venv/bin/activate</code></pre>
+        </li>
+        <li class="li">Install a package and confirm that it resolves through the Lightwell Network repository:
+          <pre class="pre codeblock"><code>$ pip install numpy</code></pre>
+        </li>
+        <li class="li">To install a specific version, specify the version number in the install command:
+          <pre class="pre codeblock"><code>$ pip install numpy==2.3.5</code></pre>
+        </li>
+        <li class="li">If you are using the Remediated repository, add a remediated dependency and verify that the resolved package version includes the <code class="ph codeph">.rhlw-0000X</code> version suffix. If you are using the Predisclosure repository, add a remediated dependency and verify that the resolved package version includes the <code class="ph codeph">.rhlw-0000X-nXXXX</code> version suffix.
+          <pre class="pre codeblock"><code>$ pip show numpy | grep Version</code></pre>
+          <p class="p">The output should show a version with the <code class="ph codeph">.rhlw-0000X</code> or <code class="ph codeph">.rhlw-0000X-nXXXX</code> suffix, for example, <code class="ph codeph">Version: 2.3.5.rhlw-00001</code>.</p>
+        </li>
+      </ol>
+    </section>
+  </div>
+</article></article><article class="topic concept nested0" aria-labelledby="ariaid-title20" id="GUID-be48768f-0401-4938-b716-8babfc3e7fda">
+  <h1 class="title topictitle1" id="ariaid-title20">Verify provenance in the Lightwell Network</h1>
+  
+  <div class="body conbody"><p class="shortdesc">Provenance provides verifiable information about how an artifact was produced, including the build that created it and the related build metadata. By retrieving this provenance, you can validate that the artifact comes from the expected Lightwell build and that it has not been modified.</p>
+    <p class="p">Verifying the provenance establishes the authenticity and integrity of the artifacts to which they refer. Provenance verification in Lightwell is ecosystem-specific. Java artifacts and Python wheel artifacts use different signing keys and methods to retrieve provenance data. You must use the correct key and retrieval method for the ecosystem of the artifact that you want to verify.</p>
+    <p class="p">The following signing keys are available:</p>
+    <ul class="ul" id="GUID-be48768f-0401-4938-b716-8babfc3e7fda__ul_1">
+      <li class="li"><strong class="ph b">PNC Provenance Signing Key 1:</strong> Verifies provenance for PNC-generated Java artifacts only.</li>
+      <li class="li"><strong class="ph b">Red Hat RELEASE3:</strong> Verifies Python wheel provenance generated by the Lightwell Python release workflow.</li>
+    </ul>
+  </div>
+<article class="topic task nested1" aria-labelledby="ariaid-title21" id="GUID-f6865fc1-7fb7-4a86-899a-5cb2d9950f96">
+  <h2 class="title topictitle2" id="ariaid-title21">Verify provenance for Java artifacts</h2>
+  
+  <div class="body taskbody"><p class="shortdesc">Retrieve the provenance for Java artifacts from a Lightwell maven repository to verify their origin and integrity.</p>
+    <section class="section prereq" id="GUID-f6865fc1-7fb7-4a86-899a-5cb2d9950f96__prereq_1"><div class="tasklabel"><h3 class="sectiontitle tasklabel">Before you begin</h3></div>You have access to the Lightwell Maven repository. For more information, see <a class="xref" href="#authenticate-to-lightwell-network" title="Access to the Lightwell Network is controlled through Red Hat entitlement certificates. Each certificate is linked to your organization ID, ensuring that your build tool can only resolve artifacts from repositories you are authorized to access.">Lightwell Network repository access</a> and <a class="xref" href="#GUID-d07d0bd4-933c-471b-8f89-b5bf2f2d75e1" title="Create a registry service account to authenticate your build tools with the Lightwell Network.">Create a Lightwell Network service account</a>.</section>
+    <section><div class="tasklabel"><h3 class="sectiontitle tasklabel">Procedure</h3></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Save the PNC Provenance Signing Key 1 public key to a local file named <span class="ph filepath">pnc-provenance-signing-key-1.pub</span>:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock"><code>$ cat &gt; pnc-provenance-signing-key-1.pub &lt;&lt; 'EOF'
+  -----BEGIN PUBLIC KEY-----
+  MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYFyYXLNpOXF46lNdwKgOthCsOZ0W
+  5Uc29eO5IQzw2PKVkdpb781AZ/sUh7dSpe3hjjTu2brbjtOH1FWhO2Mmrg==
+  -----END PUBLIC KEY-----
+  EOF</code></pre>
+        </div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Download a Java artifact and its matching provenance bundle from the same Maven coordinate directory. The provenance bundle file name uses the following pattern:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock"><code>&lt;artifactId&gt;-&lt;version&gt;.provenance.sigstore.json</code></pre>
+          <p class="p">where:</p>
+          <dl class="dl">
+            
+              <dt class="dt dlterm"><code class="ph codeph">&lt;artifactId&gt;</code></dt>
+              <dd class="dd">Specifies the ID of the artifact to verify.</dd>
+            
+            
+              <dt class="dt dlterm"><code class="ph codeph">&lt;version&gt;</code></dt>
+              <dd class="dd">Specifies the version of the Maven artifact.</dd>
+            
+          </dl>
+        </div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Verify the artifact and provenance bundle with Cosign:</span>
+        <div class="itemgroup info">
+          <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">The artifact and provenance bundle must be the matching pair for the same Maven coordinate and version. This verifies that the Supply-chain Levels for Software Artifacts (SLSA) provenance attestation was signed by the PNC Provenance Signing Key 1, and that its subject digest matches the downloaded artifact.</div></div>
+          <pre class="pre codeblock"><code>$ cosign verify-blob-attestation \
+      --type https://slsa.dev/provenance/v1 \
+      --key pnc-provenance-signing-key-1.pub \
+      --bundle &lt;artifactId&gt;-&lt;version&gt;.provenance.sigstore.json \
+      &lt;artifactId&gt;-&lt;version&gt;.jar</code></pre>
+        </div>
+      </li></ol></section>
+  </div>
+</article><article class="topic task nested1" aria-labelledby="ariaid-title22" id="GUID-59c030d0-4ec6-4ff0-9e4f-a50bbcb18407">
+  <h2 class="title topictitle2" id="ariaid-title22">Verify provenance for Python wheel artifacts</h2>
+  
+  <div class="body taskbody"><p class="shortdesc">Retrieve the provenance for Python wheel content from the Pulp Integrity API to verify their origin and integrity.</p>
+    <section class="section prereq" id="GUID-59c030d0-4ec6-4ff0-9e4f-a50bbcb18407__prereq_1"><div class="tasklabel"><h3 class="sectiontitle tasklabel">Before you begin</h3></div>
+      <ul class="ul" id="GUID-59c030d0-4ec6-4ff0-9e4f-a50bbcb18407__ul_1">
+        <li class="li">You have access to the Lightwell Python repository on <code class="ph codeph">packages.redhat.com</code>. For more information, see <a class="xref" href="#authenticate-to-lightwell-network" title="Access to the Lightwell Network is controlled through Red Hat entitlement certificates. Each certificate is linked to your organization ID, ensuring that your build tool can only resolve artifacts from repositories you are authorized to access.">Lightwell Network repository access</a> and <a class="xref" href="#GUID-d07d0bd4-933c-471b-8f89-b5bf2f2d75e1" title="Create a registry service account to authenticate your build tools with the Lightwell Network.">Create a Lightwell Network service account</a>.</li>
+      </ul>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">Python requires that the username and password be passed as HTTP basic authentication.</div></div>
+    </section>
+    <section><div class="tasklabel"><h3 class="sectiontitle tasklabel">Procedure</h3></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Set shell variables for the wheel to verify:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock"><code>WHEEL='&lt;filename&gt;.whl'
+  PACKAGE='&lt;package&gt;'
+  VERSION='&lt;version&gt;'
+  REPOSITORY='&lt;repository&gt;'
+  LIGHTWELL_USERNAME='&lt;service-account-username&gt;' 
+  LIGHTWELL_TOKEN='&lt;service-account-token&gt;'</code></pre>
+          <p class="p">where:</p>
+          <dl class="dl">
+            
+              <dt class="dt dlterm"><code class="ph codeph">&lt;filename&gt;</code></dt>
+              <dd class="dd">Specifies the complete filename of the wheel to verify, including the <code class="ph codeph">.whl</code> extension. For example, <code class="ph codeph">typer-0.16.1-0-py3-none-any.whl</code>.</dd>
+            
+            
+              <dt class="dt dlterm"><code class="ph codeph">&lt;package&gt;</code></dt>
+              <dd class="dd">Specifies the normalized Python project name that is used by the Pulp Integrity API. For example, <code class="ph codeph">typer</code>.</dd>
+            
+            
+              <dt class="dt dlterm"><code class="ph codeph">&lt;version&gt;</code></dt>
+              <dd class="dd">Specifies the Python package version that is used by the Pulp Integrity API, for example: <code class="ph codeph">0.16.1</code></dd>
+            
+            
+              <dt class="dt dlterm"><code class="ph codeph">&lt;repository&gt;</code></dt>
+              <dd class="dd">Specifies the Lightwell Python repository path segment that contains the wheel, for example, <code class="ph codeph">validated</code>.</dd>
+            
+            
+              <dt class="dt dlterm"><code class="ph codeph">&lt;service-account-username&gt;</code></dt>
+              <dd class="dd">Specifies the username for your Lightwell Network service account.</dd>
+            
+            
+              <dt class="dt dlterm"><code class="ph codeph">&lt;service-account-token&gt;</code></dt>
+              <dd class="dd">Specifies the token for your Lightwell Network service account.</dd>
+            
+          </dl>
+        </div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Download the Red Hat RELEASE3 public key from the Red Hat Product Signing Keys page and extract the Privacy-Enhanced Mail (PEM) public-key block:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock"><code>$ curl -fsSLo release3.txt \
+      https://security.access.redhat.com/data/63405576.txt
+  sed -n '/-----BEGIN PUBLIC KEY-----/,$p' release3.txt &gt; release3.pub</code></pre>
+        </div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Download the wheel:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock"><code>$ curl -fsSLO \
+       --user "${LIGHTWELL_USERNAME}:${LIGHTWELL_TOKEN}" \
+       "https://packages.redhat.com/api/pulp-content/lightwell/python/${REPOSITORY}/${WHEEL}"</code></pre>
+        </div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Download the wheel provenance from the Pulp Integrity API:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock"><code>$ curl -fsSLo "${WHEEL}.provenance.json" \
+         --user "${LIGHTWELL_USERNAME}:${LIGHTWELL_TOKEN}" \
+"https://packages.redhat.com/api/pypi/lightwell/python/${REPOSITORY}/integrity/${PACKAGE}/${VERSION}/${WHEEL}/provenance/"</code></pre>
+        </div>
+        <div class="itemgroup stepresult">Pulp serves the provenance in Python Enhancement Proposal (PEP) 740 form.</div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Map the envelope fields to the matching Dead Simple Signing Envelope (DSSE) representation that is accepted by Cosign:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock"><code>jq '
+      .attestation_bundles[0].attestations[0].envelope
+      | {
+          payloadType: "application/vnd.in-toto+json",
+          payload: .statement,
+          signatures: [{sig: .signature}]
+        }
+    ' "${WHEEL}.provenance.json" &gt; "${WHEEL}.dsse.json"</code></pre>
+        </div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Verify the RELEASE3 signature and the wheel digest binding in the SLSA statement with Cosign:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock"><code>$ cosign verify-blob-attestation \
+      --insecure-ignore-tlog \
+      --type https://slsa.dev/provenance/v1 \
+      --key release3.pub \
+      --signature "${WHEEL}.dsse.json" \
+      "${WHEEL}"</code></pre>
+        </div>
+      </li></ol></section>
+  </div>
+</article></article><article class="topic reference nested0" aria-labelledby="ariaid-title23" id="GUID-aad7d19b-43ae-4a4b-894f-ed6d38fc4d84">
+  <h1 class="title topictitle1" id="ariaid-title23">Get help with the Lightwell Network</h1>
+  
+  <div class="body refbody"><p class="shortdesc">Access support options and essential resources for the Lightwell Network, including support policies.</p>
+    <section class="section" id="GUID-aad7d19b-43ae-4a4b-894f-ed6d38fc4d84__section_1"><h2 class="title sectiontitle">Support</h2>
+      
+      <ul class="ul" id="GUID-aad7d19b-43ae-4a4b-894f-ed6d38fc4d84__ul_1">
+        <li class="li">To report a problem or request assistance, open a support case through the <a class="xref" href="https://access.redhat.com/support" target="_blank" rel="external noopener">Red Hat customer support</a>.</li>
+        <li class="li">For the Lightwell Network support policy, see <a class="xref" href="https://access.redhat.com/support/policy/updates/lightwell" target="_blank" rel="external noopener">Red Hat Lightwell Support Policy</a>.</li>
+      </ul>
+    </section>
+    <section class="section" id="GUID-aad7d19b-43ae-4a4b-894f-ed6d38fc4d84__section_2"><h2 class="title sectiontitle">Software bills of materials </h2>
+      
+      <ul class="ul" id="GUID-aad7d19b-43ae-4a4b-894f-ed6d38fc4d84__ul_2">
+        <li class="li">To view a Python SBOM, extract the wheel file and navigate to <code class="ph codeph">&lt;package&gt;-X.Y.Z.dist-info/sboms/redhat.spdx.json</code>.</li>
+        <li class="li">To view the Java SBOM, navigate to the directory containing the <span class="ph filepath">.jar</span> file and open the <code class="ph codeph">cyclonedx.json</code> file.</li>
+      </ul>
+    </section>
+    <section class="section" id="GUID-aad7d19b-43ae-4a4b-894f-ed6d38fc4d84__section_5"><h2 class="title sectiontitle">Provenance attestations </h2>
+      
+      <ul class="ul" id="GUID-aad7d19b-43ae-4a4b-894f-ed6d38fc4d84__ul_4">
+        <li class="li">To view a Python provenance attestation, see<code class="ph codeph">packages.redhat.com/api/pypi/lightwell/&lt;tier&gt;/integrity/&lt;package&gt;/&lt;version&gt;/&lt;wheel_filename&gt;/provenance/</code>.</li>
+        <li class="li">To view a Java provenance attestation, navigate to the directory with the <span class="ph filepath">.jar</span> file and open the <span class="ph filepath">.provenance.sigstore.json</span> file.</li>
+      </ul>
+    </section>
+    <section class="section" id="GUID-aad7d19b-43ae-4a4b-894f-ed6d38fc4d84__section_4"><h2 class="title sectiontitle">Vulnerability data</h2>
+      
+      <p class="p">To download OSV data for Java artifacts, see the following depending on your repository:</p>
+      <ul class="ul" id="GUID-aad7d19b-43ae-4a4b-894f-ed6d38fc4d84__ul_5">
+        <li class="li"><a class="xref" href="https://packages.redhat.com/lightwell/osv/java/remediated/" target="_blank" rel="external noopener">Remediated repository</a> </li>
+        <li class="li"><a class="xref" href="https://packages.redhat.com/lightwell/osv/java/predisclosure/" target="_blank" rel="external noopener">Predisclosure repository </a></li>
+      </ul>
+    </section>
+  </div>
+</article><article class="topic reference nested0" aria-labelledby="ariaid-title24" id="GUID-a8942bfb-8f03-486d-9df7-d57b06b2bccd">
+  <h1 class="title topictitle1" id="ariaid-title24">Lightwell Network PDF Reference</h1>
+  
+  <div class="body refbody"><p class="shortdesc">A listing of all available PDF documentation for Red Hat Lightwell Network. </p>
+    <table class="table frame-all table--pgwide-1" id="GUID-a8942bfb-8f03-486d-9df7-d57b06b2bccd__table_rhln_pdfs"><caption></caption><colgroup><col style="width:25%"><col style="width:75%"></colgroup><thead class="thead">
+          <tr class="row">
+            <th class="entry colsep-1 rowsep-1" id="GUID-a8942bfb-8f03-486d-9df7-d57b06b2bccd__table_rhln_pdfs__entry__1">Guide</th>
+            <th class="entry rowsep-1" id="GUID-a8942bfb-8f03-486d-9df7-d57b06b2bccd__table_rhln_pdfs__entry__2">PDF Link</th>
+          </tr>
+        </thead><tbody class="tbody">
+          <tr class="row">
+            <td class="entry colsep-1 rowsep-1" headers="GUID-a8942bfb-8f03-486d-9df7-d57b06b2bccd__table_rhln_pdfs__entry__1">What's new</td>
+            <td class="entry rowsep-1" headers="GUID-a8942bfb-8f03-486d-9df7-d57b06b2bccd__table_rhln_pdfs__entry__2"><a class="xref" href="https://your-s3-bucket-link/rhln-whats-new-pdf.pdf" target="_blank" rel="external noopener">Lightwell Network What's new</a></td>
+          </tr>
+          <tr class="row">
+            <td class="entry colsep-1 rowsep-1" headers="GUID-a8942bfb-8f03-486d-9df7-d57b06b2bccd__table_rhln_pdfs__entry__1">Discover</td>
+            <td class="entry rowsep-1" headers="GUID-a8942bfb-8f03-486d-9df7-d57b06b2bccd__table_rhln_pdfs__entry__2"><a class="xref" href="https://your-s3-bucket-link/rhln-discover-pdf.pdf" target="_blank" rel="external noopener">Lightwell Network Discover</a></td>
+          </tr>
+          <tr class="row">
+            <td class="entry colsep-1 rowsep-1" headers="GUID-a8942bfb-8f03-486d-9df7-d57b06b2bccd__table_rhln_pdfs__entry__1">Get started</td>
+            <td class="entry rowsep-1" headers="GUID-a8942bfb-8f03-486d-9df7-d57b06b2bccd__table_rhln_pdfs__entry__2"><a class="xref" href="https://your-s3-bucket-link/rhln-get-started-pdf.pdf" target="_blank" rel="external noopener">Lightwell Network Get started</a></td>
+          </tr>
+          <tr class="row">
+            <td class="entry colsep-1 rowsep-1" headers="GUID-a8942bfb-8f03-486d-9df7-d57b06b2bccd__table_rhln_pdfs__entry__1">Configure</td>
+            <td class="entry rowsep-1" headers="GUID-a8942bfb-8f03-486d-9df7-d57b06b2bccd__table_rhln_pdfs__entry__2"><a class="xref" href="https://your-s3-bucket-link/rhln-configure-pdf.pdf" target="_blank" rel="external noopener">Lightwell Network Configure</a></td>
+          </tr>
+          <tr class="row">
+            <td class="entry colsep-1" headers="GUID-a8942bfb-8f03-486d-9df7-d57b06b2bccd__table_rhln_pdfs__entry__1">Troubleshoot</td>
+            <td class="entry" headers="GUID-a8942bfb-8f03-486d-9df7-d57b06b2bccd__table_rhln_pdfs__entry__2"><a class="xref" href="https://your-s3-bucket-link/rhln-troubleshoot-pdf.pdf" target="_blank" rel="external noopener">Lightwell Network Troubleshoot</a></td>
+          </tr>
+        </tbody></table>
+  </div>
+</article></article></main></body></html>
