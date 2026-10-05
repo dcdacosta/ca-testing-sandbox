@@ -4,6 +4,7 @@
   <title>Establish access across your organization</title>
   <shortdesc>The User Access feature is an implementation of role-based access control (RBAC) that controls user access to various services hosted on the Red Hat Hybrid Cloud Console. You configure the User Access feature to grant user access to services hosted on the Hybrid Cloud Console.</shortdesc>
   <conbody>
+  <p>This file is locked in AEM. Will that prevent the changes from being merged by the Git connector?</p>
     <p>User access on the Hybrid Cloud Console uses an additive model, which means that actions are only permitted, not denied. To control access, administrators assign the appropriate roles with the desired permissions to groups, then add users to those groups. The access permitted to an individual user is the sum of all roles assigned to all groups to which that user belongs.</p>
     <p otherprops="PUBLIC">For Red Hat Enterprise Linux (RHEL) systems, you can configure workspaces to organize systems in your inventory and apply access management rules to those systems. Use workspace configuration to restrict system access to only those who require it.</p>
     <note otherprops="PUBLIC" type="note">Configuring access management using workspaces is available in the Hybrid Cloud Console Preview environment.</note>
