@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <task id="proc-insights-rbac-adding-a-role-to-a-group">
-  <title>Add a role to a group</title>
+  <title>Git title change</title>
   <shortdesc>Add a role to an existing group to provide additional permissions to all members of that group. You can view user details to add roles to a group that the user belongs to.</shortdesc>
   <taskbody>
     <prereq>
